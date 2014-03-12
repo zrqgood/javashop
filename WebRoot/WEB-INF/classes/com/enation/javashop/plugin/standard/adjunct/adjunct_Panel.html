@@ -1,0 +1,75 @@
+<table class="form-table">
+		<tr>
+			<td class="label">配件组名称：</td>
+			<td class="adj">
+				<span style="float:left"><input type="text" name="adjunct.adjunct_name" class="input_text" style="width:50px" <#if adjunct?exists>value="${adjunct.adjunct_name!'' }"</#if>  dataType="string" />&nbsp;</span>
+				<a href="javascript:;" ><img class="delete" src="../shop/admin/images/transparent.gif" > </a>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="label">
+				最小购买量：
+			</td>
+			<td>
+				<input type="text" name="adjunct.min_num" class="input_text" style="width:50px" <#if adjunct?exists>value="${adjunct.min_num!'' }"</#if>  dataType="int" />
+			</td>
+		</tr>
+		<tr>
+			<td class="label">
+				最大购买量：
+			</td>
+			<td>
+				<input type="text" name="adjunct.max_num" class="input_text" style="width:50px" <#if adjunct?exists>value="${adjunct.max_num!'' }"</#if>  dataType="int" />
+			</td>
+		</tr>
+		<tr>
+			<td class="label">
+				配件优惠：
+			</td>
+			<td>
+				<select name="pricetype">
+					<option value="discount" <#if adjunct?exists&& adjunct.set_price == 'discount'>selected</#if> >优惠某个折扣</option>
+					<option value="minus" <#if adjunct?exists&& adjunct.set_price == 'minus'>selected</#if> >优惠一定金额</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">
+				配件优惠：
+			</td>
+			<td>
+				<input type="text" name="adjunct.price" class="input_text" style="width:50px" <#if adjunct?exists>value="${adjunct.price!'' }"</#if>  dataType="float" />
+				(无优惠可不填；优惠9折就输入0.9，优惠100元就输入100)
+			</td>
+		</tr>
+		<tr>
+			<td class="label">添加配件商品：</td>
+			<td>
+			    <div class="grid">
+				<table  cellspacing="0" cellpadding="0" class="adjunct_grid">
+					<thead>
+						<tr>
+							<th style="text-align:left"><input type="button" value="添加" class="adj_item_addbtn" />	</th>
+							<th style="text-align:left">商品名称</th>
+							<th style="text-align:left">描述	</th>
+						</tr>
+					</thead>
+					<tbody class="adjunctitem_body">
+					<#if adjunct?exists && adjunct.listAdjunctItem?exists>
+					<#list adjunct.listAdjunctItem as item>
+					<tr class="adj_item_${item.productid}">
+						<td><a href="javascript:;" ><img class="delete" src="../shop/admin/images/transparent.gif" > </a></td>
+						<td>${item.name!''}</td>
+						<td>${item.specs!''}
+						<input type="hidden" name="productid_" value='${item.productid}' ></input>
+						</td>
+					</tr>
+					</#list>
+					</#if>
+				</tbody>			
+				</table>
+				</div>
+			</td>
+		</tr>
+	</table>				

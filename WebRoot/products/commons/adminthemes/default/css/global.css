@@ -1,0 +1,166 @@
+.Border{}
+.Background{background-color:#ECF5FF;}
+.ImgBorder{border:1px solid #0770BB;}
+.ImgBackground{background-color:#B0D3EE;}
+.ButtonBackground{background-color:#E2E8EB}
+.ButtonBorder{border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;border-style:solid;border-width:1px 2px 2px 1px;}
+.loading{
+	background:#ECF5FF url("../images/loading.gif") no-repeat scroll 5px 50%;
+	border:1px solid #1C80C8;
+	font-size:12px;
+	height:25px;
+	left:50%;
+	line-height:25px;
+	margin:-50px 0 0 -100px;
+	padding-left:25px;
+	padding-right:10px;
+	position:absolute;
+	text-align:left;
+	top:50%;
+	z-index:99;
+}
+/*=====后台模板中选项卡样式======*/
+ul.tab{
+	font-size:14px;
+	height:30px;
+	padding:10px 0 0 30px !important;
+	vertical-align:bottom;
+	clear:both;
+	background:url("../images/tabbar_bg.gif") repeat-x scroll;
+}
+ul.tab li{
+	background:#DAEC93 none repeat scroll 0 0;
+	border-width:0;
+	cursor:pointer;
+	float:left;
+	height:23px;
+	line-height:24px;
+	margin-left:3px;
+	padding:0 15px;
+}
+ul.tab li a{
+	color:#666666;
+	font-size:12px;
+	text-decoration:none;
+}
+ul.tab li.active{
+	background:#FBFDFF none repeat scroll 0 0;
+	border-color:#99CC00;
+	border-style:solid;
+	border-width:1px 1px 0;
+	color:#000000;
+	font-weight:bold;
+	height:24px;
+	line-height:25px;
+}
+ul.tab li.active a{
+	color:#000;
+}
+/*=====后台模板中工具栏按钮样式======*/
+/*定义列表容器中工具栏的样式，使用div元素*/
+ 
+.toolbar{
+	overflow:hidden;
+	background:none repeat scroll 0 0 #F1F7FD;
+	height:25px;
+	margin:5px;
+	padding:5px 0 5px 10px;
+	text-align:left;
+}
+
+/*定义列表容器中工具栏列表的样式，使用ul元素*/
+.toolbar ul{
+	padding:0px;
+	margin:0px;
+}
+
+/*定义列表容器中工具栏列表的样式，使用li元素*/
+.toolbar ul li{
+	margin-left:5px;
+	padding-top:2px;
+}
+
+/*定义列表容器中工具栏按钮链接的样式，使用a元素*/
+.toolbar li a{
+	line-height: 21px;
+	color: #234f8d;
+	background: url("../images/buttons.png") repeat scroll -10px -108px transparent;
+	text-align: center;
+	display: block;
+	height: 21px;
+	width: 80px;
+	float: left;
+	text-decoration: none;
+}
+
+
+.modify{
+
+	background:transparent url("../images/gridicon.gif") no-repeat scroll 0px -44px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+	border:0px;
+}
+
+.delete{
+ 
+	background:transparent url("../images/gridicon.gif") no-repeat scroll 0px -85px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+ border:0px;
+}
+
+
+.add{
+ 
+	background:transparent url("../images/gridicon.gif") no-repeat scroll 0px -1px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+ border:0px;
+}
+
+.submitlist td{text-align:center}
+.submitlist .submitBtn{
+	background:none repeat scroll 0 0 #DDDDDD;
+	border-color:#DDDDDD #666666 #666666 #DDDDDD;
+	color:#000000;
+	cursor:pointer;
+	margin:3px 0;
+	padding:2px 5px;
+	vertical-align:middle;
+}
+
+.success{
+	margin-top:30px;
+	border-top:4px solid #deeefa;
+	border-bottom:4px solid #deeefa;
+	margin-left:20px;
+	margin-right:20px;
+	background:#f2f9fd;
+	height:110px;
+	text-align:center;
+	padding-top:15px;
+}
+.success h4{ 
+	color:#009900;
+	font-size:14px;
+	font-weight:bold;
+	
+}
+.success a{
+	color:#666666;
+	font-size:12px;
+	text-decoration:none;
+}
+.version{
+color:#000;
+}

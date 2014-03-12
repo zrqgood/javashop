@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widgets>
+	<page id="common">
+		<widget id="header">
+			<type>header</type>
+			<border>none</border>
+		</widget>
+
+		<widget id="logo">
+			<type>imageWidget</type>
+			<src>attachment/images/logo.png</src>
+		</widget>
+
+		<widget id="mloginbar">
+			<type>member_login_bar</type>
+			<border>none</border>
+		</widget>
+
+		<widget id="mcartbar">
+			<type>member_cart_bar</type>
+			<border>none</border>
+		</widget>
+
+		<widget id="menu">
+			<type>shop_menu</type>
+			<border>none</border>
+		</widget>
+
+		<widget id="searchbar">
+			<type>searchBar</type>
+			<border>none</border>
+		</widget>
+
+		<widget id="footer1">
+			<article_id>30</article_id>
+			<overflow>visible</overflow>
+			<border>none</border>
+			<type>partZone</type>
+		</widget>
+		<widget id="footer2">
+			<article_id>31</article_id>
+			<overflow>visible</overflow>
+			<border>none</border>
+			<type>partZone</type>
+		</widget>
+		<widget id="footer3">
+			<article_id>32</article_id>
+			<overflow>visible</overflow>
+			<border>none</border>
+			<type>partZone</type>
+		</widget>
+		<widget id="footer">
+			<article_id>33</article_id>
+			<overflow>visible</overflow>
+			<border>none</border>
+			<type>partZone</type>
+		</widget>
+
+	</page>
+
+
+	<page id="/index.html">
+		<widget id="3">
+			<overflow>visible</overflow>
+			<bordertitle>·SPECIAL ZONE</bordertitle>
+			<border>border2</border>
+			<type>goods_list</type>
+			<tabs>
+				[
+				{title:'魔术系列',term:{catid:'6'}},
+				{title:'挺拔集中',term:{catid:'7'}},
+				{title:'轻薄透气',term:{catid:'8'}}
+				]
+</tabs>
+			<setting>{type:'morediv',goodsImgPosition:'top',changeEffect:0,thumbnail_pic_width:'115px',thumbnail_pic_height:'160px',
+				showGoodsName:'on', goodsNum:8}</setting>
+		</widget>
+		<widget id="2">
+			<overflow>visible</overflow>
+			<bordertitle>商品分类</bordertitle>
+			<border>border3</border>
+			<type>goods_cat</type>
+		</widget>
+		<widget id="7">
+			<overflow>visible</overflow>
+			<bordertitle>热卖商品</bordertitle>
+			<border>border2</border>
+			<type>goods_list</type>
+			<term>{tagid:'1'}</term>
+			<setting>{type:'default',goodsImgPosition:'top',
+				thumbnail_pic_width:'202px',thumbnail_pic_height:'268px',
+				showGoodsName:'on', goodsNum:8}</setting>
+			<overflow>visible</overflow>
+		</widget>
+		<widget id="6">
+			<acid>2</acid>
+			<overflow>visible</overflow>
+			<bordertitle />
+			<border>none</border>
+			<type>ad</type>
+		</widget>
+		<widget id="5">
+			<acid>1</acid>
+			<overflow>visible</overflow>
+			<bordertitle />
+			<border>none</border>
+			<type>flashAdv</type>
+		</widget>
+		<widget id="4">
+			<cat_id>2</cat_id>
+			<overflow>visible</overflow>
+			<bordertitle>网店公告</bordertitle>
+			<border>border3</border>
+			<type>articlecat</type>
+		</widget>
+		<widget id="8">
+			<overflow>visible</overflow>
+			<border>border1</border>
+			<type>goods_list</type>
+		</widget>
+		<widget id="9">
+			<acid>1</acid>
+			<overflow>visible</overflow>
+			<border>none</border>
+			<type>ad</type>
+		</widget>
+	</page>
+
+	<page id="/member.html">
+		<widget id="1">
+			<overflow>visible</overflow>
+			<border />
+			<type>member_main</type>
+		</widget>
+	</page>
+
+	<page id="/article.html">
+		<widget id="3">
+			<cat_id>2</cat_id>
+			<overflow>visible</overflow>
+			<border>border3</border>
+			<bordertitle>新闻中心</bordertitle>
+			<type>articlecat</type>
+		</widget>
+		<widget id="2">
+			<overflow>visible</overflow>
+			<border />
+			<type>shop_article</type>
+		</widget>
+		<widget id="5">
+
+			<overflow>visible</overflow>
+			<border />
+			<type>article_comments</type>
+
+		</widget>
+	</page>
+
+	<page id="/help.html">
+		<widget id="3">
+			<overflow>visible</overflow>
+			<border>border6</border>
+			<bordertitle>帮助中心</bordertitle>
+			<cat_id>1</cat_id>
+			<type>articlecat</type>
+		</widget>
+		<widget id="2">
+			<overflow>visible</overflow>
+			<border />
+			<type>shop_help</type>
+		</widget>
+	</page>
+
+
+	<page id="/articleList.html">
+		<widget id="3">
+			<overflow>visible</overflow>
+			<border>border3</border>
+			<bordertitle>新闻中心</bordertitle>
+			<cat_id>2</cat_id>
+			<type>articlecat</type>
+		</widget>
+
+		<widget id="2">
+			<overflow>visible</overflow>
+			<border />
+			<cat_id>7</cat_id>
+			<type>articleList</type>
+		</widget>
+
+	</page>
+
+
+
+	<page id="/cart.html">
+
+		<widget id="1">
+			<overflow>visible</overflow>
+			<border />
+			<type>shop_cart</type>
+		</widget>
+
+	</page>
+
+
+	<page id="/default.html">
+		<widget id="2">
+			<overflow>visible</overflow>
+			<border>border3</border>
+			<bordertitle>商品分类</bordertitle>
+			<type>goods_cat</type>
+		</widget>
+		<widget id="/goods-(\d+).html">
+			<overflow>visible</overflow>
+			<border />
+			<type>goods_detail</type>
+		</widget>
+		<widget id="/search-(.*).html">
+			<overflow>visible</overflow>
+			<border />
+			<type>goods_search</type>
+		</widget>
+
+		<widget id="/compare.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>goods_compare</type>
+		</widget>
+		<widget id="/package.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>goods_compare</type>
+		</widget>
+		<widget id="/brandDetail-(\d+).html">
+			<overflow>visible</overflow>
+			<border />
+			<type>brand_detail</type>
+		</widget>
+		<widget id="/brand.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>brand_list</type>
+		</widget>
+		<widget id="/search.html">
+
+			<overflow>visible</overflow>
+			<border />
+			<type>search</type>
+
+		</widget>
+
+		<widget id="/leavewords.html">
+
+			<overflow>visible</overflow>
+			<border />
+			<type>shop_guestbook</type>
+
+		</widget>
+
+		<widget id="/friendslink.html">
+			<overflow>visible</overflow>
+			<border />
+			<cat_id>1</cat_id>
+			<type>friends_link</type>
+		</widget>
+		<widget id="/package.html">
+			<overflow>visible</overflow>
+			<border />
+			<cat_id>1</cat_id>
+			<type>package</type>
+		</widget>
+		<widget id="/giftlist.html">
+			<overflow>visible</overflow>
+			<showtype>list</showtype>
+			<border />
+			<type>gift_list</type>
+		</widget>
+		<widget id="/gift-(\d+).html">
+			<overflow>visible</overflow>
+			<showtype>detail</showtype>
+			<border />
+			<type>gift_list</type>
+		</widget>
+	</page>
+
+
+</widgets>

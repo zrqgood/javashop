@@ -1,0 +1,44 @@
+<#include 'GiftRule.html' />
+<div class="GoodsInfoWrap">
+<div class="info">
+<table width="100%">
+	<tbody>
+		<tr>
+			<td align="center" valign="top" class="goodspic">
+			<table width="100%">
+				<tbody>
+					<tr>
+						<td align="center" class="gift_details">
+						<div class="goods-detail-pic">
+						<img height="300" width="300" alt="${gift.fo_name}" src="${gift.pic}" style="margin-top: 0px;"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td valign="top">
+			<h1 class="goodsname">赠品名：${gift.fo_name}</h1>
+			<ul class="goodsprops clearfix">
+				<li><span>赠品分类：</span>${gift.cat_name}</li>
+				<li><span>商品重量：</span>${gift.weight!''} g</li>
+				<li><span>起始时间：</span><@dateFormat date="${gift.startdate?c}" pattern="yyyy-MM-dd"/>   </li>
+				<li><span>库存数量：</span>${gift.repertory!''}</li>
+				<li><span>截止时间：</span><@dateFormat date="${gift.enddate?c}" pattern="yyyy-MM-dd"/></li>
+				<li><span>数量限制：</span>${gift.limit_purchases!''}</li>
+				<li class="memberprice"><span>市场价格：</span><i>${gift.price?string.currency}</i></li>
+				<li><span>所需积分：</span>${gift.score!''}</li>
+				<li style="white-space: normal;" class="spec"><span>兑换级别：</span>
+				<#list lvList as lv>
+				${lv.name}&nbsp;&nbsp;
+				</#list>
+				</li>
+			</ul>
+			<div><a target="_blank"
+				href="cart.html?action=add&productid=${gift.fo_id}&itemtype=2"
+				class="actbtn btn-gift">换取</a></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>

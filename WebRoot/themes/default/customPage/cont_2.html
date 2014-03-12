@@ -1,0 +1,18 @@
+<div class="title">
+	<h1>新闻详细</h1>
+	<div class="position">您现在的位置：${navbar}</div>
+</div>
+<div class="cont">
+	<div class="newscontent">
+		<div class="title">${data.title}</div>
+		<div class="info"> 发布于：${data.add_time?string('yyyy-MM-dd')} &nbsp;&nbsp; 文字：【<a href="javascript:fontZoom(16)">大</a>】【<a href="javascript:fontZoom(14)">中</a>】【<a href="javascript:fontZoom(12)">小</a>】</div>
+		<div id="con" class="con">
+		<#if data.img?exists>
+			<#if data.img!=''>
+			<img src="${data.img!''}" width="550" height="400" style="padding:0 50px 10px;"/>
+			</#if>
+		</#if>
+			${data.content}
+		</div>
+	</div>
+</div>

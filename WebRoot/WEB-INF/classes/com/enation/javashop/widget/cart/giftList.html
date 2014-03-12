@@ -1,0 +1,43 @@
+<h3>赠品:</h3>
+<div class="division" id="giftbody">
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle">
+	<col class="span-2">
+	<col>
+	<col class="span-2">
+	<col class="span-2 ">
+	<col class="span-1">
+	<col class="span-2 ColColorOrange">
+	<col class="span-2">
+	<thead>
+		<tr>
+			<th>图片</th>
+			<th>赠品名称</th>
+			<th>所需积分</th>
+			<th>限购数量</th>
+			<th>数量</th>
+			<th>小计</th>
+			<th>删除</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<#list giftItemList as gift>
+		<tr itemid="${gift.id}" price="${gift.point}" limitnum="${gift.limitnum}">
+			<td><a style="margin: 0pt; padding: 0pt; text-decoration: none;"
+				target="_blank" href="gift-${gift.product_id}.html"><img
+				height="160" width="120"
+				src="http://pic.shopex.cn/pictures/gift/59626b937f3bd84d.gif"></a></td>
+			<td style="text-align: left;">
+				<a target="_blank" href="gift-${gift.product_id}.html">${gift.name}</a></td>
+			<td>${gift.point}</td>
+			<td>${gift.limitnum}</td>
+			<td>
+			<div class="Numinput"> </div>
+			</td>
+			<td class="itemTotal">${gift.subtotal}</td>
+			<td><span class="lnk quiet">删除</span></td>
+		</tr>
+	 </#list>	
+	</tbody>
+</table>
+</div>

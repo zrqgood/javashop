@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widgets>
+	<page id="common">
+		<widget id="header">
+			<type>header</type>
+			<border>none</border>
+		</widget>
+		<widget id="menu">
+			<type>shop_menu</type>
+			<border>none</border>
+		</widget>
+		<widget id="logo">
+			<type>imageWidget</type>
+			<src>images/logo.gif</src>
+		</widget>	
+		
+		<widget id="im">
+			<type>imbar</type>
+		</widget>		
+	</page>
+
+	<page id="/index.html">
+		
+		<widget id="2">
+			<type>staticDataList</type>
+			<catid>3</catid>
+			<count>5</count>
+			<custom_page>index_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="3">
+			<type>staticDataList</type>
+			<catid>4</catid>
+			<count>5</count>
+			<custom_page>index_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="4">
+			<type>staticDataDetail</type>
+			<catid>1</catid>
+			<id>1</id>
+			<custom_page>index_3</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="5">
+			<type>staticDataList</type>
+			<catid>7</catid>
+			<count>50</count>
+			<custom_page>index_4</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>
+	<page id="/about.html">
+		<widget id="leftnav">
+			<type>staticDataList</type>
+			<catid>8</catid>
+			<count>8</count>
+			<custom_page>brand_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="2">
+			<type>staticDataDetail</type>
+			<catid>1</catid>
+			<id>1</id>
+			<custom_page>about_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+	<page id="/news.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=2</sql>
+			<custom_page>news_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="newsList">
+			<type>dynamicDataList</type>
+			<pagesize>10</pagesize>
+			<custom_page>news_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>
+	<page id="/product.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=7</sql>
+			<custom_page>product_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="productpic">
+			<type>dynamicDataList</type>
+			<pagesize>6</pagesize>
+			<custom_page>product_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+	<page id="/brand.html">
+		<widget id="leftnav">
+			<type>staticDataList</type>
+			<catid>8</catid>
+			<count>8</count>
+			<custom_page>brand_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="1">
+			<type>staticDataDetail</type>
+			<catid>8</catid>
+			<id>54</id>
+			<custom_page>brand_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+	<page id="/solution.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=13</sql>
+			<custom_page>solution_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="newsList">
+			<type>dynamicDataList</type>
+			<pagesize>10</pagesize>
+			<custom_page>solution_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+	<page id="/job.html">
+		<widget id="leftnav">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=2</sql>
+			<custom_page>news_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="1">
+			<type>dynamicDataList</type>
+			<pagesize>10</pagesize>
+			<custom_page>news_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>
+	<page id="/service.html">
+		<widget id="leftnav">
+			<type>staticDataList</type>
+			<catid>14</catid>
+			<count>8</count>
+			<custom_page>service_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="2">
+			<type>staticDataDetail</type>
+			<catid>14</catid>
+			<id>76</id>
+			<custom_page>service_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>
+	<page id="/guestbook.html">
+		<widget id="leftnav">
+			<type>staticDataList</type>
+			<catid>14</catid>
+			<count>8</count>
+			<custom_page>service_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="2">
+			<type>guestbook</type>
+		</widget>
+	</page>	
+	<page id="/article.html">
+		<widget id="leftnav">
+			<type>staticDataList</type>
+			<catid>8</catid>
+			<count>8</count>
+			<custom_page>brand_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="2">
+			<type>dynamicDataDetail</type>
+			<custom_page>brand_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+	<page id="/article1.html">
+		<widget id="leftnav">
+			<type>staticDataList</type>
+			<catid>14</catid>
+			<count>8</count>
+			<custom_page>service_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="2">
+			<type>dynamicDataDetail</type>
+			<custom_page>brand_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+	<page id="/article2.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=7</sql>
+			<custom_page>product_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="content">
+			<type>dynamicDataDetail</type>
+			<custom_page>cont_3</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+		<page id="/article3.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=13</sql>
+			<custom_page>solution_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="content">
+			<type>dynamicDataDetail</type>
+			<custom_page>cont_3</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>
+	<page id="/contact.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=2</sql>
+			<custom_page>news_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="content">
+			<type>staticContent</type>
+			<custom_page>cont_1</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>	
+	<page id="/detail.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=2</sql>
+			<custom_page>news_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="content">
+			<type>dynamicDataDetail</type>
+			<custom_page>cont_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+	</page>
+	<page id="/search.html">
+		<widget id="newscat">
+			<type>sql_list</type>
+			<sql>select * from #data_cat# where parent_id=2</sql>
+			<custom_page>news_2</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="search">
+			<modelid>1</modelid>
+			<type>dataSearchForm</type>
+			<formpage>search_1</formpage>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="1">
+			<modelid>1</modelid>
+			<type>dataSearchResult</type>
+			<custom_page>search_2</custom_page>
+			<folder>customPage</folder>
+			<pagesize>7</pagesize>
+		</widget>
+	</page>
+	
+</widgets>

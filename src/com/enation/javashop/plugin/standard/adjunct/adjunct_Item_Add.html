@@ -1,0 +1,37 @@
+<div id="adjunct_item_input">
+	<div class="grid">
+	<table width="100%" cellspacing="0" cellpadding="3" >
+	<thead>
+		<tr>
+			<th><input type="checkbox"/></th>
+			<th>货号</th>
+			<th>商品名称</th>
+			<th>销售价格</th>
+			<th>库存</th>
+			<th>商品描述</th>
+		</tr>
+	</thead>
+	<tbody id="productBody">
+	    <#list listProduct as product>
+		<tr>
+			<td><input type="checkbox" value="${product.product_id}" name="product_id"/></td>
+			<td>${product.sn!''}</td>
+			<td id="name_${product.product_id}">${product.name!''}</td>
+			<td>${product.price?string.currency}</td>
+			<td>${product.store!''}</td>
+			<td id="des_${product.product_id}">这是描述</td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>
+<table style="margin: 0pt auto; width: auto;">
+	<tbody>
+		<tr>
+			<td><b class="save">
+			<button class="adjunct_itemSubmitBtn">确定</button>
+			</b></td>
+		</tr>
+	</tbody>
+</table>
+</div>

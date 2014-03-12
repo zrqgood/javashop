@@ -1,0 +1,19 @@
+<div class="BrandDetailWrap">
+<div class="branddetail">
+<table width="100%" cellspacing="3" cellpadding="0" class="brandtitle">
+	<tbody>
+		<tr>
+			<td width="80"><#if brand.logo?exists><img
+				src="${brand.logo}"></#if></td>
+			<td class="prepend-1">
+			<div class="info">
+			<h1>${brand.name!''}</h1>
+			官方站点:<a target="_blank" href="${brand.url!''}">${brand.url!''}</a></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p class="intro"></p>
+${brand.brief!''}
+</div>

@@ -1,0 +1,16 @@
+<#list ordersList as orders>
+		<tr>
+			<td><a href="member_orderdetail_${orders.sn}.html">${orders.sn!'' }</a></td>
+			<td><@dateFormat date="${orders.create_time?c}" pattern="yyyy-MM-dd HH:mm"/></td>
+			<td class="textright">${orders.order_amount?string.currency}</td>
+			<td>
+				<#if orders.status == -2>退货</#if>
+				<#if orders.status == -1>退款</#if>
+				<#if orders.status == 0>未付款</#if>
+				<#if orders.status == 1>已付款</#if>
+				<#if orders.status == 2>已发货</#if>
+				<#if orders.status == 3>完成</#if>
+				<#if orders.status == 4>作废</#if>
+			</td>
+		</tr>
+</#list>

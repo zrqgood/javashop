@@ -1,0 +1,20 @@
+<#list children as cat> 
+<tr>
+    <td style="padding-left:${(level+1)*20}px;font-weight: bold;">${cat.name}</td>
+    <td>${cat.domain}</td>
+    <td><a href="multiSite!edit.do?siteid=${cat.siteid}"><img src="images/transparent.gif" class="modify"></a></td> 
+    <td>
+    
+    <#if cat.code!=100000>
+    <a href="multiSite!delete.do?siteid=${cat.siteid}" onclick="javascript:return confirm('确认删除此站点吗？删除后将不可恢复！');">
+    <img src="images/transparent.gif" class="delete" catid="${cat.siteid}"></a> 
+    </#if>
+    </td>
+</tr>
+	<#if cat.children??>
+		<#assign level=level+1 />
+	  	<#assign children=cat.children />
+		<#include 'list_children.html' />
+  		<#assign level=level-1/>
+	</#if>
+</#list>

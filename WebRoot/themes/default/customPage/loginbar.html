@@ -1,0 +1,9 @@
+<div class="Toolbar">
+	<#if !isLogin >
+		您好,<a href="member_login.html">[请登录]</a><a href="member_register.html">[免费注册]</a>
+	</#if>
+	<#if isLogin>
+		您好,<span id="uname">${member.uname}</span>!<a href="member_index.html">[会员中心]</a><a href="member_logout.html">[退出]</a>
+	</#if>
+	<a class="red" onclick="if (document.all){window.external.addFavorite('http://'+document.domain,document.title);}else if (window.sidebar){ window.sidebar.addPanel(document.title, 'http://'+document.domain, document.title);}">收藏本站</a>
+</div>

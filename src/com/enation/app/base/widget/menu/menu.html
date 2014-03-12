@@ -1,0 +1,15 @@
+<#list children as menu>
+<li <#if menu_index==0>class="first"</#if><#if !menu_has_next>class="last"</#if>>
+<a href="${menu.url!''}"<#if menu.target?exists> target="${menu.target}"</#if>>${menu.name!''}</a>
+	<#if menu.hasChildren && isDropDown=='on' >
+	<ul class="level${level}">
+	<#assign level=level+1 />
+  	<#assign children=menu.children />
+	<#include 'menu.html' />
+ 		<#assign level=level-1/>
+ 		<ul class="bottom"></ul> 	
+ 	</ul>	
+	</#if>
+	
+ </li>
+</#list>

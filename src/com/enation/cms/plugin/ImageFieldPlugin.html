@@ -1,0 +1,102 @@
+<div class="uploadWrapper${fieldname}"><input type="button"
+	value="上传" id="uploadBtn_${fieldname}" style="float:left"/> <input type="hidden"
+	name="${fieldname}" id="${fieldname}" />
+<div style="width: 150px; height: 150px; overflow: hidden;float:left"><img
+	id="img_${fieldname}" style="width: 150px; height: 150px;"
+	src="images/transparent.gif" /></div>
+<div style="display: none;float:left;margin:130px 0 0 5px;" id="divdelbtn"><a
+	href="javascript:;" id="delBtn_${fieldname}" title="删除此图片"><img class="delete"
+	src="images/transparent.gif" /></a></div>
+<div id="uploadDlg_${fieldname}"></div>
+</div>
+<script>
+
+function uploadOk${fieldname}(data){
+	if(data.result==1){
+		 $("#${fieldname}").val(data.path);
+		 $("#img_${fieldname}").attr("src",data.path);
+		 $("#delBtn_${fieldname}").attr('picname',data.path);
+		 $("#divdelbtn").show();
+		 $("#uploadBtn_${fieldname}").hide();
+		 $("#delBtn_${fieldname}").unbind('click');
+		 $("#delBtn_${fieldname}").bind("click",function(){
+				if( confirm("确定要删除此图片吗") ){
+				var that = this;
+				$.ajax({
+					 type: "GET",
+					 url: "${ctx}/eop/upload!delete.${ext}?picname="+data.path,
+					 data: "ajax=1",
+					 dataType:"json",
+					 success: function(result){
+						 if(result.result==0){
+							 $("#img_${fieldname}").attr('src','images/transparent.gif');
+							 $("#${fieldname}").val('');
+							 $("#img_${fieldname}").attr("src","");
+							 $("#divdelbtn").hide();
+							 $("#uploadBtn_${fieldname}").show();
+					     }else{
+					    	 alert("操作失败，请重试");
+						 }
+					 },
+					 error:function(){
+						 alert("操作失败，请重试");
+					 }
+				});
+				}
+			});
+	}else{
+		alert(data.message);
+	}
+	Eop.Dialog.close("uploadDlg_${fieldname}");	
+	$("#uploadDlg_${fieldname}").empty();
+}
+
+
+
+
+$(function(){
+	Eop.Dialog.init({id:'uploadDlg_${fieldname}', width:500,height:280,title:'上传图片'});
+	$("#uploadBtn_${fieldname}").click(function(){
+		Eop.Dialog.open("uploadDlg_${fieldname}");
+		$("#uploadDlg_${fieldname}").load('${ctx}/eop/upload.${ext}?subFolder=cms',function(){
+			Eop.Upload.uploadOk = uploadOk${fieldname};
+		});
+		
+	});
+	<#if value?exists && value!='' >
+		$("#${fieldname}").val('${value}');
+		$("#img_${fieldname}").attr('src','${value}');
+		$("#divdelbtn").show();
+		$("#uploadBtn_${fieldname}").hide();
+		$("#delBtn_${fieldname}").attr('picname','${value}');
+		$("#delBtn_${fieldname}").click(function(){
+			if( confirm("确定要删除此图片吗") ){
+			var that = this;
+			$.ajax({
+				 type: "GET",
+				 url: "${ctx}/eop/upload!delete.${ext}?picname="+$(that).attr('picname'),
+				 data: "ajax=1",
+				 dataType:"json",
+				 success: function(result){
+					 if(result.result==0){
+						 $("#img_${fieldname}").attr('src','images/transparent.gif');
+						 $("#${fieldname}").val('');
+						 $("#img_${fieldname}").attr("src","");
+						 $("#divdelbtn").hide();
+						 $("#uploadBtn_${fieldname}").show();
+				     }else{
+				    	 alert("操作失败，请重试");
+					 }
+				 },
+				 error:function(){
+					 alert("操作失败，请重试");
+				 }
+			});
+			}
+		});
+	<#else>
+	$("#img_${fieldname}").attr('src','images/transparent.gif');
+	</#if>
+	
+})
+</script>

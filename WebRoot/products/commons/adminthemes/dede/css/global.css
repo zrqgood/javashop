@@ -1,0 +1,17 @@
+.Border{border-color:#E5FBB5 #CDE990 #CDE990 #E5FBB5;border-style:solid;border-width:1px;}
+.Background{background-color:#FAFEE9;}
+.ImgBorder{border:1px solid #B6E28B;}
+.ImgBackground{background-color:#DCF4BD;}
+.ButtonBackground{background-color:#E2E8EB}
+.ButtonBorder{border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;border-style:solid;border-width:1px 2px 2px 1px;}
+.loading{background:url(../images/loading.gif) no-repeat scroll 5px 50%;border:1px solid #BFD67C;font-size:12px;height:25px;left:46%;line-height:25px;padding-left:25px;padding-right:10px;position:absolute;text-align:left;top:200px;z-index:99;}
+/*=====后台模板中选项卡样式=====*/
+ul.tab{width:100%;height:28px;border-bottom:1px solid #ccc;padding-top:8px;background:#F4FBF4}
+ul.tab li{width:80px;height:28px;float:left;cursor:pointer;background:url(../images/img_1.gif) no-repeat 0 -370px;line-height:28px;text-align:center;overflow:hidden;margin-right:6px;}
+ul.tab li a{color:#666;text-decoration:none;}
+ul.tab li.active{width:80px;height:28px;float:left;cursor:pointer;background:url(../images/img_1.gif) no-repeat 0 -338px;line-height:28px;text-align:center;overflow:hidden;margin-right:10px;font-weight:bold;}
+/*=====后台模板中工具栏按钮样式=====*/
+.toolbar{width:100%;height:38px;margin-bottom:5px;background:#E2F5BC;text-align:center;}
+.toolbar ul{padding-top:7px;height:27px;display:block;}
+.toolbar ul li{float:left;line-height:27px;padding:0 5px;}
+.toolbar ul li a{color:#000;text-decoration:none;letter-spacing:1px;border:1px solid #999;line-height:24px;padding:3px 5px;background:url(../images/toolbar_a_bg.gif) repeat-x left center;}

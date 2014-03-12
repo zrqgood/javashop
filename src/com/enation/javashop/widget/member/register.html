@@ -1,0 +1,121 @@
+<script src="${staticserver}/js/common/jquery.validate.js" type="text/javascript"></script>
+<link href="${staticserver}/js/common/validate/validate.css" rel="stylesheet" type="text/css" />
+<div class="PassportWrap">
+	<form action="member_register.html" method="post" class="validate signform">
+		<input type="hidden" name="action" value="register" />
+		<div class="RegisterWrap">
+			<h4>用户注册</h4>
+			<div class="intro">欢迎来到我们网站，如果您是新用户，请填写下面的表单进行注册</div>
+			<div class="form">
+				<input type="hidden" value="" name="forward">
+				<table cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<th><i>*</i>用户名：</th>
+							<td>
+								<input maxlength="50" id="username" name="username" class="inputstyle _x_ipt" autocomplete="off" />
+								<span id="reg_user_info"></span>
+							</td>
+						</tr>
+						<tr>
+							<th><i>*</i>密码：</th>
+							<td>
+								<input type="password" id="password" dataType="string" required="true" name="password" class="inputstyle _x_ipt" autocomplete="off" />
+							</td>
+						</tr>
+						<tr>
+							<th><i>*</i>确认密码：</th>
+							<td><input type="password" id="reg_passwd_r" name="passwd_r" class="inputstyle _x_ipt" autocomplete="off" fun='checkpwd'></td>
+						</tr>
+						<tr>
+							<th><i>*</i>电子邮箱：</th>
+							<td>
+								<input type="email" maxlength="200" id="reg_email" name="email" dataType="email" required="true" class="inputstyle _x_ipt" autocomplete="off">
+							</td>
+						</tr>
+						<tr>
+							<th><i>*</i>验证码：</th>
+							<td id="verifyCodebox">
+								<input type="text" id="iptlogin" name="validcode" required="true" class="inputstyle _x_ipt" size="8" autocomplete="off">
+								<span class="verifyCode">
+									<img border="1" style="height:22px;left:150px;"	id="LoginimgVerifyCode"	src="${ctx}/validcode.do?vtype=memberreg" />
+									<a href="javascript:;">&nbsp;看不清楚?换个图片</a>
+								</span>
+							</td>
+						</tr>
+						<#if agreement?exists>
+						<tr>
+							<th></th>
+							<td>
+								<label style="width: auto; text-align: left; font-weight: normal;" class="nof" for="license">
+									<input type="checkbox" checked="checked" value="agree" name="license" id="license">我已阅读并同意
+									<#list agreement as agree>
+									<a target="_blank" class="lnk" id="terms_error"	href="${agree.url}">
+										<span id="terms_error_sym" class="FormText">${agree.title}</span>
+									</a>
+									<#if agree_has_next> 和<#else>。</#if>
+									</#list>
+								</label>
+							</td>
+						</tr>
+						</#if>
+						<tr>
+							<th></th>
+							<td>
+								<input type="submit" value="注册新用户" class="actbtn btn-register">
+								<input type="hidden" value="" name="forward">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	<!--    <div class="righttop" style=" margin-top:20px;"><h4>会员登录</h4><div class="intro">如果您已经是本站会员，请登录</div><a style="margin-top:9px;" class="actbtn btn-login" href="http://localhost/?passport-login.html">立即注册</a></div><div class="rightbottom"><h4>忘记密码？</h4><div class="intro">如果您忘记密码，请点击下面按钮取回密码</div><a style="margin-top:9px;"  class="actbtn btn-forgetpass" href="http://localhost/?passport-lost.html">取回密码</a></div>-->
+		</div>
+	</form>
+</div>
+<script type="text/javascript>
+$(function(){
+	$("form.signform").validate();
+	$("#verifyCodebox a").click(function(){
+		$("#verifyCodebox img").attr("src","${ctx}/validcode.do?vtype=memberreg&r="+new Date().getTime());
+	});
+
+	$("#username").blur(function(){
+		var input = $("#username");
+		var username  = input.val();
+		if($.trim(username)==''){
+			var tip= '<div class="valierror">&nbsp;<strong>'+username+'</strong>&nbsp;用户名不能为空!</div>';	
+			$("#reg_user_info").empty().append(tip);	
+			input.attr("valid",false);
+			return ;
+		}
+		$.ajax({
+			url:"widget?type=member_register&ajax=yes&action=checkname&username="+username,
+			dataType:"json",
+			success:function(json){
+				if(json.result==1){
+					var tip= '<div class="valierror">&nbsp;<strong>'+username+'</strong>&nbsp;重复的用户名!</div>';	
+					$("#reg_user_info").empty().append(tip);	
+					input.attr("valid",false);		
+				}else{
+					var tip='<div class="valisuccess">&nbsp;<strong>'+username+'</strong>&nbsp;可以使用</div>';
+					$("#reg_user_info").empty().append(tip);	
+					input.attr("valid",true);	
+				}
+			},
+			error:function(){
+				
+			}	
+		});		
+	});
+});
+ 
+function checkpwd(){
+	if( $("#reg_passwd_r").val()==$("#password").val() ){
+		return true;
+	}
+	else{ 
+		return "密码不一致";
+	}
+}
+</script>

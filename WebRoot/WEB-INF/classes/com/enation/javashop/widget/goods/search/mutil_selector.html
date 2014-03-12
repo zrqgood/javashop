@@ -1,0 +1,41 @@
+<#if propList?exists  >
+<div id="goods-spec-content" class="division">
+<div class="goods-spec">
+<ul>
+
+<#list propList as prop>
+	<#if prop.type==4>
+		<li class="handle" index="${prop_index}"><em>${prop.name }</em>：<span class="select">请选择<</span></li>
+	</#if>
+</#list>
+<#list propList as prop>
+<#if prop.type==4>
+	<li class="content" index="${prop_index}">
+	<ul>
+		<#list prop.optionMap  as m>
+			<li><a href="<@searchUrl type="prop" value="${m.url}" />"><span>${m.name}</span></a></li>
+		</#list>
+	</ul>
+	</li>
+</#if>	
+</#list>	
+
+</ul>
+</div>
+</div>
+<script>
+$(function(){
+	$("#goods-spec-content .handle" ).click(function(){
+		$("#goods-spec-content .handle" ).removeClass("curr");
+		$("#goods-spec-content .content" ).removeClass("content-curr");
+		$(this).addClass("curr");
+		$("#goods-spec-content .content[index="+$(this).attr("index")+"]" ).addClass("content-curr");
+	});
+
+	if($("#goods-spec-content li").length==0){
+		$("#goods-spec-content").hide();
+	}
+});
+
+</script>
+</#if>

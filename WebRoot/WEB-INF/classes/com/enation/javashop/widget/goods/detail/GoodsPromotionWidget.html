@@ -1,0 +1,13 @@
+<#if pmtList?exists >
+<ul class="boxBlue list">
+<#list pmtList as pmt>
+	<li>${pmt.pmt_describe}
+	<span class="font11px fontcolorBlack">
+	<@dateFormat date="${pmt.pmt_time_begin?c}" pattern="yyyy-MM-dd"/>
+	~ 
+	<@dateFormat date="${pmt.pmt_time_end?c}" pattern="yyyy-MM-dd"/>
+	</span>
+	</li>
+</#list>
+</ul>
+</#if>	

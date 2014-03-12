@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+.input{background:#fff;}
+.input a{text-decoration:none;}
+.input table{width:100%;border:0px;padding:0px;margin:0px;background:#fff;}
+.input table td{border-bottom:1px dotted #BCBCBC;line-height:28px;}
+.input .info{width:100%;padding:5px 0;background:#fff;}
+.input .info ul{display:inline-block;} 
+.input .info ul li{float:left;line-height:20px;padding:0 8px;}
+.input .info ul li a{color:#666600;;}
+.input .info ul li a:hover{text-decoration:underline;}
+.input form{padding:0;margin:0;}
+.input td.label{width:115px;}
+.input .text{padding-left:5px;}

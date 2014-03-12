@@ -1,0 +1,107 @@
+<script src="${staticserver}/js/common/jquery.validate.js" type="text/javascript"></script>
+<link href="${staticserver}/js/common/validate/validate.css" rel="stylesheet" type="text/css" />
+<div class="span-19 last cut">
+<form method="post" class="validate" id="searchForm" >
+<div class="SearchMoreWrap">
+<div class="FormWrap clearfix">
+<div class="division">
+<table cellspacing="0" cellpadding="0" border="0" class="forform">
+	<tbody>
+		<tr>
+			<th style="width: auto;">关键字：</th>
+			<td><input class="inputstyle" size="20" id="keyword" ></td>
+		</tr>
+		<!-- 
+		<tr>
+			<th style="width: auto;">货号：</th>
+			<td><input class="inputstyle" size="10" id="sn" value=""></td>
+		</tr>
+		 -->
+		<tr>
+			<th style="width: auto;">价格区间：</th>
+			<td><!--从&nbsp;-->
+			<input  class="inputstyle _x_ipt" size="8" dataType="float" autocomplete="off" id="minprice">&nbsp;&nbsp;-&nbsp;&nbsp;<!--到&nbsp;-->
+			<input  class="inputstyle _x_ipt" size="8" dataType="float" autocomplete="off" id="maxprice">
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="division">
+<table cellspacing="0" cellpadding="0" border="0" class="forform">
+	<tbody>
+		<tr>
+			<th style="width: auto;">商品分类：</th>
+			<td><select size="1" class="inputstyle"
+				style="font-size: 12px;" id="cat_id">
+				<option value="0" selected="">- 所有分类 -</option>
+		  		<#assign children=cat_tree />
+				<#assign level=1 />
+				<#include 'select_opation.html' />  
+			</select></td>
+		</tr>
+		
+		<!-- 
+		<tr>
+			<td colspan="2"><a return false;"
+				class="lnk" id="m_search_cat_view" href="javascript:;">显示高级选项</a></td>
+		</tr>
+		 -->
+	</tbody>
+</table>
+</div>
+<div style="display: none;" class="clearfix" id="search_cat_view">
+<h4>选择品牌：</h4>
+<div class="division clearfix">
+	<#if listBrand?exists>
+	<#list listBrand as brand>
+    <span
+	style="display: block; float: left; width: 30%;"><input
+	type="checkbox" value="${brand.brand_id}" name="brand_id"><label
+	for="ipt_brand_17">${brand.name}</label></span>
+	</#list>
+	</#if>
+</div>
+</div>
+<div class="division textcenter">
+	<input type="button" value="立即查询" class="actbtn btn-advancesearch" id="searchBtn">
+</div>
+</div>
+</div>
+<script>
+/*
+$(function(){
+	$("#m_search_cat_view").toggle(
+		function(){
+			$("#search_cat_view").show();
+			$(this).html("隐藏高级选项");
+		},
+		function(){
+			$("#search_cat_view").hide();
+			$(this).html("显示高级选项");
+		});
+});*/
+
+$(function(){
+	$("form.validate").validate();
+	$("#searchBtn").click(function(){
+		var url = "search-cat{"+ $("#cat_id").val()+"}" ;
+
+		if($("#keyword").val()){
+			url+="keyword{"+$("#keyword").val()+"}";
+		}
+		if($("#minprice").val()){
+			url+="minprice{"+$("#minprice").val()+"}";
+		}
+		if($("#maxprice").val()){
+			url+="maxprice{"+$("#maxprice").val()+"}";
+		}		
+		$("#searchForm").attr("action",url+".html");
+		$("#searchForm").submit();
+	});
+});
+
+
+</script>
+</form>
+</div>

@@ -1,0 +1,82 @@
+ body{
+ -moz-user-select : none;
+ cursor:pointer;
+ background-image:none;
+ }
+ .drag_operate_box{
+     border:1px solid #3366cc; 
+     font-size:12px;
+     font-family:Arial, Helvetica, sans-serif;
+     position:absolute;
+     color:#fff!important;
+     z-index:65535;
+     
+ }
+ .drag_operate_box_moving{
+    background-color:#e9e9e9;
+    border-style:solid;
+ }
+ .drag_handle_box{
+   line-height:20px;
+   background:#5983D6;
+   position:relative;
+   white-space:nowrap;
+   border:1px #
+ }
+ .drag_handle_box span{
+  display:block;
+ }
+ .drag_handle_box .dhb_title{
+   text-align:left;
+   padding:0 5px;
+   font-weight:bold;
+   cursor:move;
+ }
+ .drag_handle_box .dhb_edit,.drag_handle_box .dhb_del{
+   margin:2px;
+   cursor:pointer;
+ }
+  .drag_handle_box table td{ text-align:center; vertical-align:middle;}
+  
+  
+  .drag_ghost_box{
+     border:2px dotted #ff6600;
+     position:absolute;
+     z-Index:200;
+  }
+  .drop_nochild{
+     line-height:25px;
+     text-align:center;
+     color:#ccc;
+     border:1px #000066 dotted;
+  }
+.widget_resize{
+  height:5px;
+  background:#ccc;
+  border-top:1px #999 solid;
+  cursor:row-resize;
+}
+  .widgets_drop_ghost{
+     position:absolute;
+     z-Index:65535;
+     border:1px dotted #ff6600;
+     background:#0066CC;
+     color:#000;
+  }
+  .widgets_drop_ghost_on{
+     background:#66cccc;
+     border:1px solid #333;
+  }
+  .shopWidgets_panel{
+  }
+  
+  .empty_drop_box{
+     line-height:20px;
+     border:1px #000066 dotted;
+     background:#e9e9e9;
+  }
+  
+  .sWidgets_flash{
+    border:1px #ccc solid;
+    background:#f1f1f1 url(images/weiget_flash.gif) no-repeat center center;
+  }

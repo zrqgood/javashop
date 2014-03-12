@@ -1,0 +1,56 @@
+<form method="post" action="/pay_to_${paypluginid}.html" target="_blank" id="f_order_pay">
+
+<input type="hidden" name="orderid" value="${order.order_id}" /> 
+<input type="hidden" name="paymentid" value="${order.payment_id}" />
+
+<div class="CartWrap">
+<div
+	style="background: none repeat scroll 0% 0% rgb(245, 244, 236); border: 1px solid rgb(229, 221, 199);"
+	class="FormWrap ">
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="liststyle data">
+	<colgroup class="span-auto ColColorBlue"></colgroup>
+	<colgroup class="span-8 ColColorGray"></colgroup>
+	<tbody>
+		<tr>
+			<td width="50%"><strong>订单编号：${order.sn}</strong><br>
+			<a href="member_orderdetail_${order.sn}.html">查看详细</a></td>
+			<td>
+			<div style="padding: 3px 6px;">共需支付</div>
+			<h1
+				style="font-size: 30px; color: rgb(255, 0, 0); margin: 0pt 0pt 15px;"><span
+				id="span_amount" class="hueorange">${order.order_amount?string("currency")}</span></h1>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+
+<div class="FormWrap ">
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="liststyle data">
+	<colgroup class="span-8 ColColorBlue"></colgroup>
+	<colgroup class="span-auto ColColorGray textcenter"></colgroup>
+	<tbody>
+		<tr>
+			<td width="50%">
+			
+			<#if order.payment_type=='offline'>
+			<strong>您选择了线下支付，请根据支付方式说明进行付款，付款后可通过网站信息联系我们。</strong>
+			<#else>
+			<strong>您选择了：${order.payment_name}</strong>
+			</#if>
+			<br>
+		<!-- 	<a href="http://localhost/?order-20100407097733-1.html" class="lnk">选择其他支付方式»</a> -->
+			</td>
+			<#if order.payment_type!='offline'>
+			<td><input type="submit" value="立刻付款"
+				style="width: 200px; padding: 5px 10px; border-left: 2px solid rgb(255, 204, 0); border-width: 2px; border-style: solid; border-color: rgb(255, 204, 0) rgb(159, 78, 43) rgb(159, 78, 43) rgb(255, 204, 0); background: none repeat scroll 0% 0% rgb(255, 153, 0); color: rgb(255, 255, 255); font-weight: bold; font-size: 14px; cursor: pointer;">
+			</td>
+			</#if>
+		</tr>
+	</tbody>
+</table>
+</div>
+</form>

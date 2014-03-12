@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+.input{
+	background:#E7EFF4 url(../images/sysrightbackgroud.gif) repeat-x scroll 0 0;
+	border:1px solid #C7DBE5;
+	margin:8px;
+	padding:15px;
+}
+table.form-table{
+	background:#FFFFFF none repeat scroll 0 0;
+	border-color:#CCCCCC #BEC6CE #BEC6CE #CCCCCC;
+	border-style:solid;
+	border-width:1px 2px 2px 1px;
+	line-height:150%;
+	padding:5px;
+	white-space:normal;
+	padding:0px;
+	width:100%;
+}
+ 
+
+
+table.form-table .label{ 
+	background:none repeat scroll 0 0 #E2E8EB;
+	border-right:1px solid #CCCCCC;
+	font-size:14px;
+	text-align:right;
+	white-space:nowrap;
+	width:140px;
+}
+
+table.form-table th{ 
+	background:none repeat scroll 0 0 #E2E8EB;
+	border-right:1px solid #CCCCCC;
+	font-size:14px;
+	text-align:right;
+	white-space:nowrap;
+	width:140px;
+}
+table.form-table td{
+	border-color:#FFFFFF #DBE2E7 #DDDDDD #FFFFFF;
+	border-left:1px solid #FFFFFF;
+	border-right:1px solid #DBE2E7;
+	border-style:solid;
+	border-width:1px;
+	padding:5px;
+	vertical-align:top;
+}
+.input form{
+	padding:0;margin:0;
+	display:block;
+}
+.input .info{width:100%;padding:5px 0;background:#fff;}
+.input .info ul{display:inline-block;} 
+.input .info ul li{float:left;line-height:20px;padding:0 8px;}
+.input .info ul li a{color:#336699;text-decoration:none;;}
+.input .info ul li a:hover{text-decoration:underline;}
+.input .text{padding-right:3px;}

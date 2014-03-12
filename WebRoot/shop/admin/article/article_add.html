@@ -1,0 +1,44 @@
+<div class="input">
+ <form method="post" action="article!saveAdd.do" name="theForm" id="theForm" class="validate">
+   <table cellspacing="1" cellpadding="3" width="100%" class="form-table">
+     <tr>
+       <th>文章标题</th>
+       <td><input type="text" name="article.title" id="title" style="width:350px" dataType="string" required="true"/>       </td>
+     </tr>
+     <tr>
+       <th>所属类别</th>
+       <td>
+       	<select name="article.cat_id"  id="cat_id">
+ 		<#assign children=catList />
+		<#assign level=1 />
+		<#include 'select_children.html' /> 
+		</select>
+		</td>
+  
+     </tr>
+     <tr>
+      <th>内容</th>
+       <td> 
+       <textarea id="content" name="article.content" ></textarea>
+	</td>
+      </tr>
+     
+   </table>
+   <div class="submitlist" align="center">
+ <table>
+ <tr><td >
+  <input name="submit" type="submit"	  value=" 确    定   " class="submitBtn" />
+   </td>
+   </tr>
+ </table>
+</div>
+ </form>
+ <script type="text/javascript">
+$(function(){
+	$('#content' ).ckeditor( );
+	 $("#cat_id").val(${cat_id});
+	 $("form.validate").validate();
+});
+</script>
+</div>
+

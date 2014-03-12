@@ -1,0 +1,472 @@
+body {font-family:Verdana;background:#fff;color:#000;line-height:160%;margin:0;padding:0px;}
+body, input {font:normal 12px Verdana, Arial, Helvetica, sans-serif;}
+a {color:#039}
+form{margin:0;padding:0;}
+img	{border:0;}
+h1,	hr{display:none;}
+p{display:block;margin:0;padding:0;}
+ 
+div.vcode{
+height: 25px;margin-top:10px;
+}
+#code_img{
+	width:100px;
+	height:20px; 
+	cursor:pointer;	
+	margin-bottom:-5px;
+}
+.top{
+	height:81px;
+	width:100%;
+	z-index:999;
+	overflow:hidden;
+	background:transparent url(../images/header_right.gif) repeat-x;
+	position: relative;
+	left:0px;
+	top:0;
+}
+.logo{
+   float:left;	
+   width:379px;
+   height:81px;
+   background:transparent url(../images/header_logo.gif) no-repeat;
+}
+.logo a{
+   font-size:0em;
+   display:block;
+   width:379px;
+   height:81px;
+}
+div.footer{
+  background-color:#D5EAA5;
+  border-top:1px solid #999999;
+  height:23px;
+  margin:0;
+  padding:0;
+}
+div.footer p {
+	font-size:10px;
+	margin:0;
+	padding:3px 5px 5px;
+} 
+.copywrites {
+float:left;
+}
+.version {
+    float:right;
+}
+p {
+	margin:0 0 7px;
+	font-size:1em;
+	line-height:1.5em;
+	margin-bottom:1.5em;
+	margin-top:1.5em;
+}
+.footer a:hover, .footer a:focus {
+	color:blue;
+	text-decoration:underline;
+} 
+.footer a {
+	color:black;
+	text-decoration:none;
+}
+.cclient{
+  width:100%;
+  text-align:left;
+}
+.outer-border-wrapper {
+    background-color: #A3C1D4;
+    margin: 10px;outer-border-wrapper
+}
+
+.IE-6 .outer-border-wrapper {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.outer-border-title {
+    margin: 0;
+    padding: 15px 5px 8px 20px;
+    color: #4C4E53;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.IE-6 .outer-border-title {
+    position: relative;
+}
+
+.outer-border-content {
+    padding: 7px;
+    min-height: 50px;
+    overflow: auto;
+}
+.outer-border-top {
+    background: url("../images/outer-top-center.gif") repeat-x top;
+}
+
+.outer-border-bottom {
+    background: url("../images/outer-bottom-center.gif") repeat-x bottom;
+}
+
+.outer-border-left {
+    background: url("../images/outer-center-left.gif") repeat-y left;
+}
+
+.outer-border-right {
+    background: url("../images/outer-center-left.gif") repeat-y right;
+}
+
+.outer-border-top-left {
+    background: url("../images/outer-top-left.gif") no-repeat top left;
+}
+
+.outer-border-top-right {
+    background: url("../images/outer-top-right.gif") no-repeat top right;
+}
+
+.outer-border-bottom-left {
+    background: url("../images/outer-bottom-left.gif") no-repeat bottom left;
+}
+
+.outer-border-bottom-right {
+    background: url("../images/outer-bottom-right.gif") no-repeat bottom right;
+}
+.outer-border-wrapper {
+    background-color: #A3C1D4;
+    margin: 10px;
+}
+
+.IE-6 .outer-border-wrapper {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.outer-border-title {
+    margin: 0;
+    padding: 15px 5px 8px 20px;
+    color: #4C4E53;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.IE-6 .outer-border-title {
+    position: relative;
+}
+
+.outer-border-content {
+    padding: 7px;
+    min-height: 50px;
+    overflow: auto;
+}
+
+
+.border-wrapper {
+    background-color: #E5E7E7;
+    margin-top: 3px;
+}
+
+.IE-6 .border-wrapper {
+    zoom: 1;
+}
+
+.border-title {
+    margin: 0;
+    padding: 11px 5px 0 10px;
+    color: #4E4F52;
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.border-content {
+    padding: 10px;
+}
+.border-content p{
+    margin-top:0px;
+ 
+}
+
+.IE-7 .border-content, .IE-6 .border-content {
+    zoom: 1;
+}
+
+.border-top {
+    background: url("../images/inner-top-center.gif") repeat-x top;
+}
+
+.border-bottom {
+    background: url("../images/inner-bottom-center.gif") repeat-x bottom;
+}
+
+.border-left {
+    background: url("../images/inner-center-left.gif") repeat-y left;
+}
+
+.border-right {
+    background: url("../images/inner-center-left.gif") repeat-y right;
+}
+
+.border-top-left {
+    background: url("../images/inner-top-left.gif") no-repeat top left;
+}
+
+.border-top-right {
+    background: url("../images/inner-top-right.gif") no-repeat top right;
+}
+
+.border-bottom-left {
+    background: url("../images/inner-bottom-left.gif") no-repeat bottom left;
+}
+
+.border-bottom-right {
+    background: url("../images/inner-bottom-right.gif") no-repeat bottom right;
+}
+div.login-panel {
+    width: 400px;
+    margin: 20px auto 0 auto;
+}
+
+.login-panel .field {
+    padding: 3px 0;
+}
+
+.login-panel .text {
+    width: 200px;
+}
+
+.login-panel label {
+    width: 80px;
+    float: left;
+}
+
+.login-panel .outer-border-title, .logout-border .outer-border-title {
+    padding-bottom: 0;
+}
+.required label, .required-message {
+    padding-left: 12px;
+    background: url("../images/required.gif") left no-repeat;
+}
+
+.required .value label {
+    padding-left: 0;
+    background: none;
+    font-weight: normal;
+}
+.field label, .title, .strong {
+    font-weight: bold;
+}
+
+.FF .field label, .Chrome .field label {
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.IE-6 .field label {
+    zoom: 1;
+}
+input.text, textarea, select,
+.virtual-repo-fields .dnd-selection,
+.list, div.textbox, span.textbox, div.textbox,
+.tundra .dijitComboBox {
+    background: white url("../images/field-center.gif") top repeat-x;
+    border: solid 1px #666666;
+}
+input.text, textarea, span.textbox, div.textbox {
+    padding: 2px 2px 0 2px;
+}
+
+.IE-8 input.text, .Safari input.text {
+    margin-top: 1px;
+}
+
+.Safari textarea, .IE-8 textarea {
+    margin-top: 1px;
+}
+
+span.textbox {
+    display: -moz-inline-block;
+    display: inline-block;
+    height: 16px;
+}
+
+
+button.button, button.styled-checkbox {
+    white-space: nowrap;
+    border: none;
+    background: transparent no-repeat;
+    padding: 0;
+    cursor: pointer;
+    margin: 0 2px;
+    width: auto;
+    overflow: visible;
+}
+
+.Moz button.button, .Chrome button.button {
+    margin: 0 -1px;
+}
+
+.MacIntel.Chrome button.button {
+    margin: 0 2px;
+}
+
+.Moz .wicket-modal .buttons button.button,
+.Chrome .wicket-modal .buttons button.button {
+    margin: 0 0 0 -2px;
+}
+
+button.button span, button.styled-checkbox span {
+    display: block;
+}
+
+button.button .button-center, button.styled-checkbox .button-center, button.button .button-left, button.styled-checkbox .button-left {
+    display: inline-block;
+}
+
+button.button .button-right {
+    padding: 6px 15px 0 15px;
+    height: 24px;
+    font-weight: bold;
+    color: #555555;
+}
+
+.Safari button.button .button-right {
+    padding-top: 8px;
+    height: 22px;
+}
+
+button.button .button-center {
+    background: url("../images/BTN-gray-center.gif") repeat-x top;
+}
+
+button.button .button-left {
+    background: url("../images/BTN-gray-left.gif") no-repeat left top;
+}
+
+button.button .button-right {
+    background: url("../images/BTN-gray-right.gif") no-repeat right top;
+}
+
+button.button:hover .button-center, button.button:focus .button-center {
+    background: url("../images/BTN-gray-mouseover-center.gif") repeat-x top;
+}
+
+button.button:hover .button-left, button.button:focus .button-left {
+    background: url("../images/BTN-gray-mouseover-left.gif") no-repeat left top;
+}
+
+button.button:hover .button-right, button.button:focus .button-right {
+    background: url("../images/BTN-gray-mouseover-right.gif") no-repeat right top;
+}
+
+button.button-disabled {
+    cursor: default;
+
+}
+
+button.button-disabled .button-center, button.button-disabled:hover .button-center {
+    background: url("../images/BTN-gray-disabled-center.gif") repeat-x top;
+}
+
+button.button-disabled .button-left, button.button-disabled:hover .button-left {
+    background: url("../images/BTN-gray-disabled-left.gif") no-repeat left top;
+}
+
+button.button-disabled .button-right, button.button-disabled:hover .button-right {
+    background: url("../images/BTN-gray-disabled-right.gif") no-repeat right top;
+    color: #999999;
+}
+
+/*-- DefaultButtonBehavior --*/
+
+.Safari button.default-button {
+    position: relative;
+    top: -2px;
+}
+
+.IE button.default-button {
+    position: relative;
+    top: 2px;
+}
+
+button.default-button .button-center {
+    background-image: url("../images/BTN-default-center.gif");
+}
+
+button.default-button .button-left {
+    background-image: url("../images/BTN-default-left.gif");
+}
+
+button.default-button .button-right {
+    background-image: url("../images/BTN-default-right.gif");
+    height: 26px;
+    color: white;
+    padding-top: 8px;
+}
+
+.Safari button.default-button .button-right {
+    padding-top: 10px;
+    height: 24px;
+}
+
+.Safari .border-wrapper button.default-button {
+    position: relative;
+    top: 1px;
+}
+
+button.default-button:hover .button-center, button.default-button:focus .button-center {
+    background-image: url("../images/BTN-default-mouseover-center.gif");
+}
+
+button.default-button:hover .button-left, button.default-button:focus .button-left {
+    background-image: url("../images/BTN-default-mouseover-left.gif");
+}
+
+button.default-button:hover .button-right, button.default-button:focus .button-right {
+    background-image: url("../images/BTN-default-mouseover-right.gif");
+}
+
+.buttons button.default-button:hover .button-left, .buttons button.default-button:focus .button-left {
+    background-image: url("../images/BTN-default-mouseover-left.gif");
+}
+
+.buttons button.default-button:hover .button-right, .buttons button.default-button:focus .button-right {
+    background-image: url("../images/BTN-default-mouseover-right.gif");
+}
+
+.buttons button.default-button .button-left {
+    background-image: url("../images/BTN-default-left.gif");
+}
+
+.buttons button.default-button .button-right {
+    background-image: url("../images/BTN-default-right.gif");
+    height: 26px;
+    padding-top: 8px;
+}
+
+button.default-button-disabled .button-center, button.default-button-disabled:hover .button-center {
+    background-image: url("../images/BTN-default-center-disabled.gif");
+}
+
+button.default-button-disabled .button-left, button.default-button-disabled:hover .button-left {
+    background-image: url("../images/BTN-default-left-disabled.gif");
+}
+
+button.default-button-disabled .button-right, button.default-button-disabled:hover .button-right {
+    background-image: url("../images/BTN-default-right-disabled.gif");
+    color: #cccccc;
+}
+
+.buttons button.default-button-disabled:hover .button-left, .buttons button.default-button-disabled .button-left {
+    background-image: url("../images/BTN-default-left-disabled.gif");
+}
+
+.buttons button.default-button-disabled:hover .button-right, .buttons button.default-button-disabled .button-right {
+    background-image: url("../images/BTN-default-right-disabled.gif");
+}
+div.buttons{
+   margin-top:10px;
+   text-align:right;
+}

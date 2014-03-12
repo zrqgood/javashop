@@ -1,0 +1,43 @@
+<script type="text/javascript" src="magiczoom.js" charset="UTF-8"></script>
+<script type="text/javascript" src="jcarousellite_1.0.1.min.js" charset="UTF-8"></script>
+ 
+<div id="gallery">
+	<div class="big">
+		 <a href="<@GoodsPic pic="${image_default!''}" postfix='_big' />"  id="zoom" rel="zoom-width:400px;zoom-height:400px;"  class="MagicZoom">
+		 <img   width="${album_pic_width}" height="${album_pic_height}"  src="<@GoodsPic pic="${image_default!''}"  postfix='_small' />" id="bigimg" />
+		 </a>								
+	</div>
+	<div class="move">
+		<div class="l_button"></div>
+		<div class="spread">
+		<ul >
+			<#list galleryList as gallery>
+				<li <#if gallery_index==defaultindex>class="selected"</#if>><a href="javascript:;"><img src="${gallery.thumbnail}" big="${gallery.big}" small="${gallery.small}"/></a></li>
+			</#list> 									
+		</ul>
+		</div>
+		<div class="r_button"></div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	<#if galleryList?size gt 4 > 
+	$(".move .spread").jCarouselLite({
+        btnNext: ".r_button",
+        btnPrev: ".l_button",
+		visible: 4
+    });
+</#if>
+
+	$(".spread img").click(function(){
+ 
+		var zoom = document.getElementById('zoom'); //get the reference to our zoom object
+		MagicZoom.update(zoom, $(this).attr("big"), $(this).attr("small"), 'show-title: false');
+		$(".move .spread li").removeClass("selected");
+		$(this).parent().parent().addClass("selected");
+	});	
+
+})
+
+</script>
+

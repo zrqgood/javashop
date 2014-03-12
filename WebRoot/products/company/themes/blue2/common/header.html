@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+${widget_header}
+<link type="text/css" href="${staticserver}/default/statics/style.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/border.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+function  setHomepage() {   //  设置首页
+    if  (document.all) {
+       document.body.style.behavior  =   'url(#default#homepage)' ;
+       document.body.setHomePage( 'http://'+document.domain);
+
+   }
+    else   if  (window.sidebar) {
+        if  (window.netscape) {
+            try  {
+               netscape.security.PrivilegeManager.enablePrivilege( "UniversalXPConnect" );
+           }
+            catch  (e) {
+               alert( " 该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值改为true " );
+           }
+       }
+        var  prefs  =  Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+       prefs.setCharPref( 'browser.startup.homepage' ,  'http://'+document.domain );
+   }
+
+} 
+</script>
+</head>
+<body>
+<div class="header">
+	<div class="top">
+		<div class="logo"><img src="${logo}" /></div>
+		<div class="toplink">
+			<div class="link">
+				<img src="images/home.jpg" /> 
+				<a onclick="setHomepage();" href="#">设为首页</a>&nbsp;
+				<img src="images/bookmark.jpg" /> 
+				<a onclick="if (document.all){window.external.addFavorite('http://'+document.domain,document.title);}else if (window.sidebar){ window.sidebar.addPanel(document.title, 'http://'+document.domain, document.title);}" style="cursor: pointer; color: rgb(255, 0, 0);">加入收藏</a>&nbsp;
+				<img src="images/mail.jpg" /> 
+				<a href="contact.html">联系我们</a>
+			</div>
+		</div>
+	</div>
+	<div class="menu">
+		${widget_menu}
+	</div>
+	<div class="banner">
+		${widget_ad}
+	</div>
+</div>

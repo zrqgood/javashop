@@ -1,0 +1,82 @@
+<script type="text/javascript" src="checkout.js"></script>
+<script type="text/javascript">
+$(function(){
+	CheckOut.init();
+});
+</script>
+<div id="log" class="CartWrap">
+	<div class="CartNav clearfix">
+		<div class="floatLeft"><img alt="购物流程--查看购物车" src="${ctx}/resource/com/enation/javashop/widget/cart/images/cartnav-step3.gif"></div>
+		<div class="floatRight"><img src="${ctx}/resource/com/enation/javashop/widget/cart/images/cartnav-cart.gif"></div>
+	</div>
+	<form action="checkout.html?action=createOrder" method="post" id="checkoutform">
+		<div style="display:none;">
+			<input type="checkForm"	vtype="checkForm" class="_x_ipt checkForm" autocomplete="off">
+		</div>
+		<div class="FormWrap">
+			<h3>填写收货人信息</h3>
+			<div id="receiver">
+				<div class="division">
+					<#include 'addressList.html' />
+				</div>
+				<div style="display:none;" id="checkout-recaddr" class="division">
+					<#include 'newAddress.html' />
+				</div>
+				<div class="division">
+					<#include 'date.html' />
+				</div>
+			</div>
+			<h3>选择配送方式</h3>
+			<div class="division">
+				<div id="shipping" class="body">请选择收货地址</div>
+			</div>
+			<h3>选择支付方式</h3>
+			<div class="division">
+				<div id="payment" class="body">
+					<#include 'paymentList.html' />
+				</div>
+			</div>
+		</div>
+		<div style="background: none repeat scroll 0% 0% rgb(245, 244, 236); border: 1px solid rgb(229, 221, 199)" class="FormWrap">
+			<#if hasGoods>
+				<#include 'goodsList.html' />
+			</#if>
+			<#if hasPgk>
+				<#include 'pgkList.html' />
+			</#if>
+			<#if hasGift>
+				<#include 'giftList.html' />
+			</#if>
+			<#if hasGroupBuy>
+				<#include 'groupBuyList.html' />
+			</#if>
+		<!--  <#include 'promotion.html' /> -->	
+		</div>
+		<div id="amountInfo"></div>
+		<div class="CartBtn clearfix">
+			<input type="hidden" value="true" name="fromCart" />
+			<div class="span-auto">
+				<input type="button" value="返回购物车" onclick="history.back()" class="actbtn btn-return-checkout" />
+			</div>
+			<div class="span-auto floatRight last">
+				<input type="button"value="确认无误，下订单" class="actbtn btn-order" id="submitBtn" />
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("#checkoutform").validate();;
+
+	$("#region_id").change(function(){
+		var regionid = $(this).val();
+		if(regionid == 0){
+			alert("请选择地区"); 
+			return;
+		}
+		$("#address_region").val($("#address_region_id option:selected").text());
+		$("#region_id").val(regionid);
+		CheckOut.loadDlyType(regionid);
+	});
+});
+</script>

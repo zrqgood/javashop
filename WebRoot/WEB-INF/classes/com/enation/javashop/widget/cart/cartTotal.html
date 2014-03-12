@@ -1,0 +1,27 @@
+<table cellspacing="0" cellpadding="3" width="100%"
+	class="liststyle_data">
+	<col class="span-auto">
+	<col class="span-2 ColColorOrange">
+	<tbody>
+		<tr>
+			<th align="right">原始总价：</th>
+			<td><span class="mktprice1">${orderPrice.originalPrice?string("currency")}</span></td>
+		</tr>
+		<#if pmtList?exists>
+		<tr>
+			<th align="right">当前享受的订单优惠：</th>
+			<td>
+			<ol>
+				<#list pmtList as pmt>
+				<li>${pmt.pmt_describe}</li>
+				</#list>
+			</ol>
+			</td>
+		</tr>
+		</#if>
+		<tr class="totalprice">
+			<th align="right">商品总额：</th>
+			<td><span class="price1">${orderPrice.goodsPrice}</span></td>
+		</tr>
+	</tbody>
+</table>

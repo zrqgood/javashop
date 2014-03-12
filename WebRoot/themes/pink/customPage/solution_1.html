@@ -1,0 +1,14 @@
+<div class="r_top">
+	<h1>${catname}</h1>
+	<div class="nav">您现在的位置：${navbar}</div>
+</div>
+<div class="content">
+	<ul class="list">
+		<#list dataList as data>
+			<li><div class="name"><a href="article3-${data.cat_id}-${data.id}.html">${data.title!''}</a></div><span>${data.add_time?string('yyyy-MM-dd')}</span></li>
+		</#list>
+	</ul>
+	<div class="page">
+		${pager}
+	</div>
+</div>

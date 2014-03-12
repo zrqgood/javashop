@@ -1,0 +1,40 @@
+<#include 'common/header.html' />
+<div class="main">
+	<div class="left">
+		<div class="border">
+			<h1>产品分类</h1>
+			<div class="cont">
+				${widget_leftcat}
+			</div>
+		</div>
+		<div class="border">
+			<h1>联系我们</h1>
+			<div class="cont">
+				<img src="images/contact.jpg" />
+				<div class="text">
+					地址：${site.address!''}<br/>
+					电话：${site.usertel!''}<br/>
+					手机：${site.usermobile!''}<br/>
+					联系：${site.username!''}<br/>
+					邮箱：${site.email!''}<br/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="right">
+		<link href="css/css.css" type="text/css" rel="stylesheet" />
+		<div class="r_top">
+			<h1>在线留言</h1>
+			<div class="nav">您现在的位置：<a href="index.html">首页</a>&gt;<a href="guestbook.html">在线留言</a></div>
+		</div>
+		<div class="content">
+			${widget_1}
+		</div>
+	</div>
+</div>
+<script>
+	$(function(){
+		selectMenu(0)
+	})
+</script>
+<#include "common/footer.html" />

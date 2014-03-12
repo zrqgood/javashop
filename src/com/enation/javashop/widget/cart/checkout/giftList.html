@@ -1,0 +1,36 @@
+<h3>赠品:</h3>
+<div class="division" id="giftbody">
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle">
+	<colgroup class="span-auto"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-1"></colgroup>
+	<colgroup class="span-2 ColColorOrange"></colgroup>
+	<thead>
+		<tr>
+
+			<th>赠品名称</th>
+			<th>所需积分</th>
+			<th>限购数量</th>
+			<th>数量</th>
+			<th>小计</th>
+
+		</tr>
+	</thead>
+	<tbody>
+
+		<#list giftItemList as gift>
+		<tr itemid="${gift.id}" price="${gift.point}"
+			limitnum="${gift.limitnum}">
+			<td style="text-align: left;"><a target="_blank"
+				href="gift-${gift.product_id}.html">${gift.name}</a></td>
+			<td>${gift.point}</td>
+			<td>${gift.limitnum}</td>
+			<td>${gift.num}</td>
+			<td class="itemTotal">${gift.subtotal}</td>
+
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>

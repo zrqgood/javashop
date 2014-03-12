@@ -1,0 +1,64 @@
+<div class="input">
+ <form class="validate" id="editForm">
+ 	<input type="hidden" name="menu.id" value="${menu.id}" />
+   <table cellspacing="1" cellpadding="3" width="100%" class="form-table">
+     <tr> 
+       <th><label class="text">名称</label></th>
+       <td><input type="text" name="menu.title" id="name"   maxlength="60" value="${menu.title}"  dataType="string" required="true"/>       </td>
+     </tr>
+     <tr>
+       <th><label class="text">类型</label></th>
+       <td>
+		 <select name="menu.menutype">
+		  	<option value="2" <#if menu.menutype==2>selected</#if> >应用</option>
+			 <option value="1" <#if menu.menutype==1>selected</#if>>系统</option>
+			
+		 </select>
+		</td>
+     </tr>     
+     <tr>
+       <th><label class="text">上级菜单</label></th>
+       <td>
+
+		<select name="menu.pid"  id="pid">
+		<option value="0">顶级菜单</option>
+ 		<#assign children=menuList />
+		<#assign level=1 />
+		<#assign pid=menu.pid />
+		<#include 'select_children.html' />  
+		</select>	</td>
+     </tr>
+     <tr>
+       <th><label class="text">url</label></th>
+       <td>
+		 <input type="text" name="menu.url" id="url" value="${menu.url}"   dataType="string" required="true"/>
+		</td>
+     </tr>
+     <tr>
+       <th><label class="text">target</label></th>
+       <td>
+		 <input type="text" name="menu.target" id="target" value="${menu.target!''}" />
+		</td>
+     </tr>     
+     <tr>
+       <th><label class="text">排序</label></th>
+       <td>
+       <input type="text" name="menu.sorder" value="${menu.sorder}" style="width:50px"   dataType="int" required="true"/>       </td>
+     </tr>
+   </table>
+	<div class="submitlist" align="center">
+	 <table>
+	 <tr><td >
+	           <input  type="button"  value=" 确定 " class="submitBtn" id="saveEditBtn"/>
+	           <input name="reset" type="reset"  value=" 重置 " class="submitBtn"/>
+	   </td>
+	   </tr>
+	 </table>
+	</div>   
+   </form>
+ </div>
+<script type="text/javascript">
+$(function(){
+	$("#editForm").validate();
+});
+</script>

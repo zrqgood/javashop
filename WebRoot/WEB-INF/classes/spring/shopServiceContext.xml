@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="false">
+	<bean id="shop" class="com.enation.javashop.ShopApp"></bean>	
+	<bean id="couponManager" class="com.enation.javashop.core.service.impl.CouponManager"  parent="baseSupport" />	
+	<bean id="goodsManager" class="com.enation.javashop.core.service.impl.GoodsManager"  parent="baseSupport" />
+	
+	<bean id="goodsSearchManager" class="com.enation.javashop.core.service.impl.GoodsSearchManager"  parent="baseSupport" />
+	<!-- 商品分类管理 -->
+	<bean id="goodsCatManagerImpl" class="com.enation.javashop.core.service.impl.GoodsCatManager"  parent="baseSupport"/>
+	
+	<!-- 商品分类缓存代理 -->
+	<bean id="goodsCatManager" class="com.enation.javashop.core.service.impl.cache.GoodsCatCacheProxy"  >
+		<constructor-arg><ref bean="goodsCatManagerImpl"/></constructor-arg>
+	</bean>
+	
+	<bean id="goodsTypeManager" class="com.enation.javashop.core.service.impl.GoodsTypeManager"  parent="baseSupport"  />
+	<bean id="brandManager" class="com.enation.javashop.core.service.impl.BrandManager"   parent="baseSupport" />
+	<bean id="tagManager" class="com.enation.javashop.core.service.impl.TagManager"  parent="baseSupport"  />
+	<bean id="cartManager" class="com.enation.javashop.core.service.impl.CartManager"  parent="baseSupport" />
+	<bean id="orderReportManager" class="com.enation.javashop.core.service.impl.OrderReportManager" parent="baseSupport"></bean>
+	<bean id="printTmplManager" class="com.enation.javashop.core.service.impl.PrintTmplManager" parent="baseSupport"></bean>
+	
+	<!-- 营销推广相关bean -->
+ 	<bean id="promotionManager" class="com.enation.javashop.core.service.impl.PromotionManager" parent="baseSupport"></bean>
+ 	<bean id="promotionActivityManager" class="com.enation.javashop.core.service.impl.PromotionActivityManager" parent="baseSupport"></bean>
+ 	<bean id="giveGift" class="com.enation.javashop.core.service.impl.promotion.GiveGiftMethod" parent="baseSupport"></bean>
+ 	<bean id="discount" class="com.enation.javashop.core.service.impl.promotion.DiscountMethod" ></bean>
+ 	<bean id="reducePrice" class="com.enation.javashop.core.service.impl.promotion.ReducePriceMethod" ></bean>
+ 	<bean id="timesPoint" class="com.enation.javashop.core.service.impl.promotion.TimesPointMethod" ></bean>
+ 	<bean id="freeFreight" class="com.enation.javashop.core.service.impl.promotion.FreeFreightMethod" ></bean>
+ 
+    <bean id="memberManager" class="com.enation.javashop.core.service.impl.MemberManager"   parent="baseSupport"  />
+    <bean id="memberLvManager" class="com.enation.javashop.core.service.impl.MemberLvManager"   parent="baseSupport" />
+    <bean id="memberAddressManager" class="com.enation.javashop.core.service.impl.MemberAddressManager"   parent="baseSupport" />
+    <bean id="dlyTypeManager" class="com.enation.javashop.core.service.impl.DlyTypeManager"   parent="baseSupport" />
+    <bean id="areaManager" class="com.enation.javashop.core.service.impl.AreaManager"  parent="baseSupport"  />
+    <bean id="logiManager" class="com.enation.javashop.core.service.impl.LogiManager"   parent="baseSupport" />
+	<bean id="goodsAlbumManager" class="com.enation.javashop.core.service.impl.GoodsAlbumManager"  parent="baseSupport" />
+	<bean id="goodsComplexManager" class="com.enation.javashop.core.service.impl.GoodsComplexManager"  parent="baseSupport" />
+	
+	<!--赠品 -->
+	<bean id="freeOfferManager" class="com.enation.javashop.core.service.impl.FreeOfferManager"  parent="baseSupport" />
+	<bean id="freeOfferCategoryManager" class="com.enation.javashop.core.service.impl.FreeOfferCategoryManager"  parent="baseSupport" />
+	<bean id="seoManager" class="com.enation.javashop.core.service.impl.SeoManager"  parent="baseSupport" />
+	<bean id="commentsManager" class="com.enation.javashop.core.service.impl.CommentsManager" parent="baseSupport"></bean>
+	<bean id="specManager" class="com.enation.javashop.core.service.impl.SpecManager" parent="baseSupport"></bean>
+    <bean id="specValueManager" class="com.enation.javashop.core.service.impl.SpecValueManager" parent="baseSupport"></bean>
+    <bean id="productManager" class="com.enation.javashop.core.service.impl.ProductManager" parent="baseSupport"></bean>
+ 	<bean id="memberPriceManager" class="com.enation.javashop.core.service.impl.MemberPriceManager" parent="baseSupport"></bean>
+	<bean id="statisticsManager" class="com.enation.javashop.core.service.impl.StatisticsManager" parent="baseSupport"></bean>
+	<bean id="rankManager" class="com.enation.javashop.core.service.impl.RankManager" parent="baseSupport"></bean>
+	<bean id="memberOrderManager" class="com.enation.javashop.core.service.impl.MemberOrderManager" parent="baseSupport"></bean>
+	<bean id="regionsDbManager" class="com.enation.javashop.core.service.impl.RegionsManager" parent="baseSupport"></bean>	
+	<bean id="regionsManager" class="com.enation.javashop.core.service.impl.cache.RegionsCacheProxy" parent="baseSupport">
+		<constructor-arg><ref bean="regionsDbManager"/></constructor-arg>
+	</bean>	
+	<bean id="messageManager" class="com.enation.javashop.core.service.impl.MessageManager" parent="baseSupport"></bean>
+	<bean id="gnotifyManager" class="com.enation.javashop.core.service.impl.GnotifyManager" parent="baseSupport"></bean>
+	<bean id="pointHistoryManager" class="com.enation.javashop.core.service.impl.PointHistoryManager" parent="baseSupport"></bean>
+    <bean id="memberCouponsManager" class="com.enation.javashop.core.service.impl.MemberCouponsManager" parent="baseSupport"></bean>
+    <bean id="favoriteManager" class="com.enation.javashop.core.service.impl.FavoriteManager" parent="baseSupport"></bean>
+    <bean id="welcomeInfoManager" class="com.enation.javashop.core.service.impl.WelcomeInfoManager" parent="baseSupport"></bean>
+    <bean id="advanceLogsManager" class="com.enation.javashop.core.service.impl.AdvanceLogsManager" parent="baseSupport"></bean>
+    <bean id="goodsAdjunctManager" class="com.enation.javashop.core.service.impl.GoodsAdjunctManager" parent="baseSupport"></bean>
+    <bean id="paymentManager" class="com.enation.javashop.core.service.impl.PaymentManager" parent="baseSupport"></bean>
+    <bean id="orderManager" class="com.enation.javashop.core.service.impl.OrderManager" parent="baseSupport"></bean>
+    <bean id="orderMetaManager" class="com.enation.javashop.core.service.impl.OrderMetaManager" parent="baseSupport"></bean>
+    <bean id="returnsOrderManager" class="com.enation.javashop.core.service.impl.ReturnsOrderManager" parent="baseSupport"></bean>
+    <bean id="orderFlowManager" class="com.enation.javashop.core.service.impl.OrderFlowManager" parent="baseSupport"></bean>
+    <bean id="articleManager" class="com.enation.javashop.core.service.impl.ArticleManager" parent="baseSupport"></bean>
+    <bean id="articleCatManagerImpl" class="com.enation.javashop.core.service.impl.ArticleCatManager" parent="baseSupport"></bean>
+    <bean id="articleCatManager" class="com.enation.javashop.core.service.impl.cache.ArticleCatCacheProxy">
+    <constructor-arg><ref bean="articleCatManagerImpl"/></constructor-arg>
+    </bean>
+    <bean id="packageProductManager" class="com.enation.javashop.core.service.impl.PackageProductManager" parent="baseSupport"></bean>
+    <bean id="dlyCenterManager" class="com.enation.javashop.core.service.impl.DlyCenterManager" parent="baseSupport"></bean>
+    <bean id="invoiceApplyManager" class="com.enation.javashop.core.service.impl.InvoiceApplyManager" parent="baseSupport"></bean>
+    <bean id="memberPointManger" class="com.enation.javashop.core.service.impl.MemberPointManger" parent="baseSupport"></bean>
+    <bean id="goodsSearchManager2" class="com.enation.javashop.core.service.impl.GoodsSearchManager2" parent="baseSupport"></bean>
+          
+    <!-- 商品字段管理  -->
+    <bean id="goodsFieldManager" class="com.enation.javashop.core.service.impl.GoodsFieldManager" parent="baseSupport"></bean>
+    
+    <!-- 团购  -->
+	<bean id="groupBuyManager" class="com.enation.javashop.core.service.impl.GroupBuyManager" parent="baseSupport"></bean>
+	
+	<!-- 限时抢购 -->
+	<bean id="limitBuyManager" class="com.enation.javashop.core.service.impl.LimitBuyManager" parent="baseSupport"></bean>
+	
+	<!-- 商品批量导入-->	
+ 	<bean id="goodsDataBatchManager" class="com.enation.javashop.core.service.impl.batchimport.GoodsDataBatchManager" ></bean>
+ 	<!-- 商品名称导入器-->	
+ 	<bean id="goodsFieldImporter" class="com.enation.javashop.core.service.impl.batchimport.GoodsFieldImporter" ></bean>
+ 	<!-- 商品品牌导入器-->
+ 	<bean id="goodsBrandImporter" class="com.enation.javashop.core.service.impl.batchimport.GoodsBrandImporter" ></bean>
+ 	<!-- 商品属性导入器-->
+ 	<bean id="goodsPropImporter" class="com.enation.javashop.core.service.impl.batchimport.GoodsPropImporter" ></bean>
+ 	<!-- 商品价格导入器-->
+ 	<bean id="goodsPriceImporter" class="com.enation.javashop.core.service.impl.batchimport.GoodsPriceImporter" ></bean>
+ 	<!-- 商品图片读取器-->
+ 	<bean id="goodsImageReader" class="com.enation.javashop.core.service.impl.batchimport.util.GoodsImageReader" ></bean> 
+ 	<!-- 商品图片导入器-->
+ 	<bean id="goodsImageImporter" class="com.enation.javashop.core.service.impl.batchimport.GoodsImageImporter" ></bean> 
+ 	<!-- 商品描述读取器-->
+ 	<bean id="goodsDescReader" class="com.enation.javashop.core.service.impl.batchimport.util.GoodsDescReader" ></bean> 
+ 	<!-- 商品描述导入器-->
+ 	<bean id="goodsDescImporter" class="com.enation.javashop.core.service.impl.batchimport.GoodsDescImporter" ></bean> 	
+ 	<!-- 商品规格导入器-->
+ 	<bean id="goodsSpecImporter" class="com.enation.javashop.core.service.impl.batchimport.GoodsSpecImporter" ></bean> 	
+
+
+</beans>

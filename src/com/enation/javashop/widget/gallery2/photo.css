@@ -1,0 +1,53 @@
+.MagicZoom img {
+border: 0 !important;
+padding: 0 !important;
+margin: 0 !important;
+}
+
+/* Style of zoomed window */
+.MagicZoomBigImageCont {
+border: 1px solid #999;
+}
+
+/* Style of header, activated with "title" attribute in <a> tag */
+.MagicZoomHeader {
+font-size: 8pt !important;
+line-height: normal !important;
+color: #fff;
+background: #666;
+text-align: center !important;
+}
+
+/* Style of small square under mouse */
+.MagicZoomPup {
+border: 1px solid #aaa;
+background: #fff;
+cursor: move;
+}
+
+/* Style of message box while image is loading */
+.MagicZoomLoading {
+border: 1px solid #ccc;
+background: #fff url(ajax-loader.gif) no-repeat 2px 50%;
+padding: 4px 4px 4px 24px !important;
+margin: 0;
+text-decoration: none;
+text-align: left;
+font-size: 8pt;
+font-family: sans-serif;
+color: #444;
+}
+
+#gallery{width:342px;float:left;display:inline;margin-right:10px;position:relative;z-index:2;}
+#gallery .big{width:338px;height:310px;padding:10px 2px;}
+#gallery .big a{width:338px;height:284px;margin-left:15px}
+#gallery .move{height:62px;overflow:hidden;}
+#gallery .move .l_button{cursor:pointer;width:12px;height:63px;background:url(../images/zuo.jpg) no-repeat left center;float:left;display:inline;margin-right:9px;}
+#gallery .move .spread{width:300px;overflow:hidden;height:63px;float:left;display:inline;margin-right:9px;}
+#gallery .move .spread li{float:left;display:inline;margin:0px 6px;overflow:hidden;}
+#gallery .move .spread li a{width:56px;height:56px;display:block;border:1px solid #909090;padding:2px;}
+#gallery .move .spread li a:hover{width:56px;height:56px;display:block;border:1px solid #cf0000;padding:2px;}
+#gallery .move .spread li img{width:56px;height:56px;}
+#gallery .move .spread .selected a{width:56px;height:56px;display:block;border:1px solid #cf0000;padding:2px;}
+#gallery .move .spread .selected img{width:56px;height:56px;}
+#gallery .move .r_button{cursor:pointer;width:12px;height:63px;background:url(../images/you.jpg) no-repeat left center;float:left;display:inline;}

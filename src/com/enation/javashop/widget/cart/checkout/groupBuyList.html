@@ -1,0 +1,34 @@
+<h3>团购</h3>
+<div class="division">
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle">
+	<colgroup class="span-auto"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-1"></colgroup>
+	<colgroup class="span-2 ColColorOrange"></colgroup>
+	<thead>
+		<tr>
+			<th class="product">商品名称</th>
+			<th class="price">积分</th>
+			<th class="price">销售价格</th>
+			<th class="number">优惠价格</th>
+			<th class="number">数量</th>
+			<th class="price">小计</th>
+		</tr>
+	</thead>
+	<tbody>
+		<#list groupBuyList as item >
+		<tr>
+			<td style="text-align: left;" class="product;">
+			${item.name}
+			<td class="price">0</td>
+			<td class="price">${item.price?string("currency")}</td>
+			<td class="cost">${item.coupPrice?string("currency")}</td>
+			<td class="number">${item.num}</td>
+			<td class="cost">${item.subtotal?string("currency")}</td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>

@@ -1,0 +1,15 @@
+<div class="path"><span>您现在的位置：${navbar}</div>
+<div class="newscontent" style="padding-bottom:0px;">
+	<div class="product">
+		<ul>
+			<#list dataList as list>  
+			<li>
+				<h3>${list.title}</h3>
+				<div class="pro_img"><a href="article2-${list.cat_id}-${list.id}.html"><img src="${list.img}" /></a></div>
+			</li>
+			</#list>
+		</ul>
+		<div style="clear:both;"></div>
+		${pager}
+	</div>
+</div>

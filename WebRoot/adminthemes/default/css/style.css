@@ -1,0 +1,163 @@
+/*======公式样式=====*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {border:0 none;font-family:inherit;font-size:100%;font-style:inherit;margin:0;padding:0;	vertical-align:baseline;}
+body {color:#222222;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12px;line-height:1.5;}
+a{text-decoration:none;	color:#000;}
+ul{	list-style-type:none;}
+html{overflow-y: hidden;}
+/*======顶部样式=====*/
+#head{
+	background:#4E6A81 url("../images/head_bg.jpg") repeat-x;
+	color:#FFFFFF;
+	height:97px;
+	margin:0 auto;
+
+}
+#head .top{
+	background:url("../images/logo_bg.jpg") no-repeat;
+	height:95px;
+	margin:0 auto;
+}
+#head .top .sysmenu {
+	float:right;
+	padding-right:30px;
+}
+#head .top .sysmenu{
+	height:29px;
+	line-height:29px;
+}
+#head .sysmenu ul{
+	margin-top:20px;
+}
+#head .sysmenu li{
+background:url("../images/buttons.gif") no-repeat scroll -16px -80px transparent;
+display:block;
+float:left;
+height:32px;
+margin-left:5px;
+text-align:center;
+width:62px;
+}
+
+
+#head .appmenu{
+	height:32px;
+	margin-top:-40px;
+}
+#head .appmenu ul{
+	float:left;
+}
+#head .appmenu li{
+background:url("../images/buttons.gif") no-repeat scroll -10px -3px;
+display:block;
+float:left;
+height:34px;
+
+margin-left:10px;
+white-space:nowrap;
+width:74px;
+}
+#head .appmenu li span{
+display:block;
+height:34px;
+outline:medium none;
+text-align:center;
+vertical-align:center;
+text-decoration:none;
+}
+#head .appmenu li a{
+color:#e1eafd;
+font-size:14px;
+line-height:34px;
+}
+a{outline:0;}
+#head .appmenu .current{
+	background:url("../images/buttons.gif") no-repeat scroll -3px -38px transparent;
+	color:#000000;
+	display:block;
+	float:left;
+	height:42px;
+	line-height:42px;
+	overflow:hidden;
+	white-space:nowrap;
+	width:94px;
+}
+#head .appmenu .current span {
+	color:#FFFFFF;
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	height:40px;
+	outline:medium none;
+	text-decoration:none;
+}
+
+#head .appmenu li.current a{
+color:#000;
+font-size:14px;	
+}
+
+
+#head .logo{
+float:left;
+height:55px;
+margin-left:10px;
+margin-top:10px;
+overflow:hidden;
+position:absolute;
+}
+/*======左侧菜单样式=====*/
+#leftMenus{
+	border-bottom:3px solid #D3E9F8;border-right:2px solid #D3E9F8;
+	width:143px;
+	float:left;
+	background:f4f9ff;
+}
+#leftMenus .folder {
+	background:url("../images/icons.png") no-repeat scroll -5px 10px transparent;
+	margin-left:10px;
+}
+#leftMenus dt{
+	background:transparent url("../images/menubg.gif") repeat-x scroll 0 0;
+	border-left:1px solid #FFFFFF;
+	position:relative;
+}
+#leftMenus dt a{
+	color:#333333;
+	display:block;
+	height:30px;
+	line-height:30px;
+	padding-left:20px;
+	text-decoration:none;
+}
+#leftMenus dd{
+	background-color:#F4F9FF;
+	background-image:url("../images/kit.gif");
+	background-position:15px 10px;
+	background-repeat:no-repeat;
+	border-bottom:1px solid #D8ECFF;
+	line-height:25px;
+	padding-left:28px;
+}
+#leftMenus dd a{
+	color:#3D6BAC;
+	text-decoration:none;
+}
+/*======右侧内容样式=====*/
+#right{
+
+	overflow-y:auto;
+}
+
+#right ifram{
+	width:100%;height:100%;
+}
+/*测试时添加，以后要删除sysmenu的样式*/
+.dmenu {
+	float:right;
+}
+.dmenu li{
+	float:left;
+}
+#right_content{
+	overflow-y:auto;
+}

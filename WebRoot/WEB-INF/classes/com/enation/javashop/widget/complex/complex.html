@@ -1,0 +1,60 @@
+<#if  hasComplex >
+
+<h2>相关商品</h2>
+<div id="goods-rels" class="body">
+<div class="GoodsSearchWrap">
+<table width="100%" cellspacing="6" cellpadding="0" border="0">
+	<tbody>
+		<tr valign="top">
+			<td width="100%">
+				<#list complexList as complex>
+				<div class="items-gallery" style="width:25%;float:left">
+					<div align="center" class="goodpic"><a
+				style="width: 160px; height: 160px; padding: 0pt; margin: 0pt auto;"
+				href="goods-${complex.goods_id}.html"><img
+				src="<@GoodsPic pic='${complex.image}' postfix='_thumbnail' />"></a></div>
+			<div class="goodinfo">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tbody>
+					<tr>
+						<td colspan="2">
+						<h6 style="text-align: center;"><a title="${complex.name}"
+							href="goods-${complex.goods_id}.html">${complex.name}</a></h6>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<ul>
+							<li><span class="price1">${complex.price?string.currency}</span></li>
+							<li><span class="mktprice1">${complex.mktprice?string.currency}</span></li>
+						</ul>
+						</td>
+						<td>
+						<ul class="button">
+							<li><a target="_blank"
+								href="shop/goodsAlubm.do?goodsid=${complex.goods_id}"
+								class="viewpic">查看图片</a></li>
+							<li class="addcart"><a rel="nofollow" title="加入购物车"
+								target="_blank_cart" class="listact" buy="75" type="g"
+								href="http://localhost/?cart-75-addGoodsToCart.html">加入购物车</a></li>
+							<li class="star-off" title="${complex.name}"  goodsid="${complex.goods_id}"><a
+								rel="nofollow" title="加入收藏" class="listact"
+								href="javascript:;">加入收藏</a></li>
+							<li class="vdetail"><a title="${complex.name}" class="listact"
+								target="_blank" href="goods-${complex.goods_id}.html">查看详细</a></li>
+						</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+				</div>
+				</#list>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+
+</#if>

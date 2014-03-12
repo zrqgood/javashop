@@ -1,0 +1,48 @@
+<table cellspacing="0" cellpadding="0" border="0" width="100%" class="liststyle data">
+	<col class="span-5">
+	<col>
+	<tbody>
+		<tr>
+			<th><em style="color: red;">*</em> 收货地区：</th>
+			<td id="checkout-select-area">
+			${widget_region_select}
+			</td>
+		</tr>
+		<tr>
+			<th><em style="color: red;">*</em> 地址：</th>
+			<td>
+			<input required="true" id="addr" size="30" style="width: 360px;"   name="shipAddr" required="true" dataType="string"  class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th><em style="color: red;">*</em> 邮编：</th>
+			<td>
+			<input type="text" id="zip" size="30" style="width: 60px;"  name="shipZip" required="true" dataType="post_code" class="inputstyle _x_ipt" autocomplete="off">
+			</td>
+		</tr>
+		<tr>
+			<th><em style="color: red;">*</em> 收货人姓名：</th>
+			<td><input type="text"  size="30"
+				style="width: 60px;" id="name" name="shipName"
+				class="inputstyle _x_ipt" autocomplete="off" required="true" dataType="string"><span
+				class="notice_inline">请填写真实姓名，以免延误收货</span></td>
+		</tr>
+		<tr>
+			<th>联系电话：</th>
+			<td><input type="text" vtype="text" id="tel"
+				style="width: 180px;" size="30" name="shipTel"
+				class="inputstyle _x_ipt" autocomplete="off"><span
+				class="notice_inline">手机和电话填写一项即可</span></td>
+		</tr>
+		<tr>
+			<th>联系手机：</th>
+			<td><input type="text" vtype="text" id="mobile"
+				style="width: 180px;" size="30" name="shipMobile"
+				class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr class="recsave">
+			<th>是否保存地址：</th>
+			<td><label><input type="checkbox" value="yes"
+				checked="checked" id="saveAddress" name="saveAddress">保存本次收货地址</label></td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,10 @@
+
+.clear {clear: both;float: none;font-size: 0px;	margin: 0;padding: 0;display: block;}
+.layout{margin:5px 0px 0px 5px;padding:0;float:left;}
+
+#header{width:99%;height:150px;padding-right:2px}
+#header .widget{width:100%;}
+#footer{width:99%;height:150px;}
+#layout_left{width:20%;margin-left:8px;float:left;height:1000px}
+#layout_center{width:58%;float:left;height:1000px}
+#layout_right{width:20%;;float:left;height:1000px}

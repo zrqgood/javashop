@@ -1,0 +1,46 @@
+<div class="uploadWrapper${fieldname}" >
+<div style="float:left;margin-bottom:5px;margin-right:5px;">
+<span id="span_${fieldname}" ></span>
+</div>
+<input type="button" value="上传" id="uploadBtn_${fieldname}" />
+<input type="hidden" name="${fieldname}_path" id="${fieldname}_path" />
+<input type="hidden" name="${fieldname}_name" id="${fieldname}_name" />
+
+<div id="uploadDlg_${fieldname}"></div>
+</div>
+<script>
+
+function uploadOk${fieldname}(data){
+	if(data.result==1){
+		 $("#${fieldname}_name").val(data.filename);
+		 $("#${fieldname}_path").val(data.path);
+		 $("#span_${fieldname}").html(data.filename);
+		 
+	}else{
+		alert(data.message);
+	}
+	Eop.Dialog.close("uploadDlg_${fieldname}");	
+	$("#uploadDlg_${fieldname}").empty();
+}
+
+
+
+
+$(function(){
+	Eop.Dialog.init({id:'uploadDlg_${fieldname}', title:'上传附件'});
+	$("#uploadBtn_${fieldname}").click(function(){
+		Eop.Dialog.open("uploadDlg_${fieldname}");
+		$("#uploadDlg_${fieldname}").load('${ctx}/eop/upload.${ext}?subFolder=cms',function(){
+			Eop.Upload.uploadOk = uploadOk${fieldname};
+		});
+		
+	});
+	<#if path?exists && path!='' >
+		$("#${fieldname}_path").val('${path}');
+		$("#${fieldname}_name").val('${name}');
+		$("#span_${fieldname}").html('${name}');
+	<#else>
+		$("#span_${fieldname}").empty();
+	</#if>
+})
+</script>

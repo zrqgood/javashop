@@ -1,0 +1,8 @@
+<p>请选择广告位:
+<select name="acid" eop_type="widget_params">
+    <#list adColumnList as adColumn>
+	<option value="${adColumn.acid}">${adColumn.cname}</option>
+	</#list>
+</select>
+</p>
+<p>广告尺寸设置：<br/>宽：<input name="width" type="widget_params"/><br/>高：<input name="height" type="widget_params"/></p>

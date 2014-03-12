@@ -1,0 +1,5 @@
+<ul>
+<#list dataList as article>
+	<li><a href="detail-${article.cat_id}-${article.id}.html">${article.title}</a><span>${article.add_time?string('yyyy-MM-dd')}</span></li>
+</#list>
+</ul>

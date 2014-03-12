@@ -1,0 +1,30 @@
+<h4>赠品</h4>
+<div class="division">
+<table cellspacing="0" cellpadding="3" width="100%"
+	class="liststyle data">
+	<colgroup class="span-auto"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-2 ColColorOrange"></colgroup>
+	<thead>
+		<tr>
+			<th>赠品名称</th>
+			<th>所需积分</th>
+			<th>数量</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<#if giftList?exists >
+		<#list giftList as gift>
+		<tr>
+			<td>${gift.gift_name}</td>
+			<td>${gift.point}</td>
+			<td>${gift.num}</td>
+		</tr>
+		</#list>
+    </#if>
+    				
+	</tbody>
+</table>
+</div>

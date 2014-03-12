@@ -1,0 +1,118 @@
+/*定义列表容器的样式，使用div元素*/
+.grid{
+	font-family:Arial,"宋体",Verdana,sans-serif;
+	font-size:12px;
+	clear:both;
+width:99%;
+}
+
+/*定义列表容器中所有公用元素样式，需要重定义的，在下面再重新定义*/
+.grid ul{
+	list-style-type:none;
+	text-align:center;
+}
+.grid ul li{
+	float:left;
+}
+/*定义列表容器中表格的样式，使用table元素*/
+.grid table{
+	width:100%;
+	margin:0px 10px;
+	padding:px;
+	border-collapse: collapse;
+
+}
+
+/*定义表格中列头的样式，使用th元素*/
+.grid table th{
+	text-align:left;
+}
+/*定义表格中列头中链接样式，使用th元素*/
+.grid th a{
+	color: #234f8d;
+	text-decoration: none;
+	padding-left:10px;
+}
+/*定义表格中单元格的样式，使用td元素*/
+.grid table td{
+	border-bottom:1px dotted #CCCCCC;
+	height:24px;
+}
+
+/*定义列表容器中分页的样式，使用div元素*/
+.grid .page{
+	padding:5px 0 0 10px;
+}
+
+/*定义列表容器中分页信息的样式，使用span元素*/
+.grid .page .info{
+	border: 1px solid #A6C1DB;
+	background: #F6FAFB;
+	padding:2px 6px;
+	margin:2px;
+	color: #999;
+	float:left;
+}
+
+/*定义列表容器中分页的样式，使用ul元素*/
+.grid .page ul{
+	color: #FFF;
+	float:right;
+	line-height:30px;
+}
+
+/*定义列表容器中分页的样式，使用li元素*/
+.grid .page ul li{
+}
+
+/*定义列表容器中分页链接的样式，使用li元素*/
+.grid .page li a{
+	border: 1px solid #A6C1DB;
+	background: #F6FAFB;
+	padding:2px 6px;
+	margin:2px;
+	color: #999;
+	text-decoration: none;	
+}
+
+/*定义列表容器中选中页的样式，使用li元素*/
+.grid .page .selected{
+	font-weight: bold; color: #FFF;
+	background:#A6C1DB;
+}
+/*定义表格中列头升序的样式，使用元素*/
+.grid .asc{
+	color:#000;
+	padding-right:18px;
+	background:url(../images/arrow_up.gif) no-repeat center right;
+}
+/*定义表格中列头降序的样式，使用a元素*/
+.grid .desc{
+	color:#000;
+	padding-right:18px;
+	background:url(../images/arrow_down.gif) no-repeat center right;
+}
+/*定义表格中操作列修改的样式，使用a元素*/
+.grid .modify{
+	border:0;
+	background:url(../images/icon_edit.gif) no-repeat;
+	width:18px;
+	height:18px;
+	overflow:hidden;
+
+}
+
+.grid .delete{
+	border:0;
+	background:url(../images/icon_drop.gif) no-repeat;
+	width:18px;
+	height:18px;
+	overflow:hidden;
+}
+.grid .add{
+	border:0;
+	background:url(../images/icon_add.gif) no-repeat;
+	width:18px;
+	height:18px;
+	overflow:hidden;
+}

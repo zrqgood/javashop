@@ -1,0 +1,11 @@
+<div class="path"><span>您现在的位置：${navbar}</div>
+<div class="ArtListWrap">
+	<ul class="list">
+		<#list dataList as list>
+				<li><span class="date">${list.add_time?string('yyyy-MM-dd')}</span><a href="detail-${list.cat_id}-${list.id}.html">${list.title}</a></li>
+		</#list>
+	</ul>
+</div>
+<div class="showpages">
+${pager}
+</div>

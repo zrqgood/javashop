@@ -1,0 +1,80 @@
+
+<div style="display: none;"  tabid="tab_12"  class="tab-panel">
+<style>
+ 
+#article_table{width:600px}
+</style>
+<input type="button" id="art_add_btn" value="添加文章" />
+ 
+<div class="grid">
+<table id="article_table">
+<thead>
+	
+	<th>标题</th>
+	<th>删除	</th>
+</thead>
+
+<tbody>
+
+<#if articleList?exists >
+<#list articleList as article  >
+<tr>
+	<td>${article.title}
+	<input type="hidden" name="articleid" value="${article.articleid}" />
+	<input type="hidden" name="title" value="${article.title}" />
+	</td>
+	<td>
+		 <a href="javascript:;" > 
+      	 <img class="delete" src="../shop/admin/images/transparent.gif" > 
+        </a>
+	</td>
+</tr>
+</#list>
+</#if>
+</tbody>
+
+</table>
+<div id="articleDlg"></div>
+<script type="text/javascript">
+
+function bindArticleEvent(){
+	$("#article_table .delete").unbind("click").bind("click",function(){
+		$(this).parents("tr").remove();
+	});
+}
+
+$(function(){
+	bindArticleEvent();
+	Eop.Dialog.init({id:"articleDlg",modal:true,title:"添加相关文章", width:"600px",height:'500px'});
+	$("#art_add_btn").click(function(){
+
+		$.ajax({
+			url:'/cms/admin/dataSelector!showDialog.do?ajax=yes',
+			success:function(html){
+				$("#articleDlg").empty().append(html);
+				$("#dataSelBtn").click(function(){
+					 
+					$("#listcontent input[name=dataid]").each(function(){
+						if(this.checked){
+							var checkbox = $(this);
+							var title = checkbox.parents("tr").find(".title").text();
+							var articleid =  checkbox.val();
+							var op =' <a href="javascript:;" > <img class="delete" src="../shop/admin/images/transparent.gif" > </a> ';
+							$("#article_table>tbody").append("<tr><td><input type='hidden' name='articleid' value='"+articleid+"' />"+title+"<input type='hidden' name='title' value='"+title+"' /></td><td>"+op+"</td></tr>");
+						}
+					});
+
+					bindArticleEvent();
+					Eop.Dialog.close("articleDlg");
+				});				
+			}
+		});
+		Eop.Dialog.open("articleDlg");
+ 
+	
+		
+		
+	});
+});
+</script>
+</div>

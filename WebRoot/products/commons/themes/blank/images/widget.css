@@ -1,0 +1,171 @@
+/*=挂件预设
+=============================================================================================*/
+.MenuList{ line-height:42px;}
+.MenuList li{ float:left; margin-right:10px; font-size:14px; font-weight:700; }
+
+
+.ShopCartWrap a{color:#fff;}
+.ShopCartWrap a:hover{color:#fff;}
+
+#middlebanner-1{
+background:url(banner-1.gif) no-repeat;
+width:190px;
+height:85px;
+}
+#middlebanner-2{
+background:url(banner-2.gif) no-repeat;
+width:190px;
+height:85px;
+}
+#middlebanner-3{
+background:url(banner-3.gif) no-repeat;
+width:350px;
+height:85px;
+}
+#mainBanner1{
+background:url(mainbanner-1.gif) no-repeat;
+width:187px;
+height:251px;
+}
+#mainBanner2{
+background:url(mainbanner-2.gif) no-repeat;
+width:187px;
+height:251px;
+}
+#mainBanner3{
+background:url(mainbanner-1.gif) no-repeat;
+width:187px;
+height:251px;
+}
+/*=搜索 
+=============================================================================================*/
+.SearchBar{padding:8px 0 0 0; color:#fff}
+.SearchBar table td{padding:0 5px 0 0;}
+.SearchBar .search_label span{display:none;}
+.SearchBar .keywords{width:100px;height:18px;border:1px solid #fff;}
+.SearchBar .btn_search{	background:url(btn-search.png) no-repeat;border:none;width:83px;height:28px;font-size:0;overflow:hidden;
+   						line-height:9999px;cursor:pointer;margin-left:2px;}
+.SearchBar .btn_advsearch{color:#fff; padding-left:8px;}
+
+.mktprice1{	text-decoration: line-through;}
+.more{	margin:5px 5px 0 0;	text-align:right;}
+
+
+.Article-Tabs,
+.GoodsList-Tabs{border-color:#ccc;	margin:0;}
+.Article-Tabs .current,
+.GoodsList-Tabs .current{color:#fff;}
+.GoodsListWrap{	padding-top:10px;}
+
+.itemsWrap h6{ font-weight:normal; text-decoration:underline;}
+.itemsWrap{ line-height:18px;}
+/*=排行榜 
+=============================================================================================*/
+.RankingList .pic{	text-align:center;}
+.RankingList li{
+	background:url(dotted.gif) repeat-x 0 bottom;	padding:5px;}
+.RankingList li span{font-size:16px;	color:#7f3217;	font-weight:bold;margin-right:5px;}
+.OrderList .orderprice{	color:#990000;	display:block;	padding:0 0 0 15px;}
+.OrderList li{	background:url(dotted.gif) repeat-x 0 bottom;	padding:5px;}
+
+.GoodsList h6{	overflow:hidden;text-overflow:ellipsis;	white-space:nowrap;}
+
+/*=站点地图
+=============================================================================================*/
+.SiteMaps td a{	padding:5px;}
+.SiteMaps h3 a{	background:url(arrs.gif) no-repeat 0 -82px;	padding:0 0 0 13px;}
+.Navigation{border:none;color:#2E2E2E;font-weight:bold;	border-bottom:1px solid #eee;line-height:32px;margin-bottom:10px;}
+.Navigation span{color:#CC6600;   font-weight:normal;}
+.Navigation .now{ font-weight:normal; color:#FE5B03;}
+.Navigation a{color:#333333;}
+
+.footArticle .TreeList{width:190px;float:left;}
+.TreeList .cat1{ font-size:14px; font-weight:700;}
+
+/*=商品分类
+=============================================================================================*/
+.GoodsCategoryWrap{}
+.c-cat-depth-1,
+.s-cat-depth-1{
+  	border-bottom:1px dashed #CCC;
+    padding:6px 0 8px 5px;
+    color:#576060;
+}
+.c-cat-depth-1 a,
+.s-cat-depth-1 a{
+	background:url(arrs.gif) no-repeat 0 -55px;
+	font-weight:bold;
+	color:#576060;
+  	font-size:13px;
+    display:inline;
+}
+.c-cat-depth-2,
+.s-cat-depth-2{
+    line-height:150%;
+    margin:3px 0 0 11px;
+}
+.c-cat-depth-2 a,
+.s-cat-depth-2 a{
+	background:none;
+	border:none;
+	font-weight:normal;
+	padding:0;
+    margin:0;
+}
+.c-cat-depth-3,
+.s-cat-depth-3{
+	margin:3px 0 0 10px;
+}
+.c-cat-depth-3 a,
+.s-cat-depth-3 a{
+	color:#3B5F9F;
+	background:none;
+	padding:0;
+}
+
+.e-cat-depth-1 p{
+	margin:0;
+	padding:2px 0 2px 10px;
+	border-bottom:1px solid #E1E1E1;
+}
+.e-cat-depth-2 p{
+	padding:2px 0 2px 0;
+    border:none;
+}
+.e-cat-depth-3{
+	padding:0 0 0 20px;
+}
+
+.e-cat-depth-1 .nosymbols,
+.e-cat-depth-1 .symbols{
+	display:block;
+	float:left;
+	width:10px;
+}
+.e-cat-depth-1 .symbols{
+	background:url(arrs.gif) no-repeat 0 -83px;
+	text-indent:-9999px;
+}
+.e-cat-depth-1 .show{
+	background-position: 0 -113px;
+}
+.e-cat-depth-1 span{
+	cursor:pointer;
+	margin:0 2px;
+}
+.e-cat-depth-1 a{
+	color:#576060;
+	font-weight:bold;
+}
+.e-cat-depth-2{
+  	margin-left:25px;
+}
+.e-cat-depth-2 a{
+	font-weight:normal;
+	color:#576060;
+}
+.e-cat-depth-3 a{
+  color:#2C4F83;
+}
+
+.TreeList .cat2{background:url(arrs.gif) no-repeat 10px -83px;}

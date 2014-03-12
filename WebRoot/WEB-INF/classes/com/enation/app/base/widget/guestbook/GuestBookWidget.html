@@ -1,0 +1,53 @@
+<div>
+<#list subjectList as subject>
+<table cellspacing="0" cellpadding="0" border="0" align="center"
+	width="100%" class="gblist">
+	<tbody>
+		<tr>
+			<td align="center" width="160" class="ltd"><b>${subject.username}</b></td>
+			<td height="26" class="timetd"><img height="16" width="16"
+				src="images/time.gif"> 时间: ${subject.addtime} &nbsp;
+			主题：${subject.title}</td>
+		</tr>
+		<tr>
+			<td align="center" width="160" class="lefttd" rowspan="2">
+			<table cellspacing="2" cellpadding="1" border="0" align="center"
+				width="160">
+				<tbody>
+					<tr>
+						<td height="80" align="center">
+						 <#if subject.sex=0 ><img border="0"	src="images/girl.gif"><#else><img border="0"	src="images/boy.gif"></#if>
+						</td>
+					</tr>
+					<tr>
+						<td height="20">&nbsp;来自：${subject.area}</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td class="msgtd">
+			<div class="rebox">${subject.content}</div>
+			
+			<#list subject.replyList as reply>
+			<p><font color="#ff0000">${adminname}回复：${reply.content}</font></p>
+			</#list>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</#list>
+
+<table cellspacing="0" cellpadding="0" border="0" align="center"
+	width="100%" class="pagetable">
+	<tbody>
+		<tr>
+			<td height="28" align="center">
+			<div class="pagelistbox">${pager}</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+<#include 'write.html' />

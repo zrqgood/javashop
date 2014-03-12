@@ -1,0 +1,16 @@
+<div class="category">
+    <ul class="trunk">
+		<#list listCat as cat>
+           <li class="limb-01">
+               <h2><a href="search-cat{${cat.cat_id }}.html">${cat.name }</a></h2>
+               <ul>
+				   <#list cat.listBrand as child>
+                   <li><a href="search-cat{${cat.cat_id }}-brand{${child.brand_id}}.html">${child.name }</a></li>
+				   </#list>
+               </ul>
+               
+           </li>
+		   </#list>
+       </ul>
+</div>
+<div class="more_all"><a href="index.html">更多品牌分类&gt;&gt;</a></div>

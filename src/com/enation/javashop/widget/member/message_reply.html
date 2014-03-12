@@ -1,0 +1,46 @@
+<div>
+<h1 class="title">回复短消息</h1>
+<form class="section" method="post"
+	action="member_message.html?action=sendSave" name="comment">
+<div class="FormWrap">
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		<tr>
+			<th>发送给：</th>
+			<td><input value="${msg_to}" size="30" id="comment_name" required="true" disabled="true"
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off">
+				<input value="${msg_to}" type="hidden""
+				name="msg_to" class="inputstyle _x_ipt _x_ipt" >
+			</td>
+		</tr>
+		<tr>
+			<th><em>*</em>标题：</th>
+			<td><input type="text" vtype="text" value="${subject!''}" size="30"
+				id="comment_email" required="true" name="subject"
+				class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		<tr>
+			<th>内容：</th>
+			<td><textarea vtype="textarea" id="commenttitle" rows="5"
+				cols="50" required="true" name="message" type="textarea"
+				class="inputstyle _x_ipt"></textarea></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" value="发送" id="Submit"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</form>
+</div>

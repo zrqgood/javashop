@@ -1,0 +1,16 @@
+	<#list inboxList as inbox>
+		<tr class="msgon">
+			<td class="selector"><input type="checkbox" name="delete"
+				value="${inbox.msg_id}"></td>
+			<td class="textleft"><span><a class="viewmsgoff" msg_id="${inbox.msg_id}" href="javascript:;">${inbox.subject}</a></span></td>
+			<td><#if inbox.from_type == 1>管理员<#else>${inbox.msg_from}</#if></td>
+			<td><@dateFormat date="${inbox.date_line?c}" pattern="yyyy-MM-dd HH:mm"/></td>
+			<td><#if inbox.from_type != 1><a href="member_message.html?action=reply&msg_to=${inbox.msg_from}&subject=RE:${inbox.subject}">回复</a></#if></td>
+			<td><em id="readstatus_${inbox.msg_id}"><#if inbox.unread == '1'>已读<#else>未读</#if></em></td>
+		</tr>
+		<tr style="display: none; white-space: normal;" id="view_msg_pro_${inbox.msg_id}" class="view_msg_pro">
+			<td colspan="6" class="textleft memberviewinfo">
+			<p id="view_msg_${inbox.msg_id}">${inbox.message}</p>
+			</td>
+		</tr>
+		</#list>

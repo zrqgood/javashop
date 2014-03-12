@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="false">
+	<!-- sitemap插件桩 -->
+	<bean id="sitemapPluginBundle" class="com.enation.app.base.core.plugin.SitemapPluginBundle"></bean>
+	<!-- 设置插件桩-->
+	<bean id="settingPluginBundle" class="com.enation.app.base.core.plugin.SettingPluginBundle"></bean>
+	
+	
+	<!-- ThemeUri-sitemap记录插件 -->
+	<bean id="themeUriSitemapPlugin"  class="com.enation.app.base.plugin.ThemeUriSitemapPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="sitemapPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	
+</beans>

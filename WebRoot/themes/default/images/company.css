@@ -1,0 +1,15 @@
+.ad1,.ad2{width:980px;margin:0 auto;}
+.company{width:946px;height:341px;margin:0 auto;background:url(bg.jpg) no-repeat scroll 0 0;}
+.company .pdtdetail {line-height:20px;}
+.company .title{padding-top:10px;;line-height:39px;height:39px;overflow:hidden;width:560px;margin:0 auto;color:#fff;}
+.company .pdtdetail .FormWrap {border:none;background:transparent;width:624px;height:241px;overflow:hidden;padding:0;margin:0;padding-left:182px;}
+.company .pdtdetail h2{display:none;}
+.company .Comments{display:none;}
+.company .FormWrap form *{line-height:20px;}
+.company .FormWrap br{height:0;display:none;}
+.company .FormWrap form h4{display:none;}
+.company .pdtdetail .inputstyle _x_ipt{height:65px;}
+.company .pdtdetail form .valid_code{float:left;}
+.company .division .forform th, .company .division .forform td{padding:3px;font-size:12px;color:#000;}
+.company .division{height:300px;}
+.company .division #comments_btn_leavewords{width:125px;height:42px;text-indent:-2000px;background:url(btn_submit.jpg) no-repeat scroll 0 0;border:none;float:right;margin-right:83px;}

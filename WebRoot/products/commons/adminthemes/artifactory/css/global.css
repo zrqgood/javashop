@@ -1,0 +1,121 @@
+.Border{}
+.Background{background-color:#ECF5FF;}
+.ImgBorder{border:1px solid #0770BB;}
+.ImgBackground{background-color:#B0D3EE;}
+.ButtonBackground{background-color:#E2E8EB}
+.ButtonBorder{border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;border-style:solid;border-width:1px 2px 2px 1px;}
+.loading{
+	background:#ECF5FF url(../images/loading.gif) no-repeat scroll 5px 50%;
+	border:1px solid #1C80C8;
+	font-size:12px;
+	height:25px;
+	left:50%;
+	line-height:25px;
+	margin:-50px 0 0 -100px;
+	padding-left:25px;
+	padding-right:10px;
+	position:absolute;
+	text-align:left;
+	top:50%;
+	z-index:99;
+}
+/*=====后台模板中选项卡样式======*/
+ul.tab{
+	font-size:14px;
+	height:27px;
+	vertical-align:bottom;
+	clear:both;
+}
+ul.tab li{
+	background:url(../images/tab_unsel.jpg) no-repeat scroll 0 -1px;
+	cursor:pointer;
+	float:left;
+	width:110px;
+	height:27px;
+	line-height:27px;
+	margin-right:3px;
+    text-align:center;
+}
+ul.tab li a{
+	color:#1E5494;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+}
+ul.tab li.active{
+	background:url(../images/tab_sel.jpg) no-repeat scroll 0 -1px;
+	cursor:default;
+}
+ul.tab li.active a{
+    cursor:text;
+}
+/*=====后台模板中工具栏按钮样式======*/
+/*定义列表容器中工具栏的样式，使用div元素*/
+.toolbar{
+	overflow:hidden;
+}
+
+/*定义列表容器中工具栏列表的样式，使用ul元素*/
+.toolbar ul{
+	padding:0px;
+	margin:0px;
+	display:block;
+	background-color:#C1D9F3;
+	height:40px;
+	padding-left:7px;
+	border-bottom:1px solid #AAC1DE;
+
+}
+
+/*定义列表容器中工具栏列表的样式，使用li元素*/
+.toolbar ul li{
+	margin:1px;
+	padding-top:7px;
+	float:left;
+}
+
+.toolbar ul li form{
+	 margin:0px;
+	 padding:0px;
+	 display:block;
+	 text-align:left;
+}
+
+/*定义列表容器中工具栏按钮链接的样式，使用a元素*/
+.toolbar li a{
+	line-height: 30px;
+	color: #fff;
+	font-size:13px;
+	font-weight:bold;
+	background: url(../images/button.gif);
+	text-align: center;
+	display: block;
+	height: 30px;
+	width: 70px;
+	float: left;
+	text-decoration: none;
+}
+.toolbar li a:hover{
+	line-height: 30px;
+	color: #fff;
+	background: url(../images/button1.gif);
+	text-align: center;
+	display: block;
+	height: 30px;
+	width: 70px;
+	float: left;
+	text-decoration: none;
+}
+
+
+/*定义列表容器中工具栏按钮链接的样式，使用button元素*/
+.toolbar li input{
+margin:1px 1px 0 0;
+height:auto;
+line-height:16px;
+padding:0;
+padding-left:3px;
+padding-right:3px;
+font-family:"lucida Grande",Verdana;
+font-size:12px;
+}

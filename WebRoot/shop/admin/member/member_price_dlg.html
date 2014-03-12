@@ -1,0 +1,29 @@
+<table cellspacing="0" cellpadding="0" class="finderInform" id="levelPriceEditor">
+	<thead>
+		<tr>
+			<th>会员等级</th>
+			<th>价格</th>
+			<th>留空默认</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		<#list lvList as lv>
+		<tr>
+			<td>${lv.name}<input type="hidden" class="lvid" value="${lv.lv_id}"/></td>
+			<td>
+			<input type="input"  class="lvPrice"  autocomplete="off" lvid="${lv.lv_id}" style="width:100px"></td>
+			<td>${lv.lvPrice?string("currency")}</td>
+		</tr>
+		</#list>
+		
+	</tbody>
+</table>
+<div class="submitlist" align="center">
+ <table>
+ <tr><td >
+  <input   type="button" value=" 确    定   " class="submitBtn" id="mbPriceBtn"/>
+   </td>
+   </tr>
+ </table>
+</div> 

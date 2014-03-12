@@ -1,0 +1,78 @@
+<#include 'common/header.html' />
+<div id="AllWrap" class="clearfix">
+<div class="span-5 cut">
+<div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable"></div>
+</div>
+<div class="span-19 last cut">
+
+	<div class="GoodsInfoWrap">
+		<div id="goods-viewer">
+		
+		<table width="100%">
+			<tbody>
+				<tr>
+					<td valign="top" align="center"><div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable">${widget_3}</div></td>
+					<td valign="top" width="60%">
+					<form target="_blank_cart" method="post" action="cart.html" class="goods-action">
+						<div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable">
+						${widget_4}
+						${widget_9}
+						</div>
+					</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<div style="clear: both;"></div>
+			<div id="tabWrapper">
+				<div class="goods-detail-tab clearfix">
+					<div class="goodsDetailTab" tab="detail"><span>商品详情</span></div>
+					<div class="goodsDetailTab" tab="complex"><span>相关商品</span></div>
+					<div class="goodsDetailTab" tab="params"><span>详细参数</span></div>
+					<div class="goodsDetailTab" tab="ask"><span>购买咨询</span></div>
+					<div class="goodsDetailTab active" tab="comments"><span>商品评论</span></div>
+				</div>
+				<div class="clear"></div>
+				<div tab="detail" class="section pdtdetail" style="display: none;">
+					<div class="goodsprop_ultra clearfix"></div>
+					<div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable">${widget_5}</div>
+				</div>
+				<div tab="complex" class="section pdtdetail" style="display: none;">
+					<div class="goodsprop_ultra clearfix"></div>
+					<div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable">${widget_10}</div>
+				</div>
+				<div tab="params" class="section pdtdetail" style="display: none;">
+					<div class="goodsprop_ultra clearfix"></div>
+					<div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable">${widget_6}</div>
+				</div>
+				<div tab="ask" class="section pdtdetail" style="display: none;">
+				<div class="goodsprop_ultra clearfix"></div>
+					<div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable">${widget_7}</div>
+				</div>
+				<div tab="comments" class="section pdtdetail">
+					<div class="goodsprop_ultra clearfix"></div>
+					<div style="min-height: 50px; height: auto;" eop_type="layout" class="layout ui-droppable">${widget_8}</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+</div>
+</div>
+ 
+<script language="JavaScript">
+	$(function() {
+		$(".goods-detail-tab .goodsDetailTab").click(function() {
+			//隐藏以前
+				$("div.goodsDetailTab").removeClass("active");
+				$("#tabWrapper>div.section").hide();
+
+				//激活当前点击的
+				var tabEl = $(this);
+				tabEl.addClass("active");
+				$("#tabWrapper>div[tab='" + tabEl.attr("tab") + "']").show();
+			});
+	})
+</script>
+<#include 'common/footer.html' />

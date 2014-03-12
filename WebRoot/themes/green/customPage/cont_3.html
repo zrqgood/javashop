@@ -1,0 +1,41 @@
+<div class="newsDetail">
+	<#if data.cat_id = 11>
+		<script>
+			selectMenu(7);
+		</script>
+		<h1 class="bg16">人才招聘</h1>
+	<#else>
+		<#if data.cat_id = 13 || data.cat_id = 18 || data.cat_id = 19 || data.cat_id = 20  || data.cat_id = 21>
+			<script>
+				selectMenu(3);
+			</script>
+			<h1 class="bg12">解决方案</h1>
+		<#else>
+			<#if data.cat_id =12 >
+				<script>
+					selectMenu(4);
+				</script>
+				<h1 class="bg13">成功案例</h1>
+			<#else>
+				<script>
+					selectMenu(1);
+				</script>
+				<h1 class="bg">新闻详情</h1>
+			</#if>
+		</#if>
+	</#if>
+	<div class="title">
+		${data.title!''}
+	</div>
+	<div class="info">
+		 发布于：${data.add_time?string('yyyy-MM-dd hh:mm:ss')}
+	</div>
+	<div class="cont">		
+		<#if data.img?exists>
+			<#if data.img!=''>
+				<img src="${data.img!''}" width="550" height="400" style="padding:0 50px 10px;"/>
+			</#if>
+		</#if>
+		${data.content!''}
+	</div>
+</div>

@@ -1,0 +1,341 @@
+/*==============================================================================================
+导航菜单
+=============================================================================================*/
+.MenuList{
+	_white-space:nowrap;
+}
+.MenuList div{
+	float:none;
+}
+.MenuList .v-m-page{
+  	z-index:65535;
+  	background:#FFF;
+    padding:2px 10px;
+    border:1px solid #CCC;
+}
+#Menu .v-m-page a,
+.MenuList .v-m-page a{
+  	white-space:nowrap;
+  	background:none;
+    padding:0;
+    margin:0;
+    color:#333;
+}
+/*==============================================================================================
+下拉菜单的样式
+=============================================================================================*/
+.fmenu{	position: absolute; left:0; background:#fff;cursor: default;border:1px solid #ccc;z-index:65535;}
+
+
+/*==============================================================================================
+即时通讯
+=============================================================================================*/
+.ImChat td  { padding:3px;}
+.ImChat td a{ padding:3px; padding:0 3px;}
+#siderIMchat_main .bg a img{ margin:3px 0}
+
+/*==============================================================================================
+评论
+=============================================================================================*/
+.Comment li  { padding:5px 0;}
+.Comment h6{ margin:0;}
+.Comment .cmt_item{ display:block;}
+.Comment span{ margin:0 5px 0 0; text-align:right;}
+
+/*==============================================================================================
+订单信息
+=============================================================================================*/
+.OrderList li{ white-space:normal;border-bottom:1px dotted #ccc;padding:5px}
+.OrderList .OrderListName{color:#000; font-weight:700;}
+.OrderList .OrderListPrice{color:#000; font-size:11px;}
+.OrderList .OrderListDate{color:#f90; font-size:11px; }
+
+/*==============================================================================================
+发货信息
+=============================================================================================*/
+.TransportList li{ white-space:normal;border-bottom:1px dotted #ccc;padding:5px}
+.TransportList .TransportListId{color:#f90; font-weight:700; font-size:11px;}
+.TransportList .TransportListShipname{color:#000; font-size:11px;}
+
+/*==============================================================================================
+浏览过的商品
+=============================================================================================*/
+.GoodsBrowsed{*width:100%;*overflow:hidden;}
+.GoodsBrowsed .smallpic{}
+.GoodsBrowsed .goodsName{font-size:11px;}
+/*==============================================================================================
+友情链接 & 即时联系
+=============================================================================================*/
+.LinkList,.ImChat{
+	padding:5px;
+}
+.LinkList .LinkListItem {float:left;text-align:center;line-height:18px;}
+/*=版块预设
+=============================================================================================*/
+.GoodsList .mktprice1{
+	text-decoration: line-through;
+	font-size:1em;
+}
+.GoodsList .price1{
+	font-size:1em;
+	font-weight:normal;
+}
+
+
+
+.more{margin:5px 5px 0 0; }
+
+
+
+
+
+.ArticleList li,.ArticleList td{
+	overflow:hidden;
+	white-space:nowrap;
+}
+.ArticleList td{
+	padding-left:10px;
+}
+.ArticleList li a,.ArticleList td a{
+	padding-left:3px;
+}
+/*==============================================================================================
+标签切换样式
+=============================================================================================*/
+.GoodsList-Tabs img,
+.ArticleList img 		  {	margin-right: 4px;}
+
+
+.Article-Tabs,
+.GoodsList-Tabs{
+	margin:10px 5px;
+	overflow:auto;
+	zoom:1;
+	border-bottom:1px solid #ccc;
+	padding:0 10px;
+}
+.Article-Tabs div,
+.GoodsList-Tabs div{
+	float:left;
+	padding:3px 5px;
+	cursor:pointer;
+	border:1px solid #ccc;
+	border-bottom:none;
+	margin:0 0 0 -1px;
+}
+.Article-Tabs .current,
+.GoodsList-Tabs .current{
+	background:#efefef;
+	font-weight:bold;
+}
+
+
+.IndexLoginWrap{
+	padding:5px;
+}
+.IndexLoginWrap label{
+	width:50px;
+	margin:0 2px 0 0;
+	font-weight:normal;
+}
+.IndexLoginWrap input.userinput{
+	width:100px;
+}
+.IndexLoginWrap input.vcode{
+	width:40px;
+}
+.IndexLoginWrap .buttonbar{
+	margin:5px 0 0 0;
+	padding:5px 0 0 0;
+	border-top:1px solid #efefef;
+	clear:both;
+	text-align:center;
+}
+.IndexLoginWrap .buttonbar a{
+	margin:0 4px;
+}
+.IndexLoginWrap .logon{
+	line-height:20px;
+	margin:5px 0;
+	text-align:center;
+}
+.IndexLoginWrap .bar{
+	overflow:hidden;
+	white-space:nowrap;
+}
+.IndexLoginWrap .bar span{
+	display:inline;
+	text-align:left;
+	line-height:12px;
+	padding:0 8px;
+}
+
+/*=版块内部
+=============================================================================================*/
+.GoodsListWrap{
+	text-align:center;
+}
+.GoodsList .item table{
+	margin:5px 0;
+}
+.GoodsList .item{
+	padding:0 5px;
+}
+.GoodsList .item table td{
+	padding:5px;
+	vertical-align:top;
+	text-align:left;
+}
+.GoodsList .item table .goodsDesc{
+	width:99%;
+}
+.GoodsList .goodsImg{
+	margin:0 auto;
+}
+.GoodsList .goodsImg a{
+	vertical-align:middle;
+	text-align:center;
+}
+.GoodsList h6{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+/*=站点地图
+=============================================================================================*/
+.SiteMaps td a{
+	padding:5px;
+}
+.SiteMaps h3 a{
+	background:url(arrs.gif) no-repeat 0 -82px;
+	padding:0 0 0 13px;
+}
+/*=商品购买区
+=============================================================================================*/
+.GoodsListWrap .button{
+	width:110px;
+	margin:0 auto;
+}
+.GoodsListWrap .button li{
+	padding:0;
+	display:inline-block;
+	display:-moz-inline-stack;
+	*display:inline;
+	zoom:1;
+	margin:0 2px;
+}
+.GoodsListWrap .listact{
+	position:relative;
+	text-indent:-9999px;
+	width:46px;
+	height:23px;
+	display:block;
+	cursor:pointer;
+}
+.GoodsListWrap .button .vdetail{
+	display:none;
+}
+/*.GoodsListWrap .vdetail .listact{
+	background:url(list_btns.gif) no-repeat 0 -100px;
+}*/
+.GoodsListWrap .addcart .listact{
+	background:url(wgt_btns.gif) no-repeat;
+}
+.GoodsListWrap .star-off .listact{
+	background:url(wgt_btns.gif) no-repeat 0 -23px;
+}
+.GoodsListWrap .star-on .listact{
+	background:url(wgt_btns.gif) no-repeat 0 -46px;
+}
+.GoodsListWrap .nobuy .listact{
+	background:url(wgt_btns.gif) no-repeat 0 -92px;
+}
+
+/*==============================================================================================
+会员中心
+=============================================================================================*/
+.TreeList{
+}
+.TreeList .cat1{
+	color:#000;
+	padding-left:3px;
+	font-weight:700;
+}
+.TreeList .cat2{
+	color:#000;
+	padding:0 0 0 25px;
+}
+.TreeList .cat3{
+	color:#666;
+	padding:0 0 0 20px;
+}
+.TreeList .cat4{
+	padding:0 0 0 30px;
+}
+.TreeList .cat5{
+	padding:0 0 0 40px;
+}
+
+/*==============================================================================================
+商品分类
+=============================================================================================*/
+.GoodsCategoryWrap{
+	text-align:left;
+}
+
+/*商品分类默认方式(最普通)*/
+/*-------------------------------------------------------------------------------------------*/
+/*第一层*/
+.c-cat-depth-1 a{background:url(arrs.gif) no-repeat 0 -82px; display:block; padding-left:10px;font-weight:bold;}
+/*第二层*/
+.c-cat-depth-2 a{font-weight:normal;background:none;margin:0 2px;}
+/*第三层*/
+.c-cat-depth-3 a{font-weight:normal;}
+
+
+
+/*商品分类弹出式*/
+/*-------------------------------------------------------------------------------------------*/
+/*第一层*/
+.s-cat-depth-1 a{background:url(arrs.gif) no-repeat 0 -82px;	padding-left:15px; font-weight:bold;}
+.s-cat-depth-1 a, .s-cat-depth-1 span{ zoom:1;}
+/*第二层*/
+.s-cat-depth-2 a{background:none; font-weight:normal;}
+.s-cat-depth-1 .s-cat-depth-2 .s-cat-depth-2-onlyfor2  {white-space:nowrap;}
+.s-cat-depth-1 .s-cat-depth-2 .s-cat-depth-2-onlyfor2 li a{	font-weight:normal;	display:block;	background:url(arrs.gif) no-repeat 5px -40px;padding:0 15px 0 15px;}
+/*弹出层*/
+.s-cat-dropdown {	border:1px solid #ccc;background:#fff; white-space:nowrap; padding:0 10px;}
+.s-cat-dropdown a{display:block;	background:url(arrs.gif) no-repeat 5px -40px;padding:0 0 0 15px;}
+
+
+
+/*商品分类折叠式*/
+/*-------------------------------------------------------------------------------------------*/
+
+/*第一层*/
+.e-cat-depth-1 a{padding:0;	font-weight:bold;}
+.e-cat-depth-1 p{margin:0}
+/*第二层*/
+.e-cat-depth-2 a{font-weight:normal;}
+/*第三层*/
+.e-cat-depth-3 {white-space:nowrap;}
+.e-cat-depth-3 a{display:block;}
+
+.e-cat-depth-1 .symbols{cursor:pointer; display:block;float:left;text-align:center;margin-right:2px;}
+
+/*==============================================================================================
+商品分类
+=============================================================================================*/
+
+.BrandListWrap{ text-align:center;}
+
+/*================================================================================
+系统挂件[不可编辑]
+===================================================================================*/
+.system-widgets-box{
+  height:500px;
+  border-width:1px;
+  border-color:#cccccc #999999 #999999 #cccccc;
+  border-style:bold;
+  background:#e6e6e6 url(system-widgets-box.gif) no-repeat 50% 50%;
+}

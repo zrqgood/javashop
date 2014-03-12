@@ -1,0 +1,55 @@
+<div class="PassportWrap">
+<form class="loginform" action="member_login.html" method="post">
+<input type="hidden" name="action" value="login" />
+<input type="hidden" name="forward" value="${forward!''}" />
+<div class="RegisterWrap">
+<h4>已注册用户，请登录</h4>
+<div class="intro">如果您已经是本站会员，请登录</div>
+<div class="form">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tbody>
+		<tr>
+			<th><i>*</i>用户名：</th>
+			<td><input  tabindex="1" id="in_login"
+				required="true" class="inputstyle _x_ipt" name="username"
+				autocomplete="off"><a
+				href="member_register.html?forward=${forward!''}"
+				style="margin-left: 6px;">立即注册</a></td>
+		</tr>
+		<tr>
+			<th><i>*</i>密码：</th>
+			<td><input type="password" vtype="password" tabindex="2"
+				id="in_passwd" required="true" class="inputstyle _x_ipt"
+				name="password" autocomplete="off"><a
+				href="member_findpassword.html"
+				style="margin-left: 6px;">忘记密码？</a></td>
+		</tr>
+		<tr>
+			<th><i>*</i>验证码：</th>
+			<td id="verifyCodebox"><input type="text" 
+				tabindex="3" id="iptlogin" name="validcode" required="true"
+				class="inputstyle _x_ipt" size="8" autocomplete="off"><span
+				style="" class="verifyCode"><img border="1" style="height:22px;left:150px;"
+				id="LoginimgVerifyCode"
+				src="${ctx}/validcode.do?vtype=memberlogin"><a
+				href="javascript:;">&nbsp;看不清楚?换个图片</a></span></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" tabindex="4" value="登录"
+				class="actbtn btn-login"><input type="hidden" value=""
+				name="forward"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+
+</form>
+<script>
+$(function(){
+	$("#verifyCodebox a").click(function(){
+		$("#verifyCodebox img").attr("src","${ctx}/validcode.do?vtype=memberlogin&r="+new Date().getTime());
+	});
+});
+</script>

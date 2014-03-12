@@ -1,0 +1,67 @@
+<div class="input">
+	 <form method="post" <#if isEdit  >action="data!saveEdit.do"<#else>action="data!saveAdd.do"</#if> class="validate" name="theForm" id="theForm" >
+	  
+	  <input type="hidden" name="modelid" value="${modelid}" />
+	  
+	  <#if isEdit  ><input type="hidden" name="dataid" value="${dataid}"/></#if>
+	   <table cellspacing="1" cellpadding="3" width="100%" class="form-table">
+	   	  <tr>
+	       <th><label class="text">所属分类：</label></th>
+	       <td>
+	       	<select name="catid">
+	       		<option value="${catid}" selected>${cat.name}</option>
+ 				<#assign children=catList />
+				<#assign level=1 />
+				<#include 'select_children.html' />
+	       	</select>
+		   </td>
+	      </tr>
+	     <tr>
+	       <th><label class="text">权重：</label></th>
+	       <td>
+			<input type="text" name="sort" style="width:50px" <#if isEdit  >value="${(article.sort?c)!0}"</#if> />
+			权重越高则越靠前显示
+		   </td>
+	      </tr>	 	      
+	   <#list fieldList as field  >
+	     <tr>
+	       <th><label class="text">${field.china_name}：</label></th>
+	       <td>
+			${field.inputHtml}
+		   </td>
+	      </tr>
+	    </#list>  
+	   	  <tr>
+	       <th><label class="text">页面标题：</label></th>
+	       <td>
+	        <input type="text" name="page_title" style="width:250px"  <#if isEdit  >value="${article.page_title!''}"</#if>/>
+		   </td>
+	      </tr>
+	   	  <tr>
+	       <th><label class="text">页面关键字：</label></th>
+	       <td>
+	        <input type="text" name="page_keywords" style="width:250px" <#if isEdit  >value="${article.page_keywords!''}"</#if> />
+		   </td>
+	      </tr>	      
+	   	  <tr>
+	       <th><label class="text">页面描述：</label></th>
+	       <td>
+	        <textarea  name="page_description" style="width:250px;height:100px"  ><#if isEdit  >${article.page_description!''}</#if></textarea>
+		   </td>
+	      </tr>		      
+	   </table>
+	<div class="submitlist" align="center">
+	 <table>
+	 <tr><td >
+	  <input name="submit" type="submit"	  value=" 确    定   " class="submitBtn" />
+	   </td>
+	   </tr>
+	 </table>
+	</div>
+	 </form>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("form.validate").validate();
+});
+</script>

@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+ul.pages {
+display:block;
+border:none;
+text-transform:uppercase;
+font-size:10px;
+margin:10px 0 10px;
+padding:0;
+}
+
+ul.pages li {
+border:1px solid #CCCCCC;
+margin:0 2px;
+padding:1px 5px;
+float:left;
+}
+
+ul.pages li:hover {
+border:1px solid #FF9900;
+color:#FF9900;
+}
+
+ul.pages li.pgEmpty {
+border:1px solid #ddd;
+color:#ddd;
+}
+
+ul.pages li.pgCurrent {
+background:none repeat scroll 0 0 #FF9900;
+border:1px solid #FFFFFF;
+color:#FFFFFF;
+margin:0 2px;
+padding:1px 5px;
+}

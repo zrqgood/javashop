@@ -1,0 +1,180 @@
+<div>
+<h1 class="title">订单详情</h1>
+<div class="body">
+<ol>
+	<#list orderLogList as log>
+	<li><span class="date"><@dateFormat date="${log.op_time?c}" pattern="yyyy-MM-dd HH:mm"/></span>&nbsp;&nbsp;&nbsp;&nbsp;${log.message}</li>
+	</#list>
+</ol>
+</div>
+<#if order.status == 0>
+<div class="FormWrap">
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody>
+		<tr>
+			<th>您尚未完成订单</th>
+			<td style="padding: 10px;">
+			<a href="member_orderpay.html?orderId=${order.order_id}"
+				style="padding: 4px; border-left: 2px solid rgb(255, 204, 0); border-width: 2px; border-style: solid; border-color: rgb(255, 204, 0) rgb(159, 78, 43) rgb(159, 78, 43) rgb(255, 204, 0); background: none repeat scroll 0% 0% rgb(255, 153, 0); color: rgb(255, 255, 255); font-weight: bold; font-size: 12px;">
+				按此为订单付款</a></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</#if>
+
+
+<div class="CartWrap">
+<div
+	style="background: none repeat scroll 0% 0% rgb(245, 244, 236); border: 1px solid rgb(229, 221, 199);"
+	class="FormWrap ">
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="liststyle data">
+	<colgroup class="span-auto ColColorBlue"></colgroup>
+	<colgroup class="span-5 ColColorGray"></colgroup>
+	<colgroup class="span-4 ColColorGray "></colgroup>
+	<tbody>
+		<tr>
+			<td>
+			<h4>订单编号：${order.sn}
+				<label style="color: rgb(255, 0, 0);">
+				<#if order.status == 3>(已完成)</#if>
+				</label>
+			</h4>
+			</td>
+			<td>下单日期：<@dateFormat date="${order.create_time?c}" pattern="yyyy-MM-dd HH:mm"/></td>
+			<td>状态：<#if order.status == -2>退货</#if>
+				<#if order.status == -1>退款</#if>
+				<#if order.status == 0>未付款</#if>
+				<#if order.status == 1>已付款</#if>
+				<#if order.status == 2>已发货</#if>
+				<#if order.status == 3>完成</#if>
+				<#if order.status == 4>作废</#if></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div
+	style="background: none repeat scroll 0% 0% rgb(245, 244, 236); border: 1px solid rgb(229, 221, 199);"
+	class="FormWrap ">
+<h4>购买的商品</h4>
+<div class="division">
+<table cellspacing="0" cellpadding="3" width="100%" class="liststyle">
+	<colgroup class="span-auto"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-3"></colgroup>
+	<colgroup class="span-2 ColColorOrange"></colgroup>
+	<thead>
+		<tr>
+			<th>商品名称</th>
+			<th>商品积分</th>
+			<th>价格</th>
+			<th>数量</th>
+			<th>小计</th>
+		</tr>
+	</thead>
+	<tbody>
+		<#list orderItemsList as item>
+		<tr>
+			<td><a target="_blank" href="goods-${item.goods_id}.html">${item.name}</a></td>
+			<td>${item.gainedpoint}&nbsp;</td>
+			<td>${item.price?string.currency}</td>
+			<td>${item.num}</td>
+			<td>${(item.num * item.price)?string.currency}</td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>
+
+<#include 'giftList.html' />
+
+<h4>收货人信息</h4>
+<div class="division">
+<table cellspacing="0" cellpadding="0" width="100%"
+	class="liststyle data">
+	<tbody>
+		<tr>
+			<th>收货人姓名:</th>
+			<td>${order.ship_name!''}</td>
+			<th>收货人Mail:</th>
+			<td>${order.ship_email!''}</td>
+		</tr>
+		<tr>
+			<th>配送地区:</th>
+			<td>${order.shipping_area!''}</td>
+			<th>联系电话:</th>
+			<td>${order.ship_tel!''}</td>
+		</tr>
+		<tr>
+			<th>收货人邮编:</th>
+			<td>${order.ship_zip!''}</td>
+			<th>送货时间:</th>
+			<td>${order.ship_day!''}&nbsp;${order.ship_time!''}</td>
+		</tr>
+		<tr>
+			<th>配送方式:</th>
+			<td>${order.ship_name!''}</td>
+			<th>付款方式:</th>
+			<td>${order.payment_name!''}</td>
+		</tr>
+		<tr>
+			<th>商品重量:</th>
+			<td colspan="3">${order.weight!''}</td>
+		</tr>
+		<tr>
+			<th valign="top">收货人地址:</th>
+			<td valign="top" colspan="3">${order.ship_addr!''}</td>
+		</tr>
+		<tr>
+			<th valign="top">订单附言:</th>
+			<td valign="top" colspan="3">${order.remark!''}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="liststyle data">
+	<col class="span-auto ColColorGray">
+	<col class="span-4 ColColorOrange textright">
+	<tbody>
+		<tr>
+			<th>商品总金额:</th>
+			<td>${(order.goods_amount!0)?string.currency}</td>
+		</tr>
+		<tr>
+			<th>配送费用:</th>
+			<td>${(order.shipping_amount!0)?string.currency}</td>
+		</tr>
+		<tr>
+			<th>您可获得积分:</th>
+			<td>${order.gainedpoint!0}</td>
+		</tr>
+		<tr>
+			<th>优惠金额:</th>
+			<td style="color: rgb(255, 0, 0);">-${(order.discount!0)?string.currency}</td>
+		</tr>
+		<!-- 
+		<tr>
+			<th>税金:</th>
+			<td>?</td>
+		</tr>
+		<tr>
+			<th>发票抬头:</th>
+			<td>?</td>
+		</tr>
+		 -->
+		<tr>
+			<th>订单总金额:</th>
+			<td class="price1">${(order.order_amount!0)?string.currency}</td>
+		</tr>
+		<tr>
+			<th>已付金额:</th>
+			<td>${(order.paymoney!0)?string.currency}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>

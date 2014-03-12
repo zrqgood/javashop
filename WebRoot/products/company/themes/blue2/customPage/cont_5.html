@@ -1,0 +1,16 @@
+<div class="path">
+	<span>您现在的位置:<a href="index.html">首页</a>&gt;<a href="contact.html">联系我们</a></span>
+</div>
+<div class="cont">
+	<div class="con" id="con">
+		<#if data.img?exists>
+			<#if data.img!=''>
+				<img src="${data.img!''}" / style="width:191px;height:160px;padding:8px 10px 8px 0;float:left;">
+			</#if>
+		</#if>
+		地址：${site.address!''}<br/>
+电话：${site.linktel!''}<br/>
+联系：${site.linkman!''}<br/>
+电邮：${site.email!''}<br/>
+	</div>
+</div>

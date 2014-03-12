@@ -1,0 +1,19 @@
+<div class="r_top">
+	<h1>${catname}</h1>
+	<div class="nav">您现在的位置：${navbar}</div>
+</div>
+<div class="content">
+	<div class="photoList">
+		<ul>
+		<#list dataList as data>
+			<li>
+				<div class="photo"><a href="article-${data.cat_id}-${data.id}.html"><img src="${data.img!''}" /></a></div>
+				<div class="name"><a href="article-${data.cat_id}-${data.id}.html">${data.title!''}</a></div>
+			</li>
+		</#list>					
+		</ul>
+	</div>
+	<div class="page">
+		${pager}
+	</div>
+</div>

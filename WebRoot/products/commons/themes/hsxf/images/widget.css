@@ -1,0 +1,270 @@
+/*=挂件预设
+=============================================================================================*/
+.mktprice1{
+	text-decoration: line-through;
+}
+.more{
+	margin:5px 5px 0 0;
+}
+.more a{
+	float:right;
+}
+.more:after {
+	content:"";
+	display:block;
+	clear:both;
+	visibility:hidden;
+	height:0;
+}
+.ArticleListWrap{
+	padding:0 0 0 5px;
+}
+.ArticleList{
+}
+.ArticleList li,.ArticleList td{
+	background:url(../images/dotted.gif) repeat-x 0 bottom;
+	display:block;
+	overflow:hidden;
+	padding:4px 0;
+	white-space:nowrap;
+}
+#widget_mloginbar{
+float:left;
+width:200px;
+}
+.scat{
+float:left;
+}
+.ArticleList td{
+	padding-left:10px;
+}
+.ArticleList li a,.ArticleList td a{
+	padding-left:3px;
+}
+.Article-Tabs{
+	border-bottom:1px solid #b3b3b3;
+	overflow:auto;
+	background:#f7fcff;
+	zoom:1;
+	padding:0 10px;
+	margin:1px 0 0 0;
+}
+.Article-Tabs div{
+	float:left;
+	padding:2px 5px;
+	background:#f7fcff;
+	cursor:pointer;
+}
+.Article-Tabs .current{
+	background:#fff url(../images/hotgoods.gif) repeat-x 0 7px;
+	12font-weight:bold;
+	border:1px solid #999;
+	border-bottom:1px solid #fff;
+	color:#205687;
+}
+.GoodsList-Tabs{
+	background:#F7FCFF;
+	overflow:auto;
+	zoom:1;
+	border-bottom:1px solid #2C4E8F;
+	padding:0 10px;
+}
+.GoodsList-Tabs div{
+	float:left;
+	padding:1px 8px;
+	cursor:pointer;
+	color:#1D345F;
+	border-right:1px solid #B5CCDF;
+}
+.GoodsList-Tabs .current{
+	background:#fff;
+	color:#2C4E8F;
+	font-weight:bold;
+}
+/*=排行榜 
+=============================================================================================*/
+.RankingList{
+	padding:10px;
+}
+.RankingList .pic{
+	text-align:center;
+}
+.RankingList li{
+	width:99%;
+}
+.RankingList li span{
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0 3px 0 0;
+	color:#FF9900;
+	font-weight:bold;
+}
+
+/*自定义
+.RankingList li span{
+	width:13px;
+	height:15px;
+	background:url(ranklt.gif) no-repeat 0 2px;
+	display:block;
+	float:left;
+	color:#FFFFFF;
+	text-align:center;
+}
+.RankingList .hl span{
+	background:url(ranklt.gif) no-repeat 0 -15px;
+}*/
+
+
+
+.IndexLoginWrap{
+	padding:5px;
+}
+.IndexLoginWrap label{
+	width:50px;
+	margin:0 2px 0 0;
+	font-weight:normal;
+}
+.IndexLoginWrap input.userinput{
+	width:100px;
+}
+.IndexLoginWrap input.vcode{
+	width:40px;
+}
+.IndexLoginWrap .buttonbar{
+	margin:5px 0 0 0;
+	padding:5px 0 0 0;
+	border-top:1px solid #efefef;
+	clear:both;
+	text-align:center;
+}
+.IndexLoginWrap .buttonbar a{
+	margin:0 4px;
+}
+.IndexLoginWrap .logon{
+	line-height:20px;
+	margin:5px 0;
+	text-align:center;
+}
+.IndexLoginWrap .bar{
+	overflow:hidden;
+	white-space:nowrap;
+}
+.IndexLoginWrap .bar span{
+	display:inline;
+	text-align:left;
+	line-height:12px;
+	padding:0 8px;
+}
+.IndexLoginWrap .bar span.links,
+.IndexLoginWrap .bar a{
+	color:#919191;
+}
+
+.OrderList .orderprice{
+	color:#990000;
+	display:block;
+	padding:0 0 0 15px;
+}
+.OrderList li{
+	background:url(dotted.gif) repeat-x 0 bottom;
+	padding:5px;
+}
+/*=挂件内部
+=============================================================================================*/
+.GoodsList .item table{
+	margin:5px 0;
+}
+.GoodsList .goodsImg a{
+	border:1px dotted #ccc;
+}
+.GoodsList .goodsImg a:hover{
+	border:1px dotted #f90;
+}
+.GoodsList h6{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+/*=站点地图
+=============================================================================================*/
+.SiteMaps td a{
+	padding:5px;
+}
+.SiteMaps h3 a{
+	background:url(arrs.gif) no-repeat 0 -82px;
+	padding:0 0 0 13px;
+}
+
+/*=分类
+=============================================================================================*/
+.c-cat-depth-1 em,
+.s-cat-depth-1 em{
+	display:block;
+	width:100%;
+}
+.c-cat-depth-1 a,
+.s-cat-depth-1 a{
+	font-weight:bold;
+	color:#666;
+	border-bottom:1px solid #f2f2f2;
+	display:block;
+	background:url(../images/arrs.gif) no-repeat 12px -122px;
+	padding:0 0 0 25px;
+}
+.c-cat-depth-2{
+	padding-top:5px;
+  	padding-bottom:10px;
+}
+.c-cat-depth-2 a,
+.s-cat-depth-2 a{
+	background:none;
+	display:inline;
+	border:none;
+	font-weight:normal;
+	color:#000;
+}
+.c-cat-depth-3 a,
+.s-cat-depth-3 a{
+	color:#537ed4;
+}
+.e-cat-depth-1 p{
+	margin:0;
+	padding:2px 0 2px 10px;
+	border-bottom:1px solid #f2f2f2;
+}
+.e-cat-depth-2 p{
+	padding:2px 0 2px 15px;
+}
+.e-cat-depth-3{
+	padding:0 0 0 20px;
+}
+
+.e-cat-depth-1 .nosymbols,
+.e-cat-depth-1 .symbols{
+	display:block;
+	float:left;
+	width:10px;
+}
+.e-cat-depth-1 .symbols{
+	background:url(../images/arrs.gif) no-repeat 0 -216px;
+	text-indent:-9999px;
+}
+.e-cat-depth-1 .show{
+	background-position: 0 -237px;
+}
+.e-cat-depth-1 span{
+	cursor:pointer;
+	margin:0 2px;
+}
+.e-cat-depth-1 a{
+	color:#666;
+	font-weight:bold;
+}
+.e-cat-depth-2 a{
+	font-weight:normal;
+	color:#000;
+}
+.e-cat-depth-3 a{
+	color:#537ed4;
+}
+.footArticle .TreeList{width:190px;float:left;}

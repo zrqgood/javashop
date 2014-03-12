@@ -1,0 +1,20 @@
+<#include 'common/header.html' />
+<div class="main">
+	<div class="leftnav">
+		<h3>新闻中心</h3>
+		${widget_leftnav}
+	</div>
+	<div class="rightcol">
+		<div class="newstitle"> 
+			<h2>联系我们</h2>
+		</div>
+		<div class="cont">
+			地址：${site.address!''}<br/>
+			电话：${site.linktel!''}<br/>
+			联系：${site.linkman!''}<br/>
+			电邮：${site.email!''}<br/>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<#include 'common/footer.html' />

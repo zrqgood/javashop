@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+${widget_header}
+<link type="text/css" href="${staticserver}/default/statics/style.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+${widget_im}
+<!--头部-->
+<div class="header">
+	${widget_loginbar}
+	<div class="logoWrap">
+		<div class="logo">
+			<img src="${logo!''}"/>
+		</div>
+		<div class="ad">
+			${widget_banner}
+		</div>
+		<div class="tel">
+			订购热线（免费长途）<br/>
+			<span>${site.usertel!''}</span>
+		</div>
+	</div>
+	<div class="menu">
+		${widget_menu}
+		<div class="Cartbar">
+			<div id="CartImage"></div>
+			${widget_cartbar}
+		</div>
+	</div>
+	<div class="Searchbar">
+		${widget_searchbar}
+	</div>
+</div>

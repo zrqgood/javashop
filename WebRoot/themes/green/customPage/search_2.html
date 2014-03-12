@@ -1,0 +1,17 @@
+<div class="news">
+	<h2 class="s">搜索结果：</h2>
+	<div class="newslist">
+		<ul>
+		<#list dataList as data>
+			<li>
+				<div class="name"><a href="detail-${data.cat_id}-${data.id}.html">${data.title!''}</a></div>
+				<span>${data.add_time?string('yyyy-MM-dd')}</span>
+			</li>
+		</#list>				
+		</ul>
+	</div>
+	<!--分页-->
+	<div class="page">
+		${pager}
+	</div>
+</div>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd" default-autowire="byName" default-lazy-init="true">
+
+
+	
+	<!-- 
+	         =============
+	                              插件桩
+	         =============              
+	 -->
+	 
+	 <!-- 商品插件桩-->
+	<bean id="goodsPluginBundle" class="com.enation.javashop.core.plugin.goods.GoodsPluginBundle"></bean>
+	
+	 <!-- 购物车插件桩-->
+	<bean id="cartPluginBundle" class="com.enation.javashop.core.plugin.cart.CartPluginBundle"></bean>
+	
+	<!-- 支付插件桩-->
+	<bean id="paymentPluginBundle" class="com.enation.javashop.core.plugin.payment.PaymentPluginBundle"></bean>
+
+	<!-- 促销插件桩 -->
+	<bean id="promotionPluginBundle" class="com.enation.javashop.core.plugin.promotion.PromotionPluginBundle"></bean>
+	
+	<!-- 商品字段插件桩 -->
+	<bean id="goodsFieldPluginBundle" class="com.enation.javashop.core.plugin.field.GoodsFieldPluginBundle"></bean>
+	
+	<!-- 商品搜索插件桩 -->
+	<bean id="goodsSearchPluginBundle" class="com.enation.javashop.core.plugin.search.GoodsSearchPluginBundle"></bean>
+
+	<!-- 商品数据过滤插件桩 -->
+	<bean id="goodsDataFilterBundle" class="com.enation.javashop.core.plugin.search.GoodsDataFilterBundle"></bean>
+	
+	<!-- 订单插件桩 -->
+	<bean id="orderPluginBundle" class="com.enation.javashop.core.plugin.order.OrderPluginBundle"></bean>
+
+	<!--会员插件桩 -->
+	<bean id="memberPluginBundle" class="com.enation.javashop.core.plugin.member.MemberPluginBundle"></bean>
+
+
+	<!--shopex式相册管理插件 -->
+	<bean id="shopexGallery" class="com.enation.javashop.plugin.standard.album.GalleryAdminPlugin"
+		lazy-init="false">
+
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+				<ref bean="settingPluginBundle" />
+			</list>
+		</property>
+
+	</bean>
+
+
+	<!-- 商品类型插件 -->
+	<bean id="javaShopGoodsTypePlugin"
+		class="com.enation.javashop.plugin.standard.type.GoodsTypeAdminPlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>
+	</bean>
+
+
+
+	<!-- 商品seo插件 -->
+	<bean id="goodsSeoPlugin" class="com.enation.javashop.plugin.standard.seo.GoodsSeoPlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 默认商品货号生成插件 -->
+	<bean id="defaultGoodsSnCreatePlugin"
+		class="com.enation.javashop.plugin.standard.sn.DefaultGoodsSnCreatePlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- 商品标签插件 -->
+	<bean id="goodsTagPlugin" class="com.enation.javashop.plugin.standard.tag.GoodsTagPlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>
+	</bean>
+
+	 
+	<!-- 商品通用规格插件  
+	<bean id="goodsSpecPlugin"
+		class="com.enation.javashop.plugin.standard.spec.GoodsSpecPlugin"
+		lazy-init="false"> <property name="bundleList"> <list> <ref
+		bean="goodsPluginBundle" /> </list> </property>
+	</bean>
+	   -->
+		
+	<!-- 商品标准价格插件 -->
+	<bean id="standardGoodsPricePlugin"
+		class="com.enation.javashop.plugin.standard.price.StandardGoodsPricePlugin"
+		lazy-init="false"> <property name="bundleList"> <list> <ref
+		bean="goodsPluginBundle" /> </list> </property>
+	</bean>
+	
+	<!-- 商品标准货品插件 -->
+	<bean id="gneralProductPlugin"
+		class="com.enation.javashop.plugin.standard.product.GeneralProductPlugin"
+		lazy-init="false"> <property name="bundleList"> <list> <ref
+		bean="goodsPluginBundle" /> </list> </property>
+	</bean>
+	
+	<bean id="commentsSettingPlugin" class="com.enation.javashop.widget.comments.CommentsSettingPlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="settingPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 相关商品插件 
+	<bean id="goodsComplexPlugin" class="com.enation.javashop.plugin.standard.complex.GoodsComplexPlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	-->
+	 
+	<!-- 商品配件插件
+	<bean id="goodsAdjunctPlugin" class="com.enation.javashop.plugin.standard.adjunct.GoodsAdjunctPlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	 -->
+	
+	<!-- ==============================================================	-->
+	<!--						支付方式插件								-->	
+    <!-- ==============================================================	-->						
+
+	<!-- 支付宝担保交易接口 -->
+	<bean id="alipayEscowPlugin"  class="com.enation.javashop.plugin.payment.alipay.escow.AlipayEscowPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="paymentPluginBundle" />
+			</list>
+		</property>	
+	</bean>
+	
+	<!-- 支付宝即时到账接口 -->
+	<bean id="alipayDirectPlugin"  class="com.enation.javashop.plugin.payment.alipay.direct.AlipayDirectPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="paymentPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	
+	
+	<!-- 支付宝双接口 -->
+    <bean id="alipayDualfunPlugin"  class="com.enation.javashop.plugin.payment.alipay.dualfun.AlipayDualfunPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="paymentPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	
+	<!-- 财付通即时到账接口 -->
+	<bean id="tenpayDirectPlugin"  class="com.enation.javashop.plugin.payment.tenpay.direct.TenpayDirectPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="paymentPluginBundle" />
+			</list>
+		</property>	
+	</bean>
+	
+	<!-- 财富通担保交易接口 -->
+	<bean id="tenpayMedPlugin" class="com.enation.javashop.plugin.payment.tenpay.med.TenpayMedPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="paymentPluginBundle" />
+			</list>
+		</property>	
+	</bean>
+	
+	<bean id="offline"  class="com.enation.javashop.plugin.payment.offline.OfflinePlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="paymentPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	<bean id="deposit"  class="com.enation.javashop.plugin.payment.deposit.DepositPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="paymentPluginBundle" />
+			</list>
+		</property>	
+	</bean>		
+	<!-- 促销插件 -->
+	<bean id="enoughPriceGiveGiftPlugin"  class="com.enation.javashop.plugin.promotion.EnoughPriceGiveGiftPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="promotionPluginBundle" />
+			</list>
+		</property>	
+	</bean>
+	<bean id="goodsDiscountPlugin"  class="com.enation.javashop.plugin.promotion.GoodsDiscountPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="promotionPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	<bean id="enoughPriceReducePrice"  class="com.enation.javashop.plugin.promotion.EnoughPriceReducePrice" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="promotionPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	<bean id="goodsTimesPointPlugin"  class="com.enation.javashop.plugin.promotion.GoodsTimesPointPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="promotionPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	<bean id="enoughPriceFreeDeliveryPlugin"  class="com.enation.javashop.plugin.promotion.EnoughPriceFreeDeliveryPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="promotionPluginBundle" />
+			</list>
+		</property>	
+	</bean>		
+			
+	<!-- 商品数据日志记录插件 -->
+	<bean id="goodsDatalogPlugin"  class="com.enation.javashop.plugin.standard.datalog.GoodsDatalogPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	
+	<!-- 商品sitemap记录插件 -->
+	<bean id="goodsSitemapPlugin"  class="com.enation.javashop.plugin.standard.sitemap.GoodsSitemapPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+				<ref bean="sitemapPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+	
+	
+	<!-- 商品自定义字段插件 -->
+	<bean id="goodsCustomFieldPlugin"  class="com.enation.javashop.core.plugin.field.GoodsCustomFieldPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>	
+	</bean>	
+
+ 
+	
+	<!-- 会员积分设置插件 -->
+	<bean id="pointSettingPlugin" class="com.enation.javashop.plugin.standard.point.PointSettingPlugin"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="settingPluginBundle" />
+			</list>
+		</property>
+	</bean>
+			
+			
+	<!-- 品牌搜索过滤器  -->		
+	<bean id="brandSearchFilter" class="com.enation.javashop.plugin.search.BrandSearchFilter"
+		lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>
+			
+	<!-- 分类搜索过滤器  -->		
+	<bean id="catSearchFilter" class="com.enation.javashop.plugin.search.CatSearchFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 属性搜索过滤器  -->
+	<bean id="propertySearchFilter" class="com.enation.javashop.plugin.search.CustomPropertySearchFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>	
+	
+	<!-- 价格搜索过滤器
+	<bean id="priceSearchFilter" class="com.enation.javashop.plugin.search.PriceSearchFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>		
+  -->
+  
+	<!-- 商品数字属性搜索过虑器 -->
+	<bean id="numeralPropertySearchFilter" class="com.enation.javashop.plugin.search.NumeralPropertySearchFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>	
+	<!-- 商品标签 搜索过虑器 -->
+	<bean id="tagSearchFilter" class="com.enation.javashop.plugin.search.TagSearchFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 商品标签 搜索过虑器 -->
+	<bean id="keywordSearchFilter" class="com.enation.javashop.plugin.search.KeywordSearchFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 商品排序过虑器 -->
+	<bean id="sortSearchFilter" class="com.enation.javashop.plugin.search.SortSearchFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsSearchPluginBundle" />
+			</list>
+		</property>
+	</bean>			
+	<!-- 商品图片数据过虑器 -->
+	<bean id="goodsImageDataFilter" class="com.enation.javashop.plugin.search.GoodsImageDataFilter" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsDataFilterBundle" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- 团购购物车插件-->
+	<bean id="groupBuyCartPlugin" class="com.enation.javashop.plugin.standard.cart.GroupBuyCartPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="cartPluginBundle" />
+			</list>
+		</property>
+	</bean>		
+	
+	<!--
+	<bean id="relatedArticlesGoodsPlugin" class="com.enation.javashop.plugin.standard.relarticle.RelatedArticlesGoodsPlugin" lazy-init="false">
+		<property name="bundleList">
+			<list>
+				<ref bean="goodsPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	-->
+</beans>

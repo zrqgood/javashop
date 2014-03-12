@@ -1,0 +1,12 @@
+<ul>
+<#list dataList as data>
+	<li>
+		<div class="pic">
+			<a href="article2-${data.cat_id}-${data.id}.html"><img src="${data.img!''}" /></a>
+		</div>
+		<div class="name">
+			<a href="article2-${data.cat_id}-${data.id}.html" title="${data.title!''}">${data.title!''}</a>
+		</div>
+	</li>
+</#list>
+</ul>

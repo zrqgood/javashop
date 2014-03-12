@@ -1,0 +1,25 @@
+<#include 'common/header.html' />
+<script type="text/javascript" src="js/jquery-ApexSlider.js"></script>
+<div class="main">
+	<div class="area">
+		<!--公司简介-->
+		<div class="aboutus">
+			${widget_1}
+		</div>
+		<!--最新动态及解决方案-->
+		<div class="news">
+			${widget_2}
+			${widget_3}
+		</div>
+	</div>
+	<!--产品展示-->
+	<div class="product">
+		${widget_4}
+	</div>
+	<script>
+		$(function(){
+			selectMenu(0)
+		})
+	</script>
+</div>
+<#include "common/footer.html" />

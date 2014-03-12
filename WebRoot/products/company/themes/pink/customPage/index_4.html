@@ -1,0 +1,23 @@
+<div class="title">
+	<h1>产品展示</h1>
+	<span class="more"><a href="product-7-1.html">更多>></a></span>
+</div>
+<div class="photoList">
+	<div class="list">
+		<ul>
+			<#list dataList as data>
+			<li>
+				<div class="photo"><a href="article-${data.cat_id}-${data.id}.html"><img src="${data.img!''}" /></a></div>
+				<div class="name"><a href="article-${data.cat_id}-${data.id}.html">${data.title!''}</a></div>
+			</li>
+			</#list>	
+		</ul>
+	</div>
+	<div class="prev">上一页</div>
+	<div class="next">下一页</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$(".photoList .list ul").LeftMarquee({speed:50,step:1,btnLeft:".prev",btnRight:".next"});
+	});
+</script>

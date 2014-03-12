@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<!-- 后台action -->	
+	<package name="cmsadmin" extends="eop_default" namespace="/cms/admin">
+		<action name="model" class="dataModelAction">
+			<result name="add">model/model_add.jsp</result>
+			<result name="edit">model/model_edit.jsp</result>
+			<result name="list">model/model_list.jsp</result>
+		</action>
+		<action name="field" class="dataFieldAction">
+			<result name="input">model/field_input.jsp</result>
+		</action>
+		<action name="cat" class="dataCatAction">
+	 		<result name="list" type="freemarker">cat/list.html</result>
+	 		<result name="input"  type="freemarker">cat/input.html</result>
+	 		<result name="cat_tree"  type="freemarker">cat/cat_tree.html</result>
+		</action>
+		<action name="data" class="dataAction">
+	 		<result name="list" >article/list.jsp</result>
+	 		<result name="dlglist" >article/dlg_list.jsp</result>
+	 		<result name="implist" >article/imp_list.jsp</result>
+	 		<result name="input"  type="freemarker">article/input.html</result>
+		</action>	
+		<action name="indexItem" class="cmsIndexItemAction">
+	 		<result name="article" >index/article.jsp</result>
+		</action>
+		<action name="dataSelector" class="dataSelectorAction">
+	 		<result name="dialog" type="freemarker" >selector/dialog.html</result>
+	 		<result name="list" >selector/list.jsp</result>
+		</action>
+		
+ 	</package>
+	
+</struts>

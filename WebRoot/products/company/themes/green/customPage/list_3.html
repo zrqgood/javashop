@@ -1,0 +1,34 @@
+<div class="news">
+	<#if catname=='成功案例'>
+		<h1 class="bg13">成功案例</h1>
+		<script>
+			selectMenu(4);
+		</script>
+	<#else>
+		<#if catname=='人才招聘'>
+		<script>
+			selectMenu(7);
+		</script>
+			<h1 class="bg16">新闻中心</h1>
+		<#else>
+		<script>
+			selectMenu(1);
+		</script>
+			<h1>新闻中心</h1>
+		</#if>
+	</#if>
+	<div class="newslist">
+		<ul>
+		<#list dataList as data>
+			<li>
+				<div class="name"><a href="detail-${data.cat_id}-${data.id}.html">${data.title!''}</a></div>
+				<span>${data.add_time?string('yyyy-MM-dd')}</span>
+			</li>
+		</#list>				
+		</ul>
+	</div>
+	<!--分页-->
+	<div class="page">
+		${pager}
+	</div>
+</div>

@@ -1,0 +1,77 @@
+//argument start
+var mz_d=document.getElementById("miaozhen7889");
+ var mz_width=211;
+var mz_height=90;
+var mz_automatchscreen=false;
+var mz_width_w=0;
+var mz_lb=new Array();
+mz_lb[0]=
+{
+0:1,
+1:2,
+l:2
+};
+mz_lb[1]=
+{
+ src:"http://market.360buy.com/hd/campaign/edmzh100520/button_edm100520a.gif",
+ src_w:"",
+ landingpage:"http://g.miaozhen.com/r.gif?^k=389^p=0s-a^o=http://www.360buy.com/news.aspx?id=2008",
+ name:"EDM",
+ type:"img",
+ rank:"1/2"
+};
+mz_lb[2]=
+{
+ src:"http://misc.360buyimg.com/da/ind/button_249.jpg",
+ src_w:"",
+ landingpage:"http://g.miaozhen.com/r.gif?^k=389^p=0s-b^o=http://market.360buy.com/ShopCampaign/Activities.aspx?hid=1526",
+ name:"ÄÐ×°",
+ type:"img",
+ rank:"1/2"
+};
+
+//template start 
+function mz_ga(s,name){
+        if(typeof(s)=="undefined")
+                return "";
+        s="^"+s+"^";
+        var b=s.indexOf("^"+name+"=");
+        if(-1==b)
+                return "";
+        else
+                b+=name.length+2;
+        var e=s.indexOf("^",b);
+        return s.substring(b,e);
+}
+var i=mz_lb[0][Math.floor(Math.random()*mz_lb[0].l)];
+var mz_k=mz_ga(mz_lb[i].landingpage,"k");
+var mz_p=mz_ga(mz_lb[i].landingpage,"p");
+
+document.write('<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="0" height="0"><param name="movie" value="http://js.miaozhen.com/a.swf"><param name="allowScriptAccess" value="always"><param name="FlashVars" value="caId='+mz_k+'&SPID='+mz_p+'&loc='+document.location.href+'&ref='+document.referrer+'"><embed src="http://js.miaozhen.com/a.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always" type="application/x-shockwave-flash" width="0" height="0" FlashVars="caId='+mz_k+'&SPID='+mz_p+'&loc='+document.location.href+'&ref='+document.referrer+'"></embed></object>');
+
+if(mz_automatchscreen&&screen.width>=1280)
+{
+        mz_width=mz_width_w;
+}
+
+var click='<div style="position: absolute; width: ' + mz_width + 'px; height: ' + mz_height + 'px; cursor: ';
+click+='pointer; background-color: rgb(255, 255, 255); opacity: 0; filter:alpha(opacity=0);" ';
+click+='onclick="javascript:window.open(\'' + mz_lb[i].landingpage + '\',\'_blank\')"></div>';
+if(mz_lb[i].type=="img")
+{
+        var ad='<img src="'+(mz_width==mz_width_w?mz_lb[i].src_w:mz_lb[i].src)+'" width="'+mz_width+'" height="'+mz_height+'" />';
+}
+else if(mz_lb[i].type=="flash")
+{
+        var ad='<embed src="' + (mz_width==mz_width_w?mz_lb[i].src_w:mz_lb[i].src) + '" width="' + mz_width + '" height="' + mz_height + '" type="application/x-shockwave-flash" play="true" loop="true" menu="true" wmode="transparent"></embed>';
+}
+ad=click+ad;
+if(typeof(mz_d)=="undefined"||mz_d==null)
+{
+        document.write(ad);
+}
+else
+{
+        mz_d.innerHTML=ad;
+}
+// as code end

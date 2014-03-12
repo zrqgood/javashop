@@ -1,0 +1,44 @@
+<form id="form${modelid}" class="validate">
+<input type="hidden" name="modelid" value="${modelid}"/>
+<input type="hidden" name="catid" value="${catid}"/>
+${html}
+</form>
+<script>
+var AritcleForm ={
+	form:undefined,
+	init:function(){
+		var self = this;
+		this.form= $("#form${modelid}");
+		this.form.validate();
+		this.form.find("input.submit").click(function(){
+			self.form.submit();
+			if( self.form.attr("validate") =="true")
+				self.submit();
+		});
+	}, 
+	submit:function(){
+		var self =this;
+		var options = {
+				url :"widget.do?type=dataForm&action=post&ajax=yes",
+				type : "POST",
+				dataType : 'json',
+				success : function(result) {				
+				 	if(result.result==1){
+						alert("${message}");
+						self.form.get(0).reset();
+				 	}else{
+				 		alert(result.message);
+				 	}
+				},
+				error : function(e) {
+					alert("出错啦:(");
+				}
+			};
+	
+		 this.form.ajaxSubmit(options);	
+	}
+}
+$(function(){
+	AritcleForm.init();
+});
+</script>

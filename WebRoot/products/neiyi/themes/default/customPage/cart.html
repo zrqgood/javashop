@@ -1,0 +1,88 @@
+<#if hasGoods|| hasPgk ||hasGift || hasGroupBuy>
+<script type="text/javascript" src="cart.js"></script>
+<script type="text/javascript">
+$(function(){
+	Cart.init('${staticserver}');
+	$("#usePointBtn").click(function(){
+		$.ajax({
+			url:"widget?type=marketPointWidget&ajax=yes&action=usepoint",
+			dataType:"json",
+			success:function(result){
+				if(result.result==0){
+ 					Cart.refreshTotal(); 					
+				}else{
+					alert("清空失败");
+				}				 
+			},
+			error:function(){
+				alert("出错了:(");
+			}
+		});			
+	});
+	
+});
+</script>
+<div id="cart-index" class="CartWrap">
+<div class="CartNav clearfix">
+<div class="floatLeft"><img alt="购物流程--查看购物车"
+	src="${ctx}/resource/com/enation/javashop/widget/cart/images/cartnav-step1.gif"></div>
+<div class="floatRight"><img src="${ctx}/resource/com/enation/javashop/widget/cart/images/cartnav-cart.gif"></div>
+</div>
+<div id="cart-items" class="section">
+
+<#if !isLogin>
+<form extra="cart" method="post" action="checkout.html?action=loginBuy" id="form-cart">
+<#else>
+<form extra="cart" method="post" action="checkout.html" id="form-cart">
+</#if>
+<div id="cartItems" class="FormWrap">
+
+<#if hasGoods>
+<#include 'goodsList.html' />
+</#if>
+
+
+<div id="cartTotal" class="division">
+</div>
+</div>
+<div style="margin-bottom: 5px;" class="CartBtn clearfix">
+<div class="span-auto"><input type="button" value="«继续购物"
+	 style="width: 90px;"
+	class="btn-return actbtn"></div>
+<div class="span-auto"><input type="button" value="清空购物车"
+	style="width: 90px;" class="btn-clearcat actbtn"
+	 id="clearCart"></div>
+<div class="span-auto floatRight"><input type="submit"
+	value="下单结算»" class="btn-checkout actbtn"></div>
+</div>
+</form>
+</div>
+<form id="cart-point" method="post" >
+<div class="FormWrap">
+<h3>使用积分</h3>
+<div class="division">
+	<#if isLogin>
+		<div class="promotion">
+		可用积分：<strong>${member.mp}</strong>
+			<input type="text"  size="30"  name="point" autocomplete="off"> 
+			<input type="submit" value="使用积分" id="usePointBtn">
+		</div>	
+	<#else>
+		 您还未登录不能使用积分
+	</#if>
+</div>
+</div>
+</form>
+</div>
+
+<#else>
+ <p id="cart-none-msg">
+     <div class='notice'>您好,您的购物车没有加入任何商品!</div>
+     <h3>现在您可以:</h3>
+      <ul class='list'>
+         <li><a href='index.html'>返回网站首页</a></li>
+         <li><a href='javascript:opener=null;window.close();'>关闭此页面</a></li>
+     </ul>
+ </p>
+ </#if>  
+   

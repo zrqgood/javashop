@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+${widget_header}
+<script src="http://static.enationsoft.com/js/common/jquery.pager.js"></script>
+<link type="text/css" href="images/css.css" rel="stylesheet">
+</head>
+<body>
+	<div class="contain">
+		<!--头部-->
+		<div class="head">
+			<!--logo-->
+			<div class="logo">
+				<a href="#"><img src="${logo}" /></a>
+			</div>
+			<!--导航菜单-->
+			<div class="nav">
+				${widget_menu}
+			</div>
+			<!--广告-->
+			<div class="banner">
+				<div class="flash">
+					${widget_ad}
+				</div>
+				<div class="contactus">
+					<div class="title">
+						联系我们<a href="contact.html" onfocus="this.blur();">more</a>
+					</div>
+					<div class="cont">
+					<#include '../customPage/cont_1.html' />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--头部 结束-->

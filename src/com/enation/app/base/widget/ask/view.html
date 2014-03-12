@@ -1,0 +1,75 @@
+<div>
+<h1 class="title">发送短消息</h1>
+<form class="section" method="post"
+	action="member_ask.html?action=ask" >
+<div class="FormWrap">
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		<tr>
+			<th>标题：</th>
+			<td>${ask.title}</td>
+		</tr>
+		<tr>
+			<th>内容：</th>
+			<td>${ask.content}
+			</td>
+		</tr>
+		<tr>
+			<th>时间：</th>
+			<td><@dateFormat date="${ask.dataline*1000?c}" pattern="yyyy-MM-dd HH:mm"/>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" value="确定" id="Submit"></td>
+		</tr>
+				
+	</tbody>
+</table>
+</div>
+
+<#list ask.replyList as reply>
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		<tr>
+			<th>${reply.username}：</th>
+			<td>${reply.content}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</#list>
+
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		<tr>
+			<th>标题：</th>
+			<td>${ask.title}</td>
+		</tr>
+		<tr>
+			<th>内容：</th>
+			<td>${ask.content}
+			</td>
+		</tr>
+		<tr>
+			<th>时间：</th>
+			<td><@dateFormat date="${ask.dataline*1000?c}" pattern="yyyy-MM-dd HH:mm"/>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" value="确定" id="Submit"></td>
+		</tr>
+				
+	</tbody>
+</table>
+</div>
+</div>
+</form>
+</div>

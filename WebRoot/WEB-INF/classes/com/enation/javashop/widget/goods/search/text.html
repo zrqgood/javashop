@@ -1,0 +1,40 @@
+<div class="ItemsWarp items-text clearfix">
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="liststyle ">
+	<colgroup class=" textleft"></colgroup>
+	<colgroup class="span-3 ColColorGray textright"></colgroup>
+	<colgroup class="span-2 ColColorGray textcenter"></colgroup>
+	<colgroup class="span-2 ColColorGray textcenter"></colgroup>
+	<colgroup class="span-2 ColColorGray textcenter"></colgroup>
+	<thead>
+		<th>商品名称</th>
+		<th>商品价格</th>
+		<th>查看大图</th>
+		<th>商品对比</th>
+		<th>操作</th>
+	</thead>
+	<tbody>
+		<#list webpage.result as goods>
+		<tr valign="top">
+			<td class="textcenter"><a class="entry-title" title="${goods.name}"
+				href="goods-${goods.goods_id}" target="_blank">${goods.name}</a></td>
+			<td class="textright">${goods.price?string.currency}</td>
+			<td class="textcenter">
+			<a title="查看图片" target="_blank" href="shop/goodsAlubm.do?goodsid=${goods.goods_id}">查看大图</a>
+			</td>
+			<td class="textcenter">
+		 
+			<a title="商品对比" class="btncmp" href="javascript:;"  goodsid="${goods.goods_id}" goodsname="${goods.name}" typeid="${goods.type_id}">
+			商品对比</a>
+			</td>
+			<td class="textbutton textcenter">
+				<li class="star-off" title="${goods.name}" goodsid="${goods.goods_id}">
+				<a rel="nofollow" title="加入收藏" class="listact" href="javascript:;">加入收藏</a>
+				</li>
+			</td>
+		</tr>
+		</#list>
+		
+	</tbody>
+</table>
+</div>

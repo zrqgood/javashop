@@ -1,0 +1,10 @@
+<#assign children=cat_tree />
+<#assign level=1 />
+<ul>
+<#list children as cat>
+	<li>
+		<a href="${url}-${cat.cat_id }-1.html">${cat.name }</a>	
+	</li>
+</#list>	
+</ul>
+

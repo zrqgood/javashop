@@ -1,0 +1,17 @@
+<div class="r_top">
+	<h1>详细内容</h1>
+	<div class="nav">您现在的位置：${navbar}</div>
+</div>
+<div class="content">
+	<div class="newscontent">
+		<div class="con" id="con">
+			<div class="productName">${data.title!''}</div>
+			<#if data.img?exists>
+				<#if data.img!=''>
+					<img src="${data.img!''}" width="550" height="400" style="padding:0 65px 10px;"/>
+				</#if>
+			</#if>
+			${data.content!''}
+		</div>
+	</div>
+</div>

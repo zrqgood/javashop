@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+.grid{width:100%;padding-top:5px;}
+.grid table{width:100%;background:#E2F5BC}
+.grid table a{text-decoration:none;color:#000;}
+.grid table thead tr{text-align:left;}
+.grid table thead tr th{background:#EDF9D5;padding:6px;}
+.grid table tbody tr td{background:#fff;padding:6px;}
+.grid .page{width:100%;height:27px;background:#EAF8CE;border:1px solid #E2F5BC;margin-top:5px;text-align:center;}
+.grid .page span.info{display:inline-block;line-height:27px;padding-left:8px;float:left;}
+.grid .page ul{float:right;line-height:27px;float:right;padding-right:30px;;margin:0 auto;}
+.grid .page ul li{float:left;padding:0 2px;}
+.grid .page ul li a{color:#000;}
+.grid .page ul li a:hover{color:#f00;}
+.grid .page .selected{font-weight:bold;text-decoration:none;}
+.grid .asc{padding-right:18px;background:url(../images/arrow_up.gif) no-repeat center right;}
+.grid .desc{padding-right:18px;background:url(../images/arrow_down.gif) no-repeat center right;}
+.grid .modify{display:block;background:url(../images/icon.gif) no-repeat 0 -1041px;width:17px;height:17px;overflow:hidden;}

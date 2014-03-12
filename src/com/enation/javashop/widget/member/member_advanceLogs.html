@@ -1,0 +1,59 @@
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<div>
+<form method="post"
+	action="http://localhost/?member-downloadAdvanceLog.html">
+<h1 class="title">预存款交易记录（预存款余额：${member_advance?string.currency}）</h1>
+</form>
+<table cellspacing="0" cellpadding="3" width="100%" class="liststyle">
+	<col class=" textleft">
+	<col class="span-3 ColColorOrange">
+	<col class="span-4">
+	<thead>
+		<tr>
+			<th>事件</th>
+			<th>存入金额</th>
+			<th>支出金额</th>
+			<th>当前余额</th>
+			<th>时间</th>
+		</tr>
+	</thead>
+	<tbody>
+		<#list advanceLogsList as advance>
+		<tr>
+			<td class="textleft">
+			<#if advance.order_id?exists>
+			<a href="orderdetail.html?order_id=${advance.order_id}">${advance.memo}</a>
+			<#else>
+			${advance.memo}
+			</#if>
+			</td>
+			<td><#if advance.import_money?exists>${advance.import_money?string.currency}<#else>-</#if></td>
+			<td><#if advance.explode_money?exists>${advance.explode_money?string.currency}<#else>-</#if></td>
+			<td>${advance.member_advance?string.currency}</td>
+			<td><@dateFormat date="${advance.mtime?c}" pattern="yyyy-MM-dd HH:mm"/></td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+<div id="pager" ></div>
+<script>
+var Pager = {
+		init:function(){
+			var self = this;
+			var PC = ${pageCount};
+			if(PC!=0){
+				$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+			}
+		},
+
+		PageClick:function(pageclickednumber){
+			var self = this;
+			location.href="member_advanceLogs.html?page="+pageclickednumber;
+		}
+	}
+$(function(){
+	Pager.init();
+});
+</script>
+</div>

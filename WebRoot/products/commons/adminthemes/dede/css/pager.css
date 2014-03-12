@@ -1,0 +1,57 @@
+.paginate_button, .dataTables_paginate span span,.dataTables_paginate span a {
+	font-size:12px;
+	padding: 2px;
+	padding-right: 0px;
+	padding-left: 1px;
+	text-align: left;
+	border: 1px solid #A6C1DB;
+	background: #F6FAFB;
+	margin: auto 3px;
+	padding: 0px 4px;
+	cursor:pointer;
+	color: #999;
+	text-decoration: none;
+}
+
+.dataTables_paginate {
+	margin:5px;
+	float:right;	
+}
+
+.dataTables_paginate span a:link 
+{
+	text-decoration: none; 
+}
+
+.pageitem
+{
+ border: 1px solid #A6C1DB; background: #F6FAFB; margin: auto 3px; padding: 0px 4px; color: #999; text-decoration: none;
+}
+
+.paginate_active
+{
+ border: 1px solid #A6C1DB;   margin: auto 3px; padding: 0px 4px;  
+  font-weight: bold; color: #FFF; background:#A6C1DB ; 
+}
+
+.paginate_active:visited 
+{
+	text-decoration: none; 
+}
+.paginate_active:hover 
+{
+	color: #FD6117; 
+}
+
+
+.pageitem_disabled
+{
+	color: #999;
+	border:solid 1px #cfd5da;
+	font-weight: bold;
+	background-color: #E4F1F1;
+	padding: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: -3px;
+}

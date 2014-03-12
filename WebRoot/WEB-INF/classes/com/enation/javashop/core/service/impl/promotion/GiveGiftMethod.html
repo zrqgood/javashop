@@ -1,0 +1,67 @@
+<h5>送赠品</h5>
+<div class="division"  >
+	<div id="pmtGiftList" class="grid">
+	<table>
+		<thead>
+		<tr>
+			<th width="50px"><input type="button" value="添加" id="giftAddBtn" ></th> 
+			<th width="250px">赠品名称</th>
+		</tr>
+		</thead>
+	  <tbody>
+	  
+	  <#if giftList?exists  >
+	  
+	  <#list giftList as gift>
+	  <tr>
+	  		<td><a href="javascript:;"><img src="images/transparent.gif" class="delete"></a>
+	  		<input type="hidden" value="${gift.fo_id}" name="giftidArray">
+	  		</td> 
+	        <td>${gift.fo_name} </td> 
+	  </tr>
+	  </#list>
+	  </#if>
+	  
+	  </tbody>
+	</table>
+	<span id="gifttip" class="tip error">此项为必填</span>
+	</div>	
+</div>
+
+<div id="gift_selector" >
+</div>
+<script>
+
+var GiftMethod={
+	init:function(){
+		this.bindDeleteEvent();
+		Eop.Dialog.init({id:"gift_selector",modal:false,title:"选择赠品", height:"200px",width:"700px"});
+
+		var self = this;
+		function appendGift(giftList){
+			self.appendGift(giftList);
+		}
+		$("#giftAddBtn").click(function(){
+			GiftSelector.open("gift_selector",appendGift);
+		});		
+	},
+	appendGift:function(giftList){
+	 	for(i in giftList){
+		 	var gift  = giftList[i];
+		 	$("#pmtGiftList tbody").append("<tr><td><a href=\"javascript:;\"><input type='hidden' name='giftidArray' value='"+gift.fo_id+"'><img class=\"delete\" src=\"images/transparent.gif\"/></a></td><td>"+gift.fo_name+"</td></tr>");
+		 	$("#gifttip").hide();
+		}
+	 	this.bindDeleteEvent();
+	},
+	bindDeleteEvent:function(){
+	 	$("#pmtGiftList .delete").unbind("click");
+	 	$("#pmtGiftList .delete").bind("click",function(){
+		 	$(this).parents("tr").remove();
+		 });
+	}	
+		
+};
+$(function(){
+	GiftMethod.init();
+});
+</script>

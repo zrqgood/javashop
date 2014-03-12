@@ -1,0 +1,9 @@
+<#list children as child> 
+<option value="${child.id}" <#if pid==child.id>selected</#if>><#list 1..(level+1)*3 as n>&nbsp;</#list>${child.title}</option>
+	<#if child.hasChildren>
+		<#assign level=level+1 />
+	  	<#assign children=child.children />
+		<#include 'select_children.html' />
+  		<#assign level=level-1/>
+	</#if>
+</#list>

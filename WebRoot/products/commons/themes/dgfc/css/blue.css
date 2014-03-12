@@ -1,0 +1,124 @@
+* {
+	font-size: 12px
+}
+
+/*.widget{height:150px;_height:150px;background-color:#FFF;float:left;width:99%;margin-top: 5px;overflow:hidden;}*/
+.widget{float:left;}
+.itemsWrap{font-size:12px}
+.layout{background-color:#E8EEFA}
+
+
+
+ 
+/*==================== 最新商品 ==========================*/
+
+.tag_goods{
+	width:605px;
+	background-color:#fff;
+}
+.tag_goods .hid{
+	display:none;
+}
+
+.tag_goods .title{
+	background:url(widgets_exmaple.gif) no-repeat scroll 0 -60px;
+	height:25px;
+	line-height:25px;
+	margin:0;
+	padding:0;
+	
+}
+.tag_goods .title .text{
+  font-size:0px;
+}
+.tag_goods .title .more{
+  font-size:0px;
+}
+
+.tag_goods .content{
+   font-size:13px;
+ 
+}
+.tag_goods .content ul{
+   padding:0px;
+   margin:0px;
+   width:100%;
+   display:block
+}
+.tag_goods .content ul li{
+  float:left;
+  width:25%;
+  overflow:hidden;
+}
+.tag_goods .content ul li div.item div.goodsTitle{
+    display:block;
+	height:25px;
+    line-height:25px;
+	width:145px;
+	overflow:hidden;
+	text-align:center;
+}
+.tag_goods .content ul li div.item div.goodsTitle a{
+    font-size:12px;
+    font-weight:bold;
+
+}
+.tag_goods .content ul li div.item div.goodsImg{
+    height:80px;
+	text-align:center;
+}
+.tag_goods .content ul li div.item div.goodsImg img{
+     border:0px;
+     width:103px;
+     height:80px;
+}
+.tag_goods .content ul li div.item div.marketPrice{
+     height:20px;
+	 line-height:20px;
+	 float:none;
+	 font-size:12px;
+	 text-align:center;
+	 color:#999999;
+     text-decoration:line-through;
+}
+.tag_goods .content ul li div.item div.price{
+     height:20px;
+	 line-height:20px;
+	 float:none;
+	 font-size:12px;
+	 text-align:center;
+	 color:#666666;
+}
+.tag_goods .content ul li div.item div.save{
+     height:20px;
+	 line-height:20px;
+	 float:none;
+	 font-size:12px;
+	 text-align:center;
+	 color:#666666;
+}
+.tag_goods .content ul li div.item div.discount{
+     height:20px;
+	 line-height:20px;
+	 float:none;
+	 font-size:12px;
+	 text-align:center;
+	 color:#666666;
+}
+.tag_goods .content ul li div.item div.marketPrice span.marketPrice0 {
+   color:#999999;
+   
+}
+.tag_goods .content ul li div.item div.marketPrice span.marketPrice1 {
+   color:#999999;
+ 
+}
+.tag_goods .content ul li div.item div.price span.price1{
+   color: #ff9900; font-weight: bold;
+}
+.tag_goods .roundrect_top{
+	display:none;
+}
+.tag_goods .roundrect_bottom{
+	display:none;
+}

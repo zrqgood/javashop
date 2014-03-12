@@ -1,0 +1,19 @@
+<div class="productDetail">
+	<div class="nav">${navbar}</div>
+	<div class="name">
+		${data.title!''}
+	</div>
+	<div class="photos">
+		<#if data.img?exists>
+			<#if data.img!=''>
+				<img src="${data.img!''}" />
+			</#if>
+		</#if>			
+	</div>
+	<div class="cont">
+		<h1 class="bg">详细描述</h1>
+		<div class="depict">
+			${data.content!''}
+		</div>
+	</div>
+</div>

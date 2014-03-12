@@ -1,0 +1,22 @@
+<div class="goodsList">
+	<ul>
+		<#list goodsList as goods>
+		<li>
+			<div class="goodsImg">
+				<a href="goods-${goods.goods_id}.html">
+					<img alt="${goods.name}" src="${goods.thumbnail_pic}" title="${goods.name!''}"  width="${setting.thumbnail_pic_width}" height="${setting.thumbnail_pic_height}" />
+				</a>
+			</div>
+			<div class="info">
+				<h6><a href="goods-${goods.goods_id}.html">${goods.name}</a></h6>
+				<ul class="price">
+					<li>市场价：<span class="mktprice1">${goods.mktprice?string.currency}</span></li>
+					<li>销售价：<span class="price1">${goods.price?string.currency}</span></li>
+				</ul>
+			</div>
+			<div class="opacity"></div>
+		</li>
+		</#list>
+	</ul>
+	<div class="clear"></div>
+</div>

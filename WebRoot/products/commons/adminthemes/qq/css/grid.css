@@ -1,0 +1,135 @@
+body{
+	margin:0px;
+	font-family:Arial,"宋体",Verdana,sans-serif;
+	font-size:12px;
+}
+html,body {padding: 0;margin: 0; overflow-x:hidden; overflow-y:auto;}
+dl,dd{margin:0px}
+ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+/*定义列表容器的样式，使用div元素*/
+.grid{
+	font-family:Arial,"宋体",Verdana,sans-serif;
+	font-size:12px;
+}
+
+/*定义列表容器中所有公用元素样式，需要重定义的，在下面再重新定义*/
+.grid ul{
+	list-style-type:none;
+	text-align:center;
+}
+.grid ul li{
+	float:left;
+}
+/*定义列表容器中表格的样式，使用table元素*/
+.grid form{
+	margin:0px;
+    padding:0px;
+	font-size:normal;
+}
+.grid table{
+	width:100%;
+	margin:0px;
+	padding:0px;
+	height:auto;
+	border-collapse: collapse;
+	background-color:#fff;
+	margin-left:-1px;
+	margin-top:1px;
+	
+}
+
+/*定义表格中列头的样式，使用th元素*/
+.grid table  th{
+	text-align:left;
+	border-bottom:1px solid #C1C8D2;
+	background:transparent url(../images/mail.gif) repeat-y scroll -128px 0;
+	background-color:#F2F4F6;
+	padding-left:10px;
+	font-size:12px;
+	font-size:normal;
+}
+/*定义表格中列头中链接样式，使用th元素*/
+.grid th a{
+    font-size:12px;
+    font-weight:normal;
+	color: #000;
+	text-decoration: none;
+
+}
+.grid th a:hover{
+	text-decoration: underline;
+}
+/*定义表格中单元格的样式，使用td元素*/
+.grid table td{
+	border-bottom:1px solid #CCCCCC;
+	height:24px;
+	font-size:12px;
+	color:#000;
+}
+.grid table tr.selected{
+	background-color:#dddddd;
+}
+
+/*定义列表容器中分页的样式，使用div元素*/
+.grid .page{
+	padding:5px 0 0 10px;
+}
+
+/*定义列表容器中分页信息的样式，使用span元素*/
+.grid .page .info{
+ 
+	padding:2px 6px;
+	margin:2px;
+	color: #3D6BAC;
+	float:left;
+}
+
+/*定义列表容器中分页的样式，使用ul元素*/
+.grid .page ul{
+	color: #FFF;
+	float:right;
+	line-height:30px;
+}
+
+/*定义列表容器中分页的样式，使用li元素*/
+.grid .page ul li{
+}
+
+/*定义列表容器中分页链接的样式，使用li元素*/
+.grid .page li a{
+ 
+	padding:2px 6px;
+	margin:2px;
+	color: #999;
+	text-decoration: none;	
+}
+
+/*定义列表容器中选中页的样式，使用li元素*/
+.grid .page .selected{
+	color: #3D6BAC;
+	text-decoration: underline;	
+}
+/*定义表格中列头升序的样式，使用元素*/
+.grid .asc{
+	color:#000;
+	padding-right:18px;
+	background:url(../images/arrow_up.gif) no-repeat center right;
+}
+/*定义表格中列头降序的样式，使用a元素*/
+.grid .desc{
+	color:#000;
+	padding-right:18px;
+	background:url(../images/arrow_down.gif) no-repeat center right;
+}
+/*定义表格中操作列修改的样式，使用a元素*/
+.grid .modify{
+	display:block;
+	background:url(../images/mail.gif) no-repeat scroll 0 0px;
+	width:20px;
+	height:18px;
+	overflow:hidden;
+}

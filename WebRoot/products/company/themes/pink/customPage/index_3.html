@@ -1,0 +1,10 @@
+<div class="title">
+	<h1>解决方案</h1><span class="more"><a href="solution-13-1.html">更多</a></span>
+</div>
+<div class="list">
+	<ul>
+		<#list dataList as data>
+		<li><a href="detail-${data.cat_id}-${data.id}.html">${data.title!''}</a></li>
+		</#list>
+	</ul>
+</div>

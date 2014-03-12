@@ -1,0 +1,553 @@
+.Border{}
+.Background{background-color:#ECF5FF;}
+.ImgBorder{border:1px solid #0770BB;}
+.ImgBackground{background-color:#B0D3EE;}
+.ButtonBackground{background-color:#E2E8EB}
+.ButtonBorder{border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;border-style:solid;border-width:1px 2px 2px 1px;}
+.loading{
+	background:#ECF5FF url("../images/loading.gif") no-repeat scroll 5px 50%;
+	border:1px solid #1C80C8;
+	font-size:12px;
+	height:25px;
+	left:50%;
+	line-height:25px;
+	margin:-50px 0 0 -100px;
+	padding-left:25px;
+	padding-right:10px;
+	position:absolute;
+	text-align:left;
+	top:50%;
+	z-index:99;
+}
+/*=====后台模板中选项卡样式======*/
+ul.tab{
+	font-size:14px;
+	height:30px;
+	padding:10px 0 0 30px !important;
+	vertical-align:bottom;
+	clear:both;
+	background:url("../images/tabbar_bg.gif") repeat-x scroll;
+}
+ul.tab li{
+	background:#DAEC93 none repeat scroll 0 0;
+	border-width:0;
+	cursor:pointer;
+	float:left;
+	height:23px;
+	line-height:24px;
+	margin-left:3px;
+	padding:0 15px;
+}
+ul.tab li a{
+	color:#666666;
+	font-size:12px;
+	text-decoration:none;
+}
+ul.tab li.active{
+	background:#FBFDFF none repeat scroll 0 0;
+	border-color:#99CC00;
+	border-style:solid;
+	border-width:1px 1px 0;
+	color:#000000;
+	font-weight:bold;
+	height:24px;
+	line-height:25px;
+}
+ul.tab li.active a{
+	color:#000;
+}
+/*=====后台模板中工具栏按钮样式======*/
+/*定义列表容器中工具栏的样式，使用div元素*/
+ 
+.toolbar{
+	overflow:hidden;
+	background:none repeat scroll 0 0 #F1F7FD;
+	height:25px;
+	margin:5px;
+	padding:5px 0 5px 10px;
+	text-align:left;
+}
+
+/*定义列表容器中工具栏列表的样式，使用ul元素*/
+.toolbar ul{
+	padding:0px;
+	margin:0px;
+}
+
+/*定义列表容器中工具栏列表的样式，使用li元素*/
+.toolbar ul li{
+	margin-left:5px;
+	padding-top:2px;
+}
+
+/*定义列表容器中工具栏按钮链接的样式，使用a元素*/
+.toolbar li a{
+	line-height: 21px;
+	color: #234f8d;
+	background: url("../images/buttons.png") repeat scroll -10px -108px transparent;
+	text-align: center;
+	display: block;
+	height: 21px;
+	width: 80px;
+	float: left;
+	text-decoration: none;
+}
+
+
+.modify{
+cursor:pointer;
+	background:transparent url("../images/gridicon.gif") no-repeat scroll 0px -44px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+	border:0px;
+}
+
+.delete{
+ cursor:pointer;
+	background:transparent url("../images/gridicon.gif") no-repeat scroll 0px -85px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+ border:0px;
+}
+
+
+.add{
+ cursor:pointer;
+	background:transparent url("../images/gridicon.gif") no-repeat scroll 0px -1px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+ border:0px;
+}
+
+.submitlist td{text-align:center}
+.submitlist .submitBtn{
+	background:none repeat scroll 0 0 #DDDDDD;
+	border-color:#DDDDDD #666666 #666666 #DDDDDD;
+	color:#000000;
+	cursor:pointer;
+	margin:3px 0;
+	padding:2px 5px;
+	vertical-align:middle;
+}
+
+.success{
+	margin-top:30px;
+	border-top:4px solid #deeefa;
+	border-bottom:4px solid #deeefa;
+	margin-left:20px;
+	margin-right:20px;
+	background:#f2f9fd;
+	height:110px;
+	text-align:center;
+	padding-top:15px;
+}
+.success h4{ 
+	color:#009900;
+	font-size:14px;
+	font-weight:bold;
+	
+}
+.success a{
+	color:#666666;
+	font-size:12px;
+	text-decoration:none;
+}
+.version{color:#000;}
+#index_box{
+	margin:10px;
+	width:450px;
+	float:left;
+}
+#index_box .imp{color:#FF662E;text-decoration:none;}
+#en_notice{
+	width:250px;
+	height:227px;
+	float:left;
+	border:1px solid #C4D5E0;
+	margin-top:10px;
+}
+
+#en_notice h3{
+	background-color:#EBF1F4;
+	margin:0;
+	padding:2px;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+}
+
+.index_nav{
+	background:none repeat scroll 0 0 #F1F7FD;
+	height:25px;
+	margin:5px;
+	overflow:hidden;
+	padding:10px 0 5px 10px;
+	text-align:left;
+	font-weight:bold;
+}
+#template{display:none;}
+.indexitem .title{
+	font-weight:bold;
+	border-bottom:1px solid #C4D5E0;
+	padding:1px;
+}
+.indexitem .title h3{
+	background:#EBF1F4;
+	display:block;
+	font-size:12px;
+	font-weight:bold;
+	height:21px;
+	line-height:21px;
+	padding-left:10px;
+	margin:0;
+	padding:0;
+}
+.indexitem{
+	width:212px;
+	float:left;
+	background-color:#FFFFFF;
+	border:1px solid #C4D5E0;
+	margin-bottom:10px;
+	margin-right:10px;
+}
+.indexitem .body th{font-weight:normal;height:20px;line-height:20px;border-bottom:1px solid #EEEEEE;}
+.indexitem .body td{font-weight:normal;height:20px;line-height:20px;border-bottom:1px solid #EEEEEE;}
+.desktop{float:left;width:80px;margin:7px 0 0 5px;}
+.desktop a{ 
+	text-indent:-999px; 
+	display:block;
+	width:47px;
+	height:23px;
+	background:transparent url("../images/desktop.gif") no-repeat scroll 0px 0px;
+}
+.closebtn{
+	background:url("../images/close.gif") no-repeat scroll 0 0 transparent;
+	width:8px;height:8px;
+	display:block;
+	float:right;
+	cursor:pointer;
+	margin-right:-20px;
+	margin-left:225px!important;
+	margin-top:-10px;
+ 
+}
+*html .closebtn{
+	margin-left:0px!important;
+	margin-right:-15px;
+}
+.popup-info-box {
+display:none;
+left:80px;
+padding-bottom:10px;
+position:absolute;
+top:2px;
+z-index:995;
+}
+.popup-info-box .bl {
+background:url("../images/popup_box_borders.gif") no-repeat scroll 0 0 transparent;
+padding-left:14px;
+}
+.popup-info-box .br {
+background:url("../images/popup_box_borders.gif") no-repeat scroll right 0 transparent;
+padding-right:11px;
+}
+.popup-info-box .bd {
+background:url("../images/popup_box_border_top.gif") repeat-x scroll 0 0 #FFFFFF;
+color:#666666;
+line-height:170%;
+padding:20px 25px 15px 15px;
+text-align:left;
+width:210px;
+}
+.popup-info-box .bt {
+clear:both;
+position:relative;
+}
+.popup-info-box .bt .corner {
+background:url("../images/popup_box_bt_corners.gif") no-repeat scroll 0 0 transparent;
+font-size:0;
+height:12px;
+position:absolute;
+top:0;
+width:13px;
+}
+.popup-info-box .bt-l {
+background-position:0 0 !important;
+left:0;
+}
+.popup-info-box .bt-r {
+background-position:-13px 0 !important;
+right:2px;
+}
+.popup-info-box .bt .mid {
+background:url("../images/popup_box_bt_bg.gif") repeat-x scroll 0 0 transparent;
+height:12px;
+left:13px;
+position:absolute;
+top:0;
+width:247px;
+}
+ 
+.popup-info-box .user-info {
+	color:#666666;
+	font-size:12px;
+ 
+}
+.popup-info-box .user-info td {
+overflow:hidden;
+}
+.popup-info-box .user-info td.message {
+word-wrap:break-word;
+}
+.popup-info-box .user-info h5 {
+background:url("../images/user_info_bg.gif") no-repeat scroll 0 4px transparent;
+color:#C33700;
+font-size:12px;
+font-weight:bold;
+margin-bottom:5px;
+padding-left:23px;
+}
+.popup-info-box hr {
+border-bottom:1px solid #FFFFFF;
+border-top:1px solid #F7EEC2;
+border-width:1px 0;
+clear:both;
+height:2px;
+margin:5px 0;
+overflow:hidden;
+width:210px;
+}
+.popup-info-box .view-address {
+	margin:8px 0 0 40px;
+}
+
+.help_icon {
+	background:url("../images/help_icon.gif") no-repeat scroll right center transparent;
+	cursor:pointer;
+	width:10px;
+	height:10px;
+	margin-top:10px;
+	
+	padding-left:10px;
+}
+#version_box li.app{font-size:14px;font-weight:bold;}
+#version_box li.log{font-size:12px;font-weight:normal;}
+#version_box ul{margin-left:5px}
+
+/* Main Style Sheet for jQuery UI date picker */
+#datepicker_div, .datepicker_inline {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+	background: #ddd;
+	width: 185px;
+}
+#datepicker_div {
+	display: none;
+	border: 1px solid #777;
+	z-index: 9999; /*must have*/
+}
+.datepicker_inline {
+	float: left;
+	display: block;
+	border: 0;
+}
+.datepicker_rtl {
+	direction: rtl;
+}
+.datepicker_dialog {
+	padding: 5px !important;
+	border: 4px ridge #ddd !important;
+}
+button.datepicker_trigger {
+	width: 25px;
+}
+img.datepicker_trigger {
+	margin: 2px;
+	vertical-align: middle;
+}
+.datepicker_prompt {
+	float: left;
+	padding: 2px;
+	background: #ddd;
+	color: #000;
+}
+* html .datepicker_prompt {
+	width: 185px;
+}
+.datepicker_control, .datepicker_links, .datepicker_header, .datepicker {
+	clear: both;
+	float: left;
+	width: 100%;
+	color: #fff;
+}
+.datepicker_control {
+	background: #400;
+	padding: 2px 0px;
+}
+.datepicker_links {
+	background: #000;
+	padding: 2px 0px;
+}
+.datepicker_control, .datepicker_links {
+	font-weight: bold;
+	font-size: 80%;
+	letter-spacing: 1px;
+}
+.datepicker_links label { /* disabled links */
+	padding: 2px 5px;
+	color: #888;
+}
+.datepicker_clear, .datepicker_prev {
+	float: left;
+	width: 34%;
+}
+.datepicker_rtl .datepicker_clear, .datepicker_rtl .datepicker_prev {
+	float: right;
+	text-align: right;
+}
+.datepicker_current {
+	float: left;
+	width: 30%;
+	text-align: center;
+}
+.datepicker_close, .datepicker_next {
+	float: right;
+	width: 34%;
+	text-align: right;
+}
+.datepicker_rtl .datepicker_close, .datepicker_rtl .datepicker_next {
+	float: left;
+	text-align: left;
+}
+.datepicker_header {
+	padding: 1px 0 3px;
+	background: #333;
+	text-align: center;
+	font-weight: bold;
+	height: 1.3em;
+}
+.datepicker_header select {
+	background: #333;
+	color: #fff;
+	border: 0px;
+	font-weight: bold;
+}
+.datepicker {
+	background: #ccc;
+	text-align: center;
+	font-size: 100%;
+}
+.datepicker a {
+	display: block;
+	width: 100%;
+}
+.datepicker_titleRow {
+	background: #777;
+}
+.datepicker_daysRow {
+	background: #eee;
+	color: #666;
+}
+.datepicker_weekCol {
+	background: #777;
+	color: #fff;
+}
+.datepicker_daysCell {
+	color: #000;
+	border: 1px solid #ddd;
+}
+.datepicker_daysCell a{
+	display: block;
+}
+.datepicker_weekEndCell {
+	background: #ddd;
+}
+.datepicker_titleRow .datepicker_weekEndCell {
+	background: #777;
+}
+.datepicker_daysCellOver {
+	background: #fff;
+	border: 1px solid #777;
+}
+.datepicker_unselectable {
+	color: #888;
+}
+.datepicker_today {
+	background: #fcc !important;
+}
+.datepicker_currentDay {
+	background: #999 !important;
+}
+.datepicker_status {
+	background: #ddd;
+	width: 100%;
+	font-size: 80%;
+	text-align: center;
+}
+
+/* ________ Datepicker Links _______
+
+** Reset link properties and then override them with !important */
+#datepicker_div a, .datepicker_inline a {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	background: none;
+	color: #000;
+}
+.datepicker_inline .datepicker_links a {
+	padding: 0 5px !important;
+}
+.datepicker_control a, .datepicker_links a {
+	padding: 2px 5px !important;
+	color: #eee !important;
+}
+.datepicker_titleRow a {
+	color: #eee !important;
+}
+.datepicker_control a:hover {
+	background: #fdd !important;
+	color: #333 !important;
+}
+.datepicker_links a:hover, .datepicker_titleRow a:hover {
+	background: #ddd !important;
+	color: #333 !important;
+}
+
+/* ___________ MULTIPLE MONTHS _________*/
+
+.datepicker_multi .datepicker {
+	border: 1px solid #777;
+}
+.datepicker_oneMonth {
+	float: left;
+	width: 185px;
+}
+.datepicker_newRow {
+	clear: left;
+}
+
+/* ___________ IE6 IFRAME FIX ________ */
+
+.datepicker_cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+} 

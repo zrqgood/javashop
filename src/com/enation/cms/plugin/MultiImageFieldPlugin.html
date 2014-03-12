@@ -1,0 +1,93 @@
+<style>
+#multi_img_box{}
+#multi_img_box .image_list_box{border:1px solid #666;height:480px}
+#image_box_temp{display:none}
+#multi_img_box .img_wrapper img{width:150px;height:200px;border:1px solid #ccc}
+#multi_img_box .img_box{float:left;width:150px;margin:5px 5px 5px 10px}
+#multi_img_box .op_bar{text-align:right;}
+#multi_img_box .op_bar input{width:120px}
+</style>
+
+<div id="multi_img_box">
+	<div class="bar"><input type="button" id="mtUploadBtn" value="上传图片"/></div>
+	
+	<div class="image_list_box">
+		<#if imglist?exists >
+			<#list imglist as imgObj>
+				<#include 'imgbox.html' />
+			</#list>
+		</#if>
+	</div>
+	
+	<div id="image_box_temp" class="img_box">
+		<input type="hidden" name="${fieldname}_img" />
+		<div class="img_wrapper">
+
+		</div>
+		<div class="op_bar">
+		 <input type="text" name="${fieldname}_title" value="在这里输入图片标题" /><img class="delete" src="images/transparent.gif" />
+		</div>
+	</div>
+</div>
+<div id="mtUploadDlg"></div>
+<script>
+function deleteImg(btn){
+	if( confirm("确定要删除此图片吗") ){
+		$.Loading.show('正在删除...');
+		var picname= btn.parents(".img_box").find(".img_wrapper>img").attr("src") ;
+		$.ajax({
+			 type: "GET",
+			 url: "${ctx}/eop/upload!delete.${ext}?picname="+picname,
+			 data: "ajax=1",
+			 dataType:"json",
+			 success: function(result){
+				 if(result.result==0){
+					 btn.parents(".img_box").remove();
+						$.Loading.hide();
+			     }else{
+			    	 alert("操作失败，请重试");
+				 }
+			 },
+			 error:function(){
+				 alert("操作失败，请重试");
+			 }
+		});
+	}
+	
+}
+function mtlUploadOk(data){
+	if(data.result==1){
+		var imgbox = $("#image_box_temp").clone().removeAttr("id");
+		imgbox.children(".img_wrapper").append("<img src='"+data.path+"' />")
+		imgbox.children("input").val(data.path);
+		imgbox.find('.op_bar>input').click(function(){
+			if('在这里输入图片标题' ==this.value){
+				$(this).select();
+			}
+		});
+		$("#multi_img_box .image_list_box").append(imgbox);
+		//图片的删除
+		imgbox.find(".delete").click(function(){
+			deleteImg($(this));
+		});
+		Eop.Dialog.close("mtUploadDlg");
+	}
+}
+
+$(function(){
+	//图片删除事件
+	$(".img_box .delete").click(function(){
+		deleteImg($(this));
+	});
+
+	//文件上传
+	Eop.Dialog.init({id:'mtUploadDlg', width:500,height:280,title:'上传图片'});
+	$("#mtUploadBtn").click(function(){
+		Eop.Dialog.open("mtUploadDlg");
+		$("#mtUploadDlg").load('${ctx}/eop/upload.${ext}?subFolder=cms',function(){
+			Eop.Upload.uploadOk = mtlUploadOk;
+		});
+	});
+	
+});
+</script>

@@ -1,0 +1,59 @@
+.input{
+	font-family:Arial,"宋体",Verdana,sans-serif;
+	font-size:12px;
+	padding-left:10px;
+	padding-right:10px;
+	_width:96%;	
+	_padding-right:5px;
+}
+.input table{
+border-collapse:collapse;
+	width:100%;
+}
+.input table tr{
+	border-bottom:1px dashed #DEEFFB;
+}
+.input table td {
+	border-bottom:1px dashed #DEEFFB;
+	padding:6px 2px;
+	vertical-align:center;
+	font-weight:bold;
+	letter-spacing:2px;
+}
+.input table th{
+	width:150px;
+	font-size:12px;
+	font-weight:bold;
+	padding-left:35px;
+	border-bottom:1px dashed #DEEFFB;
+}
+ 
+.input ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+.input .info{
+/*	width:100%;*/
+	padding:5px 0 5px 30px;
+	background:#fff;
+}
+.input .info ul{
+	display:inline-block;
+} 
+.input .info ul li{
+	float:left;
+	line-height:20px;
+	padding:0 8px;
+}
+.input .info ul li a{
+	color:#071C8B;
+	text-decoration:none;
+}
+.input .info ul li a:hover{
+	text-decoration:underline;
+}
+.input form{
+	padding:0;
+	margin:0;
+}

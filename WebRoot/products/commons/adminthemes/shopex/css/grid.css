@@ -1,0 +1,109 @@
+@CHARSET "UTF-8";
+.grid{width:100%;clear:both;}
+.grid form{
+	margin:0;
+	padding:0;
+}
+.grid table{
+	width:100%;
+	border-collapse:collapse;
+	empty-cells: show;
+	border-bottom:1px solid #ddd;
+}
+.grid table a{
+	text-decoration:none;
+	color:#000;
+}
+.grid table tr{
+	height:24px;
+	line-height:24px;
+}
+.grid table thead tr{
+	background:transparent url(../images/tablethbg.gif) repeat scroll 0 0;
+	color:#000000;
+	font-weight:bold;
+}
+.grid table thead tr th{
+	border-bottom:1px solid #CCCCCC;
+	border-right:1px solid #DBE2E7;
+	background:transparent url(../images/blank_01.gif) repeat-y scroll left 0;;
+	*background:transparent url(../images/tablethbg_a.gif) no-repeat scroll left 0;
+	text-align:left;
+	padding:0 2px;
+}
+.grid table thead tr th a:hover{
+	color:#FF9900;
+}
+.grid table tbody tr{
+	background:#F1F5FA url(../images/blank_01.gif) repeat-x scroll 0 top;
+}
+.grid table tbody tr td{
+	border-right:1px solid #DBE2E7;
+	border-bottom:1px solid #DDDDDD;
+	background:transparent url(../images/blank_01.gif) repeat-y scroll left 0;
+	*background:#F1F5FA url(../images/blank_01.gif) repeat-y scroll left 0;
+	padding:2px;
+}
+.grid table tbody tr:hover{
+	background:#ffffd4;
+}
+.grid .page{
+	background:transparent url(../images/functionareabg.gif) repeat scroll 0 40px;
+	border-bottom:1px solid #CCCCCC;
+	border-top:1px solid #CCCCCC;
+	height:28px;
+	line-height:28px;
+	margin-top:1px;
+}
+.grid .page span.info{
+	margin:0 5px 0 0 ;
+	height:27px;
+	line-height:27px;
+	float:right;
+}
+.grid .page ul{
+	float:left;
+	line-height:27px;
+	padding-left:8px;
+}
+.grid .page ul li{
+	float:left;
+	text-align:center;
+	margin-top:3px;
+}
+.grid .page ul li a{
+	color:#000000;
+	display:block;
+	border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;
+	border-style:solid;
+	border-width:1px;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	margin-right:3px;
+}
+.grid .page ul li a:hover{
+	background:#ffffd4;
+}
+.grid .page .selected{
+	background:#FFFFFF;
+	color:#000000;
+	font-weight:700;
+}
+.grid .asc{
+	border-top:1px solid #FF9900;
+	padding-right:18px;
+	background:transparent url(../images/arrow-up.gif) no-repeat scroll 95% 50%;
+	color:#336699;
+	cursor:pointer;
+	padding-left:3px;
+	display:block;
+}
+.grid .desc{
+	border-top:1px solid #FF9900;
+	background:transparent url(../images/arrow-down.gif) no-repeat scroll 95% 50%;
+	color:#336699;
+	cursor:pointer;
+	padding-left:3px;
+	display:block;
+}

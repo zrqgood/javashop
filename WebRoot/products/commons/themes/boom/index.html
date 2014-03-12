@@ -1,0 +1,65 @@
+<#include 'common/header.html' />
+<style id="slidewigetsStyle">#slidewigetscontrols #num_nav ul li{float:left; height:12px; font-size:10px; line-height:12px;}#slidewigetscontrols #num_nav ul li a{ display:block; background:#efefef; color:#0e0e0e; text-align:center;}#slidewigetscontrols #num_nav ul li a.active{ background:#f90; color:#fff;}</style>
+<div class="AllWrap clearfix">
+  <div class="span-19 pageMain">
+    <div class="mainTopArea clearfix">
+      <div class="span-14">
+        <div class="bannerArea">
+		<script>var SL_Slider = new Class({Implements: [Options],numNav: new Array(),timer: null,isSliding: 0,direction: 1,origColor: null,options: {slideTimer: 8000,isPaused: 0,transitionTime: 3000,slidecontainer: null,slideitems:  null,slideitemNum: 0,hasControls: false,numNavActive: false,numNavHolder: null,playBtn: null,prevBtn: null,nextBtn: null},initialize: function(options) {this.setOptions(options);this.options.slidecontainer.setStyle('overflow', "hidden");if(this.options.hasControls != false) {this.pauseIt.bind(this);this.options.playBtn.set('text', 'pause');this.options.playBtn.addEvents({'mouseover': 	function() {this.pauseIt();}.bind(this),'mouseenter' : function() {this.setStyle('cursor', 'pointer');}});this.options.playBtn.addEvent('mouseenter', function() {this.setStyle('cursor', 'pointer');} );}this.options.slideitems.each(function(el, i){el.setStyle('position', "absolute");var slideitemH = el.getSize().y;var slideitemW = el.getSize().x;el.setStyle('left', (-1 * slideitemW));if(this.options.numNavActive){var numslideitem = new Element('li', {id: 'num'+i});var numLink = new Element('a', {'class': 'numbtn','html': (i+1)});numslideitem.adopt(numLink);this.options.numNavHolder.adopt(numslideitem);this.numNav.push(numLink);numLink.set('morph', {duration: 100, transition: Fx.Transitions.linear, link: 'ignore'});numLink.addEvents({'mouseover' : this.numPress.bindWithEvent(this, i),'mouseenter' : function() {this.setStyle('cursor', 'pointer');}});if(i == this.options.slideitemNum){var initNum = this.numNav[i];initNum.addClass('active');}}}, this);},start: function() {this.slideIt(this.options.slideitemNum);this.theTimer = this.slideIt.periodical(this.options.slideTimer, this, null);},slideIt: function(passedID) {var curslideitem = this.options.slideitems[this.options.slideitemNum];if(this.options.numNavActive){var curNumslideitem =  this.numNav[this.options.slideitemNum];}if(this.direction == 1){var curX = this.options.slidecontainer.getSize().x;}else{var curX = (-1 * this.options.slidecontainer.getSize().x);}this.changeIndex();if(passedID != null) {if(this.options.slideitemNum != passedID){this.options.slideitemNum = passedID;}}var newslideitem = this.options.slideitems[this.options.slideitemNum];if(this.options.numNavActive){var newNumslideitem =  this.numNav[this.options.slideitemNum];}if(this.direction == 1){var newX = (-1 * newslideitem.getSize().x);}else{var newX = newslideitem.getSize().x;}var slideitem_in = new Fx.Morph(newslideitem, {duration: this.options.transitionTime,transition: 'cubic:inOut',link: 'ignore',onStart: this.toggleSlidingOn.create({bind: this}),onComplete: this.toggleSlidingOff.create({bind: this})});if(this.options.numNavActive){newNumslideitem.addClass('active');}slideitem_in.start({'left' : [newX, 0]});if(curslideitem != newslideitem){var slideitem_out = new Fx.Morph(curslideitem, {duration: this.options.transitionTime,transition: 'cubic:inOut',link: 'ignore'});if(this.options.numNavActive){curNumslideitem.removeClass('active');}slideitem_out.start({'left' : [(curX)]});}},pauseIt: function () {if(this.isSliding == 0){if(this.options.isPaused == 0){this.options.isPaused = 1;$clear(this.theTimer);this.options.playBtn.set('text', 'play');}else{this.options.isPaused = 0;this.slideIt();this.theTimer = this.slideIt.periodical(this.options.slideTimer, this, null);this.options.playBtn.set('text', 'pause');}}},changeIndex: function() {var numslideitems = this.options.slideitems.length;if(this.direction == 1){if(this.options.slideitemNum < (numslideitems - 1)){this.options.slideitemNum++;}else{this.options.slideitemNum = 0;}}else if(this.direction == 0){if(this.options.slideitemNum > 0){this.options.slideitemNum--;}else{this.options.slideitemNum = (numslideitems - 1);}}},numPress: function (e, theIndex) {if((this.isSliding == 0) && (this.options.slideitemNum != theIndex)){if(this.options.isPaused == 0){$clear(this.theTimer);this.theTimer = this.slideIt.periodical(this.options.slideTimer, this, null);}this.slideIt(theIndex);}},toggleSlidingOn: function () {this.isSliding = 1;},toggleSlidingOff: function () {this.isSliding = 0;}});window.addEvent('domready', function() {var slideitemsHolder = $('slidecontainer');var numNavHolder = $('num_nav').getElement('ul');var myslideitems = $$('.slideitem');var firstslideitem = myslideitems[0];var thePlayBtn = $('play_btn');var mySlider = new SL_Slider({slideTimer:3000,transitionTime:3000,slidecontainer: slideitemsHolder,slideitems: myslideitems,hasControls: false,numNavActive: true,numNavHolder: numNavHolder,playBtn: thePlayBtn});mySlider.start();});</script><div id="slidecontainer" style="height: 172px; overflow: hidden; position: relative; width: 550px;"><div style="position: absolute; left: -202px;" class="slideitem"> <a href="#"><img src="http://localhost/themes/boom/images/bigbanner-1.gif"></a> </div><div style="position: absolute; left: 550px;" class="slideitem"> <a href="#"><img src="http://localhost/themes/boom/images/bigbanner-1.gif"></a> </div><div style="position: absolute; left: 348px;" class="slideitem"> <a href="#"><img src="http://localhost/themes/boom/images/bigbanner-1.gif"></a> </div></div><div id="slidewigetscontrols"><div id="play_btn"> </div><div id="num_nav" class="clearfix"><ul><li style="width: 183px;" id="num0"><a style="cursor: pointer;" class="numbtn active">1</a></li><li style="width: 183px;" id="num1"><a style="cursor: pointer;" class="numbtn ">2</a></li><li style="width: 183px;" id="num2"><a style="cursor: pointer;" class="numbtn ">3</a></li></ul></div></div><script>window.addEvent('domready', function() {$('slidewigetsStyle').inject($E('link'), 'before');$$('#slidewigetscontrols #num_nav ul li').setStyle('width',($('slidecontainer').getSize().x-1)/$$('#slidewigetscontrols #num_nav ul li').length)});</script>
+		</div>
+        <div class="topPush">${widget_3}</div>
+      </div>
+      <div class="span-4 last topTenTitle clearfix"> </div>
+      <div class="span-4 last topTen">${widget_13}</div>
+    </div>
+    <div class="clearfix">
+      <div class="span-5 pushdown-1"><div id="middlebanner-1"></div></div>
+      <div class="span-5 pushdown-1"><div id="middlebanner-2"></div></div>
+      <div class="span-9 pushdown-1 last"><div id="middlebanner-3"></div></div>
+    </div>
+    
+    <div class="MainBorder">
+      <div class="addInfo"></div>
+      <div class="top new"></div>
+      <div class="body clearfix">
+        <div class="bannerArea"><div id="mainBanner1"></div></div>
+        <div class="goodsArea">${widget_12}</div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+    
+    <div class="indexBrandLogo pushdown-2"></div>
+    
+    <div class="MainBorder">
+    <div class="addInfo"></div>
+      <div class="top hot"></div>
+      <div class="body clearfix">
+        <div class="bannerArea"><div id="mainBanner2"></div></div>
+        <div class="goodsArea">${widget_11}</div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+    
+    <div class="MainBorder">
+    <div class="addInfo"></div>
+      <div class="top recommend"></div>
+      <div class="body clearfix">
+        <div class="bannerArea"><div id="mainBanner3"></div></div>
+        <div class="goodsArea">${widget_10}</div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+    <div class="footLinks pushdown-2"> </div>
+  </div>
+  <div class="span-5 pageSide" >
+  ${widget_2}
+  
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+$(".mktprice1").hide();
+$("#widget_13 ul").hide();
+})
+</script>
+<#include 'common/footer.html' />

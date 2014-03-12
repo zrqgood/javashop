@@ -1,0 +1,8 @@
+<h4>可获得赠品：</h4>
+<ol class="division CartInfoContent">
+<#list giftList as item>
+	<li>
+	<a href="gift-${item.id}.html">${item.name}<span class="fontcolorOrange num">x${item.num}</span></a>
+	</li>
+</#list>	
+</ol>

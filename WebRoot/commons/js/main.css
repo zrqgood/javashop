@@ -1,0 +1,132 @@
+
+body { font:12px Arial, "宋体", Verdana, sans-serif;}
+html,body {padding: 0;margin: 0; overflow-x:hidden; overflow-y:auto;}
+form,iframe { margin: 0px; padding: 0px; }
+ul { list-style: none; margin: 0px; padding: 0px; }
+#header {
+
+ font-size: 14px; color: #185096;
+ color: #185096; background: #DBE9F6 url(../images/topper_bg.jpg) repeat-x top; border-bottom: 1px solid #A6C1DB; padding: 10px; clear: right;	
+}
+ 
+
+#header a:visited {
+	font-weight: bold;	
+  color: #185096;
+  text-decoration:none;
+}
+
+#header a:link {
+	font-weight: bold;	
+	line-height: 30px; margin: auto 10px;
+	text-decoration:none;
+ color: #185096;
+}
+
+#header a:hover {
+ color: #185096;
+  text-decoration:none;
+}
+
+#header span{zoom:1;}
+
+#header .action-span {
+ float: left; font-size: 14px; margin: 0px;
+ line-height: 30px; background: url(../images/topper_arrow.gif) no-repeat 10px center;
+  padding: 0px 10px 0px 30px;
+}
+
+#footer { margin-top: 1em; padding: 1em; text-align: center; padding: 1em 0px; border-top: 1px solid #A6C1DB; color: #999; clear: both;}
+
+#loader {	
+ background: url(../images/loading.gif) no-repeat 5px;
+ background-color:#ECF5FF;
+ position:absolute;    
+ top:40%;                 
+ left:50%;
+ padding-left:25px;
+ margin:-50px 0 0 -100px;     
+ height:25px;    
+ border:1px solid #1C80C8;
+ line-height:25px;
+ font-size:12px;
+ text-align:left;
+ z-index:99;   
+}
+
+
+/*操作栏*/
+
+.toolbar {
+  padding: 7px 10px;
+  overflow:hidden;
+}
+
+
+.toolbar span{
+	zoom:1;display:block;
+	float:left;
+	margin-left:5px;
+	width: 60px; height: 21px; color: #234f8d; border: 0; background: url(../images/button2.gif);
+	text-align:center;		
+}
+
+.toolbar span a{
+ display:block;
+ margin-top:2px;
+ *margin-top:4px;
+ text-decoration:none;
+ color: #234f8d;
+}
+
+.toolbar span a:hover{
+ color: #234f8d;
+  text-decoration:none;
+}
+
+.toolbar span a:link{
+ color: #234f8d;
+  text-decoration:none;
+}
+
+.toolbar span a:visited{
+ color: #234f8d;
+  text-decoration:none;
+}
+
+
+
+.note {font:12px "SimSun"; background:none; padding:3px 5px; vertical-align:middle; margin-left:5px; color: #999; }
+.note.active{background:#EEF7FD url(../images/check_tip.gif) no-repeat 5px center; padding:3px 5px 3px 25px; border:1px solid #9cf;}
+.msg {vertical-align:middle; margin-left:5px;height:15px;width:15px;}
+.msg.error{font:12px "SimSun"; background:#feebeb url(../images/check_error.gif) no-repeat 5px center; padding:3px 5px 3px 25px; vertical-align:middle; margin-left:5px; border:1px solid #d37575; }
+.msg.ok{background:url(../images/check_right.gif) no-repeat ;height:15px;width:15px;margin-left:3px;}
+
+.tab-form { display: none; }
+.tab-bar { background: #FBFDFF url(../images/tabbar_bg.gif) repeat-x; height: 30px; padding: 10px 0 0 30px !important; padding: 9px 0 0 30px; vertical-align: bottom;}
+.tab-bar li { float: left; height: 23px; line-height: 24px; padding: 0px 25px; background: #DAEC93; color:#666; border-width: 0px; cursor: pointer; margin-left: 3px; }
+.tab-bar li.actived { border-width: 1px 1px 0px 1px; border-style: solid; border-color: #99cc00; background: #FBFDFF; color: #000; height: 24px; line-height: 25px; font-weight: bold; }
+
+.tab-page{background:#FBFDFF}
+.form-table,.form-table table { width: 100%; margin:0;}
+.form-table td { border-bottom: 1px dashed #CCC; padding: 6px 2px; vertical-align: top; }
+.form-table td.label { padding-left: 35px; font-weight: bold; width: 160px; letter-spacing: 2px; }
+.form-table td.radio { padding-left: 8px; }
+.form-table td.label-title { font-weight:bold;font-size:15px; }
+.form-table td.sublabel { padding-left: 30px; width: 160px; letter-spacing: 2px; }
+.form-table input,.form-table img { vertical-align:middle; }
+.form-table .title th { text-align:left; padding:6px 5px; border-bottom:1px solid #dadada; }
+.form-table td.pd,.form-table th.pd { padding-left:35px; }
+.form-table fieldset { margin-bottom:20px; border:1px solid #dadada; }
+.form-table  a { text-decoration: none; color:#1A5499; }
+.form-tablet a:hover { text-decoration: underline; color: #FF6600; }
+
+.submitlist { padding-left:200px; }
+
+input.button {width: 60px; height: 21px; color: #234f8d; border: 0; background: url(../images/button2.gif);}
+
+#grid_list{
+	height:400px;
+}
+
+

@@ -1,0 +1,83 @@
+<div class="input">
+	<div class="main-div">
+	 <form class="validate" method="post" action="cat!saveEdit.do" name="theForm" id="theForm" enctype="multipart/form-data">
+	 <input type="hidden" name="cat.cat_id" value="${cat.cat_id }" />
+	   <table cellspacing="1" cellpadding="3" width="100%" class="form-table">
+	     <tr>
+	       <th><label class="text">分类名称</label></th>
+	       <td><input type="text" name="cat.name"   maxlength="60" value="${cat.name }"  dataType="string" required="true"/>       </td>
+	      </tr>
+	     <tr> 
+	       <th><label class="text">分类图片</label></th>
+	       <td><input type="file" name="image" id="image" size="45"/>
+	       <input type="hidden" name="cat.image" value="${cat.image!''}">
+	        </td>
+	     </tr> 
+		     
+		  <#if cat.image?exists >   
+		     <tr>
+		       <th>&nbsp;</th>
+		       <td> 
+		       <div style="width:680px;height:245px;overflow:hidden"><img src="${cat.image }"  /></div>
+		       </td>
+		     </tr>
+		 </#if>
+		   
+	     <tr>
+	       <th><label class="text">上级分类</label></th>
+	       <td>
+			<select name="cat.parent_id"  id="parent_id" >
+			<option value="0">顶级类别</option>
+	  		<#assign children=catList />
+			<#assign level=1 />
+			<#include 'select_children.html' />  
+			</select>
+			</td>
+	      </tr>
+	     <tr>
+	       <th><label class="text">商品类型</label></th>
+	       <td>
+	       <select name="cat.type_id"  id="type_id"  dataType="int" required="true">
+	       <option value="">--选择商品类型--</option>
+        	<#list typeList as type>
+			<option value="${type.type_id }" >${type.name }</option>
+			</#list>	
+			</select>
+			</td>
+	     </tr>
+	     <tr>
+	       <th><label class="text">排序</label></th>
+	       <td>
+	       <input type="text" name="cat.cat_order" value="${cat.cat_order }" style="width:50px" dataType="int" required="true"/>       </td>
+	     </tr>
+	     <tr>
+       <th><label class="text">列表中显示</label></th>
+       <td><input type="radio" class="listshow"   name="cat.list_show" value="1" />是&nbsp;
+       <input type="radio" class="listshow"   name="cat.list_show" value="0"  />否       </td>
+     </tr>
+	   </table>
+		<div class="submitlist" align="center">
+		 <table>
+		 <tr><td >
+            <input name="submit" type="submit"  value=" 确定 " class="submitBtn"/>
+           <input name="reset" type="reset"  value=" 重置 " class="submitBtn"/>
+		   </td>
+		   </tr>
+		 </table>
+		</div>   	   
+	 </form>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("form.validate").validate();
+	$("#parent_id").val(${cat.parent_id});
+	$("#type_id").val(${cat.type_id});
+	$(".listshow").each(function(){
+		if($(this).val() ==  '${cat.list_show}' ){
+			$(this).attr("checked",true);
+		}
+	});
+});
+
+</script>

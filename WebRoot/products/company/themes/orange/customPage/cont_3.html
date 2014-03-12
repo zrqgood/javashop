@@ -1,0 +1,29 @@
+<!--当前位置-->
+<script language="javascript" type="text/javascript">
+	 function fontZoom(size){
+		 document.getElementById('con').style.fontSize=size+'px';
+		}
+</script>
+<div class="path">
+	<h1>详细内容</h1>
+	<span>
+		您现在的位置：${navbar}</a>
+	</span>
+</div>
+<!---->
+<div class="content">
+	<div class="newstitle">${data.title!''}</div>
+	<div class="info">
+		发布于：${data.add_time?string('yyyy-MM-dd hh:mm:ss')} &nbsp;&nbsp; 文字：【<a href="javascript:fontZoom(16)">大</a>】【<a href="javascript:fontZoom(14)">中</a>】【<a href="javascript:fontZoom(12)">小</a>】
+	</div>
+	<div class="con" id="con">
+		<#if data.img?exists>
+			<#if data.img!=''>
+				<img src="${data.img!''}" width="550" height="400" style="padding:0 50px 10px;"/>
+			</#if>
+		</#if>
+		${data.content!''}
+	</div>
+
+</div>
+<!---->		

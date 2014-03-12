@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<!-- 安装 -->
+	<package name="install" namespace="/install" extends="eop_default">
+		<action name="install" class="eopInstallAction">
+			<result name="step1">step1.jsp</result>
+			<result name="step2">step2.jsp</result>
+			<result name="step3">step3.jsp</result>
+			<result name="success">success.jsp</result>
+		</action>	
+	</package>
+	<package name="basefacade" namespace="/core" extends="eop_default">
+		<action name="adv" class="advAction">
+			<result name="go">adv/go.jsp</result>
+		</action>
+	</package>	
+	<package name="base" namespace="/core/admin" extends="eop_default">
+		<!-- 重建站点地图 -->
+		<action name="createSitemap" class="createSitemapAction">
+		</action>
+		
+		<!-- 版本升级 -->
+		<action name="update" class="updateAction">
+		</action>
+				
+		<!-- 角色 -->
+		<action name="role" class="roleAction">
+			<result name="list">auth/rolelist.jsp</result>
+			<result name="input">auth/roleinput.jsp</result>
+		</action>
+		
+		<!-- 权限点-->
+		<action name="auth" class="authAction">
+			<result name="input">auth/auth_input.jsp</result>
+		</action>		
+		
+		<!-- 帮助-->
+	    <action name="help" class="helpAction">
+			<result name="content">help/content.jsp</result>
+		</action>	
+		
+		<!-- 后台首页-->
+	    <action name="index" class="indexAction">
+			<result name="index">index.jsp</result>
+		</action>
+		
+		<!-- 首页项-->
+	    <action name="indexItem" class="baseIndexItemAction">
+			<result name="base">index/base.jsp</result>
+			<result name="access">index/access.jsp</result>
+			<result name="point">index/point.jsp</result>
+		</action>
+
+		<!-- 友情链接-->
+		<action name="friendsLink" class="friendsLinkAction">
+	 		<result name="list">friendsLink/list.jsp</result>
+	 		<result name="edit">friendsLink/edit.jsp</result>
+	 		<result name="add">friendsLink/add.jsp</result>
+	 		<interceptor-ref name="defaultStack">
+        		<param name="fileUpload.maximumSize">1048576</param>
+        	</interceptor-ref>
+		</action>
+			
+		<!-- 流量 -->
+	   <action name="access" class="accessAction">
+			<result name="list">access/list.jsp</result>
+			<result name="detaillist">access/detaillist.jsp</result>
+			<result name="history">access/history.jsp</result>
+		</action>
+
+		<action name="ask" class="askAction">
+			<result name="alllist">ask/alllist.jsp</result>
+			<result name="mylist">ask/mylist.jsp</result>
+			<result name="admin_view">ask/admin_view.jsp</result>
+			<result name="user_view">ask/user_view.jsp</result>
+			<result name="ask">ask/ask.jsp</result>
+		</action>	
+		 <action name="guestBook" class="guestBookAction">
+			<result name="list">guestbook/list.jsp</result>
+			<result name="detail">guestbook/detail.jsp</result>
+		</action>
+		 <action name="themeUri" class="themeUriAction">
+			<result name="list">uri/list.jsp</result>
+			<result name="input">uri/input.jsp</result>
+		</action>
+		<action name="themeFile" class="themeFileAction">
+			<result name="list">theme/file_list.jsp</result>
+			<result name="new_file">theme/new_file.jsp</result>
+			<result name="edit_file">theme/edit_file.jsp</result>
+			<interceptor-ref name="defaultStack">
+        		<param name="fileUpload.maximumSize">10485760</param>
+        	</interceptor-ref>
+		</action>
+		<action name="menu" class="menuAction">
+			<result name="list" type="freemarker">menu/list.html</result>
+			<result name="add" type="freemarker">menu/add.html</result>
+			<result name="edit" type="freemarker">menu/edit.html</result>
+		</action>		
+		
+		<action name="multiSite" class="multiSiteAction">
+			<result name="add">multisite/add.jsp</result>
+			<result name="edit">multisite/edit.jsp</result>
+			<result name="main" type="freemarker">multisite/main.html</result>
+		</action>
+		
+		<action name="siteMenu" class="siteMenuAction">
+		     <result name="list" type="freemarker">sitemenu/menu_list.html</result>
+		     <result name="input" type="freemarker">sitemenu/menu_input.html</result>
+		</action>
+		<action name="adColumn" class="adColumnAction">
+			<result name="list">adv/adc_list.jsp</result>
+			<result name="add">adv/adc_input.jsp</result>
+			<result name="edit">adv/adc_edit.jsp</result>
+		</action>
+		<action name="adv" class="advAction">
+			<result name="list">adv/adv_list.jsp</result>
+			<result name="add">adv/adv_input.jsp</result>
+			<result name="edit">adv/adv_edit.jsp</result>
+		</action>	
+		<action name="widgetCache" class="widgetCacheAction">
+		</action>					
+	</package>
+ 
+	
+	<package name="user" namespace="/core/admin/user" extends="eop_default">
+
+		<action name="baseInfo" class="baseInfoAction">
+			<result name="input">baseinfo.jsp</result>
+			<interceptor-ref name="defaultStack">
+        		<param name="fileUpload.maximumSize">1048576</param>
+        	</interceptor-ref>
+		</action>
+		
+		<action name="userDetail" class="userDetailAction">
+			<result name="input">userdetail.jsp</result>
+		</action>
+		
+		<action name="userSite" class="userSiteAction">
+			<result name="success">usersite.jsp</result>
+			<result name="add">addUserSite.jsp</result>
+			<result name="edit">editUserSite.jsp</result>
+			<result name="adddomain">addDomain.jsp</result>
+			<result name="domainlist">domainlist.jsp</result>
+			<result name="domain">domain.jsp</result>
+			<result name="init_data">init_data.jsp</result>
+			<result name="export">export.jsp</result>
+			<result name="import">import.jsp</result>			
+		</action>
+
+		<!-- 管理员 -->
+		<action name="userAdmin" class="userAdminAction">
+			<result name="success">useradmin.jsp</result>
+			<result name="add">addUserAdmin.jsp</result>
+			<result name="edit">editUserAdmin.jsp</result>
+			<result name="editPassword">editPassword.jsp</result>
+		</action>
+
+		<action name="siteTheme" class="siteThemeAction">
+			<result name="input">newtheme.jsp</result>
+			<result name="success">sitetheme.jsp</result>
+		</action>
+		<action name="siteAdminTheme" class="siteAdminThemeAction">
+			<result name="success">siteadmintheme.jsp</result>
+		</action>
+		
+	</package>
+ 
+	<package name="eop_saler_default" extends="eop_default" namespace="/eop">
+ 	    <action name="index" class="indexAction">
+			<result name="index">index.jsp</result>
+		</action>
+		<action name="border" class="borderAction">
+			<result name="list">setting/borderlist.jsp</result>
+		</action>
+	
+		<action name="upload" class="uploadAction">
+			<interceptor-ref name="fileUploadStack"></interceptor-ref>
+			<result name="input">/core/admin/upload/upload.jsp</result>
+		</action>
+		<action name="ckuploader" class="ckEditorUploadAction">
+			<interceptor-ref name="fileUploadStack"></interceptor-ref>
+			<result name="success">/core/admin/upload/cksuccess.jsp</result>
+		</action>		
+		
+		<action name="recordInstaller" class="recordInstallerAction">
+		</action>
+		<action name="errorReport" class="errorReportAction">
+		</action>		
+	</package>
+	 
+</struts>

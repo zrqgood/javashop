@@ -1,0 +1,106 @@
+<form  class="GoodsSelector division boxGray">
+<div id="selectorBox">
+<#if catList?exists >
+<div class="division boxBrown">
+<table>
+	<tbody>
+	
+	
+		<tr>
+			<td style="padding-right: 6px; width: 72px; white-space: nowrap;"
+				class="textright">分类名称：</td>
+			
+			<td style="line-height: 22px; white-space: normal;">
+				<#list catList as cat><a href="<@searchUrl type="cat" value="${cat.cat_id}" />">${cat.name}</a></#list>
+			</td>
+				
+		</tr>
+		
+	</tbody>
+</table>
+</div>
+</#if>
+ 
+
+<div id="selector_contents" class="division">
+<table width="100%">
+	<tbody>
+	
+	<#if !brandStr?exists ||  brandStr=='' >
+		<#if brandList?exists >
+		<tr>
+			<td style="padding-right: 6px; width: 72px; white-space: nowrap;"
+				class="textright">品牌：</td>
+			<td style="border-bottom: 1px solid rgb(238, 238, 238); line-height: 22px;">
+			
+			<#list brandList as brand>
+			<a href="<@searchUrl type="brand" value="${brand.brand_id}" />">${brand.name}<span
+				class="num">(${brand.num})</span>
+			</a> 
+			</#list>
+				
+			</td>
+		</tr>
+		</#if>
+	</#if>
+	
+	<#if propList?exists>
+	<#list propList as prop>
+		<#if prop.type==3&& prop.hidden==0>
+		<tr>
+			<td style="padding-right: 6px; width: 72px; white-space: nowrap;" class="textright">${prop.name }：</td>
+			<td style="border-bottom: 1px solid rgb(238, 238, 238); line-height: 22px;">
+			
+			<#list prop.optionMap  as m>
+			<a href="<@searchUrl type="prop" value="${m.url}" />">${m.name}
+			<span class="num">(${m.num })</span>
+			</a> 
+			</#list>
+			</td>
+		</tr>
+		</#if>
+	</#list>
+	</#if>	
+	</tbody>
+</table>
+</div> 
+
+
+<#include 'mutil_selector.html' />
+<#if propList?exists>
+<div id="input_selector" class="division clearfix">
+	<#list propList as prop>
+		<#if prop.type=1>
+		<div class="span-3">
+			<h5>${prop.name}</h5>
+			<input type="input" class="_x_ipt input" pos="${prop_index}" name="text_prop" style="width: 100px;"  value="${prop.value!''}" autocomplete="off">
+		</div>
+		</#if>
+	</#list>	
+</div>
+<div class="textcenter"><input type="button" id="propSearchBtn" value="显示符合条件的商品"></div>
+
+</#if>
+<script>
+
+$(function(){
+
+	//找出属性字串，如由字串 var uri ='search-car{sdfds}prop{0_1,1_测试,2_3}'找到0_1,1_测试,2_3
+	 var uri ='${uri}';
+		 
+	$("#propSearchBtn").click(function(){
+		var url = PropUrlCreator.init(uri).createPropUri();
+		location.href=url;
+	});
+
+
+	if( $("#selector_contents tr").length ==0){
+		 $("#selector_contents").hide();
+	}
+	if( $("#input_selector div").length ==0){
+		 $("#input_selector").hide();
+	}
+});
+</script>
+</div>
+</form>

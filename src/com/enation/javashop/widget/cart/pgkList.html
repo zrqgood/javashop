@@ -1,0 +1,42 @@
+<h3>捆绑商品</h3>
+<div class="division" id="pgkbody">
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle">
+	<col class="span-2">
+	<col style="width: auto;">
+	<col class="span-2 ">
+	<col class="span-1">
+	<col class="span-2 ColColorOrange">
+	<col class="span-2">
+	<thead>
+		<tr>
+			<th>货号</th>
+			<th>捆绑名称</th>
+			<th>优惠价格</th>
+			<th>数量</th>
+			<th>小计</th>
+			<th>删除</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<#list pgkItemList as item>
+		<tr itemid="${item.id}" price="${item.coupPrice}">
+			<td>${item.sn}</td>
+			<td style="text-align: left;">
+				<a target="_blank" href="package.html">
+					${item.name}
+				</a>
+			</td>
+			<td>${item.price?string("currency")}</td>
+			<td>
+			<div class="Numinput">
+			</div>
+			</td>
+			<td class="itemTotal">${item.subtotal?string("currency")}</td>
+			<td><span class="lnk quiet">删除</span></td>
+		</tr>
+		
+	 </#list>	
+	</tbody>
+</table>
+</div>

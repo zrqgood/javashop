@@ -1,0 +1,41 @@
+<div class="r_top">
+	<h1><#if data.cat_id=12>成功案例<#else><#if data.cat_id=11>人才招聘<#else>新闻详情</#if></#if></h1>
+	<div class="nav">您现在的位置：${navbar}</div>
+</div>
+<div class="content">
+	<script>
+		function fontZoom(size)
+			{
+			document.getElementById('con').style.fontSize=size+'px';
+			}
+	</script>
+	<div class="newscontent">
+		<div class="newstitle">${data.title!''}</div>
+		<div class="info">
+			发布于：${data.add_time?string('yyyy-MM-dd hh:mm:ss')} &nbsp;&nbsp; 文字：【<a href="javascript:fontZoom(16)">大</a>】【<a href="javascript:fontZoom(14)">中</a>】【<a href="javascript:fontZoom(12)">小</a>】
+		</div>
+		<div class="con" id="con">
+			<#if data.img?exists>
+				<#if data.img!=''>
+					<img src="${data.img!''}" width="550" height="400" style="padding:0 65px 10px;"/>
+				</#if>
+			</#if>
+			${data.content!''}
+		</div>
+	</div>
+</div>
+<#if data.cat_id=12>
+	<script>
+		selectMenu(4)
+	</script>
+<#else>
+	<#if data.cat_id=11>
+		<script>
+			selectMenu(7)
+		</script>
+	<#else>
+		<script>
+			selectMenu(1)
+		</script>
+	</#if>
+</#if>

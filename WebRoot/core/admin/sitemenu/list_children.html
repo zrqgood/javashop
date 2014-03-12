@@ -1,0 +1,21 @@
+<#list children as child> 
+<tr>
+    <td style="padding-left:${(level+1)*20}px;font-weight: bold;">${child.name}</td>
+    <td>
+    <input type="text" style="width:50px" name="sortArray" value="${child.sort}" />
+    <input type="hidden" name="menuidArray" value="${child.menuid}" />
+    </td> 
+    <td><a href="siteMenu!add.do?menuid=${child.menuid}"><img src="images/transparent.gif" class="add"></a></td>
+    <td><a href="siteMenu!edit.do?menuid=${child.menuid}"><img src="images/transparent.gif" class="modify"></a></td>
+    <td>
+    <a href="siteMenu!delete.do?menuid=${child.menuid}" onclick="javascript:return confirm('此操作将要删除此菜单及其所有子菜单，确定删除吗?');"><img src="images/transparent.gif" class="delete"></a>
+     
+    </td>
+</tr>
+	<#if child.hasChildren>
+		<#assign level=level+1 />
+	  	<#assign children=child.children />
+		<#include 'list_children.html' />
+  		<#assign level=level-1/>
+	</#if>
+</#list>

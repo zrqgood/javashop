@@ -1,0 +1,8 @@
+<p>
+请指定待显示的内容：
+<select name="article_id" eop_type="widget_params">
+	<#list articleList as article>
+		<option value="${article.id}">${article.title}</option>
+	</#list>
+</select>
+</p>

@@ -1,0 +1,49 @@
+<div>
+<h1 class="title">收货地址</h1>
+<table width="100%" cellspacing="0" cellpadding="0"
+	class="liststyle_option">
+	<col class=" textright">
+	<tbody>
+		<tr>
+			<td><input type="button" value="添加收货地址"
+				onclick="location.href='member_address.html?action=add'"></td>
+		</tr>
+	</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="3" class="liststyle">
+	<col class="span-2">
+	<col class="textleft">
+	<col class="span-2">
+	<col class="span-2">
+	<col class="span-2">
+	<col class="span-1">
+	<col class="span-4">
+	<thead>
+		<tr>
+			<th>收货人</th>
+			<th>地址</th>
+			<th>电话</th>
+			<th>手机</th>
+			<th>邮编</th>
+			<th>默认</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<#list addressList as address>
+		<tr>
+			<td><a
+				href="member_address.html?action=edit&addr_id=${address.addr_id}">${address.name!''}</a></td>
+			<td style="text-align: left;" class="textwrap">${address.province!''}-${address.city!''}-${address.region!''}-${address.addr!''}</td>
+			<td>${address.tel!''}</td>
+			<td>${address.mobile!''}</td>
+			<td>${address.zip!''}</td>
+			<td><#if address.def_addr == 0 >否</#if><#if address.def_addr == 1 >是</#if></td>
+			<td><a
+				href="member_address.html?action=edit&addr_id=${address.addr_id}">修改</a><a
+				href="member_address.html?action=delete&addr_id=${address.addr_id}" onclick="return confirm('您确认要删除该行数据吗？');">删除</a></td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>

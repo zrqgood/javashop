@@ -1,0 +1,262 @@
+/*=挂件预设
+=============================================================================================*/
+
+.AdvBanner {
+	margin-bottom: 5px;
+}
+
+.mktprice1 {
+	text-decoration: line-through;
+}
+
+.more {
+	margin: 5px 5px 0 0;
+	text-align: right;
+}
+
+.ArticleList td a,.ArticleList li a {
+	background: url(arrs.gif) no-repeat 0 -21px;
+	display: block;
+	padding-left: 10px;
+}
+
+.Article-Tabs,.GoodsList-Tabs {
+	border-color: #ccc;
+}
+
+.Article-Tabs .current,.GoodsList-Tabs .current {
+	background-color: #F0FAFD;
+}
+
+.GoodsListWrap {
+	padding: 10px 0;
+}
+
+#advbanner_1{
+background:url(testb2.jpg) no-repeat;
+width:762px;
+height:104px;
+}
+
+/*=搜索 
+=============================================================================================*/
+.SearchBar {
+	height: 20px;
+	padding: 2px 0 0 70px; *
+	padding-top: 0;
+}
+
+.SearchBar table td {
+	padding: 0 0 0 2px;
+}
+
+.SearchBar .search_label span {
+	display: none;
+}
+
+.SearchBar .keywords {
+	width: 150px;
+	height: 14px;
+	line-height: 16px;
+	border: 1px solid #d3d3d3;
+}
+
+.SearchBar .btn_search {
+	background: url(search.gif) no-repeat 0 -30px;
+	border: none;
+	width: 42px;
+	height: 19px;
+	font-size: 0;
+	overflow: hidden;
+	line-height: 9999px;
+	cursor: pointer;
+	margin-left: 2px;
+}
+
+.SearchBar .btn_advsearch {
+	display: inline-block;
+	display: -moz-inline-block; *
+	display: inline;
+	zoom: 1;
+	width: 54px;
+	height: 19px;
+	text-indent: -9999px; *
+	text-indent: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	background: url(search.gif) no-repeat 0 -60px; *
+	margin-top: 3px; *
+	background-position: 0 -60px;
+}
+
+/*=排行榜 
+=============================================================================================*/
+.RankingList .pic {
+	text-align: center;
+}
+
+.RankingList li {
+	background: url(dotted.gif) repeat-x 0 bottom;
+	padding: 5px;
+}
+
+.RankingList li span {
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #7f3217;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.OrderList .orderprice {
+	color: #990000;
+	display: block;
+	padding: 0 0 0 15px;
+}
+
+.OrderList li {
+	background: url(dotted.gif) repeat-x 0 bottom;
+	padding: 5px;
+}
+
+.GoodsList h6 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/*=站点地图
+=============================================================================================*/
+.SiteMaps td a {
+	padding: 5px;
+}
+
+.SiteMaps h3 a {
+	background: url(arrs.gif) no-repeat 0 -82px;
+	padding: 0 0 0 13px;
+}
+
+.Navigation {
+	border: none;
+	color: #2E2E2E;
+	margin: 5px 0;
+	font-weight: bold;
+	padding: 0 0 0 10px;
+}
+
+.Navigation span {
+	color: #CC6600;
+	font-weight: normal;
+}
+
+.Navigation .now {
+	font-weight: normal;
+	color: #FE5B03;
+}
+
+.Navigation a {
+	color: #333333;
+}
+
+/*=商品购买区
+=============================================================================================*/
+.ShopCartWrap {
+	margin: 10px;
+}
+
+/*=商品分类
+=============================================================================================*/
+.GoodsCategoryWrap {
+	margin: 0 10px;
+}
+
+.c-cat-depth-1,.s-cat-depth-1 {
+	border-bottom: 1px dashed #CCC;
+	padding: 6px 0 8px 13px;
+	color: #576060;
+}
+
+.c-cat-depth-1 a,.s-cat-depth-1 a {
+	background: url(arrs.gif) no-repeat 0 -55px;
+	font-weight: bold;
+	color: #576060;
+	font-size: 13px;
+	display: inline;
+}
+
+.c-cat-depth-2,.s-cat-depth-2 {
+	line-height: 150%;
+	margin: 3px 0 0 11px;
+}
+
+.c-cat-depth-2 a,.s-cat-depth-2 a {
+	background: none;
+	border: none;
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+}
+
+.c-cat-depth-3,.s-cat-depth-3 {
+	margin: 3px 0 0 10px;
+}
+
+.c-cat-depth-3 a,.s-cat-depth-3 a {
+	color: #3B5F9F;
+	background: none;
+	padding: 0;
+}
+
+.e-cat-depth-1 p {
+	margin: 0;
+	padding: 2px 0 2px 10px;
+	border-bottom: 1px solid #E1E1E1;
+}
+
+.e-cat-depth-2 p {
+	padding: 2px 0 2px 0;
+	border: none;
+}
+
+.e-cat-depth-3 {
+	padding: 0 0 0 20px;
+}
+
+.e-cat-depth-1 .nosymbols,.e-cat-depth-1 .symbols {
+	display: block;
+	float: left;
+	width: 10px;
+}
+
+.e-cat-depth-1 .symbols {
+	background: url(arrs.gif) no-repeat 0 -83px;
+	text-indent: -9999px;
+}
+
+.e-cat-depth-1 .show {
+	background-position: 0 -113px;
+}
+
+.e-cat-depth-1 span {
+	cursor: pointer;
+	margin: 0 2px;
+}
+
+.e-cat-depth-1 a {
+	color: #576060;
+	font-weight: bold;
+}
+
+.e-cat-depth-2 {
+	margin-left: 25px;
+}
+
+.e-cat-depth-2 a {
+	font-weight: normal;
+	color: #576060;
+}
+
+.e-cat-depth-3 a {
+	color: #2C4F83;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<product>
+	<menus>
+	
+		<!-- <menu text="更多方案" type="sys" url="http://www.enationsoft.com/solution_download.html"  target="_blank"/>-->
+		<!-- <menu text="访问易邦" type="sys" url="http://www.enationsoft.com"  target="_blank"/> -->
+		<menu text="浏览网站" type="sys" url="../"  target="_blank"/>
+		<!--menu text="我的账户" type="sys" url="/core/admin/user/baseInfo.do" />
+		<menu text="站点设置" type="sys" url="/core/admin/user/userSite.do" />
+		<menu text="流量统计" type="sys" url="/core/admin/access!list.do" /-->
+		<!-- 
+		<menu text="我的问题" type="sys" url="/core/admin/ask!listMy.do" />
+		<menu text="我要提问" type="sys" url="/core/admin/ask!toAsk.do" />
+		 -->
+		<menu text="退出" type="sys" url="/admin/logout.do" target="_self"/>
+	</menus>
+	<adminThemes>
+		<theme id="default" name="默认模板" isCommonTheme="true"  default="yes"></theme>
+	</adminThemes>
+</product>

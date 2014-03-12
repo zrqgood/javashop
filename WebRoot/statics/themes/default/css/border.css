@@ -1,0 +1,62 @@
+/* CSS Document */
+.border1{width:315px;height:188px;border:1px solid #B2D5F3;float:left;margin-right:10px;_margin-right:8px;}
+.border1 .title{height:32px;width:100%;background:url(../images/h_bg_1.gif) repeat-x scroll 0 top;}
+.border1 .title h1{background:url(../images/bg_1_30.gif) no-repeat scroll;width:73px;height:31px;float:left;text-align:center;margin-top:1px;color:#fff;line-height:25px;}
+.border1 .title span.more{float:right;background:url(../images/m_bg_01.gif) no-repeat scroll;width:32px;height:5px;display:block;text-indent:-2000px;margin-top:10px;margin-right:8px;}
+.border1 .title span.more a{display:block;width:100%;height:100%;}
+.border1 .cont{margin:5px 10px 13px 25px;width:282px;height:138px;overflow:hidden;line-height:20px;}
+.border1 .cont ul li{background:url(../images/icon_2.gif) no-repeat scroll 0 center;width:100%;height:20px;overflow:hidden;}
+.border1 .cont ul li a{padding-left:10px;}
+.border1 .cont .red{font-size:14px;color:#CD0708;font-weight:bold;line-height:35px;}
+.border1 .cont .line30{line-height:30px;font-size:14px;}
+
+.border2{width:315px;_width:313px;height:188px;border:1px solid #B2D5F3;float:left;margin-right:10px;_margin-right:8px;}
+.border2 .title{height:32px;width:100%;background:url(../images/h_bg_1.gif) repeat-x scroll 0 top;}
+.border2 .title h1{background:url(../images/bg_1_30.gif) no-repeat scroll;width:73px;height:31px;float:left;text-align:center;margin-top:1px;color:#fff;line-height:25px;}
+.border2 .title span.more{float:right;background:url(../images/m_bg_01.gif) no-repeat scroll;width:32px;height:5px;display:block;text-indent:-2000px;margin-top:10px;margin-right:8px;}
+.border2 .title span.more a{display:block;width:100%;height:100%;}
+.border2 .cont{margin:5px 10px 13px 25px;width:282px;_width:280px;height:138px;overflow:hidden;line-height:20px;}
+.border2 .cont ul li{background:url(../images/icon_2.gif) no-repeat scroll 0 center;width:100%;height:20px;overflow:hidden;}
+.border2 .cont ul li a{padding-left:10px;}
+
+.border3{width:315px;height:188px;border:1px solid #B2D5F3;float:left;}
+.border3 .title{height:32px;width:100%;background:url(../images/h_bg_1.gif) repeat-x scroll 0 top;}
+.border3 .title h1{background:url(../images/bg_1_30.gif) no-repeat scroll;width:73px;height:31px;float:left;text-align:center;margin-top:1px;color:#fff;line-height:25px;}
+.border3 .title span.more{float:right;background:url(../images/m_bg_01.gif) no-repeat scroll;width:32px;height:5px;display:block;text-indent:-2000px;margin-top:10px;margin-right:8px;}
+.border3 .title span.more a{display:block;width:100%;height:100%;}
+.border3 .cont{margin:5px 15px 13px 15px;width:285px;height:138px;overflow:hidden;line-height:20px;}
+.border3 .cont ul li{background:url(../images/icon_2.gif) no-repeat scroll 0 center;width:100%;height:20px;overflow:hidden;}
+.border3 .cont ul li a{padding-left:10px;}
+
+.border4{width:315px;height:188px;border:1px solid #B2D5F3;float:left;margin-right:10px;_margin-right:8px;}
+.border4 .title{height:32px;width:100%;background:url(../images/h_bg_1.gif) repeat-x scroll 0 top;}
+.border4 .title h1{background:url(../images/bg_1_30.gif) no-repeat scroll;width:73px;height:31px;float:left;text-align:center;margin-top:1px;color:#fff;line-height:25px;}
+.border4 .title span.more{float:right;background:url(../images/m_bg_01.gif) no-repeat scroll;width:32px;height:5px;display:block;text-indent:-2000px;margin-top:10px;margin-right:8px;}
+.border4 .title span.more a{display:block;width:100%;height:100%;}
+.border4 .cont{margin:5px 10px 13px 25px;width:282px;height:138px;overflow:hidden;line-height:20px;}
+.border4 .cont ul li{background:url(../images/icon_2.gif) no-repeat scroll 0 center;width:100%;height:20px;overflow:hidden;}
+.border4 .cont ul li a{padding-left:10px;}
+.border4 .cont .red{font-size:14px;color:#CD0708;font-weight:bold;line-height:35px;}
+.border4 .cont .line30{line-height:30px;font-size:14px;}
+
+.border5{width:315px;height:234px;border:1px solid #B2D5F3;float:left;margin-right:10px;overflow:hidden;}
+.border5 .title{width:100%;height:26px;background:url(../images/h_bg.gif) repeat-x scroll ;line-height:26px;border-bottom:1px solid #B2D5F3;overflow:hidden;}
+.border5 .title h1{color:#0054A6;padding-left:10px;float:left;}
+.border5 .title span.more{float:right;background:url(../images/m_bg_96.gif) no-repeat scroll;width:33px;height:5px;display:block;text-indent:-2000px;margin-top:10px;margin-right:8px;}
+.border5 .title span.more a{display:block;width:100%;height:100%;}
+.border5 .cont{width:285px;height:188px;overflow:hidden;padding:10px 15px;}
+.border5 .cont ul{display:block;width:100%;height:100%; overflow:hidden;}
+.border5 .cont ul li{width:100%;height:23px;line-height:23px;overflow:hidden;background:url(../images/icon_1.gif) no-repeat scroll left center;}
+.border5 .cont ul li a{padding-left:10px;color:#000;}
+.border5 .cont ul li a:hover{color:red;}
+
+.border6{width:315px;height:234px;border:1px solid #B2D5F3;float:left;overflow:hidden;}
+.border6 .title{width:100%;height:26px;background:url(../images/h_bg.gif) repeat-x scroll ;line-height:26px;border-bottom:1px solid #B2D5F3;overflow:hidden;}
+.border6 .title h1{color:#0054A6;padding-left:10px;float:left;}
+.border6 .title span.more{float:right;background:url(../images/m_bg_96.gif) no-repeat scroll;width:33px;height:5px;display:block;text-indent:-2000px;margin-top:10px;margin-right:8px;}
+.border6 .title span.more a{display:block;width:100%;height:100%;}
+.border6 .cont{width:285px;height:188px;overflow:hidden;padding:10px 15px;}
+.border6 .cont ul{display:block;width:100%;height:165px; overflow:hidden;padding-left:15px;padding-top:5px;}
+.border6 .cont ul li{width:51px;height:36px;padding-right:15px;padding-bottom:6px;float:left;}
+.border6 .cont span{padding-left:15px;}
+

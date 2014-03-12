@@ -1,0 +1,13 @@
+
+<div class="ItemsWarp clearfix"><#list listBrand as brand>
+<div class="span-4 items">
+<dl>
+	<#if brand.logo?exists>
+	<dd class="img textcenter"><a title="${brand.name}"
+		href="brandDetail-${brand.brand_id}.html"><img src="${brand.logo}"></a></dd>
+	</#if>
+	<dd class="intro textcenter"><a 
+		title="${brand.name}" href="brandDetail-${brand.brand_id}.html"> ${brand.name}</a></dd>
+</dl>
+</div>
+</#list></div>

@@ -1,0 +1,161 @@
+.fontcolorGray {
+color:#666666;
+}
+
+.division {
+background:none repeat scroll 0 0 #FFFFFF;
+border-color:#CCCCCC #BEC6CE #BEC6CE #CCCCCC;
+border-style:solid;
+border-width:1px 2px 2px 1px;
+line-height:150%;
+margin:10px;
+padding:5px;
+white-space:normal;
+}
+
+.division table {
+margin:0;
+padding:0;
+width:100%;
+border-collapse:separate;
+border-spacing:0;
+}
+ .division td {
+white-space:normal;
+}
+.division table, td, th {
+	vertical-align:middle;
+}
+.tableform {
+background:none repeat scroll 0 0 #EFEFEF;
+border-color:#DDDDDD #BEC6CE #BEC6CE #DDDDDD;
+border-style:solid;
+border-width:1px;
+margin:10px;
+padding:5px;
+}
+
+table.finderInform {
+border:1px solid #EFEFEF;
+margin:0;
+width:100%;
+}
+
+
+.dialog .finderInform thead th {
+background:none repeat scroll 0 0 #EEEEEE;
+}
+ 
+.dialog .division th {
+font-size:12px;
+width:120px;
+}
+ 
+.finderInform thead th {
+background:url("../images/functionareabg.gif") repeat scroll 0 0 transparent;
+border-color:#FFFFFF #DBE2E7 #CCCCCC #FFFFFF;
+border-style:solid;
+border-width:1px;
+font-size:12px;
+font-weight:700;
+padding:1px 3px;
+text-align:center;
+white-space:nowrap;
+width:auto;
+}
+ 
+.division th {
+background:none repeat scroll 0 0 #E2E8EB;
+border-right:1px solid #CCCCCC;
+font-size:14px;
+text-align:right;
+white-space:nowrap;
+width:140px;
+}
+ 
+.division th, .division td {
+border-color:#FFFFFF #DBE2E7 #DDDDDD #FFFFFF;
+border-left:1px solid #FFFFFF;
+border-right:1px solid #DBE2E7;
+border-style:solid;
+border-width:1px;
+padding:5px;
+vertical-align:top;
+}
+
+
+
+.division ul, .division ul li {
+list-style:none outside none;
+margin:0;
+padding:0;
+}
+
+.spec_box {
+background:none repeat scroll 0 0 #FFFFFF;
+overflow:hidden;
+}
+
+
+.division ul li {
+	border-bottom:1px solid #EFEFEF;
+	padding:2px;
+}
+
+.division ul, .division ul li {
+	list-style:none outside none;
+	margin:0;
+	padding:0;
+}
+
+.spec_box li {
+	border:2px solid #FFFFFF;
+	cursor:pointer;
+	float:left;
+	margin:3px;
+}
+
+.spec_box span, .spec_box img {
+	background:none repeat scroll 0 0 #FFFFFF;
+	border:1px solid #3366CC;
+	color:#333333;
+	display:block;
+	padding:1px;
+}
+
+
+.spec_box .spec_add, .spec_box .spec_add label {
+	border:medium none;
+	cursor:pointer;
+	line-height:normal;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+.spec_box span {
+	padding:1px 4px;
+	white-space:nowrap;
+}
+
+.spec_box span, .spec_box img {
+	background:none repeat scroll 0 0 #FFFFFF;
+	border:1px solid #3366CC;
+	color:#333333;
+	display:block;
+	padding:1px;
+}
+
+.spec_box .spec_add, .spec_box .spec_add label {
+	border:medium none;
+	cursor:pointer;
+	line-height:normal;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+.division td label, .division div label {
+	display:inline;
+	float:none;
+}

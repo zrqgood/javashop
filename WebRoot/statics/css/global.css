@@ -1,0 +1,477 @@
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*	������cssͨ�ò��֣��漰��ҳ����Ű桢���ֵȵȡ�
+    ��Щ��������ʽ������ģ���ʱ��Ҳ����ֱ��ʹ�ã�һ���̶��Ͽ��Լ�������ģ��Ĺ�����
+	��Ȼ��������������վ��ʱ�������ͬ����ʹ�������css���塣
+	
+	1��������ص�htmlԪ��
+	2������������ʾ��صĶ���
+	3���?�������ʽ
+	4����!��Ϣ
+	5�����б�Ķ���
+	6�������ʽ
+	7����ҳ
+    8��������ص�css����
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/* 1�� ������ص�htmlԪ��
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { 
+	margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; 
+	font-family: inherit; vertical-align: baseline; list-style:none;
+}
+/* Tables still need 'cellspacing="0"' in the markup. */
+table {border-collapse: separate; border-spacing: 0;}
+caption, th, td { font-weight: normal;}
+table, td, th { vertical-align: top;}
+button{
+	width:auto;
+  cursor:pointer;	
+}
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+/* Remove annoying border on linked images. */
+a img { border: none; }
+a{color:#000;text-decoration:none; outline:none}
+a:hover {color: #f90;}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*2������������ʾ��صĶ���
+/*----------------------------------------------------------------------------------------------------------------------*/
+/* ����
+-------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #111; margin:15px 0; font-weight: bold;}
+
+h1 { font-size: 18px;}
+h2 { font-size: 16px; }
+h3 { font-size: 14px;}
+h4 { font-size: 12px;}
+h5 { font-size: 1em;}
+h6 { font-size: 1em;}
+
+h1 img, h2 img, h3 img, 
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+/* ��������������ص�Ԫ��
+-------------------------------------------------------------- */
+a           {color:#000;text-decoration:none;}
+a:hover     {color: #f90;}
+.lnk        {text-decoration:underline; cursor:pointer}
+
+p           { margin: 0 0 1.5em; }
+p img.left  { margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr, 
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre,code    { margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; } 
+
+
+/* Misc classes
+-------------------------------------------------------------- */
+.yellowlight { background:#ff0; }
+.greenlight  { background:#060; color: #fff; }
+.redlight    { background:#900; color: #fff; }
+
+.first      { margin-left:0; padding-left:0; }
+.last       { margin-right:0; padding-right:0; }
+.top        { margin-top:0; padding-top:0; }
+.bottom     { margin-bottom:0; padding-bottom:0; }
+
+/* �������Ҷ��� */
+.textright,td.textright,a.textright,span.textright,li.textright,div.textright,p.textright
+{text-align:right;}
+/* ����������� */
+.textleft, td.textleft,a.textleft,span.textleft,li.textleft,div.textleft,p.textleft,colgroup.textleft
+{text-align:left;}
+/* ������ж��� */
+.textcenter, td.textcenter,a.textcenter,span.textcenter,li.textcenter,div.textcenter,p.textcenter,colgroup.textcenter
+{text-align:center;}
+/* ���������ֲ����� */
+.textnowrap, td.textnowrap,a.textnowrap,span.textnowrap,li.textnowrap,div.textnowrap,p.textnowrap
+{white-space:nowrap;}
+/* ���������ֿ��Ի��� */
+.textwrap, td.textwrap,a.textwrap,span.textwrap,li.textwrap,div.textwrap,p.textwrap
+{white-space:normal;}
+/* ����Ԫ�ؼ���inline��������block���� */
+.inline-block{display:inline-block;display:-moz-inline-stack;*display:inline;zoome:1;}
+
+/* ����Ĵ�С��ɫ
+-------------------------------------------------------------- */
+.font9px         { font-size:9px;}
+.font10px         { font-size:10px;}
+.font11px         { font-size:11px;}
+.font12px         { font-size:12px;}
+.font14px         { font-size:14px;}
+.font16px         { font-size:16px;}
+.font18px         { font-size:18px;}
+.font20px         { font-size:20px;}
+
+/* ����Ĵ�ϸ
+-------------------------------------------------------------- */
+.fontbold         { font-weight:700;}
+.fontnormal       { font-weight:normal;}
+
+/* �������ɫ
+-------------------------------------------------------------- */
+.fontcolorRed     { color:#CC0000}
+.fontcolorGreen   { color:#618605}
+.fontcolorOrange  { color:#f90;}
+.fontcolorBlack   { color:#000;}
+.fontcolorGray    { color:#666;}
+.fontcolorBlue    { color:#369;}
+
+/* Ԫ�ر���ɫ
+-------------------------------------------------------------- */
+.ColColorRed            {background:#fbeeef; }
+.ColColorDeepRed        {background:#d9685a;  color:#fff;}
+.ColColorGray           {background:#efefef; }
+.ColColorGraydark       {background:#efefef; }
+.ColColorGreen          {background:#eefbee; }
+.ColColorBlue           {background:#eef4fb }
+.ColColorOrange         {background:#FBF7EE}
+.ColColorWhite          {background:#fff}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*3���?�������ʽ
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+fieldset    { padding:1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
+legend      { font-weight: bold; font-size:1.2em; }
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*4����!��Ϣ
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*���ò�ͬ����ʾ����ʽ����(��������ɫ*/
+.error,
+.notice,
+.note, 
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd;}
+
+
+.error h4,
+.notice h4,
+.note h4, 
+.success h4{ margin:3px 0;}
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+.note       { background: #F5F4EC; color: #514721; border-color: #E5DDC7;}
+.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
+
+.toshow     { background:#F0F5EC; margin:15px 0; border:3px solid #C2D7B2; padding:10px; }
+
+/*���ò�ͬ��ʾ��Ϣ�ڵ�t�ӵ���ʽ*/
+.error a    { color: #8a1f11; }
+.notice a   { color: #514721; }
+.note a     { color: #000; }
+.success a  { color: #264409; }
+
+/*�ر���ʾ��Ϣ�İ�ť*/
+.error .option,
+.notice .option,
+.note .option, 
+.success .option   { float:right;cursor:pointer;}
+
+/*��ͼ�����ʾ��Ϣ��ʽ*/
+.error .pic,
+.notice .pic, 
+.note .pic,     
+.success .pic { width:48px; height:48px;}
+.error .pic   { background: url(images/infoerror.gif); }
+.notice .pic  { background: url(images/infonotice.gif); }
+.note .pic    { background: url(images/infonote.gif); }
+.toshow .pic { width:56px; height:48px;background: url(images/infosuccess.gif); }
+
+.toshow .pic { background: url(images/toshow.gif); }
+/*�򵥵���ʾ��Ϣ*/
+.infotips{ color:#999; padding-left:5px}
+.infohelp{ background:url(images/faq.gif) no-repeat right 0; padding-right:14px; margin-right:2px; white-space:nowrap}
+
+/*ϵͳ��Ϣ��!ҳ��*/
+.FeedBackInfo                 {margin:50px auto;color:#333333; width:700px;}
+.FeedBackInfo .success,
+.FeedBackInfo .error          {margin:0 auto; background:none; border:0;}
+
+.FeedBackInfo .success .pic,
+.FeedBackInfo .error .pic     {background:url(images/feedbackinfo.gif) no-repeat center;	width:128px; height:128px;padding:0 10px;		border-right:1px solid #eee;}
+.FeedBackInfo .success .pic   {background-position:0 18px;}
+.FeedBackInfo .error .pic     {background-position:0 -97px;}
+
+.FeedBackInfo h1              {margin:0 0 0 5px; font-size:14px; }
+.FeedBackInfo .success h1     {color:#060;}
+.FeedBackInfo .error h1       {color:#900}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*5�����б�Ķ���
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*��ͨ���б?��*/
+ul.list                    {margin:10px 0;}
+ul.list li                 {background:url(../images/bj_small_108.jpg) no-repeat 0 8px;padding-left:15px;color:#666;display:block;border-bottom:1px solid #efefef;line-height:23px;}
+ul.list ul                 {margin-left:10px;}												
+ul.list li.nolist          {border-bottom:0;background:none;}
+
+/*�Ҳ����˵����б�*/
+ul.list.WithRight li       {position:relative;}
+ul.list.WithRight li span  {position:absolute;	right:0px;color:#666/*����д��ʱ��*/}	
+
+/*�����б�*/
+ul.list.float li		   {width:120px;float:left; margin-left:15px;}	/*�����ȿ��Ը��ʵ�������ģ���css�������¶���*/
+
+/*�����б�*/											
+ol                         {margin:10px 10;}
+ol li                      {margin:0 0 0 20px; color:#000;border-bottom:1px solid #efefef;line-height:20px;list-style:decimal;}
+ol li ol                   {margin-top:1px 0 0 10px}
+/*��ͨ���б�ͷ����*/
+div.divcontainer           {width:400px;height:300px;border: 1px solid #efefef;margin:0;}
+/*div.title                  {position:relative;background-color:#00ff00;padding:5px;}*/
+/*div.title a                {position:absolute;	right:0px;padding-right:10px;color:#fff/*����д��more*/}	*/
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*6�������ʽ
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*����table���� ���Խ��colgroupʹ��4�����еı���ɫ��th��tdԪ��ȫ�����У�����Ҫ��Ԫ�����������������Ҷ��룬��Ҫ��td������*/
+.liststyle              { border: 1px solid #efefef;	width:100%;	margin:0;}
+.liststyle a            { padding-right:5px; text-decoration:underline;}
+.liststyle thead th     {text-align:center;	font-size:12px; white-space:nowrap;	font-weight:700;background:url(images/tablethbg.gif);	
+						 border-bottom:1px solid #ccc;	border-top:1px solid #fff;	border-right:1px solid #DBE2E7;	border-left:1px solid #fff;
+						 padding:4px 3px;}/*�����б��ͷ��*/
+.liststyle  td, 
+.liststyle  th          {padding:4px;  word-break:break-word; text-align:center;
+				        border-right:1px solid #DBE2E7;	border-left:1px solid #fff;	border-bottom:1px solid #efefef;	border-top:1px solid #fff;}
+
+
+/*����data�ͱ��th���Ҷ��룬td�������*/
+.liststyle.data td, 
+.liststyle.data th      {word-break:break-word;}				
+.liststyle.data th      {text-align:right;color:#000; font-size:14px;} 
+.liststyle.data td      {text-align:left;}	
+.liststyle.data .colspan{ text-align:center; border-bottom:1px solid #aaa;border-top:1px solid #fff; color:#000; font-weight:700;}	/*�������ͨ8��td��ʹ����colspan��td*/
+/*����·��Ĳ�������*/
+.liststyle_option       {}
+.liststyle_option th,
+.liststyle_option td    {padding:5px; text-align:center; background:#eee; text-align:left;}
+
+
+/*����DIV�ͱ��th���ж��룬td�������*/
+.table-div              { background: #F4FAFB; border: 1px solid #BBDDE5; margin-bottom: 10px; padding: 2px; }
+.table-div table        { background-color: #BBDDE5; border-top: 10px solid #FFF; border-bottom: 10px solid #FFF; width: 100%; }
+.table-div table th     {padding:2px;text-align:center;background: #BBDDE5; line-height: 2.0; white-space: nowrap;color:#000; font-size:12px;}
+.table-div table td     {padding:2px; text-align:left;background: #FFF;line-height: 1.5;  }
+
+/*������Ϣ��ϸ��񣬱�����Ҷ��룬��Ϣ�������*/
+.detail-div              {padding:0px;margin:0px; }
+.detail-div table        { border: 1px solid #BBDDE5; width: 100%; }
+.center       {text-align:center;}
+.right        {text-align:right;}
+.left       {text-align:left;}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*7����ҳ
+/*----------------------------------------------------------------------------------------------------------------------*/
+.pager{ clear:both; margin:10px;}
+.pagerbox{ float:right;}
+	.pager a{text-align:center; border:1px solid #ccc; padding:0 4px;_padding:0 4px; background:#fff; text-decoration:none; margin:0 1px;}
+	.pager a.first,
+	.pager a.last,
+	.pager a.pre,
+	.pager a.next{ background-repeat:no-repeat;width:21px; height:18px; border:0;padding:1px 10px 1px 8px;}
+	.pager a.first{ background:url(images/thefirst.gif);}
+	.pager a.last{ background:url(images/thelast.gif); }
+	.pager a.pre{ background:url(images/theprevious.gif); }
+	.pager a.next{ background:url(images/thenext.gif);}
+	
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*7����ҳ
+/*----------------------------------------------------------------------------------------------------------------------*/
+.boxTips           { padding: .8em; margin-top:13px;margin-bottom: 1em; border: 2px solid #ddd; position:relative; z-index:1000; background:#fff;}
+.boxTips i         { display:block;width:23px; height:14px; position:absolute;top:-13px; z-index:1001; background-repeat:no-repeat}
+.boxTips i.left    {left:8px;} 
+.boxTips i.right   {right:8px;} 
+	
+.boxTips.success   { border: 2px solid #C6D880;} 
+.boxTips.success i {background-image:url(images/boxtips-success.gif)}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*8��������ص�css����
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+
+/* ���岼��css�ĸ�����margin. */
+div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, 
+div.span-6, div.span-7, div.span-8, div.span-9, div.span-10, 
+div.span-11, div.span-12, div.span-13, div.span-14, div.span-15, 
+div.span-16, div.span-17, div.span-18, div.span-19, div.span-20, 
+div.span-21, div.span-22, div.span-23, div.span-24, div.span-auto {
+  float: left;
+  margin-right: 10px; 
+  background-color:#00ff00;
+}
+
+/* ���ֵ����һ�� */
+div.last { margin-right: 0; }
+/* ����Ԫ�صĿ�� */
+.span-0  { width: 10px; }
+.span-1  { width: 30px; }
+.span-2  { width: 70px; }
+.span-3  { width: 110px; }
+.span-4  { width: 150px; }
+.span-5  { width: 190px; }
+.span-6  { width: 230px; }
+.span-7  { width: 270px; }
+.span-8  { width: 310px; }
+.span-9  { width: 350px; }
+.span-10 { width: 390px; }
+.span-11 { width: 430px; }
+.span-12 { width: 470px; }
+.span-13 { width: 510px; }
+.span-14 { width: 550px; }
+.span-15 { width: 590px; }
+.span-16 { width: 630px; }
+.span-17 { width: 670px; }
+.span-18 { width: 710px; }
+.span-19 { width: 750px; }
+.span-20 { width: 790px; }
+.span-21 { width: 830px; }
+.span-22 { width: 870px; }
+.span-23 { width: 910px; }
+.span-24, div.span-24 { width: 950px; margin: 0; }
+.span-auto{ width:auto;}
+/*�����ұ߿�8*/
+.append-1  { padding-right: 10px; }  
+.append-2  { padding-right: 20px; } 
+.append-3  { padding-right: 30px; } 
+.append-4  { padding-right: 40px; } 
+.append-5  { padding-right: 50px; } 
+.append-6  { padding-right: 60px; } 
+.append-7  { padding-right: 70px; } 
+.append-8  { padding-right: 80px; } 
+.append-9  { padding-right: 90px; } 
+.append-10 { padding-right: 100px; } 
+.append-11 { padding-right: 110px; } 
+.append-12 { padding-right: 120px; } 
+.append-13 { padding-right: 130px; } 
+.append-14 { padding-right: 140px; } 
+.append-15 { padding-right: 150px; } 
+.append-16 { padding-right: 160px; } 
+.append-17 { padding-right: 170px; } 
+.append-18 { padding-right: 180px; } 
+.append-19 { padding-right: 190px; } 
+.append-20 { padding-right: 200px; } 
+.append-21 { padding-right: 210px; } 
+.append-22 { padding-right: 220px; } 
+.append-23 { padding-right: 230px; } 
+
+/*������߿�8*/
+.prepend-1  { padding-left: 10px; }  
+.prepend-2  { padding-left: 20px; } 
+.prepend-3  { padding-left: 30px; } 
+.prepend-4  { padding-left: 40px; } 
+.prepend-5  { padding-left: 50px; } 
+.prepend-6  { padding-left: 60px; } 
+.prepend-7  { padding-left: 70px; } 
+.prepend-8  { padding-left: 80px; } 
+.prepend-9  { padding-left: 90px; } 
+.prepend-10 { padding-left: 100px; } 
+.prepend-11 { padding-left: 110px; } 
+.prepend-12 { padding-left: 120px; } 
+.prepend-13 { padding-left: 130px; } 
+.prepend-14 { padding-left: 140px; } 
+.prepend-15 { padding-left: 150px; } 
+.prepend-16 { padding-left: 160px; } 
+.prepend-17 { padding-left: 170px; } 
+.prepend-18 { padding-left: 180px; } 
+.prepend-19 { padding-left: 190px; } 
+.prepend-20 { padding-left: 200px; } 
+.prepend-21 { padding-left: 210px; } 
+.prepend-22 { padding-left: 220px; } 
+.prepend-23 { padding-left: 230px; } 
+
+div.floatLeft{ float:left}
+div.floatRight { float:right}
+div.floatNone{ float:none}
+
+/*����Ԫ���ұ߱߿�*/
+.border { padding-right: 4px; margin-right: 5px; border-right: 1px solid #eee;}
+
+/* ����Ԫ�ؾ��и��߾���ұ߱߿� */
+.colborder {padding-right: 24px;margin-right: 25px;border-right: 1px solid #eee;}
+
+/*��Ԫ����ǰ�����������ǰһ8���ߺ�һ8*/
+.pull-1 { margin-left: -10px; }
+.pull-2 { margin-left: -20px; }
+.pull-3 { margin-left: -30px; }
+.pull-4 { margin-left: -40px; }
+.pull-5 { margin-left: -50px; }
+.push-6 { margin-left: -60px;  }
+.push-7 { margin-left: -70px;  }
+
+.push-1 { margin: 0 -10px 1.5em 10px; }
+.push-2 { margin: 0 -20px 1.5em 20px; }
+.push-3 { margin: 0 -30px 1.5em 30px; }
+.push-4 { margin: 0 -40px 1.5em 40px; }
+.push-5 { margin: 0 -50px 1.5em 50px; }
+.push-6 { margin: 0 -60px 1.5em 60px; }
+.push-7 { margin: 0 -70px 1.5em 70px; }
+
+.box{padding:7px;}
+.boxBlue {background:#ECF2F5; border:1px solid #C7DBE5; padding:7px;}
+.boxBrown{background:#F5F4EC; border:1px solid #E5DDC7; padding:7px;}
+.boxGray {background:#efefef;	border:1px solid #E1E1E1;padding:7px;}/*�?��ͬ����Ļ���*/
+
+
+/*�ָ���*/
+hr       {background: transparent; color: #ddd;  float: none; width: 100%; height: 0; margin:5px 0; padding:0;border: 1;}
+hr.space {background: #fff;color: #fff;}
+
+/*���
+	 �ṩ}��ʽ4����
+	 1��clearfix����ֱ���ڸ���Ԫ�صİ��������ֱ��д��class=cleafix�Ϳ��ԾͿ�������ˣ��ô��ǽ�����һ��class����Ҫ��Ӷ���Ķ���htmlԪ�ء�����
+			<div class="clearfix">
+				<div style="float:left"></div>
+				<div style="float:right"></div>
+			</div>
+	 2����һ�����ֱ���ڸ���Ԫ�صĽ�β��д��<div class="clear"></div>
+ */
+ 
+.clearfix:after  {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix        {display: inline-block;}
+* html .clearfix,
+* html           {height: 1%;}
+.clearfix        {display: block;}
+.clear           {border-top:1px solid transparent !important; border-top:0; clear:both; line-height:0; font-size:0;height:0;height:1%;}
+

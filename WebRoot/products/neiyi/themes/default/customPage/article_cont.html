@@ -1,0 +1,7 @@
+<div class="newstitle"> 
+	<h2>${data.title!''}</h2>
+</div>
+<div class="cont">
+	<#if data.cat_id != 10><div class="date">发布日期：${data.add_time?string('yyyy-MM-dd')}</div></#if>
+	${data.content!''}
+</div>

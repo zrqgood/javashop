@@ -1,0 +1,67 @@
+<ul id="snsshare">
+	<li class="kaixin" onclick='javascript:kaixinshare();'></li>
+	<li class="renren" onclick='javascript:renrenshare();'></li>
+	<li class="sina" onclick='javascript:sinashare();'></li>
+	<li class="taobao" onclick="javascript:taobaoshare();"></li>
+	<li class="qq"  onclick="javascript:qqshare();"></li>
+	<li class="douban" onclick="javascript:doubanshare();"></li>
+	<li class="tqq" onclick="javascript:tqqshare();"></li>
+</ul>
+<script>
+function sinashare(){
+	var url= 'url='+encodeURIComponent("${url}");
+	url= url+"&title="+encodeURIComponent("${title}");
+	url= url+"&pic="+encodeURIComponent("${img}");
+	url='http://service.weibo.com/share/share.php?'+url;
+	window.open( url,'转播到新浪微博', 'width=700, height=580, top=180, left=320, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	 
+}
+
+function renrenshare(){
+	var url= 'link='+encodeURIComponent("${url}");
+	url= url+"&title="+encodeURIComponent("${title}");
+	url='http://share.renren.com/share/buttonshare.do?'+url;
+	window.open( url,'分享至人人网', 'width=700, height=580, top=180, left=320, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	 
+}
+
+function kaixinshare(){
+	var url= 'rurl='+encodeURIComponent("${url}");
+	url= url+"&rtitle="+encodeURIComponent("${title}");
+	url='http://www.kaixin001.com/repaste/bshare.php?'+url;	
+	window.open( url,'分享至开心网', 'width=700, height=580, top=180, left=320, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	 
+}
+
+function taobaoshare(){
+	var url= 'url='+encodeURIComponent("${url}");
+	url= url+"&title="+encodeURIComponent("${title}");
+	url='http://share.jianghu.taobao.com/share/addShare.htm?'+url;
+	window.open( url,'分享到淘江湖', 'width=700, height=580, top=180, left=320, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	 
+}
+
+function qqshare(){
+	var url= 'url='+encodeURIComponent("${url}");
+	url= url+"&title="+encodeURIComponent("${title}");
+	url= url+"&pics="+encodeURIComponent("${img}");
+	url='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?'+url;	
+	window.open( url,'分享至QQ空间', 'width=700, height=580, top=180, left=320, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	 
+}
+function doubanshare(){
+	var url= 'url='+encodeURIComponent("${url}");
+	url= url+"&title="+encodeURIComponent("${title}");
+	url='http://www.douban.com/recommend/?'+url;	
+	window.open( url,'推荐至豆瓣', 'width=700, height=580, top=180, left=320, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	 	
+}
+function tqqshare(){
+	var url= 'url='+encodeURIComponent("${url}");
+	url= url+"&title="+encodeURIComponent("${title}");
+	url= url+"&pic="+encodeURIComponent("${img}");
+	url='http://v.t.qq.com/share/share.php?'+url;
+	window.open( url,'转播到腾讯微博', 'width=700, height=580, top=180, left=320, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	 			
+}
+</script>

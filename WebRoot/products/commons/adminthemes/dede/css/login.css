@@ -1,0 +1,110 @@
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li, body, form, input, button, img, cite, strong, em,
+table, td, th { padding:0; margin:0;}
+h1, h2, h3, h4, h5, h6 { font-size:14px;}
+img, table, td, th { border:0;}
+ul, ol { list-style-type:none;padding:0;margin:0;}
+body { font:12px Arial, "宋体", Verdana, sans-serif;width:100%;height:100%;}
+html,body {padding: 0;margin: 0; overflow-x:hidden; overflow-y:hidden;background-color:#f4fbf4;}
+/* 字体颜色 */
+.red {color:red;}
+.bold {font-weight: bold; color: #660;}
+#head{
+	height:66px;
+	width:100%;
+	z-index:99;
+	position:relative;
+	overflow:hidden;
+}
+.welcome{
+	border-right:medium none;
+	color:#A8C280;
+	padding-right:6px
+}
+.top{
+	width:100%;
+	height:37px;
+	background:url(../images/img_1.gif) repeat-x 0 0;
+}
+.logo{
+	width:170px;
+	height:37px;
+	float:left;
+}
+.logo img{
+	width:170px;
+	height:37px;
+	border:none;
+}
+#top_link{
+	float:right;
+}
+#top_link ul{
+	padding:12px 0 0;
+	list-style-type:none;
+	color:#CBDAB3
+}
+#top_link ul li{
+	position: relative;
+	float:left;
+}
+#top_link ul li a {
+	color:#CBDAB3;
+	padding:0 11px 0 11px;
+	text-decoration:none;
+	border-right:1px solid #61910F;
+}
+#top_link ul li a:hover{
+	color:#fff;
+}
+.topnav{
+	width:100%;
+	height:29px;
+	background:url(../images/img_1.gif) repeat-x 0 -37px;
+	overflow:hidden;
+	clear:both;
+}
+.menuact{
+	height:27px;
+	line-height:27px;
+	float:right;
+	padding-right:20px;
+}
+.menuact a{
+	color:#999;
+	padding:0 10px 0 20px;
+	text-decoration:none;
+}
+.login{
+	margin-top:20px;
+	padding:10px;
+	width:70%;
+}
+.login form{
+	margin-left:30px;
+}
+table tr td{
+	height:33px;
+	line-height:33px;
+}
+input[type="text"], input[type="password"],input[type="input"] {
+	background:#FFFFFF url(../images/input.gif) no-repeat scroll 0 0;
+	border:1px solid #A7A6AA;
+	height:15px;
+	padding:2px;
+	width:200px;
+}
+#login_btn {
+	background:url(../images/img_1.gif) no-repeat 0 -404px;
+	cursor:pointer;
+	font-size:12px;
+	height:24px;
+	width:79px;
+	overflow:hidden;
+	border-width:0;
+	border-color:-moz-use-text-color
+}
+#code_img{
+	width:100px;
+	height:23px;
+	cursor:pointer;	
+}

@@ -1,0 +1,74 @@
+<div>
+	<h1 class="title">充值到预存款</h1>
+	<form class="section" method="post" action="widget.do?type=member_deposit" target="_blank">
+		<input type="hidden" name="action" value="pay" />
+		<div class="FormWrap">
+			<div class="division">
+				<table cellspacing="0" cellpadding="0" border="0" width="100%" class="forform">
+					<tbody>
+						<tr>
+							<th>输入充值金额：</th>
+							<td><input type="text" id="money" required="true" name="money" class="inputstyle _x_ipt" autocomplete="off">元</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="division">
+				<table cellspacing="0" cellpadding="0" border="0" width="100%" class="forform">
+					<tbody>
+						<tr>
+							<th>选择支付方式：</th>
+							<td id="paymentlist">
+								<table cellspacing="0" cellpadding="0" width="100%" class="liststyle data">
+									<colgroup class="span-5 ColColorGray"></colgroup>
+									<colgroup class="span-auto"></colgroup>
+									<tbody>
+										<#list payList as pay>
+										<tr type="${pay.type}">
+											<th style="text-align: left;">
+												<label>
+													<input type="radio" value="${pay.id}" name="paymentid" class="x-payMethod" />${pay.name}
+												</label>
+											</th>
+											<td>&nbsp;</td>
+										</tr>
+										</#list>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><input type="submit" value="点击立刻付款" class="btnstyle" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("tr[type='deposit']").hide();
+	$("tr[type='offline']").hide();
+	$("form").submit(function(){
+		var result = false;
+		var money = $("#money").val();
+		money = $.trim(money);
+		if( money=='' || parseFloat(money) != money ){
+			alert("请输入正确的金额格式");
+			return false;
+		}
+		
+		$("input[name=paymentid]").each(function(){
+			if( $(this).attr("checked") )
+				result  = true;
+		});
+		
+		if(!result){
+			alert("请选择支付方式");
+		}
+		
+		return result;
+	});
+});

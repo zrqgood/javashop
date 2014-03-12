@@ -1,0 +1,11 @@
+<ol class="division CartInfoContent">
+    <#list goodsList as item>
+	<li style="overflow: auto; height: 100%; margin-left: 0pt;">
+	<a style="display: block; width: 40px; height: 40px; overflow: hidden; float: left; clear: left;"
+		class="goods-pic" href="goods-${item.goods_id}.html">
+		<img height="40" width="29" src="<@GoodsPic pic='${item.image_default}' postfix='_thumbnail' />"></a>
+		<a href="goods-${item.goods_id}.html">${item.name}</a>
+		<span class="fontcolorOrange num">x${item.num}</span>
+	</li>
+	</#list>
+</ol>

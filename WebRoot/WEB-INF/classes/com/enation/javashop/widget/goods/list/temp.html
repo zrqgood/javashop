@@ -1,0 +1,151 @@
+<style>
+.itemsWrap{
+  *display:inline;
+  float:left;
+  overflow:hidden;
+}
+</style>
+<{capture name=titleImg}>
+  <div class="titleImg"><a href="<{if $setting.titleImgHref}><{$setting.titleImgHref}><{else}><{link ctl=gallery act=$setting.view arg0=$setting.id}><{/if}>"><img src="<{$setting.titleImgSrc}>" alt="<{$setting.titleImgAlt}>"/></a></div>
+<{/capture}>
+
+<{capture name=goodsCat}>
+  <{if $setting.showTitle=="on"}>
+    <h4><{$setting.titleDesc}></h4>
+  <{/if}>
+<{/capture}>
+
+<{capture name=goodsLoop}>
+    <{foreach from=$data item=data key=key name=goodslist}>
+    
+    <{capture name=goodsImg}>
+    <{if $setting.showGoodsImg=="on"}><div class="goodsImg" style="overflow:hidden;text-align:center;vertical-align: middle;<{if $setting.goodsImgWidth}>width:<{$setting.goodsImgWidth}>px;<{elseif $env.thumbnail_pic_width}>width:<{$env.thumbnail_pic_width}>px;<{/if}><{if $setting.goodsImgHeight}>height:<{$setting.goodsImgHeight}>px;<{elseif $env.thumbnail_pic_height}>height:<{$env.thumbnail_pic_height}>px;<{/if}>"><a href="<{link ctl="product" act="index" arg0=$data.goods_id}>" target="_blank" title="<{$data.name}>"><img <{if $setting.restrict=='off'}><{if $setting.goodsImgWidth}>width="<{$setting.goodsImgWidth}>"<{/if}><{if $setting.goodsImgHeight}>height="<{$setting.goodsImgHeight}>"<{/if}><{/if}>  src="<{$data.thumbnail_pic|gimage:'thumbnail'}>" alt="<{$data.name}>"></a></div><{/if}>
+    <{/capture}>
+
+    <{capture name=goodsName}>
+      <{if $setting.showGoodsName=="on"}>
+        <h6><a href="<{link ctl="product" act="index" arg0=$data.goods_id}>" target="_blank" title="<{$data.name|escape:html}>"><{$data.name|cut:$setting.max_length}></a></h6>
+      <{/if}>
+    <{/capture}>
+    
+    <{capture name=goodsDesc}>
+      <{if $setting.showGoodsDesc=="on"}>
+      <ul>
+    <{assign var="savePC" value=$data.mktprice-$data.price}>
+    
+        <{if $setting.showGoodsMktPrice=="on"}><li><span class="mktprice0"></span><span class="mktprice1" style="color:<{$setting.color1}>;<{$setting.mark_font|styleset}>"><{$setting.mktPriceText|default:'市场价'}><{$setting.mktPriceSep|default:':'}><{$data.mktprice|cur}></span></li><{/if}>
+        <{if $setting.showGoodsPrice=="on"}><li><span class="price0"><{$setting.priceText|default:'销售价'}><{$setting.priceSep|default:':'}></span><span class="price1" style="color:<{$setting.color2}>;<{$setting.member_font|styleset}>"><{$data.price|cur}></span></li><{/if}>
+        <{if $savePC>0 && $setting.showGoodsSave=="on"}><li><span class="save0"><{$setting.saveText|default:'节省'}><{$setting.saveSep|default:':'}></span><span class="save1" style="color:<{$setting.color3}>;<{$setting.save_font|styleset}>"><{$savePC|cur}></span></li><{/if}>
+        <{if $setting.showGoodsInfo=="on" && $data.brief}><li><span class="info0">简介：<{$data.brief}></span></li><{/if}>
+        <{if $setting.showCount=="on"}><li><span class="countprice"><{$setting.countText|default:'折扣'}></span><span class="info1" style="color:<{$setting.color5}>;<{$setting.count_font|styleset}>"><{assign var ="aCount" value=$data.price/$data.mktprice*100}>
+        <{math equation="countResult" countResult=$aCount format="%.0f"}>
+        <{$setting.countSep|default:':'}></span></li><{/if}>
+      </ul>
+            <{if $setting.showBuyArea=="on"}>
+            <ul class="button">
+        <{goodsmenu product=$data}>
+      </ul>
+            <{/if}>
+      <{/if}>
+    <{/capture}>
+    
+      <div class="itemsWrap <{if $setting.column > 1 &&($smarty.foreach.goodslist.iteration % $setting.column|default:4) == 0}>last<{/if}>" product="<{$data.goods_id}>" style="width:<{math equation="floor(100/x)" x=$setting.column|default:4}>%;">
+        <div class="item">
+          <{if $setting.showGoodsImg=="off"}>
+            <{$smarty.capture.goodsName}>
+            <{$smarty.capture.goodsDesc}>
+          <{elseif $setting.showGoodsName=="off" && $setting.showGoodsDesc=="off"}>
+            <{$smarty.capture.goodsImg}>
+          <{elseif $setting.goodsImgPosition=="top"}>
+            <{$smarty.capture.goodsImg}>
+            <{$smarty.capture.goodsName}>
+            <{$smarty.capture.goodsDesc}>
+          <{elseif $setting.goodsImgPosition=="center"}>
+            <{$smarty.capture.goodsName}>
+            <{$smarty.capture.goodsImg}>
+            <{$smarty.capture.goodsDesc}>
+          <{elseif $setting.goodsImgPosition=="bottom"}>
+            <{$smarty.capture.goodsName}>
+            <{$smarty.capture.goodsDesc}>
+            <{$smarty.capture.goodsImg}>
+          <{elseif $setting.goodsImgPosition=="left"}>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+              <td><{$smarty.capture.goodsImg}></td>
+              <td class="goodsDesc">
+                <{$smarty.capture.goodsName}>
+                <{$smarty.capture.goodsDesc}>
+              </td>
+              </tr>
+            </table>
+          <{elseif $setting.goodsImgPosition=="right"}>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <td class="goodsDesc">
+                  <{$smarty.capture.goodsName}>
+                  <{$smarty.capture.goodsDesc}>
+                </td>
+                <td><{$smarty.capture.goodsImg}></td>
+                </tr>
+            </table>
+          <{/if}>
+        </div>
+      </div>
+      <{if $setting.column!=1 &&($smarty.foreach.goodslist.iteration % $setting.column|default:4) == 0}>
+        <div class="clear"></div>
+      <{/if}>
+    <{/foreach}>
+    <div class="clear"></div>
+<{/capture}>
+
+<div class="GoodsListWrap">
+  <{if $setting.showTitleImg=="off"}>
+    <div class="GoodsList">
+      <{$smarty.capture.goodsCat}>
+      <{$smarty.capture.goodsLoop}>
+    </div>
+  <{elseif $setting.titleImgPosition=="top"}>
+    <{$smarty.capture.titleImg}>
+    <div class="GoodsList">
+      <{$smarty.capture.goodsCat}>
+      <{$smarty.capture.goodsLoop}>
+    </div>
+  <{elseif $setting.titleImgPosition=="center"}>
+    <{$smarty.capture.goodsCat}>
+    <{$smarty.capture.titleImg}>
+    <div class="GoodsList">
+      <{$smarty.capture.goodsLoop}>
+    </div>
+  <{elseif $setting.titleImgPosition=="bottom"}>
+    <div class="GoodsList">
+      <{$smarty.capture.goodsCat}>
+      <{$smarty.capture.goodsLoop}>
+    </div>
+    <{$smarty.capture.titleImg}>
+  <{elseif $setting.titleImgPosition=="left"}>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      <td width="<{$setting.titleImgWidth}>"><{$smarty.capture.titleImg}></td>
+      <td><div class="GoodsList">
+        <{$smarty.capture.goodsCat}>
+        <{$smarty.capture.goodsLoop}>
+      </div>
+      </td>
+      </tr>
+    </table>
+  <{elseif $setting.titleImgPosition=="right"}>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      <td><div class="GoodsList">
+        <{$smarty.capture.goodsCat}>
+        <{$smarty.capture.goodsLoop}>
+      </div>
+      </td>
+      <td width="<{$setting.titleImgWidth}>"><{$smarty.capture.titleImg}></td>
+      </tr>
+    </table>
+  <{/if}>
+  <{if $setting.showMore == "on" && $data}>
+    <div class="more clearfix"><a href="<{$setting.link}>">更多...</a></div>
+  <{/if}>
+</div>

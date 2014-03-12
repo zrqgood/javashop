@@ -1,0 +1,22 @@
+<div class="FeedBackInfo">
+	<div class="success clearfix">
+		<div class="span-1 pic"></div>
+		<div class="span-auto ">
+			<h1><#if msg?exists >${msg}</#if></h1>
+			<#if urls?exists >
+			<ol>
+				<#list urls?keys  as itemKey>
+					<#if itemKey?exists >
+						<#assign url = urls[itemKey]>
+						<li><a href="${url}">${itemKey}</a></li>
+					</#if>
+				</#list>
+			</ol>
+			</#if>
+			<a class="jumpurl" href="<#if jumpurl?exists >${jumpurl}<#else>javascript:history.back();</#if>">3秒后系统会自动跳转，也可点击本处直接跳转</a>
+		</div> 
+	</div>
+</div>
+<script>
+document.write("<meta http-equiv='refresh' content='3;url=<#if jumpurl?exists >${jumpurl}<#else>" + document.referrer + "</#if>'>");
+</script>

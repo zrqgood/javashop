@@ -1,0 +1,21 @@
+<!--标题及位置-->
+<div class="title">
+	<h1>产品展示</h1>
+	<div class="position">您现在的位置：${navbar}</div>
+</div>
+<!--内容-->
+<div class="cont">
+	<div class="productlist">
+		<ul>
+		<#list dataList as list>  
+			<li>
+				<div class="img"><a href="detail-${list.cat_id}-${list.id}.html"><img  alt="${list.title}" src="${list.img}' postfix='_thumbnail' />"/></a></div>
+				<div class="name"><a href="detail-${list.cat_id}-${list.id}.html">${list.title}</a></div>
+			</li>
+		</#list>
+		</ul>
+	<div style="clear:both"></div>
+	</div>
+</div>
+<!--分页-->
+${pager}

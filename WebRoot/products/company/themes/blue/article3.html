@@ -1,0 +1,23 @@
+<#include 'common/header.html' />
+<script language="javascript" type="text/javascript">
+	 function fontZoom(size){
+		 document.getElementById('con').style.fontSize=size+'px';
+		}
+</script>
+<!--content-->
+	<div class="newslist">
+		<div class="newslist_l">
+			<div class="navigation">
+				<div class="title"></div>
+				<div class="cont">
+					${widget_newscat}
+				</div>
+			</div>
+		${widget_search}
+		</div>
+		<div class="newslist_r">
+			${widget_content}
+		</div>
+	</div>
+<!--content end-->
+<#include 'common/footer.html' />

@@ -1,0 +1,96 @@
+<div class="input">
+ <form class="validate" method="post" <#if isEdit>action="cat!saveEdit.do"<#else>action="cat!saveAdd.do"</#if> name="theForm" id="theForm" >
+ 	<#if isEdit>
+ 		<input type="hidden" name="cat.cat_id" value="${cat.cat_id}" />
+ 	</#if>
+   <table cellspacing="1" cellpadding="3" width="100%" class="form-table">
+     <tr> 
+       <th><label class="text">分类名称</label></th>
+       <td><input type="text" name="cat.name"   maxlength="60" <#if isEdit>value="${cat.name!''}"</#if>  dataType="string" required="true"/>       </td>
+     </tr>
+     <tr>
+       <th><label class="text">上级分类</label></th>
+       <td>
+
+		<select name="cat.parent_id"  id="parent_id">
+		<option value="0">顶级类别</option>
+ 		<#assign children=catList />
+		<#assign level=1 />
+		<#include 'select_children.html' />  
+		</select>	</td>
+     </tr>
+     <tr>
+       <th><label class="text">文章模型 </label></th>
+       <td>
+       
+       <select name="cat.model_id"  id="model_id"  dataType="int" required="true">
+       <option value="">--选择模型--</option>
+        <#list modelList as model>
+			<option value="${model.model_id }" >${model.china_name }</option>
+		</#list>	
+	 
+		</select>
+		 
+		</td>
+		
+     </tr>
+     
+     <tr>
+       <th><label class="text">是否加入到SiteMap</label></th>
+       <td>
+       <input type="radio" name="cat.tositemap" value="0" checked class="tositemap"/>否 &nbsp;<input type="radio" name="cat.tositemap" value="1" class="tositemap"/>是    </td>
+     </tr>
+     
+     <tr>
+       <th><label class="text">页面地址</label></th>
+       <td>
+       <input type="text" name="cat.url" <#if isEdit>value="${cat.url!''}" dataType="String" required="true"</#if>  /> 默认为newlist-catid-1.html      </td>
+     </tr>
+
+     <tr id="detail_url" <#if isEdit><#if cat.tositemap != 1>style="display:none"</#if><#else>style="display:none"</#if>>
+       <th><label class="text">详细页地址前缀</label></th>
+       <td>
+       <input type="text" name="cat.detail_url" <#if isEdit>value="${cat.detail_url!''}" </#if>  />       </td>
+     </tr>
+          
+     <tr>
+       <th><label class="text">排序</label></th>
+       <td>
+       <input type="text" name="cat.cat_order" <#if isEdit>value="${cat.cat_order!0}"</#if> style="width:50px"  dataType="int" required="true"/>       </td>
+     </tr>
+
+   </table>
+	<div class="submitlist" align="center">
+	 <table>
+	 <tr><td >
+	          <input name="submit" type="submit"  value=" 确定 " class="submitBtn"/>
+	           <input name="reset" type="reset"  value=" 重置 " class="submitBtn"/>
+	   </td>
+	   </tr>
+	 </table>
+	</div>   
+   </form>
+   
+   </div>
+<script type="text/javascript">
+$(function(){
+	$("form.validate").validate();
+
+	<#if isEdit >
+	$("#parent_id").val(${cat.parent_id});
+	$("#model_id").val(${cat.model_id});
+	$(".tositemap").each(function(){
+		if($(this).val() ==  '${cat.tositemap}' ){
+			$(this).attr("checked",true);
+		}
+	});
+	<#else>
+	$("#parent_id").val(${cat_id});
+	</#if>
+	$(".tositemap").click(function(){
+		if($(this).val() == '0') $("#detail_url").hide(); else $("#detail_url").show();
+	});
+	
+});
+
+</script>

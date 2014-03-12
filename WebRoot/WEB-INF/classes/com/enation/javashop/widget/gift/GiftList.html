@@ -1,0 +1,41 @@
+<#include 'GiftRule.html' />
+<div class="GoodsSearchWrap">
+<div class="ItemsWarp clearfix">
+
+<#list webpage.result  as gift >
+<div class="items-list">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td width="1%" valign="middle" style="padding: 0pt 12px;"
+				class="goodpic gift_showlist"><a
+				href="gift-${gift.fo_id}.html"
+				style="width: 120px; height: 160px;"><img height="120"
+				width="120" alt="${gift.fo_name}"
+				src="${gift.list_thumb}"
+				style="margin-top: 20px;"></a></td>
+			<td class="goodinfo">
+			<h6><a href="gift-${gift.fo_id}.html">${gift.fo_name}</a></h6>
+			${gift.synopsis}</td>
+			<td width="250" class="price_button">
+			<ul>
+				<li><span class="price1">积分：${gift.score}</span><span class="mktprice1">原价格:
+				${gift.price?string.currency}</span></li>
+				<!--<li><span class="mktprice0">市场价</span>:<span class="mktprice1">136</span></li><li><span class="point0">积分</span>:<span class="point1">500</span></li><li><span class="goodsitro0">简介:</span><span class="goodsintro1">军用级别，防紫外线，高强度镜片</span></li>-->
+			</ul>
+			<ul>
+				<li class="button">
+					<a class="present" href="cart.html?action=add&productid=${gift.fo_id}&itemtype=2">兑换赠品</a>
+				</li>
+				<li><a href="gift-${gift.fo_id}.html">赠品详细</a></li>
+			</ul>
+			</td>
+		</tr>
+		<tr></tr>
+	</tbody>
+</table>
+</div>
+</#list>
+ 
+</div>
+</div>

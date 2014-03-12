@@ -1,0 +1,151 @@
+<link rel="stylesheet" type="text/css" media="all" href="css/ui.datepicker.css" title="win2k-cold-1" />
+<Script Language="JavaScript" type="text/JavaScript" src="js/ui.datepicker.js"></Script>
+<Script Language="JavaScript" type="text/JavaScript" src="js/DatePicker.js"></Script>
+<div>
+<h1 class="title">个人信息</h1>
+<form class="section" id="form_saveMember"
+	action="member_info.html?action=save" method="post">
+<div class="FormWrap">
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		
+		<tr>  
+			<th><em>*</em>Email：</th>
+			<td><input type="text" vtype="text" value="${member.email!''}"
+				required="true" name="email" class="inputstyle _x_ipt"
+				autocomplete="off"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		<tr>
+			<th>用户名</th>
+			<td>${member.uname}<input type="hidden" name="member.member_id" value="${member.member_id!''}"/></td>
+		</tr>
+		<tr>
+			<th>姓名</th>
+			<td><input required="false" name="member.name" value="${member.name!''}" 
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th>性别</th>
+			<td><input type="radio" <#if member.sex==1>checked</#if> value="1" name="member.sex"><label>男</label><input
+				type="radio" value="0" <#if member.sex==0>checked</#if> name="member.sex"><label>女</label></td>
+		</tr>
+		<tr>
+			<th>出生日期</th>
+			<td><input type="text" name="mybirthday" value="${mybirthday?string("yyyy-MM-dd")}" maxlength="60" dataType="date" class="dateinput"/></td>
+		</tr>
+		<tr>
+			<th>地区</th>
+			<td>
+			<select name="member.province_id" id="member_province_id"></select>&nbsp;
+			<input type="hidden" name="member.province" id="member_province" value="${member.province!''}"/>
+			<select name="member.city_id" id="member_city_id"></select>&nbsp;
+			<input type="hidden" name="member.city" id="member_city" value="${member.city!''}"/>
+			<select name="member.region_id" id="member_region_id"></select>&nbsp;
+			<input type="hidden" name="member.region" id="member_region" value="${member.region!''}"/>
+			</td>
+		</tr>
+		<tr>
+			<th>联系地址</th>
+			<td><input required="false" name="member.address"
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off" value="${member.address!''}"></td>
+		</tr>
+		<tr>
+			<th>邮编</th>
+			<td><input required="false" name="member.zip"
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off" value="${member.zip!'' }"></td>
+		</tr>
+		<tr>
+			<th>移动电话</th>
+			<td><input required="false" name="member.mobile"
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off" value="${member.mobile!''}"></td>
+		</tr>
+		<tr>
+			<th>固定电话</th>
+			<td><input required="false" name="member.tel"
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off" value="${member.tel!''}"></td>
+		</tr>
+		<tr>
+			<th>安全问题</th>
+			<td><input required="false" name="member.pw_question"
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off" value="${member.pw_question!''}"></td>
+		</tr>
+		<tr>
+			<th>回答</th>
+			<td><input required="false" name="member.pw_answer"
+				class="inputstyle _x_ipt _x_ipt" autocomplete="off" value="${member.pw_answer!''}"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" value="保存"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</form>
+<script>
+$(function(){
+	$("#member_province_id").empty();
+	$("<option value='-1'>请选择...</option>").appendTo($("#member_province_id"));
+	<#list provinceList as province>
+		$("<option value='${(province.region_id)?c}' <#if member.province_id == province.region_id>selected</#if> >${province.local_name}</option>").appendTo($("#member_province_id"));
+	</#list>
+	$("<option value='-1'>请选择...</option>").appendTo($("#member_city_id"));
+	<#list cityList as city>
+		$("<option value='${(city.region_id)?c}' <#if member.city_id == city.region_id>selected</#if> >${city.local_name}</option>").appendTo($("#member_city_id"));
+	</#list>
+	$("<option value='-1'>请选择...</option>").appendTo($("#member_region_id"));
+	<#list regionList as region>
+		$("<option value='${(region.region_id)?c}' <#if member.region_id == region.region_id>selected</#if> >${region.local_name}</option>").appendTo($("#member_region_id"));
+	</#list>
+	$("#member_province_id").change(function(){
+		$("#member_province").val($("#member_province_id option:selected").text());
+		$("#member_city_id").empty();
+		$("#member_city_id").hide();
+		$("#member_region_id").empty();
+		$("#member_region_id").hide();
+		$.ajax({
+			method:"get",
+			url:"shop/area!list_city.do?province_id=" + $("#member_province_id").attr("value"),
+			dataType:"html",
+			success:function(result){
+				$("#member_city_id").show();
+				$(result).appendTo($("#member_city_id"));
+			},
+			error:function(){
+				alert("异步失败");
+			}
+		});
+	});
+	$("#member_city_id").change(function(){
+		$("#member_city").val($("#member_city_id option:selected").text());
+		$("#member_region_id").empty();
+		$("#member_region_id").hide();
+		$.ajax({
+			method:"get",
+			url:"shop/area!list_region.do?city_id=" + $("#member_city_id").attr("value"),
+			dataType:"html",
+			success:function(result){
+				$("#member_region_id").show();
+				$(result).appendTo($("#member_region_id"));
+			},
+			error:function(){
+				alert("异步失败");
+			}
+		});
+	});
+	$("#member_region_id").change(function(){
+		$("#member_region").val($("#member_region_id option:selected").text());
+	});
+});
+</script>
+</div>

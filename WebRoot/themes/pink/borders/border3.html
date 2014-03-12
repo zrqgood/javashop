@@ -1,0 +1,19 @@
+<script type="text/javascript" src="js/jquery-ApexSlider.js"></script>
+<div class="border3">
+	<div class="title">
+		<h1>${title!''}</h1>
+		<span class="more"><a href="product-7-1.html">¸ü¶à</a></span>
+	</div>
+	<div class="cont">
+		<div class="piclist">
+			${body!''}
+		</div>
+		<div class="leftbg"></div>
+		<div class="rightbg"></div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$(".piclist ul").LeftMarquee({speed:50,step:1,btnLeft:".leftbg",btnRight:".rightbg"});
+		});
+	</script>
+</div>

@@ -1,0 +1,61 @@
+<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+<script type="text/javascript" src="js/GoodsCompare.js" ></script>
+<script type="text/javascript" src="js/jquery.scrollfollow.js" ></script>
+<script type="text/javascript" src="js/PropUrlCreator.js" ></script>
+<div class="GoodsSearchWrap">
+
+<#include 'selector.html' />
+
+<#include 'title.html' />
+
+<#if distype=='index'>
+<#include "index.html">
+<#elseif   distype=='grid'>
+<#include "grid.html">
+<#elseif   distype=='text'>
+<#include "text.html">
+</#if>
+
+<div class="clearfix pager">
+ <@pager pageno="${pageno?c}" pagesize="${pagesize?c}" total="${total?c}" />  
+</div>
+</div>
+
+<#include 'compare_goods.html' />
+
+<script>
+$(function(){
+
+	//排序select初始化
+	$("#orderSel").val("<@searchUrl type="order" value="${order!0}" />");
+
+	//更新忆收藏
+	<#if favoriteList?exists >
+		<#list favoriteList as favorite>
+			$(".star-off[goodsid=${favorite.goods_id}]").removeClass("star-off").addClass("star-on");
+		</#list>
+	</#if>
+
+	//收藏
+	$(".star-off").click(function(){
+		var btn =$(this);
+		$.ajax({
+			url:"shop/favorite.do?ajax=yes&goodsid="+btn.attr("goodsid"),
+			method:"get",
+			dataType:"json",
+			success:function(result){
+				if(result.result==1){
+					btn.removeClass("star-off").addClass("star-on");
+				}
+				alert(result.message);
+				
+			},
+			error:function(){
+				alert("出现错误，请稍后重试");
+			}
+		});
+	});
+
+	GoodsCompare.init();
+});
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+${widget_header}
+<link type="text/css" href="${staticserver}/shopex/statics/style.css" rel="stylesheet">
+<link href="images/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="AllWrap">
+<div id="Top">
+	<div id="TopMenu"></div>
+	<div id="Logo"><div style="margin-top:15px;">${widget_logo}</div></div>
+	<div id="Menu">
+	
+	
+	${widget_menu}</div>
+	<div class="topbar">
+		<ul class="cat"></ul>
+		<div class="cart"><div style="margin-top:15px;margin-left:10px;">${widget_mcartbar}</div></div>
+		<div class="cartbg"></div>
+	</div>
+	<div class="toplogin"><div class="lt"></div><div class="bg">${widget_mloginbar}</div><div class="rt"></div></div>
+</div>
+<div id="InfoWrap">
+${widget_info}
+</div>
+<div id="SearchWrap">
+	<div id="Search">
+		${widget_searchbar}
+	</div>
+</div>
+<script>
+$(function(){
+$(".MenuList li").slice(5).hide();
+});
+</script>
+
+

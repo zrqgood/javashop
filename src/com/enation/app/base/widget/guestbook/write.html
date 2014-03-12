@@ -1,0 +1,118 @@
+<form id="guestBookFrm" class="validate">
+<table cellspacing="1" cellpadding="4" border="0" bgcolor="#dedede"
+	align="center" width="100%" class="writetable">
+	<tbody>
+		<tr>
+			<td class="writetd" colspan="4"><b>发布留言：</b><a name="write"></a></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td nowrap="" align="center" width="10%"><font color="#ff0000">*</font>标题：</td>
+			<td width="40%">
+				<input type="text" class="ipt-txt" size="30" dataType="string" required="true"	name="title" maxlength="50" >
+			</td>
+			<td nowrap="" align="center" width="10%">验 证 码：</td>
+			<td>
+			<table cellspacing="0" cellpadding="0" border="0">
+				<tbody>
+					<tr>
+						<td width="70">
+						<input type="text" style="width: 60px;" class="ipt-txt"   id="vdcode2" name="vcode">
+						</td>
+						<td><img height="20" width="50" src="${ctx}/validcode.do?vtype=guestbook"></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td nowrap="" align="center" width="10%"><font color="#ff0000">*</font>你的姓名：</td>
+			<td width="40%"><input type="text" class="ipt-txt" value=""
+				size="30" name="username" dataType="string" required="true" maxlength="10"></td>
+			<td nowrap="" align="center" width="10%">QQ号码：</td>
+			<td width="40%"><input type="text" class="ipt-txt" size="20"
+				name="qq" maxlength="20"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td nowrap="" align="center">&nbsp;电子邮件：</td>
+			<td><input type="text" class="ipt-txt" size="30" name="email"
+				maxlength="80"></td>
+			<td nowrap="" height="12" align="center">手机号码：</td>
+			<td height="12"><input type="text" class="ipt-txt" size="20"
+				name="tel" maxlength="80"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td nowrap="" align="center" width="10%"><font color="#ff0000">*</font>留言内容：<br>
+			(1000字内)</td>
+			<td align="left" width="40%"><textarea class="textarea ipt-txt"
+				rows="5" cols="38" name="content" dataType="string" required="true"></textarea></td>
+			<td nowrap="" height="2" align="center" width="10%">选择头像：</td>
+			<td nowrap="" height="2" width="40%">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td><img height="72" width="72"
+							src="images/boy.gif"></td>
+						<td><img height="72" width="72"
+							src="images/girl.gif"></td>
+					</tr>
+					<tr>
+						<td align="center"><input type="radio" checked="" value="1"
+							name="sex"></td>
+						<td align="center"><input type="radio" value="0"
+							name="sex"></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td nowrap="" align="center" colspan="4">
+			<input type="submit" class="btn-2" value="提 交" name="submit" id="gbAddBtn" />
+			&nbsp;&nbsp;<input type="reset" class="btn-2" value="取消" name="reset"  />
+			 </td>
+		</tr>
+
+	</tbody>
+</table>
+</form>
+<script type="text/javascript">
+var GuestBook ={
+	init:function(){
+		var self  = this;
+		var form =$("#guestBookFrm");
+		form.validate();
+		form.submit(function(){
+			if("false"==$(this).attr("validate")) return false;
+			self.add();
+			return false;
+		});
+		
+	 	
+	},
+	add:function(){
+		var options = {
+				url : "widget.do?type=guestbook&ajax=yes&action=add",
+				type : "POST",
+				dataType : 'json',
+				success : function(result) {	
+				 if(result.result==1){
+						alert('${message}');
+						location.reload();	 
+					 }else{
+						 alert(result.message);
+				  }
+				},
+				error : function(e) {
+					
+					alert("出现错误 ，请重试");
+				}
+			};
+
+			$('#guestBookFrm').ajaxSubmit(options);
+					
+	}
+};
+$(function(){
+	GuestBook.init();
+});
+</script>

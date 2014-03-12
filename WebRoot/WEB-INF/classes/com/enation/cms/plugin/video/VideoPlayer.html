@@ -1,0 +1,30 @@
+<script type="text/javascript" src="${ctx}/resource/com/enation/cms/plugin/video/flowplayer-3.2.4.min.js"></script>
+<a  
+			 href="${path}"  
+			 style="display:block;width:${width!''}px;height:${height!''}px"  
+			 id="${fieldname}_player"> 
+			 <#if !autoplay?exists || autoplay=='0' >
+				 <#if img?exists >
+				 	<img src="${img!''}" style='width:${width!''}px;height:${height!''}px' alt="${title!''}" />
+				 </#if>
+			 </#if>
+</a> 
+
+<script>
+
+		$(function(){
+			flowplayer("${fieldname}_player", 
+					"${ctx}/resource/com/enation/cms/plugin/video/flowplayer-3.2.5.swf",
+					{
+						
+					    clip:  {
+					    <#if autoplay?exists && autoplay=='1'>
+					        autoPlay: true 
+					    </#if>    
+					    }
+				    					    	
+					  }
+			);
+		});	
+</script>
+	

@@ -1,0 +1,88 @@
+.progressContainer {
+	float:left;
+	padding-left:10px;
+	width:50px;
+}
+.proWrapper{
+	border: solid 1px #BBDDE5;
+	width:50px;
+	height:50px;
+	float:left;
+	margin:5px 5px 5px 5px;
+}
+.uploadImg{
+	width:50px;
+	height:50px;
+}
+.progressState{
+	margin-top:15px;
+	height:20px;
+	background-color: #E8F2FE;
+}
+.progressText{
+	margin-top:-18px;
+	padding-left:30px
+}
+.imgPrivew{
+  background: #F4FAFB;
+  border: 1px solid #BBDDE5;
+  margin-bottom: 10px;
+  padding: 2px;
+  width:280px;
+  height:250px;
+  text-align:center;
+}
+.deleteBtn{
+	letter-spacing:25px;
+	width:50px;
+	height:25px;
+	background-image: url('../images/icon_drop.gif');
+	background-repeat:no-repeat;
+	background-position:top center ;
+
+}
+* html .deleteBtn{ display:block;}
+ul,li{
+	list-style:none;
+}
+.input_panel{
+	float:left
+}
+.input_panel ul{
+	margin:1px;
+	width:100%;
+	float:left;
+	
+}
+.input_panel ul li{
+
+	float:left;
+	border: 1px solid #EFEFEF;
+}
+.input_panel ul li.text{
+	 background-color: #F8FAFC;
+	 width:150px;
+	 text-align:right;
+	 line-height:25px;
+}
+.input_panel ul li.input{
+	 border-left: 0;
+	 padding-left:5px;
+	 width:350px;
+	 line-height:25px;
+}
+.input_panel ul li.adj_input{
+	border-left: 0;
+	 padding-left:5px; 
+	 width:450px;
+	  line-height:25px; 
+}
+.input_panel .input_text{
+	 width:200px
+}
+.groupname{
+	font-size:14px
+}
+.albumbox table tr{
+border-bottom:0;
+}

@@ -1,0 +1,295 @@
+/*=默认		特价，货币等
+=============================================================================================*/
+.border1{
+	margin:0 0 5px 0;
+}
+.border1 h3{
+	background:#474747 url(../images/arrs.gif) no-repeat 12px -58px;
+	color:#FFFFFF;
+	letter-spacing:0.1em;
+	padding:0 0 0 28px;
+	margin:0;
+	height:26px;
+	line-height:28px;
+	overflow:hidden;
+	font-weight:normal;
+}
+.border1 .border-body{
+	border:1px solid #B3B3B3;
+	border-top:none;
+	overflow:hidden;
+	*width:99%;
+}
+.border1 td{
+	text-align:left;
+}
+/*=边栏2	公告，链接等
+=============================================================================================*/
+.border2{
+	border:1px solid #B3B3B3;
+	margin:0 0 5px 0;
+	*width:99%;
+}
+.border2 h3{
+	background:url(../images/arrs.gif) no-repeat 5px -98px;
+	border-bottom:2px solid #E0E0E0;
+	color:#FF7328;
+	height:26px;
+	letter-spacing:0.1em;
+	font-size:14px;
+	line-height:28px;
+	margin:0 5px;
+	padding:0 0 0 20px;
+	font-weight:bold;
+}
+.border2 .border-body{
+	padding:5px;
+}
+.border2 .GoodsList{
+	text-align:center;
+}
+.border2 .GoodsList .item{
+	border-bottom:1px dotted #ccc;
+	padding-bottom:5px;
+	margin:5px 0;
+}
+.border2 .price1{
+	color:#F90;
+}
+.border2 .titleImg{
+	text-align:center;
+}
+/*=首页促销信息
+=============================================================================================*/
+.border3{
+	border:1px solid #ddd;
+	margin:5px 0;
+}
+.border3 h3{
+	background:#424242;
+	color:#FFFFFF;
+	margin:0 2px 0 0;
+	padding:2px 4px;
+	font-weight:normal;
+	width:4em;
+}
+.border3 .border-body{
+	height:20px;
+	overflow:hidden;
+}
+.border3 li{
+	float:left;
+	margin:0 5px;
+	background:url(../images/arrs.gif) no-repeat 0 -142px;
+	padding:0 0 0 13px;
+}
+.border3 li a{
+	color:#F7620E;
+}
+/*=首页商品列表
+=============================================================================================*/
+.border4{
+	margin:0 0 10px 0;
+}
+.border4 h3{
+	background:url(../images/arrs.gif) no-repeat 5px -98px;
+	border-bottom:2px solid #E0E0E0;
+	color:#FF7328;
+	height:26px;
+	letter-spacing:0.1em;
+	font-size:14px;
+	line-height:28px;
+	margin:0 5px;
+	padding:0 0 0 20px;
+	font-weight:bold;
+}
+.border4 .border-body{
+	padding:5px;
+	text-align:left;
+}
+.border4 .GoodsListWrap{
+	text-align:left;
+}
+.border4 h4{
+	font-size:1.2em;
+	border-bottom:1px solid #B0B0B0;
+	color:#205E87;
+	font-weight:bold;
+	padding:0 0 0 4px;
+	margin:0 0 8px 0;
+}
+.border4 h6{
+	font-size:1em;
+	background:url(dotted.gif) repeat-x 0 bottom;
+	display:block;
+	line-height:2.2em;
+	font-weight:normal;
+	width:90%;
+}
+.border4 h6 a{
+	background:url(arrs.gif) no-repeat 5px -40px;
+	padding:0 0 0 15px;
+}
+.border4 .GoodsListWrap .item{
+	padding:0;
+}
+.border4 .goodsDesc{
+	width:60%;
+}
+/*=首页热卖商品
+=============================================================================================*/
+.border5{
+	clear:both;
+}
+.border5 .border-body{
+	padding:10px;
+	overflow:hidden;
+	text-align:center;
+}
+.border5 .border-top{
+	background:url(../images/hotgoods.gif) repeat-x;
+	height:32px;
+	border-bottom:1px solid #b3b3b3;
+}
+.border5 h3{
+	overflow:hidden;
+	float:left;
+	color:#FFFFFF;
+	background:url(../images/hotgoods.gif) no-repeat 0 -32px;
+	height:32px;
+	margin:0 0 0 10px;
+}
+.border5 h3 span{
+	padding:6px 8px 0 8px;
+	display:block;
+	background:url(../images/hotgoods.gif) no-repeat right -32px;
+}
+.border5 .price1{
+	color:#F90;
+	font-weight:bold;
+	font-size:1.1em;
+}
+.border5 .item{
+	margin:0 0 5px 0;
+}
+/*=首页最新商品
+=============================================================================================*/
+.border6 h3{
+	text-indent:-9999px;
+	background:url(../images/newgoods.gif) no-repeat;
+	height:150px;
+	margin:15px 10px 0 0;
+	width:26px;
+}
+.border6 .border-body{
+	overflow:hidden;
+}
+/*=底部文章
+=============================================================================================*/
+.border7{
+	text-align:center;
+}
+.border7 h3{
+	text-align:center;
+	background-color:#333333;
+	border:1px solid #666666;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding:4px 0;
+	margin:0;
+}
+.border7 .ArticleList li{
+	background:none;
+	padding:0;
+}
+/*=在线客服
+=============================================================================================*/
+.border8{
+	border:1px solid #B3B3B3;
+	margin:0 0 5px 0;
+	*width:99%;
+}
+.border8 h3{
+	background:url(../images/onlineserv_t.gif) no-repeat 10px 10px;
+	border-bottom:1px solid #E0E0E0;
+	color:#303030;
+	height:31px;
+	line-height:31px;
+	letter-spacing:0.1em;
+	font-size:14px;
+	margin:0 5px;
+	padding:10px 0 5px 50px;
+	font-weight:bold;
+}
+.border8 .border-body{
+	padding:10px;
+}
+
+/*=排行榜
+=============================================================================================*/
+.border9{
+	margin:0 0 5px 0;
+}
+.border9 h3{
+	background:#fe9928 url(../images/toprank_t.gif) no-repeat;
+	color:#FFFFFF;
+	letter-spacing:0.1em;
+	text-align:center;
+	margin:0;
+	height:26px;
+	font-weight:bold;
+	line-height:28px;
+	overflow:hidden;
+}
+.border9 .border-body{
+	border:1px solid #B3B3B3;
+	border-top:none;
+	overflow:hidden;
+	*width:99%;
+}
+/*=帮助中心	
+=============================================================================================*/
+.border10{
+	margin:0 0 5px 0;
+	border:1px solid #ddddcc;
+	*height:1%;
+}
+.border10 h3{
+	background:#ddddcc;
+	height:25px;
+	line-height:25px;
+	font-size:14px;
+	font-weight:bold;
+	color:#000000;
+	margin:0;
+	padding:0 0 0 10px;
+}
+.border10 .border-body{
+	padding:5px;
+}
+
+.border10{
+	line-height:1.8em;
+}
+.border10 .TreeList .cat1{
+	background:#efefef;
+	padding:0 0 0 5px;
+	margin:5px 0;
+	font-weight:bold;
+}
+.border10 .TreeList .cat1 a{
+	background:url(arrs.gif) no-repeat 0 -201px;
+	padding:0 0 0 13px;
+	color:#333;
+}
+.border10 .TreeList a:hover{
+	color:#FF6600;
+}
+.border10 .TreeList .cat2{
+	padding:0 0 0 18px;
+}
+.border10 .TreeList .cat2 a{
+	background:url(arrs.gif) no-repeat 0pt -45px;
+	padding:0 0 0 10px;
+	color:#666;
+}

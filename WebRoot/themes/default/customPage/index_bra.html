@@ -1,0 +1,30 @@
+<div class="selTabMenu">
+	<ul>
+		<#list tabList as tab>
+			<li <#if tab.selected>class="current"</#if> id="${tab.id}" >${tab.title}</li>
+		</#list>
+	</ul>
+</div>
+<div class="selTabCon">
+	<#list tabList as tab>
+	 <div id="tpc_${tab.id}" <#if !tab.selected>style="display:none"</#if> class="tabContent" >
+		<#assign goodsList = tab.goodsList>
+		<#include 'index_goodsList.html' />
+	</div>
+	</#list>
+</div>
+<script type="text/javascript">
+$(function(){
+	 function toggleTab(tab){
+		$(".selTabMenu li").removeClass("current");
+		tab.addClass("current");
+		var id = tab.attr("id");
+		$(".selTabCon .tabContent").hide();
+		$(".selTabCon #tpc_"+id).show();		 
+	 }
+	$(".selTabMenu li").click(function(){
+		toggleTab($(this));
+	});
+
+})
+</script>

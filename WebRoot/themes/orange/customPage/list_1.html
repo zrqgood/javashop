@@ -1,0 +1,5 @@
+<ul>
+<#list dataList as data>
+	<li><div class='l_title'><a href='detail-${data.cat_id}-${data.id}.html' title='${data.title}'>${data.title!''}</a></div><span class='r_time'>[${data.add_time?string('yyyy-MM-dd')}]</span></li>
+</#list>
+</ul>

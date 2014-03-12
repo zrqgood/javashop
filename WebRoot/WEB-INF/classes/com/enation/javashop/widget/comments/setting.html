@@ -1,0 +1,40 @@
+<div>
+	<table class="form-table">
+		<tr>
+			<td class="label">
+				回复验证码:
+			</td>
+			<td>
+				<input type="radio" name="comments.validcode" value="1"  <#if comments.validcode?exists &&comments.validcode?number==1 >checked</#if> />开启&nbsp;&nbsp;<input type="radio" name="comments.validcode" value="0" <#if comments.validcode?exists &&comments.validcode?number==0 >checked</#if> />关闭
+			</td>
+		</tr>
+
+		<tr>
+			<td class="label">
+				评论分页条数:
+			</td>
+			<td>
+				每页<input type="text" name="comments.pageSize" value="${comments.pageSize!0}"/>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="label">
+				匿名评论:
+			</td>
+			<td>
+				<input type="radio" name="comments.anonymous" value="1" <#if comments.anonymous?exists &&comments.anonymous?number==1 >checked</#if> />允许&nbsp;&nbsp;  <input type="radio" name="comments.anonymous" value="0" <#if comments.anonymous?exists &&comments.anonymous?number==0 >checked</#if> />不允许 
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="label">
+				直接显示：
+			</td>
+			<td>
+				<input type="radio" name="comments.directShow" value="1" <#if comments.directShow?exists &&comments.directShow?number==1 >checked</#if> />是&nbsp;&nbsp;  <input type="radio" name="comments.directShow" value="0" <#if comments.directShow?exists &&comments.directShow?number==0 >checked</#if> />否
+			</td>
+		</tr>
+				
+	</table>
+</div>

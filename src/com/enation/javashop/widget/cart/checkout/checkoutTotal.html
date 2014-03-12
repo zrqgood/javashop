@@ -1,0 +1,39 @@
+<table cellspacing="0" cellpadding="0" width="100%"
+	class="liststyle data">
+	<col class="span-auto ColColorGray">
+	<col class="span-4 ColColorOrange textright">
+	<tbody>
+		<tr>
+			<th>商品总价格：</th>
+			<td class="price" value="498">${orderPrice.originalPrice?string("currency")}</td>
+		</tr>
+		<#if  orderPrice.shippingPrice?exists >
+		<tr>
+			<th>配送费用：</th>
+			<td>${orderPrice.shippingPrice?string("currency")}</td>
+		</tr>
+		</#if>
+		<#if orderPrice.protectPrice?exists >
+		<tr>
+			<th>保价费用：</th>
+			<td>${orderPrice.protectPrice?string("currency")}</td>
+		</tr>
+		</#if>
+ 
+		<#if orderPrice.discountPrice?exists >
+		<tr>
+			<th>优惠金额：</th>
+			<td style="color: rgb(255, 0, 0);">-￥${orderPrice.discountPrice }</td>
+		</tr>
+ 		</#if>
+		<tr>
+			<th>订单总金额：</th>
+			<td><span class="price1">${orderPrice.orderPrice?string("currency")}</span></td>
+		</tr>
+		<tr>
+			<th>此订单数获得积分：</th>
+			<td><span class="price1">${orderPrice.point!0}</span></td>
+		</tr>		
+		
+	</tbody>
+</table>

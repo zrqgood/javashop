@@ -1,0 +1,104 @@
+<link href="user/css/admin.css" rel="stylesheet" type="text/css" />
+<div class="input">
+<form  class="validate"  action="multiSite!save.do" method="post"   id="siteForm" >
+<div class="tableform">
+<h4>网站多站点设置</h4>
+<div class="division">
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="shop-setting">
+	<tbody>
+		<tr>
+			<th>开启多站点：</th>
+			<td>
+			
+			<input type="radio" name="multi_site"  class="multisiteon" id="open_chk" value="1" >
+			<label >是</label>
+			
+			&nbsp;<input type="radio" value="0"  class="multisiteon" id="close_chk" name="multi_site"   >
+			<label>否</label>
+			
+			</td>
+		</tr>
+		<tr id="multi_sitedomain_line" >
+			<th>主站域名：</th>
+			<td>
+				<input type="text" name="domain" required="true"/>
+			</td>
+		</tr>		
+	</tbody>
+</table>
+</div>
+<div class="submitlist" align="center">
+ <table>
+ <tr><td >
+  <input name="button" type="button"  value="保存设置" class="submitBtn" id="saveBtn"/>
+   </td>
+   </tr>
+ </table>
+</div>
+</div>
+</form>
+</div>
+<div id="sitelistbox">
+<#include 'list.html ' />
+</div>
+
+<script type="text/javascript"><!--
+
+
+function save(){
+	if($("#open_chk").attr("checked")){
+		if(!$("#siteForm").checkall()) return;
+	}
+	$.Loading.show('正在保存，请稍侯...');
+	var options = {
+			url :"multiSite!save.do?ajax=yes",
+			type : "POST",
+			dataType : 'json',
+			success : function(result) {				
+			 	if(result.result==1){
+			 		$.Loading.hide();
+			 		alert(result.message);
+			 		location.reload();
+			 	}else{
+			 		alert(result.message);
+			 	}
+			},
+			error : function(e) {
+				$.Loading.hide();
+					alert("出错啦:(");
+			}
+		};
+
+	$("#siteForm").ajaxSubmit(options);	
+}
+
+$(function(){
+	$("form.validate").validate();
+	var multi_site =${eopSite.multi_site};
+
+	if( multi_site ==1){
+		$("#sitelistbox").show();
+		$("#open_chk").attr("checked",true);
+		$("#multi_sitedomain_line").hide();
+	}else{
+		$("#sitelistbox").hide();
+		$("#close_chk").attr("checked",true);
+		$("#multi_sitedomain_line").hide();
+	}
+	
+	$(".multisiteon").click(function(){
+		if($(this).val()=='1'){
+			if(multi_site==0){
+				$("#multi_sitedomain_line").show();
+			}
+		}else{
+			$("#multi_sitedomain_line").hide();
+		}
+	});
+
+	$("#saveBtn").click(function(){
+		save();
+	});
+});
+</script>

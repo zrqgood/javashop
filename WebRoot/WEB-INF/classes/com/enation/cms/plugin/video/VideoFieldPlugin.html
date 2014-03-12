@@ -1,0 +1,43 @@
+<div id="video_wrapper">
+
+	<table>
+		<tr>
+			<th>视频标题:</th>
+			<td><input type="text" style="width:100px" name="${fieldname}_title" id="${fieldname}_title" value="${title!''}"/></td>
+		</tr>
+		<tr>
+			<th>视频地址:</th>
+			<td><input type="text" style="width:250px" name="${fieldname}_path" id="${fieldname}_path" value="${path!''}" /></td>
+		</tr>
+		<tr>
+			<th>视频封面:</th>
+			<td>
+				${imgHtml!''}
+			</td>
+		</tr>			
+		<tr>
+			<th>自动播放:</th>
+			<td>
+				<input type="radio" value="0" name="${fieldname}_autoplay" checked=true />否&nbsp;&nbsp;<input type="radio" value="1" name="${fieldname}_autoplay"  />是
+				&nbsp;(自动播放则视频封面无效)
+			</td>
+		</tr>	
+		<tr>
+			<th>视频尺寸:</th>
+			<td>
+			
+			宽:<input type="text" name="${fieldname}_width" style="width:30px" value="${width!''}" />px&nbsp;&nbsp;
+			高<input  name="${fieldname}_height" type="text"  style="width:30px" value="${height!''}" />px
+			
+			</td>
+		</tr>			
+	</table>
+<script type="text/javascript">
+$(function(){
+	<#if autoplay?exists>
+	$("input[name=${fieldname}_autoplay][value=${autoplay}]").attr("checked",true);
+	</#if>
+});
+</script>
+
+</div>

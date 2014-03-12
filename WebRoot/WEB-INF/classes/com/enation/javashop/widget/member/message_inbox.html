@@ -1,0 +1,98 @@
+﻿<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">收件箱</h1>
+<form method="post" action="member_message.html?action=indel">
+<table width="100%" cellspacing="0" cellpadding="0"
+	class="liststyle_option">
+	<col class="span-0 textcenter">
+	<col class=" textleft">
+	<tbody>
+		<tr>
+			<th class="textcenter"><input type="checkbox" title="全选"
+				id="chkall" name="chkall" onclick="checkAll(this.form,this)"></th>
+			<td><input type="submit" name="pmsend /" value="删除"></td>
+			<td class="textright">共有短消息:<em id="pmtotalnum">${totalCount}</em></td>
+		</tr>
+	</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" class="liststyle"
+	summary="收件箱">
+	<col class="span-0 ColColorGraydark">
+	<col class=" textleft">
+	<col class="span-2 ColColorOrange">
+	<col class="span-3">
+	<col class="span-2">
+	<col class="span-2">
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>标题</th>
+			<th>来自</th>
+			<th>时间</th>
+			<th>操作</th>
+			<th>是否阅读</th>
+		</tr>
+	</thead>
+	<tbody  class="division">
+	    <#include "Inbox_Panel.html">
+	</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0"
+	class="liststyle_option">
+	<col class="span-0 textcenter">
+	<col class=" textleft">
+	<tbody>
+		<tr>
+			<th class="textcenter"><input type="checkbox" title="全选"
+				id="chkall" name="chkall" onclick="checkAll(this.form,this)"></th>
+			<td><input type="submit" name="pmsend /" value="删除"></td>
+			<td class="textright">共有短消息:<em id="pmtotalnum">${totalCount}</em></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<div id="pager" ></div>
+<script>
+var Pager = {
+		init:function(){
+			var self = this;
+			var PC = ${pageCount};
+			if(PC!=0){
+				$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+			}
+		},
+
+		PageClick:function(pageclickednumber){
+			var self = this;
+			location.href="member_message.html?action=inbox&page="+pageclickednumber;
+		}
+	}
+$(function(){
+	$(".viewmsgoff").toggle(
+			function(){
+				$(".view_msg_pro").hide();
+				$("#view_msg_pro_"+$(this).attr("msg_id")).show();
+				var that = this;
+				if($("#readstatus_"+$(this).attr("msg_id")).html() == "未读"){
+					$.ajax({
+						method:"get",
+						url:"widget?action=read&ajax=yes&type=member_message&msg_id="+$(this).attr("msg_id"),
+						dataType:"html",
+						success:function(result){
+							$("#readstatus_"+$(that).attr("msg_id")).html("已读");
+						},
+						error:function(){
+							alert("异步失败");
+						}
+					});
+				};
+			},
+			function(){
+				$(".view_msg_pro").hide();
+			}
+	);
+	Pager.init();
+});
+</script>
+</div>

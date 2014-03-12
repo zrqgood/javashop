@@ -1,0 +1,52 @@
+<script src="${staticserver}/js/common/jquery.validate.js" type="text/javascript"></script>
+<link href="${staticserver}/js/common/validate/validate.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">修改密码</h1>
+<form class="validate section"
+	action="member_security.html?action=save" method="post">
+<div class="FormWrap">
+
+<div style="border-top: 1px solid rgb(102, 102, 102);" class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="forform">
+	<tbody>
+		<tr>
+			<th>旧密码：</th>
+			<td><input type="password" vtype="password" name="oldpassword" dataType="string"
+				required="true" class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th>新密码：</th>
+			<td><input type="password" vtype="password" name="password" dataType="string" id="password"
+				required="true" class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th>确认新密码：</th>
+			<td><input type="password" vtype="password" name="passwd_re" dataType="string" id="passwd_re"
+				required="true" class="inputstyle _x_ipt" autocomplete="off" fun='checkpwd'></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" value="保存"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</form>
+<script>
+$(function(){
+	$("form.section").validate();
+});
+
+function checkpwd( ){
+    
+	if( $("#passwd_re").val()==$("#password").val() ){
+		return true;
+	}
+	else{ 
+		return "密码不一致";
+	}
+}
+</script>
+</div>

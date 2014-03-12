@@ -1,0 +1,104 @@
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">我的积分</h1>
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	style="margin-bottom: 20px; border-bottom: 3px solid rgb(239, 239, 239); border-top: 3px solid rgb(239, 239, 239);">
+	<tbody>
+		<tr>
+			<td nowrap="nowrap" width="20%" valign="top">
+			<div
+				style="border: 2px solid rgb(242, 242, 242); padding: 5px; text-align: center; line-height: 30px; margin: 20px;">您当前的有效积分:
+			<div style="font-size: 30px; color: rgb(255, 102, 0);">${point}</div>
+			</div>
+			</td>
+			<td
+				style="margin: 20px; padding-left: 20px; border-left: 1px dotted rgb(204, 204, 204);">
+			<h3>积分规则:</h3>
+			<ol>
+				<li>当积分已达到某一兑换积分标准时，顾客可将累计积分依照网站相应积分及兑换标准兑换回馈商品，网站将即时从用户会员积分中扣减相应积分。</li>
+				<li>各项回馈项目（包含各项商品、服务或抵用券等）及兑换标准及兑换规则均以兑换当时最新回馈活动公告或目录为准。</li>
+				<li>部分兑换商品有数量限制的，兑完为止。</li>
+				<li>公告或目录如有有效期限的，逾期即不得兑换。</li>
+				<li>积分兑换区的商品为只可用积分兑换的商品(如积分价格：100积分)</li>
+			</ol>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="3" class="liststyle">
+	<col class="span-4 ColColorGray">
+	<col class="span-2 ColColorOrange">
+	<col class="textleft">
+	<thead>
+		<tr>
+			<th>日期</th>
+			<th>类型</th>
+			<th>积分</th>
+			<th>摘要</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <#list pointHistoryList as pointHistory>
+		<tr>
+			<td><@dateFormat date="${pointHistory.time?c}" pattern="yyyy-MM-dd HH:mm"/></td>
+			<td>
+			<#if pointHistory.type==1>
+				获得
+			</#if>	
+			<#if pointHistory.type==0>
+				消费
+			</#if>			
+			</td>
+			<td>${pointHistory.point}</td>
+			<td class="textleft">
+				 ${pointHistory.reason!''}
+			</td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+<div id="pager" ></div>
+<script>
+
+
+var Pager = {
+	init:function(){
+		var self = this;
+		var PC = 0;
+		PC = ${pageCount};
+		if(PC!=0){
+			$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		location.href="member_pointhistory.html?page="+pageclickednumber;
+	}
+}
+
+$(function(){
+	Pager.init();
+});
+</script>
+<table width="100%" cellspacing="0" cellpadding="3"
+	class="liststyle data">
+	<col class="ColColorGray">
+	<col class="span-2 ColColorOrange textright">
+	<tbody>
+		<tr>
+			<th>消费积分总计：</th>
+			<td>${consumePoint}</td>
+		</tr>
+		<tr>
+			<th>获得积分总计：</th>
+			<td>${gainedPoint}</td>
+		</tr>
+		<tr>
+			<th>剩余可用积分：</th>
+			<td>${point}</td>
+		</tr>
+	</tbody>
+</table>
+</div>

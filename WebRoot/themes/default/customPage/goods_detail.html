@@ -1,0 +1,89 @@
+<div class="GoodsInfoWrap">
+	<div id="goods-viewer">
+		<table width="100%">
+			<tbody>
+				<tr>
+					<td valign="top" align="center">${widget_goods_gallery}</td>
+					<td valign="top" width="60%">
+					<form target="_blank_cart" method="post" action="cart.html" class="goods-action">
+						${widget_goods_props}
+						${widget_goods_pmt}
+						${widget_goods_spec}
+						<#if hasAdj>
+						${widget_goods_adjunct}
+						</#if>
+					</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="clear: both;"></div>
+		<div id="tabWrapper">
+			<div class="goods-detail-tab clearfix">
+				<div class="goodsDetailTab  active" tab="detail"><span>商品详情</span></div>
+				<#if hasComplex>
+				<div class="goodsDetailTab" tab="complex"><span>相关商品</span></div>
+				</#if>
+				
+				<#if hasParam>
+				<div class="goodsDetailTab" tab="params"><span>详细参数</span></div>
+				</#if>
+				
+				<div class="goodsDetailTab" tab="ask"><span>购买咨询</span></div>
+				<div class="goodsDetailTab" tab="comments"><span>商品评论</span></div>
+			</div>
+			<div class="clear"></div>
+			<div tab="detail" class="section pdtdetail" >
+				<div class="goodsprop_ultra clearfix"></div>
+				${widget_goods_intro}
+			</div>
+			<div tab="complex" class="section pdtdetail" style="display: none;">
+				<div class="goodsprop_ultra clearfix"></div>
+				${widget_goods_complex}
+			</div>
+			<div tab="params" class="section pdtdetail" style="display: none;">
+				<div class="goodsprop_ultra clearfix"></div>
+				${widget_goods_params}
+			</div>
+			<div tab="ask" class="section pdtdetail" style="display: none;">
+			<div class="goodsprop_ultra clearfix"></div>
+				${widget_goods_ask}
+			</div>
+			<div tab="comments" class="section pdtdetail" style="display: none;">
+				<div class="goodsprop_ultra clearfix"></div>
+				${widget_goods_discuss}
+			</div>
+		</div>	
+	</div>
+</div>
+<script type="text/javascript">
+$(function() {
+	$(".goods-detail-tab .goodsDetailTab").click(function() {
+		//隐藏以前
+		$("div.goodsDetailTab").removeClass("active");
+		$("#tabWrapper>div.section").hide();
+
+		//激活当前点击的
+		var tabEl = $(this);
+		tabEl.addClass("active");
+		$("#tabWrapper>div[tab='" + tabEl.attr("tab") + "']").show();
+	});
+	$(".star-off").click(function(){
+		var btn =$(this);
+		$.ajax({
+			url:"shop/favorite.do?ajax=yes&goodsid="+btn.attr("goodsid"),
+			method:"get",
+			dataType:"json",
+			success:function(result){
+				if(result.result==1){
+					btn.removeClass("star-off").addClass("star-on");
+				}
+				alert(result.message);				
+			},
+			error:function(){
+				alert("出现错误，请稍后重试");
+			}
+		});
+	});
+});
+</script>

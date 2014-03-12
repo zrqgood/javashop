@@ -1,0 +1,13 @@
+<ehcache>
+	<diskStore path="c:\\temp" />
+	<defaultCache maxElementsInMemory="25600" eternal="true" overflowToDisk="true" />
+    <cache name="widgetCache" maxElementsInMemory="51200" eternal="false" overflowToDisk="true" timeToIdleSeconds="0" timeToLiveSeconds="30" />
+    <cache name="appCache" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+    <cache name="themeUriCache" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+    <cache name="eopDNS" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+    <cache name="regionCache" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+    <cache name="siteMenuList" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+    <cache name="goods_cat" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+    <cache name="article_cat" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+    <cache name="sitemap" maxElementsInMemory="25600" eternal="true" overflowToDisk="true"/>
+</ehcache>

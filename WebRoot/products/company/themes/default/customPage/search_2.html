@@ -1,0 +1,14 @@
+<div class="title">
+	<h1>搜索结果</h1>
+	<div class="position">您当前的位置：<a href="index.html">首页</a> &gt; 搜索结果</div>
+</div>
+<div class="cont">
+	<ul class="newslist">
+		<#list dataList as list>
+				<li><a href="detail-${list.cat_id}-${list.id}.html">${list.title}</a><span>(${list.add_time?string('yyyy-MM-dd')})</span></li>
+		</#list>
+	</ul>
+</div>
+<div class="showpages">
+${pager}
+</div>

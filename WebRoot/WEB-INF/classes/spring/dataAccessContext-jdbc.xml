@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd"
+	default-autowire="byName" default-lazy-init="false">
+	
+	<!-- 属性文件读入 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:config/jdbc.properties</value>
+				<value>classpath*:config/mail.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 数据源定义,使用Apache DBCP 连接池
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}"/>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="100" />
+		<property name="maxIdle" value="30" />
+		<property name="maxWait" value="1000" />
+	</bean>
+	 -->
+	 
+   <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">      
+      <property name="driverClass" value="${jdbc.driverClassName}" />      
+      <property name="jdbcUrl" value="${jdbc.url}" />      
+      <property name="user" value="${jdbc.username}" />      
+      <property name="password" value="${jdbc.password}" />      
+   </bean>  
+   
+   	
+	<bean id="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+  		<constructor-arg><ref bean="dataSource"/></constructor-arg>
+	</bean>
+   	<bean id="jdbcTemplate" class="com.enation.framework.database.impl.LowerCaseJdbcTemplate"></bean>	
+   	<bean id="sqlFileExecutor" class="com.enation.framework.database.impl.DefaultSqlFileExecutor"></bean>	
+	<bean id = "transactionManager" 
+         class = "org.springframework.jdbc.datasource.DataSourceTransactionManager" > 
+         <property name = "dataSource" > 
+             <ref bean = "dataSource" /> 
+         </property > 
+     </bean >
+	<bean id="springContextHolder" class="com.enation.framework.context.spring.SpringContextHolder" lazy-init="false"/>
+	<bean class="com.enation.framework.plugin.PluginLoader"></bean>	
+ 	<bean id="daoSupport" class="com.enation.framework.database.impl.JdbcDaoSupport"></bean>
+ 
+	<bean id="baseDBRouter" class="com.enation.eop.sdk.database.DBRouter">
+		<property name="prefix">
+			<value>es_</value>
+		</property>
+	</bean>		
+	
+	<bean id="baseDaoSupport" class="com.enation.eop.sdk.database.BaseJdbcDaoSupport">
+		<property name="dbRouter">
+			<ref bean="baseDBRouter"/>
+		</property>		
+	</bean>
+	
+	 	 	
+	<bean id="baseSupport" class="com.enation.eop.sdk.database.BaseSupport"  abstract="true" >
+	</bean>
+	
+	<!-- 支持 @Transactional 标记 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>   
+</beans>

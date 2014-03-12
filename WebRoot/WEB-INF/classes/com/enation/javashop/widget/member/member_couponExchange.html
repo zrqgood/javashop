@@ -1,0 +1,56 @@
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">兑换优惠券</h1>
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle">
+	<col class=" textleft">
+	<col class="span-2 ColColorOrange">
+	<col class="span-2">
+	<col class="span-2">
+	<col class="span-3">
+	<thead>
+		<tr>
+			<th>优惠券</th>
+			<th>所需积分</th>
+			<th>起始时间</th>
+			<th>截止时间</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <#list listExchangeCoupons as coupon>
+		<tr>
+			<td>${coupon.cpns_name!''}</td>
+			<td>${coupon.cpns_point!''}</td>
+			<td><@dateFormat date="${coupon.pmt_time_begin?c}" pattern="yyyy-MM-dd"/></td>
+			<td><@dateFormat date="${coupon.pmt_time_end?c}" pattern="yyyy-MM-dd"/></td>
+			<td><#if coupon.use_status == 1><a href="member_couponExchange.html?action=exchange&cpns_id=${coupon.cpns_id}">兑换</a><#else>当前等级不能兑换</#if></td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+<div id="pager" ></div>
+<script>
+
+
+var Pager = {
+	init:function(){
+		var self = this;
+		var PC = 0;
+		PC = ${pageCount};
+		if(PC!=0){
+			$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		location.href="member_couponExchange.html?page="+pageclickednumber;
+	}
+}
+
+$(function(){
+	Pager.init();
+});
+</script>
+</div>

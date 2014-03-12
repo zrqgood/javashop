@@ -1,0 +1,10 @@
+<div class="Navigation">您当前的位置：
+  <#list navList as nav >
+	  <#if !nav_has_next|| !nav.link?exists>
+	  <span class="now">${nav.title!''}</span>
+	  <#else>
+	  <span><a href="${nav.link!''}" alt="${nav.tips!''}" title="${nav.tips!''}">${nav.title!''}</a></span>
+	 	<span>&raquo;</span>
+	  </#if>
+  </#list>
+</div>

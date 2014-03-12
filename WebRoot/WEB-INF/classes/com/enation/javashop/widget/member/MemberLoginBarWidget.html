@@ -1,0 +1,17 @@
+<span style="position: relative; z-index: 65535;" id="foobar">
+
+	<#if !isLogin >
+		<span style="visibility: visible;" id="loginBar">您好,&nbsp;
+		<a href="member_login.html">[请登录]</a>&nbsp;&nbsp;
+		<a href="member_register.html">[免费注册]</a>
+		</span>
+	</#if>
+
+	<#if isLogin>
+	<span  id="memberBar">
+		您好,<span id="uname">${member.uname}</span>!&nbsp;
+		<a href="member_index.html">[会员中心]</a>&nbsp;&nbsp;
+		<a href="member_logout.html">[退出]</a>
+	</span> 
+	</#if>
+</span>

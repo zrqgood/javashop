@@ -1,0 +1,16 @@
+/*表单元素校验失败样式*/
+form.validate .fail{border:1px solid #D37575}
+/*上述样式根据情况也可为：
+form.validate input.fail{}
+form.validate select.fail{}
+form.validate textarea.fail{}
+*/
+
+/*提示框样式*/
+form.validate  span.tip.note{border:1px solid #BFD67C;padding:3px 5px 3px 25px;background:#F2FFD4 url(../images/form_img.gif) no-repeat scroll 5px -3px;margin-left:5px;vertical-align:middle;}
+
+/*校验成功样式*/
+form.validate span.tip.ok{display:inline-block;width:15px;height:15px;margin-left:3px;background:url(../images/form_img.gif) no-repeat scroll 0 -57px;vertical-align:middle;}
+
+/*校验失败样式*/
+form.validate span.tip.error{background:#FEEBEB url(../images/form_img.gif) no-repeat scroll 5px -30px;padding:3px 5px 3px 25px;margin-left:5px;border:1px solid #D37575;vertical-align:middle;}

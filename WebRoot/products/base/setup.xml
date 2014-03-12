@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+    <version>2.2</version>
+    <clean>
+		<table>es_access</table>
+		<table>es_adcolumn</table>
+		<table>es_adv</table>
+		<table>es_auth_action</table>
+		<table>es_border</table>
+		<table>es_friends_link</table>
+		<table>es_guestbook</table>
+		<table>es_role</table>
+		<table>es_role_auth</table>
+		<table>es_settings</table>
+		<table>es_site</table>
+		<table>es_site_menu</table>
+		<table>es_user_role</table>
+		<table>es_widgetbundle</table>
+    </clean>
+    <recreate/>
+</setup>

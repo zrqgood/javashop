@@ -1,0 +1,41 @@
+<script type="text/javascript" src="js/cat.js"></script>
+<div class="grid">
+<form>
+	<div class="toolbar">
+		<ul><li><a href="cat!add.do">添加分类</a></li></ul>
+		<div style="clear:both"></div>
+	</div>
+
+<div id="cat_list">
+	
+<table>
+	<thead>
+		<tr>
+		<th width=200>名称</th> 
+		<th width=100>排序</th> 
+		<th width=100>添加子</th>
+		<th width=100>编辑</th>
+		<th>删除</th>
+		<th>文章</th>
+		</tr>
+	</thead> 
+	<tbody>
+		<#assign children=catList />
+		<#assign level=1 />
+		<#include 'list_children.html' />  
+	</tbody>
+</table>	
+	
+</div>
+
+<div style="text-align:center">
+ <input name="button" type="button" class="button" id="sortBtn" value="保存排序" />
+</div>
+</form>
+<div style="clear:both;padding-top:5px;"></div>
+</div>
+<script>
+$(function(){
+	Cat.init();
+});
+</script>

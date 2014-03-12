@@ -1,0 +1,25 @@
+<ul>
+<#list goodsList as goods>
+
+	<#if goods_index=0>
+		<li class=recommend>
+			<dl>
+				<dt>
+					<a href="goods-${goods.goods_id}.html" target=_blank>
+						<IMG alt=""	onerror="this.src='/images/none/none_150.gif'" src="${goods.thumbnail_pic}">
+					</a>
+				</dt>
+				<dd class=p_Name>
+					<A href="goods-${goods.goods_id}.html" target=_blank>${goods.name}</A></dd>
+				<dd class=p_Price>销售价：￥<EM>${goods.price}</EM></dd>
+			</DL>
+		</li>
+	<#else>
+		<li>·<A href="goods-${goods.goods_id}.html" target=_blank>${goods.name}</A></li>
+	</#if>
+
+</#list>
+</ul>
+<div class=more><A
+	href="search-cat{0}.html"><B></B>更多&gt;&gt;</A></div>
+</div>

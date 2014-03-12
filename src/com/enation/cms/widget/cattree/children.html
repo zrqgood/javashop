@@ -1,0 +1,18 @@
+<ul>
+<#list children as cat>
+	<li class="e-cat-depth-${level}">
+		<p>
+		 <span class="symbols show">-</span>
+		 <a href="${url}-${cat.cat_id }-1.html">${cat.name }</a>
+		</p>
+		<#if cat.hasChildren  >
+			<#assign level=level+1 />
+		  	<#assign children=cat.children />
+			<#include 'children.html' /> 
+			<#assign level=level-1/>	
+		</#if>	
+	</li>
+
+</#list>	
+</ul>
+

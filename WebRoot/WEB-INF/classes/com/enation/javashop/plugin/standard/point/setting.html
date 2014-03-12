@@ -1,0 +1,96 @@
+<style>
+<!--
+#point_setting th{width:180px;text-align:left}	
+-->
+</style>
+<div id="point_setting">
+<table class="form-table">
+		<tr>
+			<th class="label">
+				<input type="checkbox" name="point.register" value="1" />注册会员:
+			</th>
+			<td>
+			 	<input type="text" name="point.register_num" style="width:150px"  value="${point.register_num!'0' }"/>积分
+			</td>
+		</tr>
+
+		<tr>
+			<th class="label">
+				<input type="checkbox" name="point.email_check" value="1" />邮箱认证:
+			</th>
+			<td>
+				<input type="text" name="point.email_check_num" style="width:150px"  value="${point.email_check_num!'0' }"/>积分
+			</td>
+		</tr>
+		
+		<tr>
+			<th class="label">
+				<input type="checkbox" name="point.login" value="1" />登陆（一天一次有效）：
+			</th>
+			<td>
+				<input type="text" name="point.login_num" style="width:150px"  value="${point.login_num!'0' }"/>积分
+			</td>
+		</tr>
+				
+		<tr>
+			<th class="label">
+				<input type="checkbox" name="point.comment" value="1" />文字评论（审核有效）:
+			</th>
+			<td>
+				<input type="text" name="point.comment_num" style="width:150px"  value="${point.comment_num!'0' }"/>积分
+			</td>
+		</tr>
+		<tr>
+			<th class="label">
+				<input type="checkbox" name="point.comment_img" value="1" />带照片评论（审核有效）:
+			</th>
+			<td>
+				<input type="text" name="point.comment_img_num" style="width:150px"  value="${point.comment_num!'0' }"/>积分
+			</td>
+		</tr>		
+			<tr>
+			<th class="label">
+				<input type="checkbox" name="point.buygoods" value="1" />购买商品:
+			</th>
+			<td>
+				<input type="text" name="point.buygoods_num" style="width:150px"  value="${point.buygoods_num!'0' }"/>积分
+			</td>
+		</tr>		
+			
+		<tr>
+			<th class="label">
+				<input type="checkbox" name="point.onlinepay" value="1" />在线支付:
+			</th>
+			<td>
+				<input type="text" name="point.onlinepay_num" style="width:150px"  value="${point.onlinepay_num!'0' }"/>积分
+			</td>
+		</tr>		
+			<tr>
+			<th class="label">
+				<input type="checkbox" name="point.register_link" value="1" />通过链接注册:
+			</th>
+			<td>
+				<input type="text" name="point.register_link_num" style="width:150px"  value="${point.register_link_num!'0' }"/>积分
+			</td>
+		</tr>		
+	</table>
+<script type="text/javascript">
+var point={};
+point.register=${point.register!'0'};
+point.email_check=${point.email_check!'0'};
+point.login=${point.login!'0'};
+point.comment=${point.comment!'0'};
+point.comment_img=${point.comment_img!'0'};
+point.buygoods=${point.buygoods!'0'};
+point.onlinepay=${point.onlinepay!'0'};
+point.register_link=${point.register_link!'0'};
+for(name in point){
+	if(point[name]==1)
+	 	$("input[name='point."+name+"']").attr('checked',true);
+	else
+		$("input[name='point."+name+"']").attr('checked',false);
+}
+
+</script>	
+
+</div>

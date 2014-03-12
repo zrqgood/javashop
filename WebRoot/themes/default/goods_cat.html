@@ -1,0 +1,32 @@
+<#list cat_tree as cat1>
+<#if cat1.list_show == "1">
+ 
+	<h3><a href="search-cat{${cat1.cat_id}}.html">${cat1.name}</a></h3>
+	
+	<#if cat1.hasChildren>
+	<#list cat1.children as cat2>
+ 	<div class="item"><span>
+	<h4><a href="search-cat{${cat2.cat_id}}.html">${cat2.name}</a></h4>
+	<ins><#if cat2.hasChildren ><#list cat2.children as cat3 ><#if cat3_index<3>&nbsp;-&nbsp;${cat3.name}</#if></#list>...</#if></ins></span>
+		<div>
+		<dl>
+			<dt></dt>
+			<dd>
+				<#if cat2.hasChildren >
+				<#list cat2.children as cat3>
+				<em><a href="search-cat{${cat3.cat_id}}.html">${cat3.name}</a></em>
+				</#list>
+			 	</#if>
+			</dd>
+		</dl>
+		</div>
+	</div>
+	</#list>
+	</#if>
+</#if>
+</#list>
+
+ 
+<div class="extra"><a class="link_1" href="search-cat{0}.html"
+	target="_blank">全部商品&gt;&gt;</a>
+</div>

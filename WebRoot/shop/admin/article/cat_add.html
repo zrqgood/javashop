@@ -1,0 +1,46 @@
+<div class="input">
+ <form method="post" action="articleCat!saveAdd.do" name="theForm" id="theForm"  class="validate">
+   <table cellspacing="1" cellpadding="3" width="100%" class="form-table">
+     <tr>
+       <th width="29%" >栏目名称</th>
+       <td width="13%"><input type="text" name="cat.name" id="name" maxlength="60" value="" dataType="string" required="true"/>
+       </td>
+       <td width="58%" align="left"><div id="nameTip" style="width:80px;"></div></td>
+     </tr>
+     <tr>
+       <th class="label">上级栏目</th>
+       <td>
+       
+
+		<select name="cat.parent_id"  id="parent_id">
+			<option value="0">顶级栏目</option>
+	 		<#assign children=catList />
+			<#assign level=1 />
+			<#include 'select_children.html' />  
+		</select>
+		</td>
+       <td align="left">&nbsp;</td>
+     </tr>
+     <tr>
+       <th class="label">排序</th>
+       <td colspan="2">
+       <input type="text" name="cat.cat_order" value="0" style="width:50px" dataType="int"/>
+       </td>
+     </tr>
+     
+   </table>
+   <div class="submitlist" align="center">
+ <table>
+ <tr><td >
+  <input name="submit" type="submit"	  value=" 确    定   " class="submitBtn" />
+   </td>
+   </tr>
+ </table>
+</div>
+ </form>
+ <script type="text/javascript">
+$("form.validate").validate();
+$("#parent_id").val(${cat_id});
+</script>
+</div>
+

@@ -1,0 +1,88 @@
+body {font-family:Verdana;background:#fff;color:#000;line-height:160%;margin:15px 0 5px 0;}
+body, input {font:normal 12px Verdana, Arial, Helvetica, sans-serif;}
+a {color:#039}
+form{margin:0;padding:0;}
+img	{border:0;}
+h1,	hr{display:none;}
+p{display:block;margin:0;padding:0;}
+.top a,.navPageBottom a	{border-right:1px solid #ccc;padding:0 8px 0 4px;}
+.top .left {float:left;}
+.top .left a {border:none;}
+.navPageTop a.end,
+.navPageBottom a.end	{border-right:0;}
+.container	{width:760px;margin:0 auto auto;}
+.header,.content,.footer{clear:both;width:100%;}
+.header	{float:left;margin:0 0 20px;}
+.logo{background:#fff url(images/logo.gif ) no-repeat 5px -12px;height:60px;width:205px;float:left;}
+.navPageTop{height:28px;line-height:200%;background:#eaf3ff;margin:6px 0 0;padding:0 6px 0 12px;}
+.navPageTop .naviBar{float:right;text-align:left;}
+.footer	{text-align:center;float:left;margin:20px 0 0;}
+.footer p{line-height:200%;display:block;}
+.moreFeature{text-align:right;padding:6px 422px 30px 0;}
+.panelLogin	{min-height:370px;height:auto !important;height:370px;width:290px;float:right;background:#f4f4f4;border:1px solid #ccc;margin:0 auto;padding:20px 16px 0 22px;}
+.panelLogin h2			{text-align:left;font-size:14px;margin:0;}
+.panelLogin p	{clear:both;display:block;margin:0 0 10px;}
+input{display:block;float:left;}
+.text{border:1px solid #7f9db9;height:20px;padding:2px;width:180px;font-size:14px;}
+p.operate	{ padding:0 0 0 59px;line-height:110%;}
+.subfix	{color:#039;line-height:26px;}
+.btn{line-height:120%;padding:2px 14px;}
+em	{font-style:normal;border-left:1px solid #ccc;padding:0 0 0 10px;}
+p.desc	{margin-top:-6px;}
+.cLight	{color:#888;}
+.copyright	{font-size:11px;clear:both;}
+.infobar{clear:both;margin:6px 0 0 0;}
+.infobar1{
+  background:#fff9e3;clear:both;border:1px solid #fadc80;line-height:120%;float:none;margin:8px 0;padding:6px 6px 6px 6px;
+}
+.error	{color:#f00;}
+ul.contentul{font-size:14px;line-height:26px;list-style:none;margin-top:-1px;}
+ul.contentul b{color:#000;}
+.wd {width:760px;clear:both;}
+.qqmaillogo {float:left;margin-top:-12px}
+.top {background:#eaf3ff;margin:7px 0 0 205px;padding:5px 15px 5px 0;text-align:right;}
+.loginplan_bg {float:right;text-align:left;width:326px!important;width:325px;background:#efefef;padding:0 3px 3px 0}
+.loginplan {text-align:left;width:300px!important;width:323px;background:#f5f8fc;border:1px solid #78a3d3;padding:12px}
+.adplan {text-align:left;margin:0 325px 0 13px}
+.loginname {font:bold 14px Verdana;padding:4px 0 6px 2px;border-bottom:1px solid #9c9c9c}
+label {display:block;float:left;line-height:24px;}
+label.column {width:60px;font-size:14px;text-align:left;padding:0 0 0 2px;}
+.adimg {width:146px;height:168px;margin: 20px 0pt 0pt;}
+.panintro {}
+dl.panintro  {margin:1px 0 0 3px;padding:3px 0 0 3px;font:normal 14px Verdana;height:171px;}
+dl.panintro dt {display:block;float:left;margin:0 0 5px 0}
+dl.panintro dd {display:block;float:left;margin:42px 0 0 10px;}
+dl.panintro dd a {font:bold 14px verdana;}
+dl.panintro dd div {font:normal 12px Verdana;margin:5px 0 2px 0;line-height:22px}
+.panintro ul {color:#888;line-height:130%;margin:5px 0 0 18px;padding:0;}
+.moreinfo {margin:10px 0 0 3px;clear:left;}
+.navPageBottom {height:24px;background:#eaf3ff;line-height:24px;margin-top:17px!important;margin-top:;}
+div.btn_div{
+padding: 12px 0pt 0pt 60px; clear: both; height: 27px ! important;
+}
+#login_btn{
+font-family: Verdana; font-style: normal; font-variant: normal; font-weight: bold; font-size: 12px; line-height: normal; font-size-adjust: none; font-stretch: normal; -x-system-font: none; padding-top: 2px ! important;
+}
+div.login_msg{
+margin: 24px 0pt 0pt 60px; color: rgb(134, 134, 134); clear: left;
+}
+div.login_msg img{
+margin: -3px 5px auto 2px ! important;
+}
+div.login_msg_a{
+margin: 30px 0pt 0pt; padding: 12px 0pt 0pt; border-top:1px dotted #666666 ; height: 43px; text-align: center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;
+}
+#chen2{
+margin: 4px 0pt 0pt 60px; color: rgb(134, 134, 134); clear: left;
+}
+div.pass{
+margin: 8px 0pt 0pt; height: 25px; clear: left;
+}
+div.vcode{
+height: 25px;margin-top:10px;
+}
+#code_img{
+	width:100px;
+	height:27px; 
+	cursor:pointer;	 
+}

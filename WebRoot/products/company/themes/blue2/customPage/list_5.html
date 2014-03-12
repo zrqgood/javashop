@@ -1,0 +1,14 @@
+<div class="path">
+	<span>${navbar}</span>
+</div>
+<div class="piccont">
+	<div class="cont">
+		<ul class="piclist">
+		<#list dataList as article>
+			<li><div class="pic"><a href="detail-${article.cat_id}-${article.id}.html"><img src="${article.img!''}" /></a></div><div class="name"><a href="detail-${article.cat_id}-${article.id}.html">${article.title!''}</a></div></li>
+		</#list>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+	${pager}
+</div>

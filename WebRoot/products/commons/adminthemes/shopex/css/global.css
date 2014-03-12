@@ -1,0 +1,190 @@
+.Border{border-color:#DDDDDD #BEC6CE #BEC6CE #DDDDDD;border-style:solid;border-width:1px;}
+.Background{background-color:#EFEFEF;}
+.ImgBorder{border:1px solid #DDDDDD;}
+.ImgBackground{background-color:#EFF2F5;}
+.ButtonBackground{background-color:#E2E8EB}
+.ButtonBorder{border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;border-style:solid;border-width:1px 2px 2px 1px;}
+/*=====后台模板中选项卡样式=====*/
+ul.tab{
+	height:28px;
+	width:100%;
+	overflow:hidden;
+	white-space:nowrap;
+	padding:5px 0 0 0;
+	margin-bottom:-3px;
+}
+ul.tab li {
+	background-color:#FFFFFF;
+	border:1px solid #DDDDDD;
+	height:25px;
+	line-height:25px;
+	padding:0 15px;
+	text-align:center;
+	float:left;
+	cursor:pointer;
+	overflow:hidden;
+}
+ul.tab li a{
+	height:25px;
+	display:block;
+	color:#000;
+	text-decoration:none;
+}
+ul.tab li.active{
+	height:28px;
+	border-color:#FF9900 #DDDDDD #FFFFFF;
+}
+
+.tab-page {
+background:none repeat scroll 0 0 #FFFFFF;
+border-color:#CCCCCC #BEC6CE #BEC6CE #CCCCCC;
+border-style:solid;
+border-width:1px ;
+line-height:150%;
+margin:0px;
+padding:5px;
+white-space:normal;
+}
+
+
+/*=====后台模板中工具栏按钮样式=====*/
+.toolbar{
+	background:#F0F0F0;
+	border-bottom:3px solid #6F777A;
+	border-top:1px solid #FFFFFF;
+	line-height:30px;
+	padding:0 8px;
+}
+.toolbar ul{
+	padding:6px 0px;
+	height:27px;
+	display:block;
+}
+.toolbar ul li {
+	border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;
+	border-style:solid;
+	border-width:1px 2px 2px 1px;
+	display:inline;
+	font-weight:normal;
+	line-height:22px;
+	height:22px;
+	padding:0 10px;
+	float:left;
+	margin:1px 3px 0 0;
+	background:#E2E8EB; 
+}
+.toolbar ul li a{
+	color:#000000;
+	text-decoration:none;
+}
+/*=====载入=====*/
+.loading{
+	left:46%;
+	position:absolute;
+	top:200px;
+	z-index:99;
+	background:#FFA53A url(../images/shopex_loading.gif) no-repeat scroll 5px 50%;
+	color:#FFFFFF;
+	display:block;
+	font-size:12px;
+	font-weight:bold;
+	line-height:29px;
+	margin:0;
+	padding:0 20px 0 30px;
+	text-align:center;
+	border:1px solid #FFBD6B;
+}
+
+.sysbtn {
+	background:url("../images/sysicon.gif") no-repeat scroll 0 0 #E2E8EB;
+	border-color:#FFFFFF #BEC6CE #BEC6CE #FFFFFF;
+	border-style:solid;
+	border-width:1px 2px 2px 1px;
+	color:#000000;
+	cursor:pointer;
+	display:inline;
+	font-weight:normal;
+	line-height:24px;
+	margin:1px 3px 0 0;
+	outline:medium none;
+	padding:4px 4px 2px 20px;
+	text-decoration:none;
+ 
+}
+.submitlist{
+
+background: none repeat scroll 0% 0% rgb(239, 239, 239); border-top: 1px solid rgb(204, 204, 204);
+width:100%;height:30px;
+padding-top:5px;
+padding-bottom:5px;
+margin-top:5px;
+ 
+}
+
+.submitBtn {
+	background:none repeat scroll 0 0 #4E6A81;
+	border-color:#DDDDDD #000000 #000000 #DDDDDD;
+	border-style:solid;
+	color:#FFFFFF;
+	cursor:pointer;
+	display:block;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:700;
+	height:28px;
+	line-height:28px;
+	margin:0 5px 0 0;
+	padding:0 5px;
+	text-align:center;
+	white-space:nowrap;
+	float:left;
+}
+
+
+.success {
+	padding: .8em;
+	margin-bottom: 1em;
+	border: 2px solid #ddd;
+	font-size: 1em;	
+	background: #E6EFC2;
+	color: #264409;
+	border-color: #C6D880;
+	background-position: 10px 8px;
+}
+
+.success a {
+	color: #264409;
+}
+.modify{
+
+	background:transparent url(../images/sysicon.gif) no-repeat scroll 0px -44px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+	border:0px;
+}
+
+.delete{
+ 
+	background:transparent url(../images/sysicon.gif) no-repeat scroll 0px -85px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+ border:0px;
+}
+
+
+.add{
+ 
+	background:transparent url(../images/sysicon.gif) no-repeat scroll 0px -1px;
+	width:15px;
+	height:17px;
+	line-height:24px;
+	overflow:hidden;
+	margin:3px 0 0 3px; 
+ border:0px;
+}

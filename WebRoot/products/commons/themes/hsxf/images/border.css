@@ -1,0 +1,93 @@
+/*=默认
+=============================================================================================*/
+.border1{
+	margin:0 0 5px 0;
+}
+.border1 h3{
+	margin-top:0;
+	text-align:left;
+	padding:0 0 0 20px;
+	overflow:hidden;
+	font-weight:normal;
+	margin:0;
+}
+.border1 .border-body{
+	border:1px solid;
+	border-top:none;
+	padding-top:3px;
+	*height:1%;
+}
+.border1 .GoodsList{
+	text-align:center;
+}
+/*=边栏
+=============================================================================================*/
+.border2{
+	margin:0 0 5px 0;
+}
+.border2 h3{
+	text-align:center;
+	font-weight:normal;
+	margin:0;
+}
+.border2 .border-body{
+	border:1px solid;
+	border-top:none;
+	*width:99%;
+}
+.border2 .GoodsList{
+	text-align:center;
+}
+.border2 .GoodsList .item{
+	border-bottom:1px dotted #ccc;
+	padding:5px 0;
+}
+.border2 .titleImg{
+	text-align:center;
+}
+/*=帮助中心	
+=============================================================================================*/
+.border3{
+	margin:0 0 5px 0;
+	border:1px solid #ddddcc;
+	*height:1%;
+}
+.border3 h3{
+	background:#ddddcc;
+	height:25px;
+	line-height:25px;
+	font-size:14px;
+	font-weight:bold;
+	color:#000000;
+	margin:0;
+	padding:0 0 0 10px;
+}
+.border3 .border-body{
+	padding:5px;
+}
+
+.border3{
+	line-height:1.8em;
+}
+.border3 .TreeList .cat1{
+	background:#efefef;
+	padding:0 0 0 5px;
+	margin:5px 0;
+	font-weight:bold;
+}
+.border3 .TreeList .cat1 a{
+	background:url(arrs.gif) no-repeat 0 -201px;
+	padding:0 0 0 13px;
+	color:#333;
+}
+.border3 .TreeList a:hover{
+	color:#FF6600;
+}
+.border3 .TreeList .cat2{
+	padding:0 0 0 18px;
+}
+.border3 .TreeList .cat2 a{
+	background:url(arrs.gif) no-repeat 0pt -45px;
+	padding:0 0 0 10px;
+	color:#666;
+}

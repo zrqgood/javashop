@@ -1,0 +1,46 @@
+<#include 'common/header.html' />
+<!--主要内容-->
+<link type="text/css" rel="stylesheet" href="http://code.google.com/apis/maps/documentation/javascript/examples/standard.css">
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-gmap.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#map_canvas").showMap({
+		address:"北京昌平区",
+		title:"我们在这里，点击查看详细",
+		content:"<h3>易族易站</h3><p>北京昌平区</p>",
+		toolDiv:"toolDiv",
+		zoom:14
+	});
+});
+</script>
+<div class="main">
+	<!--左侧-->
+	<div class="left">
+		<!--栏目导航-->
+		${widget_1}
+		<!--联系我们-->
+		${widget_2}
+		<!---->
+	</div>
+	<!--右侧-->
+	<div class="right">
+		<!--当前位置-->
+		<div class="path">
+			<h1>联系我们</h1>
+			<span>
+				您现在的位置：<a href="index.html">首页</a>&gt; <a href="contact.html">联系我们</a>
+			</span>
+		</div>
+		<!---->
+		<div class="content">
+			<div class="con" id="con">${widget_3}</div>
+			<div class="map_wrap">
+				<div id='toolDiv' style="width:100%;height:30px;"></div>
+				<div id="map_canvas" style="width:100%; height:500px"></div>
+			</div>
+		</div>
+		<!---->		
+	</div>	
+</div>
+<#include 'common/footer.html' />

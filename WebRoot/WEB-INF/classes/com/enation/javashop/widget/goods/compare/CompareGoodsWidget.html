@@ -1,0 +1,120 @@
+			<div style="overflow: auto; width: 100%;" class="cmpresult">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0" class="liststyle">
+					<thead>
+						<tr>
+							<th>
+								<h3>
+									商品名称
+								</h3>
+							</th>
+							<#list goodsList as goods>
+								<th>
+									<a title="${goods.name }" href="goods-${goods.goods_id }.html"><strong>${goods.name }</strong> </a>
+								</th>
+							</#list>
+						</tr>
+						<tr />
+						<tr>
+							<td>
+								商品图片
+							</td>
+							
+							<#list goodsList as goods>
+								<td width="${width }%">
+									<a href="goods-${goods.goods_id }.html"><img title="${goods.name }" src="<@GoodsPic pic='${goods.image_default}' postfix='_thumbnail' />" /> </a>
+								</td>
+							</#list>
+						</tr>
+
+						<tr>
+							<td>
+								商品价格
+							</td>
+
+							<#list goodsList as goods>
+								<td width="${width }%">
+									${goods.price?string.currency}
+								</td>
+							</#list>
+						</tr>
+
+					</thead>
+
+
+					<tbody>
+						<tr>
+							<th colspan="${goodsNum+1}">
+								<h3>
+									基本属性
+								</h3>
+							</th>
+						</tr>
+						<tr>
+							<td colspan="${goodsNum+1}">
+								<table width="100%" cellspacing="0" cellpadding="0" border="0">
+								 
+									<tbody>
+									
+								<#list propList as prop>	
+										<tr>
+											<td>
+												${prop.name }
+											</td>
+											
+											<#list prop.valueList as v>
+											 
+											<td width="${width }%">
+												${v }
+											</td>
+											 </#list>
+
+										</tr>
+								</#list>
+								
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+
+					<#if paramGroups?exists >
+					<#list paramGroups as group >
+
+						<tbody>
+
+							<tr>
+								<th colspan="${goodsNum+1}">
+									<h3>
+										${group.name }
+									</h3>
+								</th>
+							</tr>
+
+							<tr>
+								<td colspan="${goodsNum+1}">
+									<table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+										<tbody>
+											<#list group.paramList as param1>
+												<tr>
+													<td>
+														${param1.name }
+													</td>
+													<#list param1.valueList as v >				
+														<td width="${width }%">
+															${v }
+														</td>
+													</#list>
+												</tr>
+											</#list>	
+
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+
+					</#list>
+					</#if>
+				</table>
+			</div>

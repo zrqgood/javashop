@@ -1,0 +1,42 @@
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<#if showPage =="1">
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<div class="ArtListWrap">
+<ul class="list">
+	<#list articleList as article>
+	<li><#if showDate == "1"><span class="date">[<@dateFormat date="${article.create_time?c}" pattern="yyyy-MM-dd"/>]</span></#if><a
+		href="${urlname}${article.id}.html">${article.title!''}</a></li>
+	</#list>
+	<#if showMore == "1">
+	<div class="more clearfix"><a href="articleList-${cat_id}.html">更多...</a></div>
+	</#if>
+</ul>
+</div>
+<#if showPage == "1">
+<div id="pager"></div>
+
+<script>
+
+
+var Pager = {
+	init:function(){
+		var self = this;
+		var PC = ${pageCount};
+		if(PC!=0){
+			$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		location.href="articleList.html?page="+pageclickednumber;
+	}
+}
+
+$(function(){
+	Pager.init();
+});
+</script>
+</#if>

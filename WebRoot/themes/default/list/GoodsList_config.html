@@ -1,0 +1,10 @@
+<table  border="0" cellspacing="0" cellpadding="2"  >
+  <tr><td height="30" width="200">
+     <select id="tag_id" name="tag_id" eop_type="widget_params" >
+      <#list tagList as tag>
+		<option value="${tag.tag_id }">${tag.tag_name }</option>
+	  </#list>
+    </select>
+ </td>
+ </tr>
+</table>

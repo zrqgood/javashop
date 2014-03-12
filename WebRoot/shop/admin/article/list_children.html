@@ -1,0 +1,23 @@
+<#list children as cat> 
+<tr>
+    <td style="padding-left:${(level+1)*20}px;font-weight: bold;">${cat.name}</td>
+ 
+    <td>
+		  <input type="hidden" name="cat_ids" value="${cat.cat_id?c }"/>
+	     <input type="text" name="cat_sorts" style="width:30px" value="${cat.cat_order?c }"/>
+    </td> 
+    <td><a href="articleCat!add.do?cat_id=${cat.cat_id?c}"><img src="images/transparent.gif" class="add"></a></td>
+    <td><a href="articleCat!edit.do?cat_id=${cat.cat_id?c}"><img src="images/transparent.gif" class="modify"></a></td>
+    <td>
+    <a href="javascript:;" ><img src="images/transparent.gif" class="delete" cat_id="${cat.cat_id?c}"></a>
+    </td>
+    <td><a href="article!list.do?cat_id=${cat.cat_id?c  }" >文章列表</a> &nbsp;&nbsp; 
+    <a href="article!add.do?cat_id=${cat.cat_id ?c}" >添加文章</a> </td>
+</tr>
+	<#if cat.hasChildren>
+		<#assign level=level+1 />
+	  	<#assign children=cat.children />
+		<#include 'list_children.html' />
+  		<#assign level=level-1/>
+	</#if>
+</#list>

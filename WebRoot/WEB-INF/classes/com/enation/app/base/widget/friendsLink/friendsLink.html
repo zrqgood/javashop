@@ -1,0 +1,14 @@
+<ul>
+	<#list listLink as link>
+	<li>
+		<div class="friendlink_logo">
+		<#if link.logo?exists>
+			<a target="_blank" title="${link.name}" href="${link.url}"><img src="${link.logo}" /></a>
+		</div>
+		</#if>
+		<div class="friendlink_name">
+			<a target="_blank" title="${link.url}" href="${link.url}">${link.name}</a>
+		</div>
+	</li>
+	</#list>
+</ul>

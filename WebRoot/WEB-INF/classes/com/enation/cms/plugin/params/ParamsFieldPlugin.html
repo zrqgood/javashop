@@ -1,0 +1,55 @@
+
+<div  >
+<style>
+#param_temp{display:none}
+#param_table{width:500px}
+</style>
+<input type="button" id="param_add_btn" value="添加参数" />
+
+<table id="param_temp">
+	<#include 'inc_param.html' />
+</table>
+<div class="grid">
+<table id="param_table">
+<thead>
+	<th>名称</th>
+	<th>值</th>
+	<th>删除</th>
+</thead>
+
+<tbody>
+ 	<#if paramlist?exists >
+		<#list  paramlist as param>
+		<#include 'inc_param.html' />
+		</#list>
+	</#if>	
+</tbody>
+
+</table>
+</div>
+
+<script>
+var Parmas={
+		init:function(){
+			var self  = this;
+			this.bindEvent();
+			$("#param_add_btn").click(function(){
+				var trHtml = $("#param_temp tr").html();
+				$("#param_table tbody").append("<tr>"+trHtml+"</tr>");
+				self.bindEvent();
+			});
+		},
+		bindEvent:function(){
+			$("#param_table .delete").unbind("cilck").bind("click",function(){
+				$(this).parent().parent().parent().remove();
+			})
+		}
+}
+ 
+
+$(function(){
+	Parmas.init();
+
+});
+</script>
+</div>

@@ -1,0 +1,662 @@
+﻿/*--------------------------------------------------------*/
+/*					整个商店系统的大的按钮
+/*--------------------------------------------------------*/
+/* 按钮总体设定 */
+.actbtn             {width:126px; height:36px; cursor:pointer;margin-top:5px;border:none;text-indent:-9999px;background-repeat:no-repeat;display:block;}/* 购买按钮 */  
+.btn-buy            {background:url(btn-buy.gif);}			/* 注册按钮  */
+.btn-register       {background:url(btn-register.gif)}  /* 登录按钮 */
+.btn-login          {background:url(btn-login.gif);}   /* 登录按钮 */
+.btn-forgetpass     {background:url(btn-forgetpass.gif);}  /* 忘记密码 */
+.btn-advancesearch  {background:url(btn-advancesearch.gif);}  /* 高级搜索按钮按钮 */
+.btn-gift           {background:url(btn-gift.gif);}  /* 赠品兑换 */
+.star-on .btn-fav   {background:url(favadded.gif);}                     /* 加入收藏 */
+.btn-return         {background:url(btn-return.gif);}  /* 购物车继续购物按钮*/
+.btn-next           {background:url(btn-next.gif);}  /* 购物下一步*/
+.btn-return-checkout{background:url(btn-return-small.gif) no-repeat;}
+.btn-order          {background:url(btn-order.gif);}  /* 确认以后下订单*/
+.btn-clearcat       {background:url(btn-clearcat.gif);}  /* 清空购物车*/
+.btn-nogift         {background:url(btn-nogift.gif);}/* 暂无赠品*/
+.btn-notify         {background:url(btn-notify.gif);}   /* 到货通知*/
+.btn-normal           {margin:0;padding:0;background: #E2E8EB;  color: #000;    text-decoration: none; display:inline;	font-weight: normal;
+					 margin-left: 3px; padding:4px 4px 2px 4px;cursor: pointer;
+					 border-top: 1px solid #fff;border-left: 1px solid #fff;border-right: 2px solid #bec6ce;border-bottom: 2px solid #bec6ce;}/* 用于普通的按钮*/
+
+
+
+
+
+/*--------------------------------------------------------*/
+/*					分页
+/*--------------------------------------------------------*/
+.pager               {clear:both;margin:5px;}
+.pager td            {padding:0 2px; vertical-align:middle}
+.pager .pagernum  a  { padding:1px 5px; border:1px solid #ccc; margin:0 2px}
+
+.pager .pagernum  a:hover  { color:#ff9c00; padding:1px 5px; border:1px solid #ff9c00; margin:0 2px}
+
+.pager .prev,
+.pager .next,
+.pager .onprev,
+.pager .onnext,  
+.pager .unprev,
+.pager .unnext   {height:18px;display:block;overflow:hidden;text-indent:-9999px;}
+
+.pager .prev,
+.pager .onprev,  
+.pager .unprev {background:url(pager_pre.gif) no-repeat 0 0;width:50px;}
+
+.pager .next,
+.pager .onnext,
+.pager .unnext      {background:url(pager_next.gif) no-repeat 0 0;width:50px;}
+
+.pager .onprev,
+.pager .onnext       {background-position:0 -18px;}
+
+.pager .unprev,
+.pager .unnext { background-position:0 -36px;}
+
+.pager .pagecurrent  {padding:1px 5px; border:1px solid #fff; background:#f90; color:#fff; margin:0 2px}
+
+/*--------------------------------------------------------*/
+/*					整个网站通用的价格样式
+/*--------------------------------------------------------*/
+.price1{	font-size:16px;	color:#FF6600;	font-weight:bold;}
+.mktprice1{	font-size:11px;	color:#999;	text-decoration:line-through;}
+.saveprice1{	font-size:11px;	color:#f90;	}
+
+.goodpic{text-align:center;}
+.goodpic a{border:3px solid #fff;display:block;text-align:center;overflow:hidden;}
+.goodpic a img{}
+
+/*--------------------------------------------------------*/
+/*					通用的成功与错误验证
+/*--------------------------------------------------------*/
+.valierror{	padding:3px 5px 3px 21px;  margin:0 5px; display:inline; height:25px;
+			border: 1px solid #E6594E;
+			white-space:nowrap;text-align: left;color: #E6594E;
+			background:#FCEAE8 url(stop.gif) no-repeat 3px;
+}
+.valisuccess{
+            padding:2px 5px 2px 15px; padding-left: 21px;  margin-left:10px; display:inline;
+			border: 1px solid #99D073;
+			white-space:nowrap;text-align: left;color: #539A33;
+			background:#EBF7E3 url(success.gif) no-repeat 3px;
+
+}
+/*tips*/
+.tip-text{
+   font-size:13px;
+   font-weight:bold;
+   border:1px #fff solid;
+   background:#e9e9e9;
+   padding:10px;
+}
+.tip{
+  border:1px #ccc solid;
+}
+.cantbuy .tip-text{
+   border-color:#fff;
+   background-color:#fffcc1;
+   color:#ff0000;
+}
+.cantbuy .tip{
+  border-color:#f6a100;
+}
+
+
+
+/*日期 calendar*/
+.calendar{border:1px #ccc solid;}
+.datepicker {font-family: Verdana, Arial, Helvetica, sans-serif;background: none !important;overflow: hidden;width: 226px;}
+.datepicker table {background: #BEBEBE;margin: 0 auto;padding: 0;overflow: hidden;border-spacing: 0px;border: 1px solid #000;border-top: none;width: 100%;}
+.datepicker caption {color: #333;font-weight: bold;font-size: 13px;text-align: center;width: 100%;height: 25px;line-height: 26px;background:#4E6A81 url(calbg.gif) repeat-x;border: 1px solid #000;	}
+.datepicker caption a {cursor: pointer;color:#000;text-decoration:none;font-weight:bold;}
+.datepicker caption span.month {width: 120px;padding-left:10px;	}
+.datepicker caption span.year {width: 80px;padding-right:10px;}			
+.datepicker th, .datepicker td {cursor: default;font-size: 12px;background: #fff;height: 25px;width: 30px;text-align: center;border-top: 1px solid #BEBEBE;	}
+.datepicker th { background: #FDFDDB; border: none; color: #888; font-family:Verdana; font-size:10px; }
+.datepicker td.active { cursor: pointer; }
+.datepicker td.inactive { background: #EEEEEE; color: #BEBEBE; }
+.datepicker td.today { border-top: 1px solid #FFD700; background: #FFFFDD; }
+.datepicker td.hilite { background: #000; color: #fff; }
+
+
+/*通用的对话框样式*/
+/*Dialog*/
+.dialog {
+    position: absolute;
+	text-align:left;
+	z-index:65534;
+    font-size: 12px;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+	border-color:#3d596f #34495a #2f4251;
+    border-style:solid;
+    border-width:1px;
+    top: 0;
+    left: 0;
+}
+.dialog .dialog_box{
+   padding:9px;
+   padding-top:0px;
+   background:#cad9e6;
+   border:1px #a1badf solid;
+   
+}
+.dialog .dialogContent{
+background:#ffffff;
+}
+.dialog .body{
+  overflow:auto;
+  overflow-x:hidden;
+  background:#ffffff;
+}
+.dialog .head {
+    position: relative;
+    padding: 3px 0;
+    zoom:1;
+    margin-bottom:4px;
+}
+
+.dialog .head .title {
+    cursor: move;
+    line-height: 20px;
+    height: 20px;
+    padding-left: 10px;
+	font-weight:bold;
+	overflow:hidden;
+}
+
+.dialog .head .closeBtn {
+    position: absolute;
+    top: 5px;
+	height:17px;
+    right: 5px;
+    cursor: pointer;
+    font-weight:bold;
+    color:#000;
+    white-space:nowrap;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*	以下是css通用部分，涉及到页面的排版、布局等等。
+    这些定义与样式，制作模板的时候也可以直接使用，一定程度上可以减少制作模板的工作量。
+	当然，在制作其他网站的时候，您可以同样拷贝和使用下面的css定义。
+	
+	1、重置相关的html元素
+	2、与字体与显示相关的定义
+	3、表单区域的样式
+	4、反馈信息
+	5、对列表的定义
+	6、表格样式
+	7、缩图列表
+    8、布局相关的css定义
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/* 1、 重置相关的html元素
+/*----------------------------------------------------------------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { 
+	margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; 
+	font-family: inherit; vertical-align: baseline; list-style:none;
+}
+/* Tables still need 'cellspacing="0"' in the markup. */
+table {border-collapse: separate; border-spacing: 0;}
+caption, th, td { font-weight: normal;}
+table, td, th { vertical-align: top;}
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+address,
+caption,
+em,
+th,
+i { font-style:normal; font-weight:400; }
+/* Remove annoying border on linked images. */
+a img { border: none; }
+a{color:#000;text-decoration:none; outline:none}
+a:hover {color: #f90;}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*2、与字体与显示相关的定义
+/*----------------------------------------------------------------------------------------------------------------------*/
+/* 标题
+-------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #111; margin:5px 0; font-weight: bold;}
+
+h1 { font-size: 18px;}
+h2 { font-size: 16px; }
+h3 { font-size: 14px;}
+h4 { font-size: 12px;}
+h5 { font-size: 1em;}
+h6 { font-size: 1em;}
+
+h1 img, h2 img, h3 img, 
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+/* 与文字与字体相关的元素
+-------------------------------------------------------------- */
+a           {color:#000;text-decoration:none;}
+a:hover     {color: #f90;}
+.lnk        {text-decoration:underline; cursor:pointer}
+
+p           { margin: 0 0 1.5em; }
+p img.left  { margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr, 
+acronym     { border-bottom: 1px dotted #666; }
+del         { color:#666; }
+
+pre,code    { margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; } 
+
+
+/* Misc classes
+-------------------------------------------------------------- */
+.highlight  { background:#ff0; }
+.added      { background:#060; color: #fff; }
+.removed    { background:#900; color: #fff; }
+
+.first      { margin-left:0; padding-left:0; }
+.last       { margin-right:0; padding-right:0; }
+.top        { margin-top:0; padding-top:0; }
+.bottom     { margin-bottom:0; padding-bottom:0; }
+
+/* 字体向右对齐 */
+.textright,td.textright,a.textright,span.textright,li.textright,div.textright,p.textright
+{text-align:right;}
+/* 字体向左对齐 */
+.textleft, td.textleft,a.textleft,span.textleft,li.textleft,div.textleft,p.textleft,colgroup.textleft
+{text-align:left;}
+/* 字体居中对齐 */
+.textcenter, td.textcenter,a.textcenter,span.textcenter,li.textcenter,div.textcenter,p.textcenter,colgroup.textcenter
+{text-align:center;}
+/* 容器内文字不换行 */
+.textnowrap, td.textnowrap,a.textnowrap,span.textnowrap,li.textnowrap,div.textnowrap,p.textnowrap
+{white-space:nowrap;}
+/* 容器内文字可以换行 */
+.textwrap, td.textwrap,a.textwrap,span.textwrap,li.textwrap,div.textwrap,p.textwrap
+{white-space:normal;}
+/* 设置元素既有inline属性又有block属性 */
+.inline-block{display:inline-block;display:-moz-inline-stack;*display:inline;zoome:1;}
+
+/* 字体的大小颜色
+-------------------------------------------------------------- */
+.font9px         { font-size:9px;}
+.font10px         { font-size:10px;}
+.font11px         { font-size:11px;}
+.font12px         { font-size:12px;}
+.font14px         { font-size:14px;}
+.font16px         { font-size:16px;}
+.font18px         { font-size:18px;}
+.font20px         { font-size:20px;}
+
+/* 字体的粗细
+-------------------------------------------------------------- */
+.fontbold         { font-weight:700;}
+.fontnormal       { font-weight:normal;}
+
+/* 字体的颜色
+-------------------------------------------------------------- */
+.fontcolorRed     { color:#CC0000}
+.fontcolorGreen   { color:#618605}
+.fontcolorOrange  { color:#f90;}
+.fontcolorBlack   { color:#000;}
+.fontcolorGray    { color:#666;}
+.fontcolorBlue    { color:#369;}
+
+/* 元素背景色
+-------------------------------------------------------------- */
+.ColColorRed            {background:#fbeeef; }
+.ColColorGray           {background:#efefef; }
+.ColColorGraydark       {background:#efefef; }
+.ColColorGreen          {background:#eefbee; }
+.ColColorBlue           {background:#eef4fb }
+.ColColorOrange         {background:#FBF7EE}
+.ColColorWhite          {background:#fff}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*3、表单区域的样式
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+fieldset    { padding:1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
+legend      { font-weight: bold; font-size:1.2em; }
+
+/*表单元素的包裹*/
+.FormWrap *{ line-height:150%;}
+.FormWrap                      {margin:10px 0;margin-bottom:0;border:1px solid #D5D5D5;background:#f0f0f0;	padding:7px;}
+.FormWrap label                {width:auto;}
+.FormWrap em                   {font-stretch:normal;	color:#FF6600;	margin:0 2px;}
+.inputstyle                    {border:1px solid #ccc; padding:3px 5px; }
+.buttonstyle                   {padding:1px 5px; font-size:14px;}
+		
+/*分区内的表格形式的表单*/		
+.division                      {background:#fff;	border:1px solid #E1E1E1;	padding:7px;	margin-bottom:7px;}/*表单不同区域的划分*/
+.borderdown                    {border-top: 1px solid #bec6ce;  border-left: 1px solid #bec6ce; border-right: 1px solid #fff;     border-bottom: 1px solid #fff;}
+.borderup         			   {border-top: 1px solid #efefef;     border-left: 1px solid #efefef;    border-right: 1px solid #bec6ce;  border-bottom: 1px solid #bec6ce;}
+.borderbottom                  {border-bottom: 1px solid #eee; margin-bottom:5px;}
+.division .forform th,
+.division .forform td          { vertical-align:top; padding:5px;}
+.division .forform th          { width:120px;font-size:14px; font-weight:normal;padding-left:5px; color:#777; white-space:nowrap; text-align:right;}
+
+/*表单部分带有增减按钮的输入框*/	
+.Numinput                      {padding:0 20px; position:relative; height:20px;}
+.Numinput input                {font-size:12px; width:24px; height:15px; line-height:15px;}
+.Numinput .numadjust           {position:absolute;width:18px; height:9px; right:1px; overflow:hidden;background-image:url(numadjust.gif); background-repeat:no-repeat; cursor:pointer}
+.Numinput .numadjust.increase  {background-position:0 0;top:0}
+.Numinput .numadjust.increase.active  {background-position:0 -20px}
+.Numinput .numadjust.decrease  {background-position:0 -10px; bottom:0;}
+.Numinput .numadjust.decrease.active {background-position:0 -30px;}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*4、反馈信息
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*设置不同的提示的样式，包括背景与颜色*/
+.error,
+.notice,
+.note, 
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd;}
+
+
+.error h4,
+.notice h4,
+.note h4, 
+.success h4{ margin:3px 0;}
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+.note       { background: #F5F4EC; color: #514721; border-color: #E5DDC7;}
+.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
+
+/*设置不同提示信息内的链接的样式*/
+.error a    { color: #8a1f11; }
+.notice a   { color: #514721; }
+.note a     { color: #000; text-decoration:none;  }
+.success a  { color: #264409; }
+
+/*关闭提示信息的按钮*/
+.error .option,
+.notice .option,
+.note .option, 
+.success .option   { float:right;cursor:pointer}
+
+/*带图标的提示信息样式*/
+.error .pic,
+.notice .pic, 
+.note .pic,     
+.success .pic { width:48px; height:48px;}
+.error .pic   { background: url(infoerror.gif); }
+.notice .pic  { background: url(infonotice.gif); }
+.note .pic    { background: url(infonote.gif); }
+.success .pic { background: url(infosuccess.gif); }
+
+/*简单的提示信息*/
+.infotips{ color:#999; padding-left:5px}
+
+/*系统信息反馈页面*/
+.FeedBackInfo                 {margin:50px auto;color:#333333; width:700px;}
+.FeedBackInfo .success,
+.FeedBackInfo .error          {margin:0 auto; background:none; border:0;}
+
+.FeedBackInfo .success .pic,
+.FeedBackInfo .error .pic     {background:url(feedbackinfo.gif) no-repeat center;	width:128px; height:128px;padding:0 10px;		border-right:1px solid #eee;}
+.FeedBackInfo .success .pic   {background-position:0 18px;}
+.FeedBackInfo .error .pic     {background-position:0 -97px;}
+
+.FeedBackInfo h1              {margin:0 0 0 5px; font-size:14px; }
+.FeedBackInfo .success h1     {color:#060;}
+.FeedBackInfo .error h1       {color:#900}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*5、对列表的定义
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*普通的列表定义*/
+ul.list                    {margin:10px 0;}
+ul.list li                 {background:url(ra.gif) no-repeat 0 8px;padding-left:15px;color:#666;display:block;border-bottom:1px solid #efefef;line-height:23px;}
+ul.list ul                 {margin-left:10px;}												
+ul.list li.nolist          {border-bottom:0;background:none;}
+
+/*右侧带有说明的列表*/
+ul.list.WithRight li       {position:relative;}
+ul.list.WithRight li span  {position:absolute;	right:0;color:#666/*可以写入时间*/}	
+
+/*浮动列表*/
+ul.list.float li		   {width:45%;float:left; margin-left:15px;}	/*这里宽度可以根据实际情况在模板的css里面重新定义*/
+
+/*有序列表*/											
+ol                         {}
+ol li                      {margin:0 0 0 20px; color:#000;border-bottom:1px solid #efefef;line-height:20px;list-style:decimal;}
+ol li ol                   {margin-top:1px 0 0 10px}	
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*6、表格样式
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*定义table类型 可以结合colgroup使用来定义列的背景色，th与td元素全部居中，如需要单元格内文字左对齐或者右对齐，需要在td上设置*/
+.liststyle              { border: 1px solid #ddd;	width:100%;	margin:0;}
+.liststyle a            { padding-right:5px; text-decoration:underline;}
+.liststyle a.lnk        { text-decoration:none;}
+.liststyle thead th     {text-align:center;	font-size:12px; white-space:nowrap;	font-weight:700;background:url(tablethbg.gif);	
+						 border-bottom:1px solid #ccc;	border-top:1px solid #fff;	border-right:1px solid #ddd;	border-left:1px solid #fff;
+						 padding:4px 3px;}/*定义列表的头部*/
+.liststyle  td, 
+.liststyle  th          {padding:4px;  word-break:break-word; text-align:center;
+				        border-right:1px solid #ddd;	border-left:1px solid #fff;	border-bottom:1px solid #ddd;	border-top:1px solid #fff;}
+
+
+/*定义data型表格，th居右对齐，td居左对齐*/
+.liststyle.data td, 
+.liststyle.data th      {word-break:break-word;}				
+.liststyle.data tbody th      {text-align:right;color:#000; font-size:14px;} 
+.liststyle.data td      {text-align:left;}	
+.liststyle.data .colspan{ text-align:center; border-bottom:1px solid #aaa;border-top:1px solid #fff; color:#000; font-weight:700;}	/*用于整个通栏的td，使用了colspan的td*/
+/*表格下方的操作区域*/
+.liststyle_option       {}
+.liststyle_option th,
+.liststyle_option td    {padding:5px; text-align:center; background:#eee; text-align:left;}
+
+.liststyle .viewpic     {text-indent:-9999px; display:block;width:20px;height:20px; background:url(goodsgallary_icon.gif) 0 -25px no-repeat;}
+.liststyle .addtocart   {text-indent:-9999px; display:block;width:20px;height:20px; background:url(goodsgallary_icon.gif) 0 -100px no-repeat;}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*7、缩图列表
+/*----------------------------------------------------------------------------------------------------------------------*/
+.thumbnailPic{}
+.thumbnailPic ul{ float:left; text-align:center; margin-right:10px;}
+.thumbnailPic ul li.pic a{ display:block; height:50px; width:50px; border:1px solid #ccc;}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*7、布局相关的css定义
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+
+/* 定义布局css的浮动与margin. */
+div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, 
+div.span-6, div.span-7, div.span-8, div.span-9, div.span-10, 
+div.span-11, div.span-12, div.span-13, div.span-14, div.span-15, 
+div.span-16, div.span-17, div.span-18, div.span-19, div.span-20, 
+div.span-21, div.span-22, div.span-23, div.span-24, div.span-auto {
+  float: left;
+  margin-right: 10px; 
+}
+/* 布局的最后一项 */
+div.last { margin-right: 0; }
+/* 布局元素的宽度 */
+.span-0  { width: 10px; }
+.span-1  { width: 30px; }
+.span-2  { width: 70px; }
+.span-3  { width: 110px; }
+.span-4  { width: 150px; }
+.span-5  { width: 190px; }
+.span-6  { width: 230px; }
+.span-7  { width: 270px; }
+.span-8  { width: 310px; }
+.span-9  { width: 350px; }
+.span-10 { width: 390px; }
+.span-11 { width: 430px; }
+.span-12 { width: 470px; }
+.span-13 { width: 510px; }
+.span-14 { width: 550px; }
+.span-15 { width: 590px; }
+.span-16 { width: 630px; }
+.span-17 { width: 670px; }
+.span-18 { width: 710px; }
+.span-19 { width: 750px; }
+.span-20 { width: 790px; }
+.span-21 { width: 830px; }
+.span-22 { width: 870px; }
+.span-23 { width: 910px; }
+.span-24, div.span-24 { width: 950px; margin: 0; }
+.span-auto{ width:auto;}
+/*附加右边空栏*/
+.append-1  { padding-right: 40px; }  
+.append-2  { padding-right: 80px; } 
+.append-3  { padding-right: 120px; } 
+.append-4  { padding-right: 160px; } 
+.append-5  { padding-right: 200px; } 
+.append-6  { padding-right: 240px; } 
+.append-7  { padding-right: 280px; } 
+.append-8  { padding-right: 320px; } 
+.append-9  { padding-right: 360px; } 
+.append-10 { padding-right: 400px; } 
+.append-11 { padding-right: 440px; } 
+.append-12 { padding-right: 480px; } 
+.append-13 { padding-right: 520px; } 
+.append-14 { padding-right: 560px; } 
+.append-15 { padding-right: 600px; } 
+.append-16 { padding-right: 640px; } 
+.append-17 { padding-right: 680px; } 
+.append-18 { padding-right: 720px; } 
+.append-19 { padding-right: 760px; } 
+.append-20 { padding-right: 800px; } 
+.append-21 { padding-right: 840px; } 
+.append-22 { padding-right: 880px; } 
+.append-23 { padding-right: 920px; } 
+
+/*附加左边空栏*/
+.prepend-1  { padding-left: 40px; }  
+.prepend-2  { padding-left: 80px; } 
+.prepend-3  { padding-left: 120px; } 
+.prepend-4  { padding-left: 160px; } 
+.prepend-5  { padding-left: 200px; } 
+.prepend-6  { padding-left: 240px; } 
+.prepend-7  { padding-left: 280px; } 
+.prepend-8  { padding-left: 320px; } 
+.prepend-9  { padding-left: 360px; } 
+.prepend-10 { padding-left: 400px; } 
+.prepend-11 { padding-left: 440px; } 
+.prepend-12 { padding-left: 480px; } 
+.prepend-13 { padding-left: 520px; } 
+.prepend-14 { padding-left: 560px; } 
+.prepend-15 { padding-left: 600px; } 
+.prepend-16 { padding-left: 640px; } 
+.prepend-17 { padding-left: 680px; } 
+.prepend-18 { padding-left: 720px; } 
+.prepend-19 { padding-left: 760px; } 
+.prepend-20 { padding-left: 800px; } 
+.prepend-21 { padding-left: 840px; } 
+.prepend-22 { padding-left: 880px; } 
+.prepend-23 { padding-left: 920px; } 
+
+/*布局元素右边边框*/
+.border { padding-right: 4px; margin-right: 5px; border-right: 1px solid #ccc;}
+
+/* 布局元素具有更宽边距的右边边框 */
+.colborder {padding-right: 24px;margin-right: 25px;border-right: 1px solid #ccc;}
+
+/*把元素向前或者向后推向前一栏或者后一栏*/
+.pull-1 { margin-left: -40px; }
+.pull-2 { margin-left: -80px; }
+.pull-3 { margin-left: -120px; }
+.pull-4 { margin-left: -160px; }
+.pull-5 { margin-left: -200px; }
+.push-6 { margin-left: -240px;  }
+.push-7 { margin-left: -280px;  }
+
+.push-1 { margin: 0 -40px 1.5em 40px; }
+.push-2 { margin: 0 -80px 1.5em 80px; }
+.push-3 { margin: 0 -120px 1.5em 120px; }
+.push-4 { margin: 0 -160px 1.5em 160px; }
+.push-5 { margin: 0 -200px 1.5em 200px; }
+.push-6 { margin: 0 -200px 1.5em 240px; }
+.push-7 { margin: 0 -200px 1.5em 280px; }
+
+
+.pushdown-1{ margin-top:5px;}
+.pushdown-2{ margin-top:10px;}
+.pushdown-3{ margin-top:15px;}
+.pushdown-4{ margin-top:20px;}
+.pushdown-5{ margin-top:25px;}
+.pushdown-6{ margin-top:30px;}
+.pushdown-7{ margin-top:35px;}
+.pushdown-8{ margin-top:40px;}
+.pushdown-9{ margin-top:45px;}
+.pushdown-10{ margin-top:50px;}
+.pushdown-11{ margin-top:55px;}
+.pushdown-12{ margin-top:60px;}
+.pushdown-13{ margin-top:65px;}
+.pushdown-14{ margin-top:70px;}
+.pushdown-15{ margin-top:75px;}
+.pushdown-16{ margin-top:80px;}
+
+div.floatLeft{ float:left}
+div.floatRight { float:right}
+div.floatNone{ float:none}
+
+.box{padding:7px;}
+.boxBlue {background:#ECF2F5; border:1px solid #C7DBE5; padding:7px;}
+.boxBrown{background:#F5F4EC; border:1px solid #E5DDC7; padding:7px;}
+.boxGray {background:#efefef;	border:1px solid #E1E1E1;padding:7px;}/*表单不同区域的划分*/
+
+.cut{ overflow:hidden;}
+/*分隔线*/
+hr       {background: transparent; color: #ddd;  float: none; width: 100%; height: 0; margin:5px 0; padding:0;border: 1px solid #eee;}
+hr.space {background: #fff;color: #fff;}
+
+/*清除浮动
+	 提供两个方式来清除浮动：
+	 1、clearfix可以直接在浮动元素的包裹容器内直接写上class=cleafix就可以就可以清除浮动了，好处是仅仅增加一个class而不需要增加额外的多于html元素。比如
+			<div class="clearfix">
+				<div style="float:left"></div>
+				<div style="float:right"></div>
+			</div>
+	 2、另一个方法是直接在浮动元素的结尾处写上<div class="clear"></div>
+ */
+ 
+.clearfix:after  {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix        {display: inline-block;}
+* html .clearfix,
+* html           {height: 1%;}
+.clearfix        {display: block;}
+.clear           {border-top:1px solid transparent !important; border-top:0; clear:both; line-height:0; font-size:0;height:0;height:1%;}
+

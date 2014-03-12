@@ -1,0 +1,47 @@
+@charset "gb2312";
+/* CSS Document */
+*{margin:0;padding:0;}
+html{border:0;width:100%;}
+body{font-family:"ËÎÌå",Arail,verdana;font-size:12px;line-height:1.5em;color:#222; position:relative}
+img{border:none;display:block;}input,img,select{vertical-align:middle;}ul,ol{list-style:none;}em{font-style:normal;}a{text-decoration:none;}a:link,a:visited{color:#222;}a:hover,a:active{text-decoration:underline;color:#f30;}h1{font-size:16px;}h2,h3,h4{font-size:14px;}h5,h6{font-size:12px;}
+
+#test3 .m{width:980px;overflow:hidden;margin-top:10px;background:#2a5f19 url(g/bg.jpg) 0 bottom;padding-bottom:10px}
+.nav{overflow:hidden}
+.main_mav{float:left; overflow:hidden;padding-left:30px;padding-top:20px}
+.main_mav li{float:left}
+.f_p{float:right;padding-right:14px}
+.wrap{margin-left:auto;margin-right:auto; overflow:hidden;}
+	.main_faq{float:left;width:611px; background:url(g/giftcard_22.png) no-repeat 0 bottom; padding-bottom:12px}
+	.faq_tit{ background:url(../images/cards_15.gif) no-repeat 50% 0;height:134px}
+	.buy_body{ overflow:hidden;zoom:1}
+	.buy_border{font-size:14px;font-weight:bold; font-family:"Î¢ÈíÑÅºÚ";zoom:1;padding-top:10px; overflow:hidden;background:url(g/gift_06.jpg) no-repeat;line-height:15px }
+	.left,.right{float:left}
+	.left{width:450px;padding-left:15px}
+	.right{width:500px}
+	.buy_body ul li{padding-bottom:10px}
+.img_alt,.img_alts{display:block;width:1px; height:0; overflow:hidden; font-size:0; line-height:0;}
+.buy_body .letter_li{margin-left:40px}
+.buy_body .letter_li li{list-style:outside upper-alpha;line-height:13px;}
+/*µ¯³ö²ã*/
+.flex_box{width:638px;overflow:hidden; clear:both}.flex_box_z{border:3px solid #134b1c}
+.input_box{border:solid 1px;border-color:#c4c4c4 #eaeaea #eaeaea;height:19px;width:225px}
+.flex_box_z td{font-size:14px;font-weight:bold}
+.flex_box_z table{margin:20px auto 0}.flex_box_z table img{ display:inline}
+.flex_box_z .align_Right{color:#d0d0d0;font-size:12px;font-weight:normal}
+.tjbutton{float:left;margin-top:15px;background:url(g/syt_03.jpg);border:none;width:73px;height:25px; cursor:pointer}
+#Tab1{padding-left:12px;overflow:hidden;zoom:1}
+#Tab1 li{float:left;cursor:pointer;background:url(g/gift_12.gif);width:220px;height:41px;text-align:center;line-height:41px;font-weight:bold;font-size:14px}
+#Tab1 li.hover{background-position:0 -42px}
+#con_one_1{ background:url(g/gift_17.gif) no-repeat 12px 0; overflow:hidden;zoom:1}
+.faq_body{padding:95px 24px 0}
+#con_one_1 dl{float:left;width:44%;padding-left:15px;margin-right:40px;font-size:14px;font-weight:bold}
+#con_one_1 dl dd{margin-bottom:15px;border-bottom:1px dotted #d1cece;padding-bottom:5px}
+#con_one_4{margin:0 10px 10px; background:#fff;padding:10px 10px 0;line-height:25px}
+#con_one_2,#con_one_3{ text-align:center; background:#fff;margin:0 10px}
+.table_box img{ display:inline}
+.align_Right{text-align:right}
+.dis{display:none}
+#con_one_1,#con_one_2,#con_one_3,#con_one_4{min-height:556px}
+*html #con_one_1,*html #con_one_2,*html #con_one_3,*html #con_one_4{height:556px}
+#con_one_4 h5{font-size:16px;margin:5px 0}
+.ilinks img{display:inline}

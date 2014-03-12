@@ -1,0 +1,8 @@
+<#if setting.showGoodsImg=='on'>
+<div style="overflow: hidden; text-align: center; vertical-align: middle; width: ${setting.thumbnail_pic_width}px; height: ${setting.thumbnail_pic_height}px;"
+	class="goodsImg">
+	<a title="${goods.name}" target="_blank" href="goods-${goods.goods_id}.html"> 
+		<img alt="${goods.name}" src="${goods.thumbnail_pic}" width="${setting.thumbnail_pic_width}px" height="${setting.thumbnail_pic_height}px">
+	 </a>
+</div>
+</#if>

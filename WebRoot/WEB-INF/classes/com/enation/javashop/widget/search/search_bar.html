@@ -1,0 +1,22 @@
+
+<form class="SearchBar">
+<table cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td class="search_label"><span>关键字：</span>
+			<input class="inputstyle keywords" size="10" id="skeyword" value="${keyword!''}" >
+			</td>
+			<td><input type="button" id="toSearch"  class="btn_search" value="搜索"></td>
+			<td><a class="btn_advsearch" href="${ctx}/search.html">高级搜索</a></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<script type="text/javascript">
+$(function(){
+	$("#toSearch").click(function(){
+	var url = "search-keyword-"+$("#skeyword").val()+".html";
+	location.href=url;
+	});
+});
+</script>

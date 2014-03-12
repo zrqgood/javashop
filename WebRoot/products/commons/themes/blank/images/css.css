@@ -1,0 +1,80 @@
+﻿@import url("border.css");
+@import url("widget.css");
+@import url("red/color.css");
+
+/*在这里可以设置前台的颜色皮肤，目前此模板已经预设了四套颜色分案
+@import url("red/color.css");
+@import url("green/color.css");
+@import url("blue/color.css");
+@import url("black/color.css");
+只要把上面四种颜色方案任意个替换第三行的就可以了
+*/
+
+@import url("pageFrame_leftMain.css");
+
+/*在这里可以设置左右分栏，目前一共预设两种分栏方式
+下面这个是主区域在右边，侧边栏在左面的布局
+@import url("pageFrame_rightMain.css");
+下面这个是主区域在左边，侧边栏在右面的布局
+@import url("pageFrame_leftMain.css");
+
+
+*/
+
+
+body {font-family: "Arial";font-size: 12px;color: #666666;line-height: 180%;}
+a{color:#464646;  text-decoration:none;}
+a:hover{color:#000000;	text-decoration:underline;}
+
+div.AllWrap{ margin:0 auto; width:950px}
+div.AllWrapInside{ margin:0 auto; width:950px;  border-top:1px solid #eee;}
+
+#mainbanner1{
+background:url(mainbanner-1.gif) no-repeat;
+width:187px;
+height:251px;
+}
+
+.headerInfo                { height:83px; position:relative}
+	.headerInfo  .logo     { position:absolute; left:0; top:8px;margin:20px 0 0 10px;}
+	.headerInfo  .topMenu  { position:absolute; right:0; top:5px;}
+	.headerInfo  .topMenu a{ text-decoration:underline;}
+	.headerInfo  .info     { background:url(header-zixun.gif) no-repeat; padding:16px 0 0 30px; height:40px;position:absolute; right:0; top:40px;}
+
+
+.header                       {height:117px; position:relative}
+	.header #menu             { height:42px; line-height:42px;}
+	.header .headerSearchBar  { position:absolute; left:0;top:42px; width:520px; height:42px;}
+	.header .loginBar         { height:30px;left:555px;position:absolute;top:52px;width:220px;}
+	.header .cartBar          { height:30px;left:808px;position:absolute;top:52px;width:125px;}
+	.header .newsBar          {height:30px;left:0;margin-left:70px;position:absolute;top:91px; width:880px;}
+			.newsBar .ArticleList ul li      { float:left; border-right:1px solid #ddd; padding:0 10px; line-height:18px;}
+			.newsBar .ArticleList ul li img  { display:none}
+	        .newsBar .more{color:#fff;border:1px solid #CCCCCC;line-height:18px;margin:0;padding:2px 6px;position:absolute;right:5px;top:0;}
+			.newsBar .more a{color:#fff}
+
+.mainTopArea{ padding:6px; border:1px solid #ccc; background:#fff}
+.mainTopArea .topPush{ border:1px solid #ddd; padding:2px;}
+.mainTopArea .topPush .price0{ display:none;}
+.mainTopArea .topPush .itemsWrap{ line-height:18px; margin-right:2px;}
+.mainTopArea .topTenTitle{height:23px; }
+.mainTopArea .topTen{padding:0 0 0 21px}
+.mainTopArea .topTen .GoodsList .itemsWrap{ line-height:1.8em;}
+.mainTopArea .topTen .GoodsList h6{ font-weight:normal; margin: 4px 0 0 0;}
+.mainTopArea .topTen .GoodsListWrap{ text-align:left; padding:0}
+
+.MainBorder                     { margin-top:10px; position:relative}
+.MainBorder .addInfo            { position:absolute; top:3px; right:10px}
+			.addInfo .ArticleList ul li      { float:left; border-right:1px solid #ddd; padding:0 10px; line-height:18px;}
+			.addInfo .ArticleList ul li img  { display:none}
+.MainBorder .top                { height:27px;}
+.MainBorder .bottom             { background:url(maingoodsborder-bottom.gif) no-repeat; height:14px;}
+.MainBorder .body               { background:url(maingoodsborder-bg.gif); padding:10px 10px 0 10px }
+.MainBorder .body .bannerArea   { width:187px; height:251px; float:left; margin-right:10px; border:1px solid #ccc;}
+.MainBorder .body .goodsArea    { float:left; width:530px;}
+
+
+#Foot{ background:#fff url(footbg.gif) repeat-x; margin-top:10px;}
+.footArticle{ margin-top:10px;}
+.footPicInfo{padding:10px; text-align:center; border-bottom:1px solid #ccc;}
+.footPicInfo .AdvBanner{ display:inline; margin-right:10px;}

@@ -1,0 +1,64 @@
+<div class="input">
+
+
+ <form class="validate" method="post" action="siteMenu!save.do"  >
+ <#if isEdit>
+ <input type="hidden" name="menuid" value="${menuid}"/>
+</#if> 
+   <table cellspacing="1" cellpadding="3" width="100%" class="form-table">
+     <tr> 
+       <th >名称</th>
+       <td><input type="text" name="siteMenu.name"  value="${siteMenu.name!''}" maxlength="60"   dataType="string" required="true"/>
+	   </td>
+     </tr>
+     <tr>
+       <th>上级菜单</th>
+       <td>
+		<select name="siteMenu.parentid" id="parentid">
+		<option value="0">顶级类别</option>
+ 		<#assign children=menuList />
+		<#assign level=1 />
+		<#include 'select_children.html' />  
+		</select>
+		</td>		
+     </tr>
+     <tr>
+       <th>链接</th>
+       <td>
+       <input type="text" name="siteMenu.url"  style="width:200px"  value="${siteMenu.url!''}"  dataType="string" required="true"/> </td>
+     </tr>
+     <tr>
+       <th>目标</th>
+       <td>
+       <input type="text" name="siteMenu.target"  style="width:200px"  value="${siteMenu.target!''}"  dataType="string"/> </td>
+     </tr>          
+     <tr>
+       <th>排序</th>
+       <td>
+       <input type="text" name="siteMenu.sort" style="width:50px"  value="${siteMenu.sort!''}"  dataType="int" required="true"/> </td>
+     </tr>
+   </table>
+	<div class="submitlist" align="center">
+	 <table>
+	 <tr><td >
+	            <input name="submit" type="submit"  value=" 确定 " class="submitBtn"/>
+	           <input name="reset" type="reset"  value=" 重置 " class="submitBtn"/>
+	   </td>
+	   </tr>
+	 </table>
+	</div>   
+   </form>
+   
+   </div>
+<script type="text/javascript">
+$(function(){
+	$("form.validate").validate();
+	<#if !isEdit>
+	$("#parentid").val(${menuid});
+	<#else>
+	$("#parentid").val(${siteMenu.parentid});
+	</#if>
+});
+
+
+</script>

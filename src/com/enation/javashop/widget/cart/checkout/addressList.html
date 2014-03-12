@@ -1,0 +1,23 @@
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	style="margin-bottom: 5px;" class="liststyle data">
+	<colgroup class="Colspan-4 ColColorGray"></colgroup>
+	<colgroup class="Colspan-auto"></colgroup>
+	<tbody>
+		<tr>
+			<th>确认收货地址：</th>
+			<td>
+			
+			<#list addressList as address>
+			<label>
+			<input type="radio" value="${address.addr_id}" regionid="${address.region_id?c}" name="addressId">
+			${address.province}-${address.city}-${address.region}-${address.addr!''}(收货人：${address.name!''}，电话：${address.tel!''}，邮编：${address.zip!''})
+			</label>
+			<!-- &nbsp;<a class="addredit" 	href="javascript:void(0)">编辑</a> -->
+			<br>
+			</#list>	
+				
+			<label><input type="radio" value="0" name="addressId" id="otherAddress">其他收货地址</label>
+			</td>
+		</tr>
+	</tbody>
+</table>

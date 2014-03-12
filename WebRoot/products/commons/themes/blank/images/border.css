@@ -1,0 +1,166 @@
+﻿.border1 h3{margin:0;height:23px;text-align:-999999px;}
+
+.border1 .Article-Tabs,
+.border1 .GoodsList-Tabs{
+  	border:none;
+    float:right;
+    margin-top:-22px;
+    height:22px;
+    overflow:hidden;
+}
+.border1 .Article-Tabs div,
+.border1 .GoodsList-Tabs div{
+	border:none;
+  	background:none;
+    padding:0;
+    line-height:22px;
+    margin:0 5px;
+    color:#9c8b8b;
+}
+.border1 .Article-Tabs .current,
+.border1 .GoodsList-Tabs .current{
+  	background:url(wgt_tabs.gif) no-repeat;
+    height:22px;
+    line-height:22px;
+    padding: 0 0 0 10px;
+}
+.border1 .Article-Tabs .current span,
+.border1 .GoodsList-Tabs .current span{
+  	display:block;
+  	background:url(wgt_tabs.gif) no-repeat right 0;
+    padding-right:10px;
+    color:#a91e1e;
+}
+
+.border2{
+	margin-bottom:7px;
+}
+.border2 h3{
+  	background:url(b2_t.gif) no-repeat;
+    padding:0 0 0 36px;
+	font-size:14px;
+  	height:32px;
+  	border-bottom:3px solid #f2f2f2;
+    color:#7f7f7f;
+}
+.border2 .border-top{
+  	margin:5px 0 8px 0;
+}
+.border2 .border-body{
+   padding:0 0 0 12px;
+}
+
+
+.border3{
+	padding:5px;
+	border:1px solid #ccc;
+}
+
+.border5{margin-top:10px;}
+.border5 .top{ height:39px;  }
+.border5 .top h3{padding:5px 0 0 6px; color:#000 ;margin:0}
+.border5 .body{ padding:5px;}
+.border5 .bottom{height:15px;}
+
+.border6{margin-top:10px;}
+.border6 .top{height:32px;  }
+.border6 .top h3{padding:2px 0 0 6px;color:#fff; margin:0}
+.border6 .body{ background:url(sidearrowborder-bg.gif); padding:8px}
+.border6 .bottom{ background:url(sidearrowborder-bottom.gif); height:10px;}
+
+
+
+.BorderColored{
+	margin:3px;
+}
+		.BorderColored h3{
+			color:#fff;
+			margin:0;
+			padding:0;
+			line-height:25px;
+			font-size:12px;
+		}
+		.BorderColored .Border-top{
+			background:url(BorderColored.gif) no-repeat;
+			height:25px;
+		}
+				.BorderColored .Border-top .bg{
+					background:url(BorderColored.gif) no-repeat right 0;
+					height:25px;
+					margin-left:10px;
+				}
+				
+		.BorderColored .Border-body{
+			background:url(BorderColoredbg.gif) repeat-y;
+			margin-right:0 2px;
+		}
+				.BorderColored .Border-body .bg{
+					background:url(BorderColoredbg.gif) repeat-y right 0;
+					margin-left:2px;
+					padding:5px;
+				}
+		.BorderColored .Border-foot{
+			background:url(BorderColored.gif) no-repeat 0 -200px;
+			height:14px;
+		}
+				.BorderColored .Border-foot .bg{
+					background:url(BorderColored.gif) no-repeat right -200px;
+					height:14px;
+					margin-left:10px;
+				}
+
+/* 不同边框的颜色*/				
+		.BorderColored .gray{
+			background:url(BorderColored.gif) no-repeat 0 -25px;
+		}
+				.BorderColored .gray .bg{
+					background:url(BorderColored.gif) no-repeat right -25px;
+				}
+				.BorderColored .gray h3{
+					color:#000;
+				}					
+		.BorderColored .LightGray{
+			background:url(BorderColored.gif) no-repeat 0 -50px;
+		}
+				.BorderColored .LightGray .bg{
+					background:url(BorderColored.gif) no-repeat right -50px;
+				}
+				.BorderColored .LightGray h3{
+					color:#000;
+				}									
+				
+		.BorderColored .blue{
+			background:url(BorderColored.gif) no-repeat 0 -75px;
+		}
+				.BorderColored .blue .bg{
+					background:url(BorderColored.gif) no-repeat right -75px;
+				}				
+		.BorderColored .red{
+			background:url(BorderColored.gif) no-repeat 0 -100px;
+		}
+				.BorderColored .red .bg{
+					background:url(BorderColored.gif) no-repeat right -100px;
+				}				
+				
+		.BorderColored .yellow{
+			background:url(BorderColored.gif) no-repeat 0 -125px;
+		}
+				.BorderColored .yellow .bg{
+					background:url(BorderColored.gif) no-repeat right -125px;
+				}
+		.BorderColored .green{
+			background:url(BorderColored.gif) no-repeat 0 -150px;
+		}
+				.BorderColored .green .bg{
+					background:url(BorderColored.gif) no-repeat right -150px;
+				}
+		.BorderColored .white{
+			background:url(BorderColored.gif) no-repeat 0 -175px;
+		}
+				.BorderColored .white .bg{
+					background:url(BorderColoredbg.gif) no-repeat right -175px;
+				}				
+				.BorderColored .white h3{
+					color:#000;
+					
+				}	

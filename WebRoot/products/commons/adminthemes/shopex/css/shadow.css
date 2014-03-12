@@ -1,0 +1,46 @@
+.shadow{
+}
+.shadow-one{
+	position:relative;
+	padding-top:16px;
+	padding-left:16px;
+	width:100%;
+	height:100%;
+}
+.shadow-corner-a{
+	position:absolute;
+	right:0px;
+	top:0px;
+	width:16px;
+	height:16px;
+	background:url('../images/shadow_total1.png') right top;
+	*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='corp', src='../images/shadow_total1.png');
+	font-size:1px;
+}
+.shadow-corner-b{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:16px;
+	height:16px;
+	background:url('../images/shadow_total1.png') left bottom;
+	font-size:1px;
+}
+.shadow-two{
+	background:url('../images/shadow_total1.png') right bottom;
+	height:100%;
+}
+.shadow-three{
+	background:url('../images/shadow_total1.png') left top;
+	position:relative;
+	height:100%;
+	left:-16px;
+	top:-16px;
+}
+.shadow-four{
+	position:relative;
+	left:8px;
+	top:8px;
+	height:100%;
+}
+

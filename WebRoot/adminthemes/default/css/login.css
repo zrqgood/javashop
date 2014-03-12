@@ -1,0 +1,65 @@
+*{margin:0;padding:0;border:0;}
+body{
+	font-family:Georgia;
+	font-size:12px;
+	text-align:center;
+}
+.main{
+	background:transparent url(../images/loginmainbg.gif) no-repeat scroll 0 0;
+	height:439px;
+	margin:74px auto 0 ;
+	position:relative;
+	text-align:left;
+	color:#666;
+	margin:120px auto 0;
+	width:600px;
+}
+.main .logo{
+	background:transparent url(../images/loginlogo.jpg) no-repeat scroll 0 0;
+	height:128px;
+	text-indent:-999999px;
+	width:233px;
+	float:left;
+}
+.main .content{
+	background:url("../images/bg_login.gif") no-repeat scroll left 50% transparent;
+	width:350px;
+	float:left;
+}
+ 
+.main .content .code_img{
+	height:22px;
+	width:60px;
+	vertical-align:middle;
+}
+.loginbtnfocus {
+background:none repeat scroll 0 0 #DDDDDD;
+border-color:#DDDDDD #666666 #666666 #DDDDDD;
+color:#000000;
+cursor:pointer;
+margin:3px 0;
+padding:2px 5px;
+vertical-align:middle;
+margin-left:60px;
+border-style:solid;
+border-width:1px;
+}
+.main table {
+	margin-left:20px;
+}
+.main table tr{
+	height:28px;
+}
+
+ 
+.inputstyle {
+background:none repeat scroll 0 0 #F9F9F9;
+border-color:#666666 #CCCCCC #CCCCCC #666666;
+border-style:solid;
+border-width:1px;
+color:#333333;
+padding:2px;
+margin-top:2px;
+width:160px;
+vertical-align:middle;
+}

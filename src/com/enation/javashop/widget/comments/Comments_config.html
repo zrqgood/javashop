@@ -1,0 +1,15 @@
+<p>
+请输入评论对象类型:
+<select name="commentType" eop_type="widget_params">
+	<option value="goods" <#if commentType == 'goods'>selected</#if>>商品</option>
+	<option value="article" <#if commentType == 'article'>selected</#if>>文章</option>
+</select>
+</p>
+<p>
+请选择信息类型:
+<select name="object_type" eop_type="widget_params">
+	<option value="discuss" <#if object_type == 'discuss'>selected</#if>>评论</option>
+	<option value="ask" <#if object_type == 'ask'>selected</#if>>咨询</option>
+	<option value="leavewords" <#if object_type == 'leavewords'>selected</#if>>留言</option>
+</select>
+</p>

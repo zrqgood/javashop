@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+${widget_header}
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link href="css/border.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+	function  setHomepage() {   //  设置首页
+		if  (document.all) {
+		   document.body.style.behavior  =   'url(#default#homepage)' ;
+		   document.body.setHomePage( 'http://'+document.domain);
+
+	   }
+		else   if  (window.sidebar) {
+			if  (window.netscape) {
+				try  {
+				   netscape.security.PrivilegeManager.enablePrivilege( "UniversalXPConnect" );
+			   }
+				catch  (e) {
+				   alert( " 该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值改为true " );
+			   }
+		   }
+			var  prefs  =  Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+		   prefs.setCharPref( 'browser.startup.homepage' ,  'http://'+document.domain );
+	   }
+
+	} 
+</script>
+</head>
+<body>
+<!--头部-->
+<div class="header">
+	<div class="top">
+		<div class="logo"><img src="${logo}" /></div>
+		<div class="toplink">
+			<ul>
+				<li class="link1"><a href="contact.html">联系我们</a></li>
+				<li class="link2"><a href="javascript:;" onclick="setHomepage();">设为首页</a></li>
+				<li class="link3"><a onclick="if (document.all){window.external.addFavorite('http://'+document.domain,document.title);}else if (window.sidebar){ window.sidebar.addPanel(document.title, 'http://'+document.domain, document.title);}" href="javascript:;">加入收藏</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--菜单-->
+	<div class="menu">
+		${widget_menu}
+	</div>
+	<!--广告-->
+	<div class="banner">
+		${widget_ad}
+	</div>
+</div>

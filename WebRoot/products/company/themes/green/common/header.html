@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+${widget_header}
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<!--头部-->
+<div class="header">
+	<div class="top">
+		<!--联系电话-->
+		<div class="tel">
+			Call us now：${site.usertel!''}
+		</div>
+		<!--产品搜索-->
+		<div class="searchbar">
+			${widget_search}
+		</div>
+	</div>
+	<div class="menumain">
+		<!--logo-->
+		<div class="logo">
+			<a href="#"><img src="${logo}" /></a> 
+		</div>
+		<!--菜单-->
+		<div class="memnu">
+			${widget_menu}
+		</div>
+	</div>
+	<!--广告图片-->
+	<div class="banner">
+		${widget_ad}
+	</div>
+</div>
+<script>
+function selectMenu(index){
+	$(".MenuList li").removeClass("curr");
+	$(".MenuList li").eq(index).addClass("curr");
+};
+</script>

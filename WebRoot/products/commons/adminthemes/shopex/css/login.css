@@ -1,0 +1,59 @@
+*{margin:0;padding:0;border:0;}
+body{
+	background:#34495A url(../images/loginbodybg.gif) repeat-x scroll 0 0;
+	font-family:Georgia;
+	font-size:12px;
+	text-align:center;
+}
+.main{
+	background:transparent url(../images/loginmainbg.gif) no-repeat scroll 0 0;
+	height:439px;
+	margin:74px auto 0;
+	position:relative;
+	text-align:left;
+	width:698px;
+	color:#666;
+}
+.main .logo{
+	background:transparent url(../images/loginlogo.png) no-repeat scroll 0 0;
+	height:128px;
+	left:80px;
+	position:absolute;
+	text-indent:-999999px;
+	top:120px;
+	width:233px;
+}
+.main .content{
+	position:absolute;
+	left:342px;
+	top:120px;
+	width:300px;
+}
+.main .content .inputstyle {
+	background:transparent url(../images/logininput.png) no-repeat scroll 0 0;
+	border:medium none;
+	color:#000;
+	height:22px;
+	padding:5px 3px 0;
+	width:156px;
+}
+.main .content .code_img{
+	height:22px;
+	left:150px;
+	position:absolute;
+	top:66px;
+	width:60px;
+}
+.loginbtnfocus {
+	background:transparent url(../images/logininput.png) no-repeat scroll 0 -150px;
+	border:medium none;
+	height:38px;
+	width:119px;
+	display:block;
+	line-height:9999px;
+	text-indent:-9999px;
+	cursor: pointer;
+}
+.main table tr{
+	height:28px;
+}

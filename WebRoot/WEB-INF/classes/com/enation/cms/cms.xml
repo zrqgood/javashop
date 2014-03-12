@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbsolution>
+	<action>
+		<command>create</command>
+		<table>data_cat</table>
+		<field><name>cat_id</name><type>int</type><size>8</size><option>11</option></field>
+		<field><name>name</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>parent_id</name><type>int</type><size>8</size><option>00</option></field>
+		<field><name>cat_path</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>cat_order</name><type>int</type><size>5</size><option>00</option></field>
+		<field><name>model_id</name><type>int</type><size>8</size><option>00</option></field>
+		<field><name>if_audit</name><type>int</type><size>2</size><option>00</option></field>
+		<field><name>url</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>detail_url</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>tositemap</name><type>int</type><size>8</size><option>00</option><default>0</default></field>
+	</action>
+	<action>
+		<command>create</command>
+		<table>data_field</table>
+		<field><name>field_id</name><type>int</type><size>8</size><option>11</option></field>
+		<field><name>china_name</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>english_name</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>data_type</name><type>int</type><size>11</size><option>00</option></field>
+		<field><name>data_size</name><type>varchar</type><size>20</size><option>00</option></field>
+		<field><name>show_form</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>show_value</name><type>varchar</type><size>400</size><option>00</option></field>
+		<field><name>add_time</name><type>long</type><size>20</size><option>00</option></field>
+		<field><name>model_id</name><type>int</type><size>8</size><option>00</option></field>
+		<field><name>save_value</name><type>memo</type><size>21845</size><option>00</option></field>
+		<field><name>is_validate</name><type>int</type><size>1</size><option>00</option></field>
+		<field><name>taxis</name><type>int</type><size>4</size><option>00</option></field>
+		<field><name>dict_id</name><type>int</type><size>8</size><option>00</option></field>
+		<field><name>is_show</name><type>int</type><size>8</size><option>00</option></field>
+	</action>
+	<action>
+		<command>create</command>
+		<table>data_model</table>
+		<field><name>model_id</name><type>int</type><size>8</size><option>11</option></field>
+		<field><name>china_name</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>english_name</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>add_time</name><type>long</type><size>20</size><option>00</option></field>
+		<field><name>project_name</name><type>varchar</type><size>255</size><option>00</option></field>
+		<field><name>brief</name><type>varchar</type><size>400</size><option>00</option></field>
+		<field><name>if_audit</name><type>int</type><size>8</size><option>00</option></field>
+	</action>
+</dbsolution>

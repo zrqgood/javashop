@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+${widget_header}
+<link type="text/css" href="${staticserver}/default/statics/style.css" rel="stylesheet" />
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META content=IE=EmulateIE7 http-equiv=X-UA-Compatible>
+<LINK rel=stylesheet type=text/css href="images/it.css">
+<LINK rel=stylesheet type=text/css href="images/it1.css">
+<SCRIPT language=javascript type=text/javascript>
+if (screen.width>=1280){document.write("<style type='text/css'>.Main {width: 1200px;}.head_box2{width:1200px;background:#D6290B url(http://static.enationsoft.com/user/3/17/themes/default/images/i/spring_12002010.gif) no-repeat scroll 0 -32px;}.Header{width: 1200px;}.head_box1{width:980px;}#Tip{width: 566px;}#MiniToolBar{width: 304px;}#MiniToolBar li.lpk,#MiniToolBar li.ybt {width: 40px;}#Nav span a{padding: 3px 20px 0;}.head_box2{width: 1200px;}#HotKeyword{width: 1150px;}.Help {width: 1158px;}.Help dt {padding-left: 60px;}.Help dd {padding-left: 95px;}#help{width: 1158px;}#help dt{margin: 0 0 15px 60px;}#help dd{padding-left: 95px;}.FriLink{width: 1168px;}.Footer_Nav {width: 1200px;}.Copyright {width: 1200px;}.Footer_Link{width: 1200px;}.Product_List_S3 li dd {padding: 0 14px;}.Product_List_S3 H6{_width:210px;}.right{width:983px;}.right_box1_left {width: 766px;}#slide{width:766px;}#slide ul{width:766px;}#slide li{width: 766px;}#ScareBuying{width:766px;}#NewProduct{width:766px;overflow:hidden;}#NewProduct .Product_List_S3{width:766px;}#NewProduct .Product_List_S3 ul{width:766px;}.Special_Product{width:766px;}.Special_Product h2{width:766px;}.Special_Product .Product_List_S3 {width: 744px;}.AD_R_1{width: 766px;}.AD_R_1 img{width: 766px;}</style>");} 
+</SCRIPT>
+<NOSCRIPT>
+<LINK rel=stylesheet type=text/css href="images/common.css">
+<LINK rel=stylesheet type=text/css href="images/home100506.css">
+
+</NOSCRIPT>
+<SCRIPT type=text/javascript src="images/g.base.js"></SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.7600.16535">
+<LINK rel=stylesheet type=text/css href="images/widgets.css">
+<script src="images/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+      $(function() {
+          $("img").lazyload({placeholder : "images/grey.gif"});
+      });
+  </script>
+
+</HEAD>
+<BODY>
+
+${widget_imbar}
+<!--[if !ie]>顶部内容开始<![endif]-->
+<DIV class=Header>
+<DIV id=Logo><img src="${logo}" /></DIV>
+<!--[if !ie]>logo end<![endif]-->
+<DIV class=head_box1>
+<DIV id=Tip><SPAN id=vtip1>${widget_mloginbar}</SPAN></DIV>
+<!--[if !ie]>tip end<![endif]-->
+<DIV id=MiniToolBar>
+<UL>
+	<LI id=My360buy><A href="member_index.html">我的网店</A></LI>
+	<LI class=line>|</LI>
+	<LI><a style="cursor: pointer; color: rgb(255, 0, 0);" id="favoriteBtn">收藏本站</a></LI>
+	
+	<!--
+	<LI class=line>|</LI>
+	<LI class=lpk><A href="giftcard.html"
+		target=_blank>礼品卡</A></LI>
+	-->
+
+
+	<!--
+		<LI class=line>|</LI>
+	<LI><A
+		href="company.html"
+		target=_blank>企业客户</A></LI>-->
+	<LI class="line">|</LI>
+	<LI>
+	<A href="help-1.html">帮助中心</A>
+	</LI>
+</UL>
+</DIV>
+<!--[if !ie]>MiniToolBar end<![endif]-->
+<DIV class=clear></DIV>
+${widget_menu}
+</DIV>
+<DIV class=clear></DIV>
+<DIV class=head_box2>
+<DIV class=head_box2_left></DIV>
+<DIV class=head_box2_right></DIV>
+<DIV id=HotKeyword></DIV>
+<UL id=Search>
+	<LI>${widget_searchbar}</LI>
+</UL>
+<!--[if !ie]>Search end<![endif]-->
+<UL id=Cart>
+	<LI class=C_num>
+	<DIV id=CartSwitch_wrap><IMG id=CartSwitch
+		src="images/head3_18.gif" width=14 height=15>${widget_mcartbar}</DIV>
+	</LI>
+	<LI class=C_bal><A 
+		href="/cart.html">去结算</A></LI>
+	<LI class=C_ord><A
+		href="/member_rrder.html">我的订单</A></LI>
+</UL>
+<!--[if !ie]>Cart end<![endif]--></DIV>
+</DIV>
+<!--[if !ie]>顶部内容结束<![endif]-->
+<DIV id=MyCart></DIV>
+<DIV id=My_Cart_Tip class=Tip360></DIV>
+<DIV id=Collect_Tip class="Tip360 w260"></DIV>
+<DIV id=Fqfk_Tip class=Tip360></DIV>
+<script>
+$(function(){
+
+	$("#skeyword").attr("size", 30);
+	$("#skeyword").addClass("S_input1");
+	$("#skeyword").click(function(){
+		$(this).val("");
+		$(this).css("color","#444");
+	});
+	$("#favoriteBtn").click(function(){
+
+		if (document.all)
+		{ 
+			window.external.addFavorite('http://'+document.domain,document.title);
+		}
+		else if (window.sidebar)
+		{ window.sidebar.addPanel(document.title, 'http://'+document.domain, document.title); 
+		} 
+	});
+
+});
+
+
+</script>

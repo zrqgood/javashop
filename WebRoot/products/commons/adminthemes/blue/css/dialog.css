@@ -1,0 +1,126 @@
+.dialog{
+	background:#fff;
+	border:2px solid #7eabcd;
+	font-size:12px;
+	position:absolute;
+	padding:1px;
+	display:none;
+	overflow:hidden;
+	-moz-border-radius:5px;
+}
+.dialog-shadow{
+	position:absolute;
+	overflow:hidden;
+}
+.dialog-header{
+	background:#7eabcd;
+	font-size:12px;
+	position:relative;
+	height:25px;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+}
+.dialog-title{
+	color:#fff;
+	padding:6px 5px;
+	*padding-top:4px;
+	height:12px;
+	font-weight:bold;
+}
+.dialog-icon{
+	width:18px;
+	height:18px;
+	position:absolute;
+	left:2px;
+	top:4px;
+}
+a.dialog-close{
+	width:16px;
+	height:16px;
+	display:block;
+	position:absolute;
+	right:2px;
+	top:4px;
+	text-align:right;
+	cursor:hand;
+	cursor:pointer;
+	background:url('../images/dialog_tools.gif') no-repeat -16px 0px;
+}
+a:hover.dialog-close{
+	top:5px;
+}
+.dialog-content{
+	padding:10px;
+	overflow: auto;
+	background:#fff url('../images/dialog_content_bg.gif') repeat-x;
+}
+.dialog-button{
+	height:30px;
+	background:#fafafa;
+	padding:5px 0px 0px 0px;
+	margin:0px;
+	text-align:right;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+}
+.dialog-mask{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	filter:alpha(opacity=40);
+	opacity:0.40;
+	background:#ccc;
+	display:none;
+}
+.dialog iframe{
+	background-color:transparent ;
+}
+
+
+/*dialog 的阴影*/
+.shadow{
+}
+.shadow-one{
+	position:relative;
+	padding-top:16px;
+	padding-left:16px;
+	width:100%;
+	height:100%;
+}
+.shadow-corner-a{
+	position:absolute;
+	right:0px;
+	top:0px;
+	width:16px;
+	height:16px;
+	background:url('../images/shadow_total.png') right top;
+	font-size:1px;
+}
+.shadow-corner-b{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:16px;
+	height:16px;
+	background:url('../images/shadow_total.png') left bottom;
+	font-size:1px;
+}
+.shadow-two{
+	background:url('../images/shadow_total.png') right bottom;
+	height:100%;
+}
+.shadow-three{
+	background:url('../images/shadow_total.png') left top;
+	position:relative;
+	height:100%;
+	left:-16px;
+	top:-16px;
+}
+.shadow-four{
+	position:relative;
+	left:8px;
+	top:8px;
+	height:100%;
+}

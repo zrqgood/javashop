@@ -1,0 +1,9 @@
+<h1>新闻中心</h1>
+<div class="cont">
+	<ul>
+	<#list dataList as data>
+		<li><a href="detail-${data.cat_id}-${data.id}.html">${data.title!''}</a></li>
+	</#list>
+	</ul>
+</div>
+<span class="more"><a href="news-2-1.html">Read more</a></span>

@@ -1,0 +1,124 @@
+<div>
+	<table class="form-table">
+		<tr>
+			<th class="label">
+				开启在线客服:
+			</th>
+			<td>
+				<input type="radio" name="im.state" id="state" value="1" checked />开启&nbsp;&nbsp;
+				<input type="radio" name="im.state" id="state" value="0"  />关闭
+			</td>
+		</tr>
+		<tr>
+			<th>
+				标题:
+			</th>
+			<td>
+				<input type="text" name="im.title"  <#if im?exists>value="${im.title!''}"</#if>/>
+			</td>
+		</tr>		
+		<tr>
+			<th>
+				<input type="checkbox" name="im.qq" id="qq"  value="1" <#if im?exists && im.qq?exists && im.qq=="1">checked</#if> />QQ列表:
+			</th>
+			<td>
+				<input type="text" name="im.qqlist" id="qqlist" style="width: 200px" disabled="true" <#if im?exists>value="${im.qqlist!''}"</#if> style="width:150px"/>
+			     格式:<span style="font-weight:normal;"> qq号码:提示文字,qq号码:提示文字...</span>
+			</td>
+		</tr>
+
+		<tr>
+			<th>
+				<input type="checkbox" name="im.msn" id="msn" value="1"   <#if im?exists && im.msn?exists && im.msn=="1">checked</#if> />MSN列表:
+			</th>
+			<td>
+				 <input type="text" name="im.msnlist" id="msnlist"  style="width: 200px" disabled="true"  <#if im?exists> value="${im.msnlist!''}"</#if>/>
+			    格式:msn账号:提示文字,msn账号:提示文字...
+			</td>
+		</tr>
+		
+		<tr>
+			<th>
+				<input type="checkbox" name="im.ww" id="ww"  value="1" <#if im?exists && im.ww?exists && im.ww=="1">checked</#if>  />旺旺列表: 
+			</th>
+			<td>
+				<input type="text" name="im.wwlist" disabled="true"  style="width: 200px" id="wwlist" <#if im?exists> value="${im.wwlist!''}"</#if>/>
+				格式:旺旺号码:提示文字,旺旺号码:提示文字...
+			</td>
+		</tr>
+		<tr>
+			<th>
+				营业时间: 
+			</th>
+			<td>
+				<input type="text" name="im.worktime" id="" <#if im?exists>value="${im.worktime!''}"</#if>/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				电话: 
+			</th>
+			<td>
+				<input type="text" name="im.tel" id="" <#if im?exists>value="${im.tel!''}"</#if>/>
+			</td>
+		</tr>		
+	</table>
+</div>
+<script>
+	$(function(){
+		
+		//各种及时通信工具的输入框可用状态切换
+		$("#qq").click(function(){
+			if(this.checked)
+				$("#qqlist").attr("disabled",false);
+			else
+				$("#qqlist").attr("disabled",true);
+		});
+
+		$("#msn").click(function(){
+			if(this.checked)
+				$("#msnlist").attr("disabled",false);
+			else
+				$("#msnlist").attr("disabled",true);
+		});		
+
+		$("#ww").click(function(){
+			if(this.checked)
+				$("#wwlist").attr("disabled",false);
+			else
+				$("#wwlist").attr("disabled",true);
+		});
+
+		//状态值
+		<#if im?exists && im.state?exists && im.state=="1"> 
+		$("#state[value=1]").attr("checked",true);
+		<#else>
+		$("#state[value=0]").attr("checked",true);
+		</#if>
+
+		<#if im?exists && im.qq?exists && im.qq=="1">
+			$("#qq").attr("checked",true);		
+			$("#qqlist").attr("disabled",false);
+		<#else>
+			$("#qq").attr("checked",false);
+			$("#qqlist").attr("disabled",true);			
+		</#if>
+		
+		<#if im?exists && im.msn?exists && im.msn=="1">
+			$("#msn").attr("checked",true);		
+			$("#msnlist").attr("disabled",false);
+		<#else>
+			$("#msn").attr("checked",false);
+			$("#msnlist").attr("disabled",true);			
+		</#if>
+
+		<#if im?exists && im.ww?exists && im.ww=="1">
+			$("#ww").attr("checked",true);		
+			$("#wwlist").attr("disabled",false);
+		<#else>
+			$("#ww").attr("checked",false);
+			$("#wwlist").attr("disabled",true);
+		</#if>		
+		
+	});
+</script>

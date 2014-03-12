@@ -1,0 +1,337 @@
+﻿/*=挂件预设
+=============================================================================================*/
+.mktprice1{
+	text-decoration: line-through;
+}
+.more{
+	margin:5px 5px 0 0;
+	text-align:right;
+}
+.more a{
+	text-indent:-9999px;
+	float:right;
+	width:42px;
+	background:url(../images/viewmore.gif) no-repeat;
+}
+.more:after {
+	content:"";
+	display:block;
+	clear:both;
+	visibility:hidden;
+	height:0;
+}
+.ArticleList li,.ArticleList td{
+	background:url(../images/dotted.gif) repeat-x 0 bottom;
+	display:block;
+	overflow:hidden;
+	padding:4px 0;
+	white-space:nowrap;
+}
+.ArticleList td{
+	padding-left:10px;
+}
+.ArticleList li a,.ArticleList td a{
+	padding-left:3px;
+}
+.Article-Tabs{
+	border-bottom:1px solid #b3b3b3;
+	overflow:auto;
+	background:#f7fcff;
+	zoom:1;
+	padding:0 10px;
+	margin:1px 0 0 0;
+}
+.Article-Tabs div{
+	border:none;
+	float:left;
+	padding:2px 5px;
+	background:#f7fcff;
+	cursor:pointer;
+}
+.Article-Tabs .current{
+	background:#fff url(../images/hotgoods.gif) repeat-x 0 7px;
+	12font-weight:bold;
+	border:1px solid #999;
+	border-bottom:1px solid #fff;
+	color:#205687;
+}
+.GoodsList-Tabs{
+	position:relative;
+	margin:5px 0 0 0;
+	border-bottom:1px solid #FF9900;
+	padding:0 10px;
+	height:25px;
+	overflow:visible;
+}
+.GoodsList-Tabs div{
+	border:none;
+	height:25px;
+	float:left;
+	background:url(../images/wgttabs.gif) no-repeat;
+	padding:0 0 0 10px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.GoodsList-Tabs span{
+	display:block;
+	background:url(../images/wgttabs.gif) no-repeat right 0;
+	padding:3px 10px 3px 0;
+}
+.GoodsList-Tabs div.current{
+	height:26px;
+	bottom:-1px;
+	position:relative;
+	border:none;
+	background:url(../images/wgttabs.gif) no-repeat 0 -25px;
+	color:#533607;
+}
+.GoodsList-Tabs div.current span{
+	display:block;
+	background:url(../images/wgttabs.gif) no-repeat right -25px;
+}
+.SearchBar table td {
+  padding:0 5px;
+vertical-align:middle
+}
+/*=排行榜 
+=============================================================================================*/
+.RankingList{
+	padding:10px;
+}
+.RankingList .pic{
+	text-align:center;
+}
+.RankingList li{
+	width:99%;
+}
+.RankingList li span{
+	font-size:9px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+ul.list {
+margin:0;
+}
+
+ul.list li {
+background:url("ra.gif") no-repeat scroll 0 8px transparent;
+border-bottom:1px solid #EFEFEF;
+color:#666666;
+display:block;
+line-height:15px;
+padding-left:15px;
+}
+
+.border7 .TreeList{
+float:left;
+width:20%;
+}
+
+/*自定义*/
+.RankingList li span{
+	width:15px;
+	height:15px;
+	background:url(ranklt.gif) no-repeat 0 2px;
+	display:block;
+	float:left;
+	color:#FFFFFF;
+	text-align:center;
+}
+.RankingList .hl span{
+	font-size:11px;
+	line-height:15px;
+	font-weight:bold;
+	background:url(ranklt.gif) no-repeat 0 -20px;
+}
+
+
+
+.IndexLoginWrap{
+	padding:5px;
+}
+.IndexLoginWrap label{
+	width:50px;
+	margin:0 2px 0 0;
+	font-weight:normal;
+}
+.IndexLoginWrap input.userinput{
+	width:100px;
+}
+.IndexLoginWrap input.vcode{
+	width:40px;
+}
+.IndexLoginWrap .buttonbar{
+	margin:5px 0 0 0;
+	padding:5px 0 0 0;
+	border-top:1px solid #efefef;
+	clear:both;
+	text-align:center;
+}
+.IndexLoginWrap .buttonbar a{
+	margin:0 4px;
+}
+.IndexLoginWrap .logon{
+	line-height:20px;
+	margin:5px 0;
+	text-align:center;
+}
+.IndexLoginWrap .bar{
+	overflow:hidden;
+	white-space:nowrap;
+}
+.IndexLoginWrap .bar span{
+	display:inline;
+	text-align:left;
+	line-height:12px;
+	padding:0 8px;
+}
+.IndexLoginWrap .bar span.links,
+.IndexLoginWrap .bar a{
+	color:#919191;
+}
+
+.OrderList .orderprice{
+	color:#990000;
+	display:block;
+	padding:0 0 0 15px;
+}
+.OrderList li{
+	background:url(dotted.gif) repeat-x 0 bottom;
+	padding:5px;
+}
+/*=挂件内部
+=============================================================================================*/
+.StyleIndexGoodsList h2{
+	color:#2D2D2D;
+	font-size:12px;
+	border:none;
+	padding:0;
+	background:none;
+}
+.StyleIndexGoodsList .goodsrow li{
+	background:url(../images/dotted.gif) repeat-x 0 bottom;
+	display:block;
+	overflow:hidden;
+	padding:5px 0 5px 4px;
+	white-space:nowrap;
+	width:190px;
+}
+.StyleIndexGoodsList .goodsrow li a{
+	background:url(../images/arrow3.gif) no-repeat 0 4px;
+	padding:0 0 0 13px;
+}
+
+#newgoods li,
+#newgoods td{
+	background:url(../images/dotted.gif) repeat-x 0 bottom;
+	display:block;
+	width:96%;
+	padding:5px 0 5px 4px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+#newgoods li a,
+#newgoods td a{
+	background:url(../images/arrs.gif) no-repeat 0 -40px;
+	padding:0 0 0 13px;
+}
+.GoodsList .item table{
+	margin:5px 0;
+}
+.GoodsList h6{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+/*=站点地图
+=============================================================================================*/
+.SiteMaps td a{
+	padding:5px;
+}
+.SiteMaps h3 a{
+	background:url(arrs.gif) no-repeat 0 -82px;
+	padding:0 0 0 13px;
+}
+/*=商品购买区
+=============================================================================================*/
+.ShopCartWrap{
+	margin:10px;
+}
+/*=分类
+=============================================================================================*/
+.s-cat-depth-1 em{
+	display:block;
+	width:100%;
+}
+.s-cat-depth-1{
+	background:#D5EBFD;
+	border-top:1px solid #E1E1E1;
+}
+.s-cat-depth-1 a{
+	background:url(../images/arrs.gif) no-repeat 12px -82px;
+	padding:0 0 0 25px;
+	font-weight:bold;
+}
+.s-cat-depth-2{
+	background:#F7FCFF;
+}
+.s-cat-depth-2 a{
+	font-weight:normal;
+	background:url(../images/arrs.gif) no-repeat 14px -40px;
+	padding:0 0 0 25px;
+}
+.s-cat-depth-3{
+	border:none;
+	background:#F7FCFF;
+	padding:2px 0 2px 15px;
+}
+.s-cat-depth-3 a{
+	color:#00318A;
+	font-weight:normal;
+	background:none;
+	padding:0;
+}
+
+.e-cat-depth-1 p{
+	margin:0;
+	padding:2px 0 2px 10px;
+	background:#D5EBFD;
+	border-bottom:1px solid #E1E1E1;
+}
+.e-cat-depth-2 p{
+	background:#F7FCFF;
+	padding:2px 0 2px 15px;
+}
+.e-cat-depth-3{
+	padding:0 0 0 20px;
+}
+
+.e-cat-depth-1 .nosymbols,
+.e-cat-depth-1 .symbols{
+	display:block;
+	float:left;
+	width:10px;
+}
+.e-cat-depth-1 .symbols{
+	background:url(../images/arrs.gif) no-repeat 0 -217px;
+	text-indent:-9999px;
+}
+.e-cat-depth-1 .show{
+	background-position: 0 -237px;
+}
+.e-cat-depth-1 span{
+	cursor:pointer;
+	margin:0 2px;
+}
+.e-cat-depth-1 a{
+	color:#000;
+	font-weight:bold;
+}
+.e-cat-depth-2 a{
+	font-weight:normal;
+	color:#000;
+}
+.e-cat-depth-3 a{
+	color:#5F6F7F;
+}

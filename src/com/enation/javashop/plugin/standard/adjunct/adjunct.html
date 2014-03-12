@@ -1,0 +1,109 @@
+<div id="adjunct_tab" tabid="tab_5"  class="form-table tab-panel" style="display: none;">
+	<table>
+		<tr>
+			<td class="label" style="text-align:left"><input type="button" value="添加配件" id="adjunctAddDialog" /></td>
+		</tr>
+	</table>
+	<div id="adjunct_content">
+	<#if listGoodsAdjunct?exists>
+	<#list listGoodsAdjunct as adjunct>
+		<#include "adjunct_Panel.html">
+	</#list>
+	</#if>
+	</div>
+<#include "adjunct_Add.html">
+
+<script>
+var Adjunct={
+		init:function(){
+			
+			$.getScript(basePath+"js/Selector.js");
+			this.bindEvent();
+			this.bindDelEvent();
+			var self= this;
+			$(".adjunctSubmitBtn").click(function(){
+				var adj_temp_table = $("#adj_temp>table").clone();
+				adj_temp_table.find("input").attr("disabled", false);
+				adj_temp_table.find("input[name=adjunct.adjunct_name]").val($("#adjunct_name").val());
+				adj_temp_table.appendTo($("#adjunct_content"));
+				
+				Eop.Dialog.close("adjunct_input");
+				self.bindEvent();
+				self.bindDelEvent();
+			});
+	 
+		}
+		,
+		bindDelEvent:function(){
+			$(".adj .delete").unbind("click");
+			$(".adj .delete").bind("click",function(){
+				$(this).parent().parent().parent().parent().parent().remove();
+			});
+			$(".adjunctitem_body .delete").unbind("click");
+			$(".adjunctitem_body .delete").bind("click",function(){
+				$(this).parent().parent().parent().remove();
+			});
+			
+		},
+		bindEvent:function(){ 
+			var that = this;
+
+			function disProList(plist){
+				that.appendProduct(plist);
+			}
+			
+			//打开货品选择对话框
+			$(".adj_item_addbtn").unbind("click");
+			$(".adj_item_addbtn").click(function(){
+				that.table =$(this).parent().parent().parent().parent();
+				ProductSelector.open('pro_selector',disProList);
+			});
+		},
+		appendProduct:function(productList){
+			
+			for(i in productList){
+				var pro= productList[i];
+				if(!pro.specs || pro.specs=='null') pro.specs='';
+				var html = "<tr class='adj_item_" + pro.product_id + "'><td>";
+				html+="<a href='javascript:;'  ><img class=\"delete\" src=\"../shop/admin/images/transparent.gif\" > </a></td>";
+				html+="<td>"+pro.name+"<input type='hidden' name='productid_' value='"+pro.product_id+"' /></td>";
+				html+="<td>"+pro.specs;
+				html+="</td></tr>";
+				$(html).appendTo(this.table.find("tbody"));
+			}
+			this.bindDelEvent();
+		} 
+};
+
+$(function(){
+	Eop.Dialog.init({id:"adjunct_input",modal:false,title:"添加配件组", height:"100px",width:"600px"});
+	$("#adjunctAddDialog").click(function(){
+		Eop.Dialog.open("adjunct_input");
+	});
+
+	Eop.Dialog.init({id:"pro_selector",modal:false,title:"添加配件商品", width:"650px",height:"320px"});
+	
+	
+	 
+	$("#adj_temp input").attr("disabled",true);
+	Adjunct.init();
+	$("form").submit(function(){
+		$("#adjunct_content .adjunct_grid").each(function(i){
+			if($(this).find("input[name=productid_]").size()<=0){
+				alert("请至少添加一个配件商品");
+				$("form").attr("validate", false);
+			 };
+			 $(this).find("input[name=productid_]").attr("name","productid_"+i);
+		});
+		return true;
+	});
+});
+</script>
+<div id="adj_temp" style="display: none">
+<#include "adjunct_Panel.html">
+</div>
+
+<div id="pro_selector">
+</div>
+	
+</div>

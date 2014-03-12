@@ -1,0 +1,111 @@
+#newLayout{background: #D9E7FF ;}
+/*布局高亮*/
+.state-highlight {
+	background: #D9E7FF ;
+}
+ 
+.state-hover {
+	border: 1px solid #fcefa1;
+	background: #ffe45c url(images/fbf9ee_40x100_textures_02_glass_55.png)
+		50% 50% repeat-x;
+	color: #363636;
+}
+.layout{height:50px;}
+/*挂件基本样式*/
+.widget{overflow:hidden;}
+/*.widget .content{height:auto}*/
+/*拖动挂件时的虚框的样式*/
+.widget.ghost{border: 1px dashed red;background-color:transparent ;}
+
+/*鼠标悬停在挂件上时的样式*/
+.widget .wrapHelper{
+border: 1px dashed #4B8CDC;
+position: absolute;top:0px;left:0px;
+background-color:transparent ;
+z-index:0;
+overflow:hidden;
+}
+ 
+
+/*挂件拖拽时的其自身的样式*/
+.widget.draging{opacity:0.5;filter:Alpha(Opacity=50);}
+/*挂件handle的样式*/
+.widget .handle { 
+	cursor: move;background:url(images/gloss_bg.png) repeat scroll 50% 50%;height: 25px;line-height:25px;
+	overflow: hidden;width:100%;position:absolute;z-index:999}
+.widget .handle span { }
+
+/*lina handle设置、删除按钮样式*/
+.widget .handle span a.edit{text-indent: -5000px;width:21px;height:20px;background:url(images/widget_handle.png) no-repeat scroll -48px -2px;overflow:hidden;white-space:nowrap;display:inline;cursor:pointer;margin-top:2px;position: absolute;right:28px;}
+.widget .handle span a.delete{text-indent: -5000px;width:21px;height:20px;background:url(images/widget_handle.png) no-repeat scroll -2px -2px;overflow:hidden;white-space:nowrap;display:inline;cursor:pointer;margin-top:2px;position: absolute;right:5px;}
+.widget .handle span a.edit:hover{text-indent: -5000px;width:21px;height:20px;background:url(images/widget_handle.png) no-repeat scroll -71px -2px;overflow:hidden;white-space:nowrap;display:inline;cursor:pointer;margin-top:2px;position: absolute;right:28px;}
+.widget .handle span a.delete:hover{text-indent: -5000px;width:21px;height:20px;background:url(images/widget_handle.png) no-repeat scroll -25px -2px;overflow:hidden;white-space:nowrap;display:inline;cursor:pointer;margin-top:2px;position: absolute;right:5px;}
+
+
+/*挂件拖拽时的helper的样式*/
+.widget_helper{ width:100px; height:50px; min-height:50px; z-index:999999;border: 1px solid #79A7E2;
+background: #EFF5FF;
+}
+
+
+
+/*挂件束helper*/
+.bundleHelper{
+	width:100px; height:50px; min-height:50px;line-height:50px;text-align:center; border: 1px solid #79A7E2;
+background: #EFF5FF;position:absolute;
+}
+
+.setupborder {
+float:none;
+font-size:12px;
+}
+
+.previewout {
+	border:1px solid #000;
+	float:right;
+	padding:5px;
+}
+
+.previewborder {
+	padding:0;
+	position:relative;
+	width:220px;
+}
+
+.selcolor {
+-x-system-font:none;
+border:1px solid #CCCCCC;
+cursor:pointer;
+font-family:Verdana,Arial,Helvetica,sans-serif;
+font-size:12px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+height:16px;
+line-height:normal;
+}
+
+div.widget_styles{
+  width:300px;height:160px;overflow:auto;
+}
+div.widget_styles ul li{
+  width:99%;
+  line-height:20px;
+  border:1px solid #666666;
+  margin-top:2px;
+  cursor:pointer;
+}
+div.widget_styles ul li.selected{
+	width:99%;
+    line-height:20px;
+    border:1px solid #666666;
+    margin-top:2px;
+    background-color:#5487de;
+    cursor:pointer;
+}
+.widget_view_mode{
+border:3px solid #dddddd;
+padding:3px;margin:0px;text-align:left;font-size:12px;
+}

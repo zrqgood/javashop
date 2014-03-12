@@ -1,0 +1,15 @@
+<div class="newstitle"> 
+	<h2>${catname}</h2>
+</div>
+<div class="cont">
+	<ul class="newslist">
+		<#list dataList as data>
+			<li>
+				<span>${data.add_time?string('yyyy-MM-dd')}</span>
+				<a href="article-${data.cat_id}-${data.id}.html" >${data.title!''}</a>
+			</li>
+		</#list>
+	</ul>
+	<div class="page">${pager}</div>
+	<div class="clear"></div>
+</div>

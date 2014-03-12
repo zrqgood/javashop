@@ -1,0 +1,227 @@
+@import url("border.css");
+@import url("widget.css");
+
+
+body {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #666666;
+	line-height: 20px;
+	margin: 0;
+	background:#fff;
+}
+ul.list {
+margin:0;
+}
+ul.list li {
+padding-top:4px;
+}
+/*=布局 
+=============================================================================================*/
+#AllWrap{
+	width:1000px; 
+	margin:0 auto;
+	overflow:hidden;
+}
+#LeftColumn{
+	width:180px;
+	float:left;
+}
+#Main{
+	float:left;
+	width:814px;
+	text-align:left;
+	overflow:hidden;
+	margin-left:5px;
+}
+.MainLeftBox{
+	float:left;
+	width:629px;
+	margin-right:5px;
+	clear:both;
+}
+.MainRightBox{
+	float:left;
+	width:180px;
+	overflow:hidden;
+}
+.MainRightBox{
+	
+}
+/*=头部和菜单
+=============================================================================================*/
+#Top{
+	border-top:1px solid #CCCCCC;
+}
+#TopMenu{
+	float:right;
+	padding:10px 10px 0 0;
+}
+
+#Logo{
+	float:left;
+	margin:15px 0 0 10px;
+}
+#Menu{
+	color:#fff;
+	background:#3260ba;
+	padding:2px;
+	clear:both;
+	text-align:center;
+}
+#Menu li{
+	display:inline;
+}
+#Menu a{
+	color:#fff;
+	font-weight:bold;
+	letter-spacing:1px;
+	margin:0 15px;
+}
+
+/*=搜索栏
+=============================================================================================*/
+#Search{
+	background:#fef8ec;
+	border-top:1px solid #dcdcdc;
+	height:20px;
+	padding:5px 0;
+	margin-bottom:5px;
+}
+#Search .SearchBar table{
+	margin:0 auto;
+}
+#Search .SearchBar table td{
+	padding:0 5px;
+}
+#Search .btn_search,
+#Search .btn_advsearch{
+	border:none;
+	background:url(search_btns.gif) no-repeat;
+	height:20px;
+	cursor:pointer;
+	color:#8d723c;
+}
+#Search .btn_search{
+	width:63px;
+	padding:0 0 0 15px;
+	margin:0 2px;
+}
+#Search .btn_advsearch{
+	background-position:0 -20px;
+	width:74px;
+	text-align:center;
+	display:block;
+}
+#Search .btn_advsearch:hover{
+	text-decoration:none;
+	color:#8d723c;
+}
+/*=底部
+TPL_BOTTOM
+=============================================================================================*/
+div.AllWrap {
+margin:0 auto;
+width:950px;
+}
+#widget_footer1 .TreeList {
+float:left;
+width:20%;
+}
+#widget_footer2 .TreeList{
+margin-left:250px;
+}
+#widget_footer2 .TreeList .cat1{
+	font-weight:bold;
+    color:#656565;
+    padding:3px 10px 0;
+	float:left;
+}
+#FootMenu{
+	margin:20px 0 0 0;
+	border-collapse:collapse;
+	border-top:3px solid #FF9900;
+	border-bottom:2px solid #999999;
+}
+#FootMenu td{
+	border:1px solid #c9c9c9;
+}
+#Foot{
+	clear:both;
+	margin-top:75px;
+}
+#Foot .bottominfo {
+	border-bottom:2px solid #999999;
+	text-align:center;
+	background-color:#C9C9C9;
+}
+#Foot .bottominfo th{
+	background-color:#333333;
+	border:1px solid #666666;
+	color:#FFFFFF;
+	padding:2px 0;
+}
+#Foot .bottominfo td{
+	background:#FFFFFF;
+	padding:10px;
+}
+#Foot .bottominfo li{
+	line-height:20px;
+}
+#Foot .bottom{
+	text-align:center;
+}
+
+
+/*=特定挂件css
+=============================================================================================*/
+#hotgoods .GoodsList h6{
+	font-weight:normal;
+	background:url(arrs.gif) no-repeat 0 -40px;
+	margin-left:5px;
+	padding:0 0 0 5px;
+	text-align:left;
+}
+#hotgoods .GoodsList ul{
+	text-align:right;
+	padding-right:10px;
+	color:#FF9900;
+}
+#hotgoods .price1{
+	color:#F90;
+}
+#promotenews {
+	 width:470px; 
+	 height:23px;
+	 overflow:hidden;
+}
+#promotenews a{
+	color:#f7620e;
+	background:url(arrow8.gif) no-repeat 0 0;
+	letter-spacing:1px;
+	padding:0 0 0 15px;
+	margin:0 30px;
+	width:200px;
+	line-height:23px;
+}
+#newgoods .GoodsListWrap{
+	margin-top:5px;
+}
+#newgoods .GoodsListWrap .item{
+	padding:10px 0;
+	border-right:1px dotted #ccc;
+	border-bottom:3px solid #eee;
+}
+#specialgoods .GoodsListWrap{
+	padding:3px 5px;
+}
+#specialgoods h6 a{
+	font-weight:normal;
+	display:block;
+	width:135px;
+	background:url(arrs.gif) no-repeat 0 -40px;
+	padding-left:12px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}

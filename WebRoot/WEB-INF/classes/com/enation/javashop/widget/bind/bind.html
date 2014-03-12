@@ -1,0 +1,67 @@
+<script type="text/javascript" src="js/jquery-form-2.33.js"></script>
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+
+<div class="ItemsWarp clearfix">
+<div class="GoodsInfoWrap PackageGoodsWrap">
+<#list bindList as bind>
+<div class="items clearfix">
+<h3>${bind.name!''}</h3>
+<div class="span-6">
+<div class="boxBlue">
+<div class="division">
+<ul>
+	<li>
+	<div class="span-2">原价：</div>
+	<strong class="mktprice1">${bind.mktprice?string.currency}</strong></li>
+	<li>
+	<div class="span-2">捆绑价：</div>
+	<strong class="price1">${bind.price?string.currency}</strong></li>
+	<li class="save">
+	<div class="span-2"></div>
+	节省：<strong>${(bind.mktprice-bind.price)?string.currency}</strong></li>
+	<li class="textcenter"><a
+		href="cart.html?action=add&productid=${bind.goods_id}&itemtype=1"
+		class="actbtn btn-buy">购买</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="push-6">
+<h4>此捆绑促销包括：</h4>
+<ul class="list">
+	<#list bind.productList as product>
+	<li><a target="_blank" href="goods-${product.pgoods_id}.html">${product.name}</a><br>
+	数量:<strong class="fontcolorBlue">${product.pkgnum}</strong> 单价:<strong
+		class="fontcolorBlue">${product.price?string.currency}</strong></li>
+	</#list>
+</ul>
+</div>
+</div>
+</#list>
+<div id="pager" ></div>
+
+<script>
+
+
+var Pager = {
+	init:function(){
+		var self = this;
+		var PC = ${pageCount};
+		if(PC!=0){
+			$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		location.href="package.html?page="+pageclickednumber;
+	}
+}
+
+$(function(){
+	Pager.init();
+});
+</script>
+</div>
+</div>

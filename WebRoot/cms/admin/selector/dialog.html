@@ -1,0 +1,32 @@
+<div class="grid">
+	 
+		<div class="toolbar">
+			<ul>
+				<li>栏目:
+					<select name="catid" id="catid">
+		 				<#assign children=catList />
+						<#assign level=1 />
+						<#include '../article/select_children.html' />
+			       	</select>
+				</li>
+				<li><input type="button"  id="searchBtn" value="搜索"/></li>
+			</ul>
+			<div style="clear:both"></div>
+		</div>
+	<div id="listcontent">
+
+	</div>
+	
+	<div style="width:100%;text-align:center"><input type="button" id="dataSelBtn" value="确定" /></div>
+	<div style="clear:both;padding-top:5px;"></div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("#searchBtn").click(function(){
+		var catid  = $("#catid").val();
+		$("#listcontent").load("/cms/admin/dataSelector!list.do?ajax=yes&catid="+catid);
+	});
+
+ 
+});
+</script>

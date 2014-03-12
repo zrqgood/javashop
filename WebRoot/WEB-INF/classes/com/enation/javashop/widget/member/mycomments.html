@@ -1,0 +1,37 @@
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+
+<h1 class="title">我的评论与咨询</h1>
+共有<em id="comment_count">${totalCount}</em>条评论与咨询
+<div class="FormWrap">
+<div id="goods-comment">
+	<div class="division boxBrown">
+			<#include "Comments_Panel.html"> 
+	</div>
+</div>
+</div>
+<div id="pager" ></div>
+
+<script>
+var Pager = {
+	init:function(){
+		var self = this;
+		var PC = 0;
+		var em  =$("#comment_count");
+		PC = (parseInt(em.text()) % ${pageSize} == 0) ? (parseInt(em.text()) / ${pageSize}): (parseInt(em.text()) / ${pageSize} + 1);
+		if(PC!=0){
+			$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+			//$("#pager").pager({ pagerid:'pager',pagenumber: 1, pagecount: 2, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		location.href="member_comments.html?page="+pageclickednumber;
+	}
+}
+
+$(function(){
+	Pager.init();
+});
+</script>

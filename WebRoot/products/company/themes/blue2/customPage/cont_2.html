@@ -1,0 +1,13 @@
+<div class="path">
+	<span>您现在的位置:<a href="index.html">首页</a>&gt;<a href="about.html">${data.title!''}</a></span>
+</div>
+<div class="cont">
+	<div class="con" id="con">
+		<#if data.img?exists>
+			<#if data.img!=''>
+				<img src="${data.img!''}" / style="width:191px;height:160px;padding:8px 10px 8px 0;float:left;">
+			</#if>
+		</#if>
+		${data.content!''}
+	</div>
+</div>

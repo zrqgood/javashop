@@ -1,0 +1,24 @@
+<tr>
+	
+	<td>
+	<#if param?exists >
+	<input type="text" name="param_name" value="${param.name}" />
+	<#else>
+	<input type="text" name="param_name"  />
+	</#if>
+	
+	</td>
+	<td>
+	<#if param?exists >
+	<input type="text" name="param_value" value="${param.value}" />
+	<#else>
+	<input type="text" name="param_value"  />
+	</#if>
+	</td>
+	
+	<td>
+		 <a href="javascript:;" > 
+      	 <img class="delete" src="images/transparent.gif" > 
+        </a>
+	</td>
+</tr>

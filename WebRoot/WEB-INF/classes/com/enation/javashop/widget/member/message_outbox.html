@@ -1,0 +1,80 @@
+﻿<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">发件箱</h1>
+<form method="post" action="member_message.html?action=outdel">
+<table width="100%" cellspacing="0" cellpadding="0"
+	class="liststyle_option">
+	<col class="span-0 textcenter">
+	<col class=" textleft">
+	<tbody>
+		<tr>
+			<th class="textcenter"><input type="checkbox" title="全选"
+				id="chkall" name="chkall" onclick="checkAll(this.form,this)"></th>
+			<td><input type="submit" name="pmsend /" value="删除"></td>
+			<td class="textright">共有短消息:<em id="pmtotalnum">${totalCount}</em></td>
+		</tr>
+	</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" class="liststyle"
+	summary="发件箱">
+	<col class="span-0 ColColorGraydark">
+	<col class=" textleft">
+	<col class="span-2 ColColorOrange">
+	<col class="span-3">
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>标题</th>
+			<th>发送到</th>
+			<th>时间</th>
+		</tr>
+	</thead>
+	<tbody  class="division">
+	    <#include "Outbox_Panel.html">
+	</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0"
+	class="liststyle_option">
+	<col class="span-0 textcenter">
+	<col class=" textleft">
+	<tbody>
+		<tr>
+			<th class="textcenter"><input type="checkbox" title="全选"
+				id="chkall" name="chkall" onclick="checkAll(this.form,this)"></th>
+			<td><input type="submit" name="pmsend /" value="删除"></td>
+			<td class="textright">共有短消息:<em id="pmtotalnum">${totalCount}</em></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<div id="pager" ></div>
+<script>
+var Pager = {
+		init:function(){
+			var self = this;
+			var PC = ${pageCount};
+			if(PC!=0){
+				$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+			}
+		},
+
+		PageClick:function(pageclickednumber){
+			var self = this;
+			location.href="member_message.html?action=outbox&page="+pageclickednumber;
+		}
+	}
+$(function(){
+	$(".viewmsgoff").toggle(
+			function(){
+				$(".view_msg_pro").hide();
+				$("#view_msg_pro_"+$(this).attr("msg_id")).show();
+				},
+			function(){
+				$(".view_msg_pro").hide();
+				}
+	);
+	Pager.init();
+});
+</script>
+</div>

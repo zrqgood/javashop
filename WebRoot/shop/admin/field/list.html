@@ -1,0 +1,25 @@
+<table  >
+	<tr>
+	<th width="50">id</th>
+	<th  width="100">提示文字</th> 
+	<th>字段名</th>
+	<th  width="100">排序</th> 
+	<th  width="100">修改</th> 
+	<th  width="100">删除</th> 
+	</tr>
+<#if fieldList?exists >	
+<#list fieldList as field>
+  <tr>
+  		<td>${field.field_id } </td>
+        <td>${field.china_name} </td>
+        <td>${field.english_name} </td> 
+         <td>
+         <input type="hidden" name="ids" value="${field.field_id}" />
+         <input type="text" name="sorts" style="width:50px;" value="${field.field_sort}" />
+          </td> 
+        <td> <a  href="javascript:;" fieldid="${field.field_id }"><img class="modify mod" src="images/transparent.gif" ></a> </td> 
+ 		<td> <a  href="javascript:;" fieldid="${field.field_id }"><img class="delete del" src="images/transparent.gif" ></a> </td>         
+  </tr>  
+</#list>
+</#if> 
+</table>

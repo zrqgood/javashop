@@ -1,0 +1,6 @@
+<#list tabList as tab>
+ <div id="tpc_${tab.id}" <#if !tab.selected>style="display:none"</#if> class="tabContent" >
+ 	<#assign goodsList = tab.goodsList>
+	<#include 'GoodsItem.html' />
+</div>
+</#list>

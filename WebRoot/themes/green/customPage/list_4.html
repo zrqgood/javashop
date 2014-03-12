@@ -1,0 +1,17 @@
+<!--当前位置-->
+<div class="nav">${navbar}</div>
+<!--产品列表-->
+<div class="productlist">
+	<ul>
+	<#list dataList as data>
+		<li>
+			<div class="photo"><a href="article2-${data.cat_id}-${data.id}.html"><img src="${data.img!''}"/></a></div>
+			<div class="name"><a href="article2-${data.cat_id}-${data.id}.html">${data.title!''}</a></div>
+		</li>
+	</#list>
+	</ul>
+</div>
+<!--分页-->
+<div class="page">
+	${pager}
+</div>

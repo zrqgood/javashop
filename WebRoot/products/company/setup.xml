@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+    <version>2.2</version>
+    <clean>
+        <table>es_data_cat</table>
+        <table>es_data_model</table>
+        <table>es_data_field</table>
+    </clean>
+    <recreate>
+    	<table>es_car_article</table>
+    </recreate>
+</setup>

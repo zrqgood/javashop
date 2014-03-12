@@ -1,0 +1,30 @@
+<div class="MemberCenter">
+<div class="siteparttitle">
+<div class="title"></div>
+
+<#if member?exists >
+<div class="main">
+<div class="content">
+<div class="user">欢迎您：<br>
+<strong>${member.uname!''}</strong></div>
+<div class="info">您目前是<strong>[${memberLv!''}]，</strong>您的积分为:<strong
+	class="point">${member.point!''}</strong>，您上次登录时间为:<strong
+	class="point"><@dateFormat date="${member.lastlogin*1000}" pattern="yyyy-MM-dd"/></strong></div>
+</div>
+</div>
+</#if>
+</div>
+
+<div class="MemberSidebar">
+${menuHtml!''}
+</div>
+<div class="MemberMain">
+<div style="">${main}</div>
+</div>
+<div class="clear"></div>
+</div>
+<script>
+$(function(){
+	$("a[href=${menuUrl}]").parent().addClass("current");
+});
+</script>

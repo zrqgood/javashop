@@ -1,0 +1,19 @@
+<!--当前位置-->
+<script language="javascript" type="text/javascript">
+	 function fontZoom(size){
+		 document.getElementById('con').style.fontSize=size+'px';
+		}
+</script>
+<div class="path">
+	<h1>${data.title!''}</h1>
+	<span>
+		您现在的位置：${navbar}</a>
+	</span>
+</div>
+<!---->
+<div class="content">
+	<div class="con" id="con">
+		${data.content!''}
+	</div>
+</div>
+<!---->		

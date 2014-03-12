@@ -1,0 +1,52 @@
+<style>.itemsWrap{*display:inline;float:left;overflow:hidden;}</style>
+
+<div class="GoodsListWrap">
+ 
+  <#if setting.showTitleImg=="off">
+    <div class="GoodsList">
+      <#include 'GoodsCat.html' />
+      <#include 'GoodsItem.html'/>
+    </div>
+  <#elseif setting.titleImgPosition=="top">
+    <#include 'TitleImg.html'/>
+    <div class="GoodsList">
+      <#include 'GoodsCat.html' />
+      <#include 'GoodsItem.html'/>
+    </div>
+  <#elseif setting.titleImgPosition=="center">
+    <#include 'GoodsCat.html' />
+    <#include 'TitleImg.html'/>
+    <div class="GoodsList">
+      <#include 'GoodsItem.html'/>
+    </div>
+  <#elseif setting.titleImgPosition=="bottom">
+    <div class="GoodsList">
+      <#include 'GoodsCat.html' />
+      <#include 'GoodsItem.html'/>
+    </div>
+    <#include 'TitleImg.html'/>
+  <#elseif setting.titleImgPosition=="left">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      <td width="${setting.titleImgWidth}"><#include 'TitleImg.html'/></td>
+      <td><div class="GoodsList">
+        <#include 'GoodsCat.html' />
+        <#include 'GoodsItem.html'/>
+      </div>
+      </td>
+      </tr>
+    </table>
+  <#elseif setting.titleImgPosition=="right">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      <td><div class="GoodsList">
+        <#include 'GoodsCat.html' />
+        <#include 'GoodsItem.html'/>
+      </div>
+      </td>
+      <td width="${setting.titleImgWidth}"><#include 'TitleImg.html'/></td>
+      </tr>
+    </table>
+  </#if>
+
+</div>

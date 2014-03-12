@@ -1,0 +1,8 @@
+* {
+	font-size: 12px
+}
+
+/*.widget{height:150px;_height:150px;background-color:#FFF;float:left;width:99%;margin-top: 5px;overflow:hidden;}*/
+.widget{float:left;background-color:red}
+.layout{background-color:green;}
+.itemsWrap{font-size:12px}

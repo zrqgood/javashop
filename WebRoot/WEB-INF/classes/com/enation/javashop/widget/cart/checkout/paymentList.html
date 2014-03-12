@@ -1,0 +1,17 @@
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle data">
+	<colgroup class="span-5 ColColorGray"></colgroup>
+	<colgroup class="span-auto"></colgroup>
+	<tbody>
+
+<#list paymentList as payment  >
+		<tr>
+			<th style="text-align: left;">
+			<label>
+			<input type="radio"  value="${payment.id}"  name="paymentId"  style="cursor: pointer;">${payment.name}
+			</label></th>
+			<td>${payment.biref!''}</td>
+		</tr>
+</#list>
+	
+	</tbody>
+</table>

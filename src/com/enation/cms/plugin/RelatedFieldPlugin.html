@@ -1,0 +1,96 @@
+<textarea name="${fieldname}" id="relatedArea" style="width:250px;height:80px">${value!''}</textarea> <a href="javascript:;" id="selBtn">从已有文章中选择</a>
+<div id="articleDlg"></div>
+<script>
+var Related={
+	init:function(){
+		var self = this;
+		Eop.Dialog.init({id:'articleDlg', width:600,height:300,title:'选择文章'});
+		$("#selBtn").click(function(){
+			$("#articleDlg").load("data!dlgList.do?ajax=yes&catid=1",function(){
+				self.bindDlgEvent();
+				
+			});
+			Eop.Dialog.open('articleDlg');
+		});
+	},
+	bindDlgEvent:function(){
+		
+		var self = this;
+		self.createCatSelect();
+		$("#okBtn").click(function(){
+			self.selid();
+		});
+		$("#filterBtn").click(function(){
+			
+			$.ajax({
+				url:"data!dlgList.do?ajax=yes&catid="+$("#catid").val(),
+				type:'get',
+				dataType:'html',
+				success:function(html){
+					$("#gridbox").empty().append( $(html).find("#gridbox").html() );
+					self.bindGridEvent();
+				},
+				error:function(){
+					alert("加载列表失败");
+				}
+			}); 			
+			
+		});
+		this.bindGridEvent();
+		
+		
+	},
+	createCatSelect:function(){
+		$.ajax({
+			url:'cat!showCatTree.do?cat_id=0&ajax=yes',
+			type:'post',
+			dataType:'html',
+			success:function(selHtml){
+				$("#catbox").empty().append(selHtml);
+			},
+			error:function(){
+				alert("加载类别树失败");
+			}
+		}); 
+	}
+	,
+	
+	bindGridEvent:function(){
+		var self  = this;
+		function loadUrl(url){
+			
+			$.ajax({
+				url:url,
+				type:'get',
+				dataType:'html',
+				success:function(html){
+					$("#gridbox").empty().append( $(html).find("#gridbox").html() );
+					self.bindGridEvent();
+				},
+				error:function(){
+					alert("加载列表失败");
+				}
+			}); 
+	 
+		}
+		EopPager.setLoadUrlFun(loadUrl);
+	}
+	,
+	selid:function(){
+		var value =$("#relatedArea").val();
+		$("[name='relatedid']").each(function(i){
+			if(this.checked){
+			 if(value!="")value= value+",";
+			 value =value+this.value;
+			}
+		});
+		$("#relatedArea").val(value);
+		alert("成功加入关联，您可以继续选择!");
+	}
+	
+};
+
+$(function(){
+	Related.init();
+});
+</script>

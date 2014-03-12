@@ -1,0 +1,33 @@
+<#include 'common/header.html' />
+<div class="Main">
+<div class="left">
+<DIV id=allsort class=m>${widget_2}</div>
+</div>
+<div class="right">
+${widget_main}
+</div>
+</div>
+<script type="text/javascript">
+$(function(){
+
+	$("#goods-viewer>table td").eq(1).attr("width", "50%");
+
+	var url = unescape(window.location.href);
+	var start_pos= url.lastIndexOf('/');
+	url =url.substring(start_pos,url.length);
+	if(url=='/search-cat{1}.html'){ //家用电器
+		$("#widget_menu li").removeClass("first").eq(1).addClass("first");
+	}
+	if(url=='/search-cat{14}.html'){ //手机数码
+		$("#widget_menu li").removeClass("first").eq(2).addClass("first");
+	}
+	if(url=='/search-cat{19}.html'){ //电脑产品
+		$("#widget_menu li").removeClass("first").eq(3).addClass("first");
+	}
+	if(url=='/search-cat{34}.html'){ //日用百货
+		$("#widget_menu li").removeClass("first").eq(4).addClass("first");
+	}
+})
+</script>
+
+<#include 'common/footer.html' />

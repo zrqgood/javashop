@@ -1,0 +1,10 @@
+<div class="TreeList">
+<#list articleCatList as cat>
+<div class="cat1">${cat.name}</div>
+	<#list cat.articleList as article>
+		<div class="cat2"><a href="<#if cat_id == '1'>help-<#else>article-</#if>${article.id}.html" 
+		style="display:block;width:130px;white-space:nowrap;overflow:hidden;float:left;-o-text-overflow: ellipsis;text-overflow:ellipsis;">${article.title}</a></div>
+		<div class="clear"></div>
+	</#list>
+</#list>
+</div>

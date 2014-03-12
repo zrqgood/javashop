@@ -1,0 +1,50 @@
+<#include 'common/header.html' />
+<div class="main">
+	<div class="area">
+		<!--商品分类-->
+		<div class="category">
+			${widget_category}
+		</div>
+		<!--焦点广告及最新公告-->
+		<div class="w840">
+			<div class="banner">
+				${widget_jqueryAd}
+			</div>
+			<div class="news">
+				<div class="title">
+					<h3>网店公告</h3>
+				</div>
+				<div class="cont">
+					<h4>最新公告</h4>
+					${widget_news1}
+					<h4>促销信息</h4>
+					${widget_news2}
+				</div>
+			</div>
+			<div class="ad">
+				${widget_ad1}
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--新品热卖-->
+		${widget_hot}
+	</div>
+	<!--文胸系列-->
+	<div class="bra">
+		<div class="title">
+			<h1>文胸系统</h1>
+		</div>
+		<div class="ad">
+			<div class="w650">
+				${widget_ad2}
+			</div>
+			<div class="w286">
+				${widget_fadeplay}
+			</div>
+		</div>
+		${widget_bra}
+	</div>
+	<!--精品推荐-->
+	${widget_recommend}
+</div>
+<#include 'common/footer.html' />

@@ -1,0 +1,53 @@
+<div>
+	<h2>您好，${member.uname!''} 会员，欢迎进入用户中心</h2>
+	<hr />
+	<div id="infotip" class="note clearfix">
+		<div class="span-1 pic"></div>
+		<div class="span-10">
+			<h4>温馨提示：</h4>
+			您有<strong class="fontcolorRed">${wel.oNum}</strong>笔订单需要付款，现在去
+			<a href="member_order.html">查阅</a>
+			您有<strong class="fontcolorRed">${wel.mNum}</strong>条站内未读短消息,现在去
+			<a href="member_message.html?action=inbox" style="color:red">查看</a>
+		</div>
+	</div>
+	<div class="FormWrap">
+		<h3>用户信息</h3>
+		<div class="division clearfix">
+			<ul class="list">
+				<li>
+					<div class="span-4">您的账户目前总积分：</div>
+					<strong class="font16px fontcolorOrange">${member.point}</strong>分&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="member_pointhistory.html" class="lnk">查看积分历史</a>
+				</li>
+				<li>
+					<div class="span-4">预存款余额：</div>
+					<strong class="font16px fontcolorOrange">${wel.aNum?string.currency}</strong>元
+				</li>
+				<li>
+					<div class="span-4">您的订单交易总数量：</div>
+					<strong class="font16px fontcolorOrange">${wel.totalOrder}</strong>个&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="member_order.html" class="lnk">进入订单列表</a>
+				</li>
+				<li>
+					<div class="span-4">您的优惠券：</div>
+					<strong class="font16px fontcolorOrange">${wel.couponNum}</strong>个，
+					<span class="fontcolorRed">(其中${wel.cNum} 个即将到期)</span>
+				</li>
+				<li>
+					<div class="span-4">已回复的评论与咨询：</div>
+					<strong class="font16px fontcolorOrange">${wel.commentRNum}</strong>条&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="member_comments.html" class="lnk">立即查看</a>
+				</li>
+			</ul>
+		</div>
+		<h3>促销活动</h3>
+		<div class="division">
+			<ul class="list">
+			<#list wel.pa as paname>
+				<li>${paname.name!''}</li>
+			</#list>
+			</ul>
+		</div>
+	</div>
+</div>

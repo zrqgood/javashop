@@ -1,0 +1,24 @@
+<#list children as menu> 
+<tr>
+    <td style="padding-left:${(level+1)*20}px;font-weight: bold;">${menu.title}</td>
+    <td>${menu.url!''}</td>
+    <td><#if menu.menutype==1>系统菜单<#else>应用菜单</#if></td>
+    <td>
+		 <input type="hidden" name="menu_ids" value="${menu.id }"/>
+	     <input type="text" name="menu_sorts" style="width:30px" value="${menu.sorder }"/>
+    </td> 
+    <td> ${menu.target!''} </td> 
+    <td><a href="javascript:;" parentid="${menu.id}" class="addBtn"><img src="images/transparent.gif" class="add"></a></td>
+    <td><a href="javascript:;" menuid="${menu.id}" class="editBtn"><img src="images/transparent.gif" class="modify"></a></td>
+    <td>
+    <a href="javascript:;" menuid="${menu.id}" class="delBtn"><img src="images/transparent.gif" class="delete" ></a>
+     
+    </td>
+</tr>
+	<#if menu.hasChildren>
+		<#assign level=level+1 />
+	  	<#assign children=menu.children /> 
+		<#include 'list_children.html' />
+  		<#assign level=level-1/>
+	</#if>
+</#list>

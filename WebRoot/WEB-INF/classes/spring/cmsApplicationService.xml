@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="true">
+	
+	<bean id="cms" class="com.enation.cms.CmsApp"  />
+	<bean id="dataModelManager" class="com.enation.cms.core.service.impl.DataModelManager"  parent="baseSupport" />
+	<bean id="dataFieldManager" class="com.enation.cms.core.service.impl.DataFieldManager"  parent="baseSupport" />
+	<bean id="dataCatManagerImpl" class="com.enation.cms.core.service.impl.DataCatManager"  parent="baseSupport" />
+	<bean id="dataCatManager" class="com.enation.cms.core.service.impl.cache.DataCatCacheProxy"  >
+	<constructor-arg>
+		<ref bean="dataCatManagerImpl"/>
+	</constructor-arg>
+	</bean>
+	<bean id="dataManager" class="com.enation.cms.core.service.impl.DataManager"  parent="baseSupport" />	
+	
+ 	
+</beans>

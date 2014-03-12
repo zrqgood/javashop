@@ -1,0 +1,35 @@
+<#include 'common/header.html' />
+
+		<!--中间内容-->
+		<div class="wrapper">
+			<!--左侧菜单-->
+			<div class="leftmenu">
+				<!--栏目导航-->
+				<div class="menu">
+					<h3>栏目导航</h3>
+					${widget_newscat}
+				</div>
+				<!--新闻搜索-->
+				<div class="search">
+					<h3>新闻搜索</h3>
+					${widget_search}
+				</div>
+				<!---->
+			</div>
+			<!--左侧菜单 结束-->
+			<!--右侧内容-->
+			<div class="rightcont">
+				<!--标题及位置-->
+				<div class="title">
+					<h1>成功案例</h1>
+					<div class="position">您现在的位置：<a href="#">首页</a>&gt;<a href="#">成功案例</a></div>
+				</div>
+				<!--内容-->
+					${widget_list}
+				<!---->
+			</div>
+			<!--右侧内容 结束-->
+			<div style="clear:both"></div>
+		</div>
+		<!--中间内容 结束-->
+<#include 'common/footer.html' />

@@ -1,0 +1,36 @@
+<span style="position: relative; z-index: 65535;" id="foobar">
+
+		<a class="cart-container" target="_blank" href="cart.html">
+		<span class="inlineblock CartIco">购物车</span>
+		[<span class="cart-number" id="Cart_widgets_441">${count}</span>]
+		<img border="none" style="width: 11px; height: 11px; background-image: url('${staticserver}/images/bundle.gif'); background-repeat: no-repeat; background-position: 0pt 0px;"
+		src="${staticserver}/images/transparent.gif">
+		</a>
+		
+
+		<div class="fmenu" style="display: none;">
+		</div>
+
+
+</span>
+<script>
+$(function(){
+	$("#foobar .cart-container").hover(function(){
+		$("#foobar .fmenu").show();
+		$("#foobar .fmenu").html('loading...');
+		$("#foobar .fmenu").load('widget?type=member_cart_bar&ajax=yes');
+	},
+	function(){
+		$("#foobar .fmenu").hide();
+	}
+	);	
+	
+ 
+	$("#foobar .fmenu").hover(function(){
+		$(this).show();
+	},function(){
+		$(this).hide();
+	});
+ 
+});
+</script>

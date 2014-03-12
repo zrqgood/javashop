@@ -1,0 +1,52 @@
+.slide UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.slide LI {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.slides {
+	POSITION: relative; /*WIDTH: 670px; HEIGHT: 414px;*/ OVERFLOW: hidden;
+}
+*html .slides{margin-left:-15px}
+*+html .slides{margin-left:-15px}
+/*.slide-pic {
+	WIDTH: 669px; HEIGHT: 414px; OVERFLOW: hidden;
+}*/
+/* lzy add
+.slide-pic IMG {
+	/*BORDER-BOTTOM: #e4e4e4 1px solid; BORDER-LEFT: #e4e4e4 1px solid; WIDTH: 669px; HEIGHT: 414px;*/ BORDER-TOP: #e4e4e4 1px solid; BORDER-RIGHT: #e4e4e4 1px solid
+}
+*/
+.slide-pic LI {
+	DISPLAY: none
+}
+.slide-pic LI.cur {
+	DISPLAY: block
+}
+.slide-li {
+	POSITION: absolute; BOTTOM: 6px; LEFT: 0px
+}
+.slide-li LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 30px; WIDTH: 133px; FLOAT: left; HEIGHT: 30px; MARGIN-RIGHT: 1px
+}
+.slide-li A {
+	WIDTH: 133px; DISPLAY: block; HEIGHT: 30px; COLOR: #ffffff; FONT-SIZE: 14px
+}
+.slide-li .cur A {
+	COLOR: #333; TEXT-DECORATION: none
+}
+.slide-li A:hover {
+	COLOR: #333; TEXT-DECORATION: none
+}
+.slide-li A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.op LI {
+	FILTER: alpha(opacity=60); BACKGROUND: #666; opacity: 0.6
+}
+.op LI.cur {
+	BACKGROUND: #fff
+}
+.slide-txt SPAN {
+	DISPLAY: none
+}

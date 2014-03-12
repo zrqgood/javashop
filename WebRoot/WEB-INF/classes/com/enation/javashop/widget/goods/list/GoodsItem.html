@@ -1,0 +1,48 @@
+<#list goodsList as goods>
+<div class="itemsWrap <#if goods.isFirst>first</#if> <#if goods.isLast>last</#if>" style="width:${setting.columnwidth}%">
+        <div class="item">
+          <#if setting.showGoodsImg=="off" >
+            <#include 'GoodsName.html' />
+            <#include 'GoodsDesc.html' />
+          <#elseif setting.showGoodsName=="off">
+            <#include 'GoodsImg.html' />
+          <#elseif setting.goodsImgPosition=="top">
+            <#include 'GoodsImg.html' />
+            <#include 'GoodsName.html' />
+            <#include 'GoodsDesc.html' />
+          <#elseif setting.goodsImgPosition=="center" >
+         	<#include 'GoodsName.html' />
+            <#include 'GoodsImg.html' />
+            <#include 'GoodsDesc.html' />
+          <#elseif setting.goodsImgPosition=="bottom" >
+         	<#include 'GoodsName.html' />
+            <#include 'GoodsDesc.html' />
+            <#include 'GoodsImg.html' />
+          <#elseif setting.goodsImgPosition=="left">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+              <td> <#include 'GoodsImg.html' /></td>
+              <td class="goodsDesc">
+                <#include 'GoodsName.html' />
+                <#include 'GoodsDesc.html' />
+              </td>
+              </tr>
+            </table>
+          <#elseif setting.goodsImgPosition=="right">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <td class="goodsDesc">
+                  <#include 'GoodsName.html' />
+                  <#include 'GoodsDesc.html' />
+                </td>
+                <td><#include 'GoodsImg.html' /></td>
+                </tr>
+            </table>
+         </#if>
+        </div>
+</div>
+<#if setting.columnnum!=1 &&(goods_index+1 % setting.columnnum == 0)>
+  <div class="clear"></div>
+</#if>
+</#list>
+ <div class="clear"></div>

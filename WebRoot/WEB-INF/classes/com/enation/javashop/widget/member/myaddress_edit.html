@@ -1,0 +1,125 @@
+<div>
+<h1 class="title">修改收货地址</h1>
+<form id="member_addr" extra="subMemAddr"
+	action="member_address.html?action=editsave" method="post"><input
+	type="hidden" value="3" name="addr_id">
+<div class="FormWrap">
+<div class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="0"
+	class="liststyle data">
+	<col class="span-4 ColColorGray">
+	<col class="span-auto">
+	<tbody>
+		<tr>
+			<th>默认收货地址：</th>
+			<td><label><input type="radio" vtype="radio"
+				class="_x_ipt radio" <#if address.def_addr == 0>checked</#if> value="0" name="address.def_addr">否</label> <label><input
+				type="radio" vtype="radio" class="_x_ipt radio" value="1"
+				<#if address.def_addr == 1>checked</#if> name="address.def_addr">是</label></td>
+		</tr>
+		<tr>
+			<th><em>*</em>姓名：</th>
+			<td><input type="hidden" name="address.addr_id" value="${address.addr_id}"/><input type="text" vtype="text" value="${address.name!''}" required="true"
+				name="address.name" class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th>电话：</th>
+			<td><input type="order_tel" vtype="order_tel" value="${address.tel!''}"
+				name="address.tel" class="inputstyle _x_ipt" autocomplete="off"><span
+				class="infotips">其中联系电话和联系手机必须填写一项</span></td>
+		</tr>
+		<tr>
+			<th>手机：</th>
+			<td><input type="text" vtype="text" value="${address.mobile!''}" name="address.mobile"
+				class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th><em>*</em>地区：</th>
+			<td>
+			<select name="address.province_id" id="address_province_id"></select>&nbsp;
+			<input type="hidden" name="address.province" id="address_province" value="${address.province!''}"/>
+			<select name="address.city_id" id="address_city_id"></select>&nbsp;
+			<input type="hidden" name="address.city" id="address_city" value="${address.city!''}"/>
+			<select name="address.region_id" id="address_region_id"></select>&nbsp;
+			<input type="hidden" name="address.region" id="address_region" value="${address.region!''}"/>
+			</td>
+		</tr>
+		<tr>
+			<th><em>*</em>地址：</th>
+			<td><textarea vtype="textarea" rows="3" cols="30" name="address.addr"
+				required="true" type="textarea" class="inputstyle _x_ipt">${address.addr!''}</textarea></td>
+		</tr>
+		<tr>
+			<th><em>*</em>邮编：</th>
+			<td><input value="${address.zip!''}" required="true" name="address.zip"
+				class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" value="保存" name="submit"
+				class="buttonstyle"><input type="button" value="返回"
+				onclick="location.href='member_address.html'"
+				class="buttonstyle"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</form>
+<script>
+$(function(){
+	$("#address_province_id").empty();
+	$("<option value='-1'>请选择...</option>").appendTo($("#address_province_id"));
+	<#list provinceList as province>
+		$("<option value='${(province.region_id)?c}' <#if address.province_id == province.region_id>selected</#if> >${province.local_name}</option>").appendTo($("#address_province_id"));
+	</#list>
+	$("<option value='-1'>请选择...</option>").appendTo($("#address_city_id"));
+	<#list cityList as city>
+		$("<option value='${(city.region_id)?c}' <#if address.city_id == city.region_id>selected</#if> >${city.local_name}</option>").appendTo($("#address_city_id"));
+	</#list>
+	$("<option value='-1'>请选择...</option>").appendTo($("#address_region_id"));
+	<#list regionList as region>
+		$("<option value='${(region.region_id)?c}' <#if address.region_id == region.region_id>selected</#if> >${region.local_name}</option>").appendTo($("#address_region_id"));
+	</#list>
+	$("#address_province_id").change(function(){
+		$("#address_province").val($("#address_province_id option:selected").text());
+		$("#address_city_id").empty();
+		$("#address_city_id").hide();
+		$("#address_region_id").empty();
+		$("#address_region_id").hide();
+		$.ajax({
+			method:"get",
+			url:"shop/area!list_city.do?province_id=" + $("#address_province_id").attr("value"),
+			dataType:"html",
+			success:function(result){
+				$("#address_city_id").show();
+				$(result).appendTo($("#address_city_id"));
+			},
+			error:function(){
+				alert("异步失败");
+			}
+		});
+	});
+	$("#address_city_id").change(function(){
+		$("#address_city").val($("#address_city_id option:selected").text());
+		$("#address_region_id").empty();
+		$("#address_region_id").hide();
+		$.ajax({
+			method:"get",
+			url:"shop/area!list_region.do?city_id=" + $("#address_city_id").attr("value"),
+			dataType:"html",
+			success:function(result){
+				$("#address_region_id").show();
+				$(result).appendTo($("#address_region_id"));
+			},
+			error:function(){
+				alert("异步失败");
+			}
+		});
+	});
+	$("#address_region_id").change(function(){
+		$("#address_region").val($("#address_region_id option:selected").text());
+	});
+});
+</script>
+</div>

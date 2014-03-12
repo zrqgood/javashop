@@ -1,0 +1,79 @@
+<div style="display: none;"  tabid="tab_4"  class="tab-panel">
+<div class="section GoodsEditSection" style="">
+<h5 class="sec-title">相关商品</h5>
+<div class="grid">
+<table width="100%" cellspacing="0" cellpadding="3" id="body1">
+	<col class="span-4 ColColorGray">
+	<col class="span-2 ColColorOrange">
+	<col class="textleft">
+	<thead>
+		<tr>
+			<th><input type="button" value="添加" id="complexOpenDialog" /></th>
+			<th>商品名称</th>
+			<th>关联方式</th>
+			<th><input type="button" value="清空" id="complexEmpty" /></th>
+		</tr>
+	</thead>
+	<tbody id="complexContent">
+		<#if listGoodsComplex?exists>
+	    <#list listGoodsComplex as complex>
+		<tr id="complex_${complex.goods_id}">
+			<td><a href="javascript:;"  ><img class="delete" src="../shop/admin/images/transparent.gif" > </a> </td>
+			<td>${complex.name!''}<input type="hidden" name="complex.goods_2" value="${complex.goods_2}" /></td>
+			<td>
+				<select name='complex.manual'><option value='left' <#if complex.manual == 'left'>selected</#if> >单向相关</option><option value='both' <#if complex.manual == 'both'>selected</#if> >双向相关</option></select>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		</#list>
+		</#if>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="complex_selected">
+</div>
+
+<script>
+
+$("#complexEmpty").click(function(){
+	$("#complexContent").empty();
+});
+
+var Complex={
+		init:function(){
+			this.bindEvent();
+			var self= this;
+
+			
+			function  appendGoods(goodsList){
+				self.appendGoods(goodsList);
+			}
+			$("#complexOpenDialog").click(function(){
+				GoodsSelector.open("complex_selected",appendGoods);
+			});
+			
+		},
+		bindEvent:function(){
+			$("#complexContent .delete").unbind("click");
+			$("#complexContent .delete").bind("click",function(){
+				$(this).parents("tr").remove();
+			});
+		},
+		appendGoods:function(goodsList){
+			for(i in goodsList){
+				var goods = goodsList[i];
+				var html = "<tr id='complex_" + goods.goods_id + "'><td><a href='javascript:;' class='delete'></a></td><td>" + goods.name+"<input type='hidden' name='complex.goods_2' value='"+goods.goods_id +"' /></td><td><select name='complex.manual'><option value='left' selected>单向相关</option><option value='both' >双向相关</option></select></td></tr>";
+				$(html).appendTo($("#complexContent"));				
+			}
+			this.bindEvent();
+		}
+};
+$(function(){
+	$.getScript(basePath+"js/Selector.js");
+	Eop.Dialog.init({id:"complex_selected",modal:false,title:"添加相关商品", width:"600px"});
+	Complex.init();
+});
+
+</script>

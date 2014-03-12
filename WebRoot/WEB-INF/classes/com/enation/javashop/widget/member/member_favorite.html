@@ -1,0 +1,61 @@
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">我的收藏</h1>
+<div id="mbc-my-fav" class="GoodsSearchWrap">
+<div id="goods_51" product="51" class="items-list">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tbody>
+		<#list favoriteList as favorite>
+		<tr>
+			<td width="120" class="goodpic"><a title="${favorite.name}"
+				href="goods-${favorite.goods_id}.html"
+				style="display: block; width: 120px; height:160px;"><img
+				alt="${favorite.name}" height="160"
+				width="120"
+				src="<@GoodsPic pic='${favorite.image_default}' postfix='_thumbnail' />" /></a></td>
+			<td width="60%" class="goodinfo">
+			<h6><a title="${favorite.name}"
+				href="goods-${favorite.goods_id}.html">${favorite.name}</a></h6>
+			</td>
+			<td style="padding: 0pt 10px;">
+			<ul>
+				<li><span class="price1">${favorite.price?string.currency}</span></li>
+				<!--<li class="intro rank-5.000">Rank 5.000</li>-->
+			</ul>
+			</td>
+			<td style="white-space: nowrap;"> 
+			<a href="member_favorite.html?action=delete&favorite_id=${favorite.favorite_id}" class="lnk">删除</a> 
+ 
+			</td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>
+</div>
+<div id="pager" ></div>
+<script>
+
+
+var Pager = {
+	init:function(){
+		var self = this;
+		var PC = 0;
+		PC = ${pageCount};
+		if(PC!=0){
+			$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		location.href="member_favorite.html?page="+pageclickednumber;
+	}
+}
+
+$(function(){
+	Pager.init();
+});
+</script>
+</div>

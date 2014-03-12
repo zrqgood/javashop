@@ -1,0 +1,21 @@
+<div class="path">
+	<h1>${catname}</h1>
+	<span>
+		您现在的位置：${navbar}</a>
+	</span>
+</div>
+<!---->
+<div class="content">
+	<div class="piclist">
+		<ul>
+		<#list dataList as data>
+			<li>
+				<div class="pic"><a href="article2-${data.cat_id}-${data.id}.html"><img src="${data.img!''}" /></a></div>
+				<div class="picname"><a href="article2-${data.cat_id}-${data.id}.html">${data.title!''}</a></div>
+			</li>
+		</#list>
+		</ul>
+	</div>
+	${pager}
+	<div style="clear:both;"></div>
+</div>

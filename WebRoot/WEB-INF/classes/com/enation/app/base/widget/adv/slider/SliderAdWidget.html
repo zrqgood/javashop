@@ -1,0 +1,20 @@
+<div id="slide" style="position: relative;">
+</div>
+<script type="text/javascript">
+	$("#slide").jdSlide(
+					{
+						width : <#if width?exists>${width}</#if>,
+						height : <#if height?exists>${height}</#if>,
+						pics : [
+								<#list advList as adv>
+								{
+									src :"${adv.atturl}" ,
+									href : "${ctx}/core/adv!click.do?advid=${adv.aid}",
+									alt : "",
+									breviary : "#",
+									type : "img"
+								}<#if adv_has_next>,</#if>
+								</#list>
+								]
+					})
+</script>

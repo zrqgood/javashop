@@ -1,0 +1,179 @@
+
+<div class="CartWrap">
+<div class="CartNav clearfix">
+<div class="floatLeft"><img alt="购物流程--查看购物车"
+	src="${ctx}/resource/com/enation/javashop/widget/cart/images/cartnav-step2.gif"></div>
+<div class="floatRight"><img src="${ctx}/resource/com/enation/javashop/widget/cart/images/cartnav-cart.gif"></div>
+</div>
+</div>
+<div class="RegisterWrap clearfix">
+<div style="width: 47%; margin-right: 10px; margin-top: 20px;"
+	class="leftpart">
+<h3>会员登录</h3>
+<div class="intro">如果您已经是本站会员，请登录</div>
+<div style="border: 1px solid rgb(158, 198, 128);" class="form">
+<form class="loginform" action="member_login.html" method="post">
+<input type="hidden" value="进入结算页面" name="message" />
+<input type="hidden" value="cart.html?step=checkout" name="forward" />
+<input type="hidden" value="login" name="action" />
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tbody>
+		<tr>
+			<th><i>*</i>用户名：</th>
+			<td><input  tabindex="1" id="in_login"
+				required="true" class="inputstyle _x_ipt" name="username"
+				autocomplete="off"><a
+				href="register.html"
+				style="margin-left: 6px;">立即注册</a></td>
+		</tr>
+		<tr>
+			<th><i>*</i>密码：</th>
+			<td><input type="password" vtype="password" tabindex="2"
+				id="in_passwd" required="true" class="inputstyle _x_ipt"
+				name="password" autocomplete="off"><a
+				href="member_findpassword.html"
+				style="margin-left: 6px;">忘记密码？</a></td>
+		</tr>
+		<tr>
+			<th><i>*</i>验证码：</th>
+			<td id="LoginverifyCodebox"><input type="text" 
+				tabindex="3" id="iptlogin" name="validcode" required="true"
+				class="inputstyle _x_ipt" size="8" autocomplete="off"><span
+				style="" class="verifyCode"><img border="1" style="height:22px;left:150px;"
+				id="LoginimgVerifyCode"
+				src="${ctx}/validcode.do?vtype=memberlogin"><a
+				href="javascript:;">&nbsp;看不清楚？换个图片</a></span></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" tabindex="4" value="登录"
+				class="actbtn btn-login"><input type="hidden" value=""
+				name="forward"></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</div>
+</div>
+<div style="width: 47%; height: auto; margin-top: 20px;"
+	class="righttop">
+<h3>用户注册</h3>
+<div class="intro">欢迎来到我们网站，如果您是新用户，请填写下面的表单进行注册</div>
+<div style="height: 250px; border: 1px solid rgb(235, 177, 166);"
+	class="form">
+<form class="validate signform" action="member_register.html" method="post">
+<input type="hidden" value="进入结算页面" name="message" />
+<input type="hidden" value="cart.html?step=checkout" name="forward" />
+<input type="hidden" value="register" name="action" />
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tbody>
+		<tr>
+			<th><i>*</i>用户名：</th>
+			<td>
+			<input  maxlength="50" id="username"  name="username" class="inputstyle _x_ipt"
+				autocomplete="off"  ><span id="reg_user_info"></span>
+			</td>
+		</tr>
+		<tr>
+			<th><i>*</i>密码：</th>
+			<td>
+			<input type="password" id="password"  dataType="string" required="true"name="password" class="inputstyle _x_ipt" autocomplete="off">
+			</td>
+		</tr>
+		<tr>
+			<th><i>*</i>确认密码：</th>
+			<td><input type="password"  id="reg_passwd_r"  name="passwd_r" class="inputstyle _x_ipt"
+				autocomplete="off" fun='checkpwd'></td>
+		</tr>
+		<tr>
+			<th><i>*</i>电子邮箱：</th>
+			<td><input type="email"  maxlength="200" id="reg_email"   name="email" dataType="email" required="true"
+				class="inputstyle _x_ipt" autocomplete="off">
+			</td>
+		</tr>
+		<tr>
+			<th><i>*</i>验证码：</th>
+			<td id="SignupverifyCodebox"><input type="text" 
+				tabindex="3" id="iptlogin" name="validcode" required="true"
+				class="inputstyle _x_ipt" size="8" autocomplete="off"><span
+				style="" class="verifyCode"><img border="1" style="height:22px;left:150px;"
+				id="LoginimgVerifyCode"
+				src="${ctx}/validcode.do?vtype=memberreg"><a
+				href="javascript:;">&nbsp;看不清楚？换个图片</a></span></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><label
+				style="width: auto; text-align: left; font-weight: normal;"
+				class="nof" for="license"><input type="checkbox"
+				checked="checked" value="agree" name="license" id="license">我已阅读并同意
+			<a target="_blank" class="lnk" id="terms_error"
+				href="help-34.html"><span
+				id="terms_error_sym" class="FormText">会员注册协议</span></a> 和 <a
+				target="_blank" class="lnk" id="privacy_error"
+				href="help-35.html"><span
+				id="privacy_error_sym" class="FormText">隐私保护政策</span></a>。</label></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input type="submit" value="注册新用户"
+				class="actbtn btn-register"><input type="hidden" value=""
+				name="forward"></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</div>
+</div>
+<div style="float: left; width: 47%; height: auto; margin-top: 5px;"
+	class="rightbottom">
+<h3>直接购买</h3>
+<div class="intro">无需注册会员，直接下订单购买商品</div>
+<div class="form"><a id="anonymityBuy"
+	href="checkout.html" class="lnk">直接进入购买</a></div>
+</div>
+</div>
+<div class="clear"></div>
+<script>
+$(function(){
+
+	//登录验证码切换
+	$("#LoginverifyCodebox a").click(function(){
+		$("#LoginverifyCodebox img").attr("src","${ctx}/validcode.do?vtype=memberlogin&r="+new Date().getTime());
+	});
+
+	//验证注册表单
+	$("form.signform").validate();
+	$("#SignupverifyCodebox a").click(function(){
+		$("#SignupverifyCodebox img").attr("src","${ctx}/validcode.do?vtype=memberlogin&r="+new Date().getTime());
+	});
+
+	//异步检测用户名是否可用
+	$("#username").blur(function(){
+		var input = $("#username");
+		var username  = input.val();
+		$.ajax({
+			url:"widget?type=member_register&ajax=yes&action=checkname&username="+username,
+			dataType:"json",
+			success:function(json){
+				if(json.result==1){
+					var tip= '<div class="valierror">&nbsp;<strong>'+username+'</strong>&nbsp;重复的用户名!</div>';	
+					$("#reg_user_info").empty().append(tip);	
+					input.attr("valid",false);		
+				}else{
+					var tip='<div class="valisuccess">&nbsp;<strong>'+username+'</strong>&nbsp;可以使用</div>';
+					$("#reg_user_info").empty().append(tip);	
+					input.attr("valid",true);	
+				}
+			},
+			error:function(){
+				
+			}
+			
+		});		
+	});
+
+	 
+});
+</script>
+ 

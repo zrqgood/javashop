@@ -1,0 +1,13 @@
+
+<link href="css/adv.css" rel="stylesheet" type="text/css" />
+<div id="slideshow_${wid}" class="slideshow" style="height: ${adheight};width:${adwidth}">
+    <#if atype==0>
+    	<div class="active">
+       		<a href="${ctx}/core/adv!click.do?advid=${adv.aid}" target="_blank"><img src="${adv.atturl}" /></a>
+   	 	</div>
+   	 <#else>
+   	 	<object id="flash1" data="${adv.atturl}" height="${adheight}" width="${adwidth}" type="application/x-shockwave-flash">
+			<param name="movie" value="${adv.atturl}" />
+		</object>
+	</#if>
+</div>

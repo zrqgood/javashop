@@ -1,0 +1,83 @@
+<div class="MemberCenter">
+	<div class="siteparttitle">
+		<div class="title"></div>
+		<#if member?exists >
+			<div class="main">
+				<div class="content">
+					<div class="user">欢迎您：<br>
+					<strong>${member.uname!''}</strong></div>
+					<div class="info">
+						您目前是<strong>[${memberLv!''}]，</strong>
+						您的积分为:<strong class="point">${member.point!''}</strong>
+						，您上次登录时间为:<strong class="point"><@dateFormat date="${member.lastlogin*1000}" pattern="yyyy-MM-dd"/></strong>
+					</div>
+				</div>
+			</div>
+		</#if>
+	</div>
+	<div class="MemberSidebar">
+		<div class="MemberMenu">
+			<div class="title1"></div>
+			<div class="body">
+				<ul>
+					<li>
+						<span style="font-size: 14px;">交易记录</span>
+						<ul>
+							<li><a href="member_order.html">我的订单</a></li>
+							<li><a href="member_pointhistory.html">我的积分</a></li>
+							<li><a href="member_couponExchange.html">积分兑换优惠券</a></li>
+							<li><a href="member_coupons.html">我的优惠券</a></li>
+							<li><a href="member_sites.html">我的站点</a></li>
+						</ul>
+					</li>
+					<li>
+						<span style="font-size: 14px;">收藏夹</span>
+						<ul>
+							<li><a href="member_favorite.html">商品收藏</a></li>
+							<li><a href="member_gnotify.html">缺货登记</a></li>
+						</ul>
+					</li>
+					<li>
+						<span style="font-size: 14px;">商品留言</span>
+						<ul>
+							<li><a href="member_comments.html">评论与咨询</a></li>
+						</ul>
+					</li>
+					<li>
+						<span style="font-size: 14px;">个人设置</span>
+						<ul>
+							<li><a href="member_info.html">个人信息</a></li>
+							<li><a href="member_security.html">修改密码</a></li>
+							<li><a href="member_address.html">收货地址</a></li>
+						</ul>
+					</li>
+					<li>
+						<span style="font-size: 14px;">预存款</span>
+						<ul>
+							<li><a href="member_advanceLogs.html">我的预存款</a></li>
+							<li><a href="member_deposit.html">预存款充值</a></li>
+						</ul>
+					</li>
+					<li>
+						<span style="font-size: 14px;">站内消息</span>
+						<ul>
+							<li><a href="member_message.html?action=send">发送消息</a></li>
+							<li><a href="member_message.html?action=inbox">收件箱</a></li>
+							<li><a href="member_message.html?action=outbox">发件箱</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="foot"></div>
+		</div>
+	</div>
+	<div class="MemberMain">
+		<div style="">${main}</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<script>
+$(function(){
+	$("a[href=${menuUrl}]").parent().addClass("current");
+});
+</script>

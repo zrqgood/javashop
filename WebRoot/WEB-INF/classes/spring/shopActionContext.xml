@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="true">
+
+	<bean id="shopIndexItemAction" class="com.enation.javashop.core.action.backend.ShopIndexItemAction" scope="prototype"/>
+	<bean id="brandAction" class="com.enation.javashop.core.action.backend.BrandAction" scope="prototype"/>
+	<bean id="freeOfferAction" class="com.enation.javashop.core.action.backend.FreeOfferAction" scope="prototype"/>
+	<bean id="freeOfferCategoryAction" class="com.enation.javashop.core.action.backend.FreeOfferCategoryAction" scope="prototype"/>
+	<bean id="seoAction" class="com.enation.javashop.core.action.backend.SeoAction" scope="prototype"/>
+	<bean id="statisticsAction" class="com.enation.javashop.core.action.backend.StatisticsAction" scope="prototype"/>
+	<bean id="rankAction" class="com.enation.javashop.core.action.backend.RankAction" scope="prototype"/>
+	<bean id="couponAction" class="com.enation.javashop.core.action.backend.CouponAction" scope="prototype"/>
+	<bean id="catAction" class="com.enation.javashop.core.action.backend.CatAction" scope="prototype"/>
+	<bean id="uploadPhoto" class="com.enation.javashop.core.action.backend.UploadPhoto" scope="prototype"/>
+	<bean id="goodsAction" class="com.enation.javashop.core.action.backend.GoodsAction" scope="prototype"/>
+	<bean id="selectorAction" class="com.enation.javashop.core.action.backend.SelectorAction" scope="prototype"/>
+	<bean id="bindAction" class="com.enation.javashop.core.action.backend.BindAction" scope="prototype"/>
+	
+ 
+	<bean id="tagAction" class="com.enation.javashop.core.action.backend.TagAction" scope="prototype"/>
+	<bean id="memberAction" class="com.enation.javashop.core.action.backend.MemberAction" scope="prototype"/>
+	<bean id="activityAction" class="com.enation.javashop.core.action.backend.ActivityAction" scope="prototype"/>
+	<bean id="promotionAction" class="com.enation.javashop.core.action.backend.PromotionAction" scope="prototype"/>	
+	<bean id="areaAction" class="com.enation.javashop.core.action.backend.AreaAction" scope="prototype"/>	
+	<bean id="dlyTypeAction" class="com.enation.javashop.core.action.backend.DlyTypeAction" scope="prototype"/>
+	<bean id="logiAction" class="com.enation.javashop.core.action.backend.LogiAction" scope="prototype"/>
+	<bean id="deliveryAction" class="com.enation.javashop.core.action.backend.DeliveryAction" scope="prototype"/>
+	<bean id="paymentAction" class="com.enation.javashop.core.action.backend.PaymentAction" scope="prototype"/>
+	<bean id="payCfgAction" class="com.enation.javashop.core.action.backend.PayCfgAction" scope="prototype"/>
+		
+	
+	<bean id="articleCatAction" class="com.enation.javashop.core.action.backend.ArticleCatAction" scope="prototype"/>
+	<bean id="articleAction" class="com.enation.javashop.core.action.backend.ArticleAction" scope="prototype"/> 
+	<bean id="specAction" class="com.enation.javashop.core.action.backend.SpecAction" scope="prototype"/>
+	<bean id="memberPriceAction" class="com.enation.javashop.core.action.backend.MemberPriceAction" scope="prototype"/>
+	<bean id="goodsSpecAction" class="com.enation.javashop.core.action.backend.GoodsSpecAction" scope="prototype"/>
+	<bean id="orderAction" class="com.enation.javashop.core.action.backend.OrderAction" scope="prototype"/>
+	<bean id="orderPrintAction" class="com.enation.javashop.core.action.backend.OrderPrintAction" scope="prototype"/>
+	<bean id="dlyCenterAction" class="com.enation.javashop.core.action.backend.DlyCenterAction" scope="prototype"/>
+	<bean id="orderReportAction" class="com.enation.javashop.core.action.backend.OrderReportAction" scope="prototype"/>
+	<bean id="regionAction" class="com.enation.javashop.core.action.backend.RegionAction" scope="prototype"/>
+	<bean id="printTmplAction" class="com.enation.javashop.core.action.backend.PrintTmplAction" scope="prototype"/>
+	
+	<!--团购 -->
+	<bean id="groupBuyAction" class="com.enation.javashop.core.action.backend.GroupBuyAction" scope="prototype"/>
+	<!--限时抢购 -->
+	<bean id="limitBuyAction" class="com.enation.javashop.core.action.backend.LimitBuyAction" scope="prototype"/>
+	<bean id="invoiceApplyAction" class="com.enation.javashop.core.action.backend.InvoiceApplyAction" scope="prototype"/>
+	
+	
+	<!--商品字段action -->
+	<bean id="goodsFieldAction" class="com.enation.javashop.core.action.backend.GoodsFieldAction" scope="prototype"/>
+	
+	<!-- 插件 -->
+	<bean id="pluginAction" class="com.enation.app.base.core.action.PluginAction" scope="prototype"/>
+	<bean id="typeAction" class="com.enation.javashop.core.action.backend.TypeAction" scope="prototype"/>
+	
+	<!-- 前台action -->
+	<bean id="goodsAlbumAction" class="com.enation.javashop.core.action.facade.GoodsAlbumAction" scope="prototype"/>
+	<bean id="favoriteAction" class="com.enation.javashop.core.action.facade.FavoriteAction" scope="prototype"/>
+	<bean id="commentsAction" class="com.enation.javashop.core.action.backend.CommentsAction" scope="prototype" />
+
+	<bean id="goodsListSetting" class="com.enation.javashop.widget.setting.GoodsListSetting" scope="prototype"/>
+ 	<bean id="goodsImportAction" class="com.enation.javashop.core.action.backend.GoodsImportAction" scope="prototype"/>
+ 	<bean id="galleryAction" class="com.enation.javashop.core.action.backend.GalleryAction" scope="prototype"/>
+ 
+</beans>

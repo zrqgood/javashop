@@ -1,0 +1,118 @@
+<script type="text/javascript" src="${staticserver}/js/common/jquery.numinput.js"></script>
+<script type="text/javascript" src="spec.js"></script>
+<input type="hidden" name="action" value="add" />
+<input type="hidden" name="productid" id="productid" <#if productid?exists>value="${productid}"</#if> />
+<!-- hightline begin -->
+<div class="hightline">
+<!-- hightbox begin -->
+<div class="hightbox">
+
+
+<div class="goods-spec" id="goods-spec">
+<h4 class="spec-tip"></h4>
+<script type="text/javascript">
+var goodsid = ${goods.goods_id};
+<#if isLogin>
+var islogin= true;
+<#else>
+var islogin=false;
+</#if>
+var Products=
+	[
+	<#list productList as product>	
+	  {'product_id':${product.product_id},'goods_id':${product.goods_id},'sn':'${product.sn}','store':${product.store},
+		'price':${product.price},
+	   'specs':${product.specsvIdJson}
+	  }
+	  <#if product_has_next >,</#if>
+	</#list>
+	];
+var spec_imgs ={};
+<#if goods.specs?exists && goods.specs!=''>spec_imgs = ${goods.specs}</#if>
+</script>
+<#if have_spec==1 >
+<#list specList as spec>
+<table width="100%" class="spec-item">
+	<tbody>
+		<tr>
+			<td style="width: 10%; white-space: nowrap;"><span><em>${spec.spec_name}</em>：</span></td>
+			<td style="padding-left: 15px;">
+ 			<ul>
+ 				
+			<#list spec.valueList as val  >
+			
+				<#if spec.spec_type==0>
+				<li>
+					<a specid="${spec.spec_id}" specvid="${val.spec_value_id}"  href="javascript:;" class="" title="${val.spec_value}">
+					<span><nobr>${val.spec_value}</nobr></span><i>&nbsp;</i>
+					</a>
+				</li>
+				</#if>
+				<#if spec.spec_type==1>
+				<li>
+					<a specid="${spec.spec_id}" specvid="${val.spec_value_id}"  href="javascript:;" class="" title="${val.spec_value}" >
+					<img height="30" width="30" title="${val.spec_value}" alt="${val.spec_value}" src="${val.spec_image}">
+					<i title="${val.spec_value}">&nbsp;</i> 
+					</a>
+				</li>
+				</#if>				
+			</#list>
+
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</#list>
+
+
+<script type="text/javascript">
+$(function(){
+	Eop.Spec.init(1);
+});
+</script>
+
+<#else>
+</div>
+<script type="text/javascript">
+$(function(){
+	Eop.Spec.init(0);
+});
+</script>
+</#if>
+
+<div class="buyinfo">
+<table width="">
+	<tbody>
+		<tr> 
+			<td><span>购买数量：</span></td>
+			<td>
+				<div class="Numinput"> 
+				</div>
+			</td>
+			<td><span style="display: none;">&nbsp;&nbsp;(库存<span
+				class="store">2000</span>)</span>
+			<div id="gnotify_action"></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<!-- hightbox end -->
+</div>
+<!-- hightline end -->
+
+<!-- btnBar begin -->
+<div class="btnBar">
+<div class="floatLeft"><input type="submit" value="加入购物车"
+	class="actbtn btn-buy"  style="cursor: not-allowed;"><input
+	type="button" style="display: none;" value="缺货登记"
+	class="actbtn btn-notify"></div>
+<ul class="floatLeft">
+	<li title="${goods.name}" class="star-off" goodsid="${goods.goods_id}"><a
+		class="btn-fav" href="javascript:;" >收藏此商品</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<!-- btnBar end -->

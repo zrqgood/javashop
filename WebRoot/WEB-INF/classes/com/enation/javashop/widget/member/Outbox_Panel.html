@@ -1,0 +1,14 @@
+	<#list outboxList as outbox>
+		<tr class="msgon">
+			<td class="selector"><input type="checkbox" name="delete"
+				value="${outbox.msg_id}"></td>
+			<td class="textleft"><span><a class="viewmsgoff" msg_id="${outbox.msg_id}" href="#">${outbox.subject}</a></span></td>
+			<td><#if outbox.to_type == 1>管理员<#else>${outbox.msg_to}</#if></td>
+			<td><@dateFormat date="${outbox.date_line?c}" pattern="yyyy-MM-dd HH:mm"/></td>
+		</tr>
+		<tr style="display: none; white-space: normal;" id="view_msg_pro_${outbox.msg_id}" class="view_msg_pro">
+			<td colspan="6" class="textleft memberviewinfo">
+			<p id="view_msg_6">${outbox.message}</p>
+			</td>
+		</tr>
+		</#list>

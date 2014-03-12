@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <apps>
+    	<app id="base" version="2.2.0"/>
+        <app id="cms" version="2.2.0"/>
+    </apps>
+    <urls>
+        <url from="/index.html" to="/index.html" name="首页" sitemaptype="1" point="2" />
+        <url from="/product-(.*).html" to="/product.html" name="产品展示" point="1" />
+        <url from="/news-(\d+)-(\d+).html" to="/news.html" name="最新动态" point="1" />
+        <url from="/detail-(.*).html" to="/detail.html" name="详细页一" point="1" />   
+        <url from="/search-(.*).html" to="/default.html" name="搜索页" point="1" />
+        <url from="/brand.html" to="/brand.html" name="品牌营销" point="1" />
+        <url from="/cases-(\d+)-(\d+).html" to="/news.html" name="成功案例" point="1" />
+        <url from="/article-(\d+)-(\d+).html" to="/article.html" name="详细页二" point="1" />
+        <url from="/article2-(\d+)-(\d+).html" to="/article2.html" name="详细页三" point="1" />
+        <url from="/guestbook.html" to="/guestbook.html" name="留言板" point="1" />
+        <url from="/article1-(\d+)-(\d+).html" to="/article1.html" name="详细页四" point="1" />
+        <url from="/job-(.*).html" to="/job.html" name="人才招聘" point="1" />
+        <url from="/article3-(\d+)-(\d+).html" to="/article3.html" name="详细页五" point="1" />
+        <url from="/about.html" to="/about.html" sitemaptype="1" name="关于我们" point="1" />
+
+        <url from="/solution-(\d+)-(\d+).html" to="/solution.html" point="1" />
+        <url from="/service.html" to="/service.html" sitemaptype="1" point="1" />
+        <url from="/contact.html" to="/contact.html" sitemaptype="1" point="1" />
+    </urls>
+    <menus>
+        <menu text="栏目内容" url="/cms/admin/data!list.do?catid=3">
+            
+            <menu text="快速编辑" url="#">
+                <menu text="最新动态" url="/cms/admin/data!list.do?catid=2" />
+                <menu text="产品展示" url="/cms/admin/data!list.do?catid=7" />
+                <menu text="解决方案" url="/cms/admin/data!list.do?catid=13" />
+                <menu text="成功案例" url="/cms/admin/data!list.do?catid=12" />
+                <menu text="品牌营销" url="/cms/admin/data!list.do?catid=8" />
+                <menu text="人才招聘" url="/cms/admin/data!list.do?catid=11" />
+                <menu text="关于我们" url="/cms/admin/data!list.do?catid=1" />
+            </menu>
+            <menu text="全面管理" url="#">
+                <menu text="文章分类" url="/cms/admin/cat!list.do" />
+                <menu text="导航栏目" url="/core/admin/siteMenu!list.do" />
+            </menu>
+        </menu>
+        <menu text="客户留言" url="/core/admin/guestBook!list.do">
+            <menu text="留言管理" url="#">
+                <menu text="留言列表" url="/core/admin/guestBook!list.do" />
+            </menu>
+        </menu>
+        <menu text="外观效果" url="/core/admin/user/siteTheme.do">
+            <menu text="模板应用" url="#">
+                <menu text="前台模板" url="/core/admin/user/siteTheme.do" />
+                <menu text="后台模板" url="/core/admin/user/siteAdminTheme.do" />
+            </menu>
+            <menu text="广告管理" url="#">
+                <menu text="广告列表" url="/core/admin/adv!list.do" />
+                <menu text="广告位置" url="/core/admin/adColumn!list.do" />
+            </menu>
+        </menu>
+        <menu text="系统设置" url="/core/admin/user/userSite!edit.do">
+            <menu text="设置" url="#">
+                <menu text="文章管理" url="/cms/admin/cat!list.do" />
+                <menu text="站点设置" url="/core/admin/user/userSite!edit.do" />
+                <menu text="域名管理" url="/core/admin/user/userSite!domain.do" />
+            </menu>
+            <menu text="权限管理">
+                <menu text="管理员管理" url="/core/admin/user/userAdmin.do" />
+                <menu text="角色管理" url="/core/admin/role!list.do" />
+            </menu>	            
+            <menu text="数据管理">
+                <!--menu text="导出" url="/core/admin/solution!toExport.do" /-->
+                <!--menu text="导入" url="/core/admin/solution!toImport.do" /-->
+                <menu text="数据初始化" url="/core/admin/user/userSite!toInitData.do" />
+            </menu>
+        </menu>
+        <menu text="访问统计" url="/core/admin/access!list.do">
+            <menu text="访问统计" url="#">
+                <menu text="访问统计" url="/core/admin/access!list.do" />
+            </menu>
+        </menu>
+    </menus>
+    <indexitems>
+    	<item>
+    		<title>站点信息统计</title>
+    		<url>/core/admin/indexItem!base.do</url>
+    	</item>     
+    	<item>
+    		<title>文章统计信息</title>
+    		<url>/cms/admin/indexItem!article.do</url>
+    	</item> 
+    	<item>
+    		<title>流量统计信息</title>
+    		<url>/core/admin/indexItem!access.do</url>
+    	</item> 
+    	<item>
+    		<title>访问点</title>
+    		<url>/core/admin/indexItem!point.do</url>
+    	</item>    	
+	</indexitems>
+    
+    <themes>
+        <theme id="blue2" name="蓝色经典" default="yes" />
+        <theme id="blue" name="蓝色简洁"  />
+        <theme id="green" name="绿色情怡"  />        
+        <theme id="default" name="红色激情" />
+        <theme id="orange" name="橙色浪漫" />
+		<theme id="pink" name="粉色柔情" />
+    </themes>
+</product>
+

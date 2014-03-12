@@ -1,0 +1,20 @@
+<input type="hidden" name="goodsid" value="${goods.goods_id}" />
+<h1 class="goodsname">${goods.name}</h1>
+<p class="brief">${goods.brief!''}</p>
+<ul class="goodsprops clearfix">
+	<li><span>商品编号：</span>${goods.sn!''}</li>
+	<li><span>品 牌：</span>${goods.brand_name!''}</li>
+	<#if attrList?exists >
+	<#list attrList as attr>
+		<li>
+			<span>${attr.name}：</span>
+			${attr.valStr!'' }
+		</li>
+    </#list>
+    </#if>
+</ul>
+<ul class="goods-price list">
+	<li><span>市场价：</span><i class="mktprice1">${goods.mktprice?string("currency")}</i></li>
+	<li><span>销售价：</span><span class="price1">${goods.price?string("currency")}</span></li>
+	<li><span class="discount">节省：${(goods.mktprice-goods.price)?string("currency")}</span></li>	
+</ul>

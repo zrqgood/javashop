@@ -1,0 +1,34 @@
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="liststyle data">
+	<colgroup class="span-5 ColColorGray"></colgroup>
+	<colgroup class="span-auto"></colgroup>
+	<tbody>
+		<tr>
+			<th>送货日期：</th>
+			<td>
+				<select	name="shipDay" class="inputstyle">
+					<option value="任意日期" selected="selected">任意日期</option>
+					<option value="仅工作日">仅工作日</option>
+					<option value="仅休息日">仅休息日</option>
+				</select>&nbsp;
+				<span style="display: none;" id="specal_day">
+					<input type="text" vtype="text" readonly="1" style="width: 80px;" value="2010-03-27" class="cal _x_ipt" name="delivery[specal_day]"	autocomplete="off"><span class="notice_inline">请勿选择默认日期之前的时间</span>
+				</span>
+			</td>
+			<th style="background-color: rgb(239, 239, 239);">时间：</th>
+			<td><select style="float: left;" name="shipTime"
+				class="inputstyle">
+				<option>任意时间段</option>
+				<option>上午</option>
+				<option>下午</option>
+				<option>晚上</option>
+			</select></td>
+		</tr>
+		<tr>
+			<th>订单附言：</th>
+			<td colspan="3">
+				<textarea vtype="textarea" rows="2" cols="40" type="textarea" name="remark" class="inputstyle _x_ipt"></textarea>
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,24 @@
+<#if hasParam>
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle data">
+	<colgroup class="span-4 ColColorGray fontcolorBlack"></colgroup>
+	<tbody>
+	<#if paramList?exists >
+		<#list paramList as group >
+		<tr>
+			<td class="colspan ColColorGraydark" colspan="2">${group.name }<span
+				class="gname"></span></td>
+		</tr>
+	 
+			<#list group.paramList as p >
+			<#if p.value != ''>
+			<tr>
+				<th>${p.name }</th>
+				<td>${p.value }</td>
+			</tr>
+			</#if>
+			</#list>
+		</#list>
+	</#if>	
+	</tbody>
+</table>
+</#if>

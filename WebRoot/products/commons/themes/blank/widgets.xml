@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widgets>
+	<page id="common">
+		<widget id="header">
+			<type>header</type>
+			<border>none</border>
+		</widget>
+
+	</page>
+
+
+	<page id="/index.html">
+
+	</page>
+
+
+	<page id="/cart.html">
+
+		<widget id="1">
+			<overflow>visible</overflow>
+			<border/>
+			<type>shop_cart</type>
+		</widget>
+
+	</page>
+
+	
+	<page id="/default.html">
+		<widget id="2">
+			<overflow>visible</overflow>
+			<border>border5</border>
+			<bordertitle>商品分类</bordertitle>
+			<type>goods_cat</type>
+		</widget>
+		<widget id="/goods-(\d+).html">
+			<overflow>visible</overflow>
+			<border/>
+			<type>goods_detail</type>
+		</widget>
+		<widget id="/search-(.*).html">
+			<overflow>visible</overflow>
+			<border/>
+			<type>goods_search</type>
+		</widget>
+		
+		<widget id="/compare.html">
+			<overflow>visible</overflow>
+			<border/>
+			<type>goods_compare</type>
+		</widget>
+		<widget id="/package.html">
+			<overflow>visible</overflow>
+			<border/>
+			<type>goods_compare</type>
+		</widget>
+		<widget id="/brandDetail-(\d+).html">
+			<overflow>visible</overflow>
+			<border/>
+			<type>brand_detail</type>
+		</widget>
+		<widget id="/brand.html">
+			<overflow>visible</overflow>
+			<border/>
+			<type>brand_list</type>
+		</widget>
+		<widget id="/search.html">
+		
+			<overflow>visible</overflow>
+			<border/>
+			<type>search</type>
+
+		</widget>
+
+		<widget id="/leavewords.html">
+ 
+			<overflow>visible</overflow>
+			<border/>
+			<type>shop_guestbook</type>
+ 
+		</widget>
+
+		<widget id="/friendslink.html">
+			<overflow>visible</overflow>
+			<border/>
+			<cat_id>1</cat_id>
+			<type>friends_link</type>
+		</widget>
+		<widget id="/package.html">
+			<overflow>visible</overflow>
+			<border/>
+			<cat_id>1</cat_id>
+			<type>package</type>
+		</widget>
+		<widget id="/giftlist.html">
+			<overflow>visible</overflow>
+			<showtype>list</showtype>
+			<border/>
+			<type>gift_list</type>
+		</widget>
+		<widget id="/gift-(\d+).html">
+			<overflow>visible</overflow>
+			<showtype>detail</showtype>
+			<border/>
+			<type>gift_list</type>
+		</widget>
+	</page>
+
+
+</widgets>

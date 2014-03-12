@@ -1,0 +1,295 @@
+/*= border1 细边框
+=============================================================================================*/
+.border1{
+	margin:0 0 10px 0;
+}
+.border1 h3{
+	font-size:14px;
+	color:#45691F;
+	margin:0 8px 5px 8px;
+	padding:0 0 5px 0;
+	border-bottom:1px solid #d8d8d8;
+	height:17px;
+}
+.border1 .border-top{
+	background:url(border1.gif) no-repeat;
+	height:14px;
+}
+.border1 .border-top .bg{
+	background:url(border1.gif) no-repeat right 0;
+	height:14px;
+	margin-left:10px;
+}
+.border1 .border-body{
+	background:url(border1b.gif) repeat-y;
+}
+.border1 .border-body .bg{
+	background:url(border1b.gif) repeat-y right 0;
+	margin-left:2px;
+}
+.border1 .border-foot{
+	background:url(border1.gif) no-repeat 0 -14px;
+	height:14px;
+}
+.border1 .border-foot .bg{
+	background:url(border1.gif) no-repeat right -14px;
+	height:14px;
+	margin-left:10px;
+}
+
+.border1 .GoodsList{
+	text-align:center;
+}
+.border1 .GoodsList .item{
+	border-bottom:1px dotted #ccc;
+}
+/*= border2 粗边框
+=============================================================================================*/
+.border2{
+	margin:0 0 10px 0;
+}
+.border2 h3{
+	font-size:14px;
+	color:#45691F;
+	margin:0 8px 5px 8px;
+	height:17px;
+	text-align:left;
+}
+.border2 .border-top{
+	background:url(border2.gif) no-repeat;
+	height:14px;
+}
+.border2 .border-top .bg{
+	background:url(border2.gif) no-repeat right 0;
+	height:14px;
+	margin-left:10px;
+}
+.border2 .border-body{
+	background:url(border2b.gif) repeat-y;
+}
+.border2 .border-body .bg{
+	background:url(border2b.gif) repeat-y right 0;
+	margin-left:6px;
+	text-align:center;
+}
+.border2 .border-foot{
+	background:url(border2.gif) no-repeat 0 -14px;
+	height:14px;
+}
+.border2 .border-foot .bg{
+	background:url(border2.gif) no-repeat right -14px;
+	height:14px;
+	margin-left:10px;
+}
+
+
+.border2 .GoodsList{
+	text-align:center;
+}
+.border2 .GoodsList .item{
+	border-bottom:1px dotted #ccc;
+}
+.border2 .titleImg{
+	text-align:center;
+}
+/*= border3 首页main头部三个边框
+=============================================================================================*/
+.border3{
+	margin:0 0 10px 0;
+}
+.border3 h3{
+	font-size:14px;
+	color:#45691f;
+	padding:0 0 2px 0;
+	height:18px;
+}
+.border3 .border-top{
+	background:url(border1.gif) no-repeat;
+	height:14px;
+}
+.border3 .border-top .bg{
+	background:url(border1.gif) no-repeat right 0;
+	height:14px;
+	margin-left:10px;
+}
+.border3 .border-body{
+	background:url(border1b.gif) repeat-y;
+}
+.border3 .border-body .bg{
+	background:url(border1b.gif) repeat-y right 0;
+	margin-left:2px;
+}
+.border3 .border-foot{
+	background:url(border1.gif) no-repeat 0 -14px;
+	height:14px;
+}
+.border3 .border-foot .bg{
+	background:url(border1.gif) no-repeat right -14px;
+	height:14px;
+	margin-left:10px;
+}
+/*=	border4 大列表
+=============================================================================================*/
+.border4{
+	margin:0 0 10px 0;
+}
+.border4 h3{
+	margin:0 16px 0 8px;
+	border-bottom:1px solid #d8d8d8;
+	color:#45691f;
+	padding-left:20px;
+	font-size:14px;
+	background:url(arrs.gif) no-repeat 10px 0;
+	*background:url(arrs.gif) no-repeat 10px -2px;
+}
+.border4 .GoodsList{
+	text-align:center;
+	margin-top:10px;
+}
+/*=	border5 底部文章
+=============================================================================================*/
+.border5{
+	float:left;
+	margin:0 4px 5px 4px;
+	width:215px;
+	overflow:hidden;
+	border-top:4px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+}
+.border5 h4{
+	color:#67821B;
+	font-size:12px;
+}
+.border5 .titleImg{
+	width:70px;
+}
+.border5 .ArticleList li{
+	padding:0;
+	background:none;
+} 
+.border5 .ArticleList a{
+	color:#8d8d8d;
+}
+/*= border6 首页main头部三个边框
+=============================================================================================*/
+.border6{
+	margin:0 0 10px 0;
+}
+.border6 h3{
+	padding:0 0 2px 10px;
+	height:18px;
+	font-size:14px;
+	color:#45691F;
+}
+.border6 .border-top{
+	background:url(border1.gif) no-repeat;
+	height:14px;
+}
+.border6 .border-top .bg{
+	background:url(border1.gif) no-repeat right 0;
+	height:14px;
+	margin-left:10px;
+}
+.border6 .border-body{
+	background:url(border1b.gif) repeat-y;
+}
+.border6 .border-body .bg{
+	background:url(border1b.gif) repeat-y right 0;
+	margin-left:2px;
+}
+.border6 .border-foot{
+	background:url(border1.gif) no-repeat 0 -14px;
+	height:14px;
+}
+.border6 .border-foot .bg{
+	background:url(border1.gif) no-repeat right -14px;
+	height:14px;
+	margin-left:10px;
+}
+.border6 .TreeList{
+	line-height:20px;
+}
+.border6 .TreeList .cat1{
+	background:#efefef;
+	padding:0 5px;
+	margin:0 0 5px 0;
+	font-weight:bold;
+}
+.border6 .TreeList .cat1 a{
+	background:url(arrs.gif) no-repeat 0 -201px;
+	padding:0 0 0 13px;
+	color:#333;
+}
+.border6 .TreeList a:hover{
+	color:#FF6600;
+}
+.border6 .TreeList .cat2{
+	padding:0 0 0 18px;
+}
+.border6 .TreeList .cat2 a{
+	background:url(arrs.gif) no-repeat 0pt -20px;
+	padding:0 0 0 10px;
+	color:#666;
+}
+
+
+
+/*=边框标题
+=============================================================================================*/
+#category h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 15px 0;
+}
+#mainbd1 h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 15px -20px;
+}
+#mainbd2 h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 15px -40px;
+}
+#news h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -80px;
+}
+#hot h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -120px;
+}
+#sidebanner h3{
+	border:none;
+}
+#special h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -60px;
+	border:none;
+}
+#comment h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -100px;
+}
+#recommend h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -140px;
+}
+#new h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 20px -160px;
+}
+#notice h3{
+	text-indent:-9999px;
+	border:none;
+	background:url(titles.gif) no-repeat 0 -240px;
+}
+#brand h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -180px;
+}
+#orderlist h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -200px;
+}
+#rankinglist h3{
+	text-indent:-9999px;
+	background:url(titles.gif) no-repeat 0 -220px;
+}

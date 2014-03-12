@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="true" >
+
+	<bean id="goodsDataProvider" class="com.enation.javashop.widget.goods.list.GoodsDataProvider"  parent="baseSupport"   scope="prototype" />
+ 	<bean id="goods_list"  class="com.enation.javashop.widget.goods.list.GoodsList"  scope="prototype"></bean>
+	<bean id="goods_cat"  class="com.enation.javashop.widget.goodscat.GoodsCat"  scope="prototype"></bean>
+	<bean id="fadeplay"  class="com.enation.app.base.widget.adv.fadeplay.FadePlayWidget"  scope="prototype"></bean>
+	<bean id="goods_search"  class="com.enation.javashop.widget.goods.search.GoodsSearchWidget"  scope="prototype"></bean>
+	<bean id="goods_search2"  class="com.enation.javashop.widget.goods.search2.GoodsSearchWidget2"  scope="prototype"></bean>
+	<bean id="goods_compare"  class="com.enation.javashop.widget.goods.compare.CompareGoodsWidget"  parent="baseSupport"  scope="prototype"></bean>
+	<bean id="shop_article"  class="com.enation.javashop.widget.article.ArticleWidget"  scope="prototype"></bean>
+	<bean id="shop_help"  class="com.enation.javashop.widget.article.HelpWidget"  scope="prototype"></bean>
+	<bean id="articlecat"  class="com.enation.javashop.widget.article.ArticleCatWidget"  scope="prototype"></bean>
+	<bean id="articleList"  class="com.enation.javashop.widget.article.ArticleListWidget"  scope="prototype"></bean>
+	<bean id="shop_cart"  class="com.enation.javashop.widget.cart.CartWidget"  scope="prototype"></bean>
+	<bean id="checkOutWidget"  class="com.enation.javashop.widget.cart.checkout.CheckOutWidget"  scope="prototype"></bean>
+	<bean id="regionsSelect"  class="com.enation.javashop.widget.Regions.RegionsSelectWidget"  scope="prototype"></bean>
+	<bean id="paywidget"  class="com.enation.javashop.widget.cart.PayWidget"  scope="prototype"></bean>
+	
+	<bean id="partZone"  class="com.enation.javashop.widget.partzone.PartZoneWidget"  scope="prototype"></bean>
+	<bean id="searchBar"  class="com.enation.javashop.widget.search.SearchBarWidget"  scope="prototype"></bean>
+	<bean id="search"  class="com.enation.javashop.widget.search.SearchWidget"  scope="prototype"></bean>
+	<bean id="comment"  class="com.enation.javashop.widget.comments2.CommentsWdiget"  scope="prototype"></bean>
+	<bean id="commentNum"  class="com.enation.javashop.widget.comments2.CommentNumWidget"  scope="prototype"></bean>
+	<bean id="shop_guestbook"  class="com.enation.javashop.widget.comments.GoodsComments"  scope="prototype">
+		<property name="commentType"><value>shop</value></property>
+		<property name="object_type"><value>leavewords</value> </property>
+	</bean>	
+	<bean id="goods_ask"  class="com.enation.javashop.widget.comments.GoodsComments"  scope="prototype">
+		<property name="commentType"><value>goods</value></property>
+		<property name="object_type"><value>ask</value> </property>
+	</bean>
+	<bean id="goods_discuss"  class="com.enation.javashop.widget.comments.GoodsComments"  scope="prototype">
+		<property name="commentType"><value>goods</value></property>
+		<property name="object_type"><value>discuss</value> </property>	
+	</bean>	
+	<bean id="goods_grade"  class="com.enation.javashop.widget.comments.GoodsGradeWidget"  scope="prototype"></bean>
+	<bean id="article_comments"  class="com.enation.javashop.widget.comments.GoodsComments"  scope="prototype">
+		<property name="commentType"><value>article</value></property>
+		<property name="object_type"><value>discuss</value> </property>	
+	</bean>	
+	<bean id="goods_detail"  class="com.enation.javashop.widget.goods.detail.GoodsDetailWidget"  scope="prototype">
+	</bean>
+	<bean id="goods_detail_main"  class="com.enation.javashop.widget.goods.detail.GoodsDetailMainWidget"  scope="prototype">
+	</bean>
+	<bean id="goods_gallery"  class="com.enation.javashop.widget.gallery.GoodsGalleryWidget"  scope="prototype"></bean>
+	<bean id="goods_gallery2"  class="com.enation.javashop.widget.gallery2.GoodsGalleryWidget2"  scope="prototype"></bean>
+	<bean id="goods_adjunct"  class="com.enation.javashop.widget.adjunct.GoodsAdjunctWidget"  scope="prototype"></bean>
+	<bean id="goods_props"  class="com.enation.javashop.widget.goods.detail.GoodsPropsWidget"  scope="prototype"></bean>
+	<bean id="goods_params"  class="com.enation.javashop.widget.goods.detail.GoodsParamsWidget"  scope="prototype"></bean>
+	<bean id="goods_intro"  class="com.enation.javashop.widget.goods.detail.GoodsIntroWidget"  scope="prototype"></bean>
+	<bean id="goods_spec"  class="com.enation.javashop.widget.spec.ShopexSpecWidget"  scope="prototype"></bean>
+	<bean id="goods_pmt"  class="com.enation.javashop.widget.goods.detail.GoodsPromotionWidget"  scope="prototype"></bean>	
+	<bean id="goods_complex"  class="com.enation.javashop.widget.complex.GoodsComplexWidget"  scope="prototype"></bean>
+	<bean id="package"  class="com.enation.javashop.widget.bind.BindWidget"  scope="prototype"></bean>
+	<bean id="brand_list"  class="com.enation.javashop.widget.brand.BrandWidget"  scope="prototype"></bean>
+	<bean id="brandGroup"  class="com.enation.javashop.widget.brand.group.BrandGroupWidget"  scope="prototype"></bean>
+	<bean id="brand_detail"  class="com.enation.javashop.widget.brand.BrandDetailWidget"  scope="prototype"></bean>
+	<bean id="gift_list"  class="com.enation.javashop.widget.gift.GiftWidget"  scope="prototype"></bean>
+	
+	<!-- 团购 -->
+	<bean id="groupBuyList"  class="com.enation.javashop.widget.groupbuy.GroupBuyListWidget"  scope="prototype"></bean>
+	<bean id="groupBuyDetail"  class="com.enation.javashop.widget.groupbuy.GroupBuyDetailWidget"  scope="prototype"></bean>
+	<!-- 限时抢购-->
+	<bean id="limitBuyList"  class="com.enation.javashop.widget.limitbuy.LimitBuyListWidget"  scope="prototype"></bean>
+	<bean id="delivery_price"  class="com.enation.javashop.widget.delivery.DeliveryPriceWidget"  scope="prototype"></bean>
+	<bean id="goods_sns_share"  class="com.enation.javashop.widget.goods.sns.GoodsSnsShareWidget"  scope="prototype"></bean>
+	<bean id="goods_article"  class="com.enation.javashop.widget.goods.detail.RelatedArticlesWidget"  scope="prototype"></bean>
+	
+	<bean id="jiusheng_cat"  class="com.enation.javashop.widget.jiushengcat.JiusshengCatWidget"  scope="prototype"></bean>
+	<bean id="search_nav"  class="com.enation.javashop.widget.nav.SearchNavWidget"  scope="prototype"></bean>
+	<bean id="detail_nav"  class="com.enation.javashop.widget.nav.DetailNavWidget"  scope="prototype"></bean>
+	
+	<!-- 以下为会员中心挂件 -->
+	<bean id="member_isbuy"  class="com.enation.javashop.widget.member.MemberGoodsIsBuyWidget"  scope="prototype"></bean>
+	<bean id="member_islogin"  class="com.enation.javashop.widget.member.MemberIsLoginWidget"  scope="prototype"></bean>
+	<bean id="member_cart_bar"  class="com.enation.javashop.widget.member.MemberCartBarWidget"  scope="prototype"></bean>
+	<bean id="member_login_bar"  class="com.enation.javashop.widget.member.MemberLoginBarWidget"  scope="prototype"></bean>
+	<bean id="member_register"  class="com.enation.javashop.widget.member.MemberRegisterWidget" scope="prototype"></bean>
+	<bean id="member_findpassword"  class="com.enation.javashop.widget.member.FindPasswordWidget" scope="prototype"></bean>
+	<bean id="member_login"  class="com.enation.javashop.widget.member.MemberLoginWidget" scope="prototype"></bean>
+	<bean id="member_logout"  class="com.enation.javashop.widget.member.MemberLogoutWidget" scope="prototype"></bean>
+	<bean id="member_main"  class="com.enation.javashop.widget.member.MemberMainWidget" scope="prototype"></bean>
+	<bean id="member_index"  class="com.enation.javashop.widget.member.MemberIndex" scope="prototype"></bean>
+	<bean id="member_order"  class="com.enation.javashop.widget.member.MemberOrderWidget" scope="prototype"></bean>
+	<bean id="member_orderdetail"  class="com.enation.javashop.widget.member.MemberOrderDetailWidget" scope="prototype"></bean>
+	<bean id="member_orderpay"  class="com.enation.javashop.widget.member.MemberOrderPay" scope="prototype"></bean>
+	<bean id="member_comments"  class="com.enation.javashop.widget.member.MemberCommentsWidget" scope="prototype"></bean>
+	<bean id="member_info"  class="com.enation.javashop.widget.member.MemberInfoWidget" scope="prototype"></bean>
+	<bean id="member_address"  class="com.enation.javashop.widget.member.MemberAddressWidget" scope="prototype"></bean>
+	<bean id="member_message"  class="com.enation.javashop.widget.member.MemberMessageWidget" scope="prototype"></bean>
+	<bean id="member_security"  class="com.enation.javashop.widget.member.MemberSecurityWidget" scope="prototype"></bean>
+	<bean id="member_sites"  class="com.enation.javashop.widget.member.MemberSitesWidget" scope="prototype"></bean>
+	<bean id="member_gnotify"  class="com.enation.javashop.widget.member.MemberGnotifyWidget" scope="prototype"></bean>
+	<bean id="member_pointhistory"  class="com.enation.javashop.widget.member.MemberPointHistoryWidget" scope="prototype"></bean>
+	<bean id="member_coupons"  class="com.enation.javashop.widget.member.MemberCouponsMemberWidget" scope="prototype"></bean>
+	<bean id="member_favorite"  class="com.enation.javashop.widget.member.MemberFavoriteWidget" scope="prototype"></bean>
+	<bean id="member_couponExchange"  class="com.enation.javashop.widget.member.MemberCouponExchangeWidget" scope="prototype"></bean>
+	<bean id="member_advanceLogs"  class="com.enation.javashop.widget.member.MemberAdvanceLogsWidget" scope="prototype"></bean>
+	<bean id="member_deposit"  class="com.enation.javashop.widget.member.MemberDepositWidget" scope="prototype"></bean>
+	<bean id="member_returns_order"  class="com.enation.javashop.widget.member.MemberReturnsOrderWidget" scope="prototype"></bean>
+	<bean id="member_invoice"  class="com.enation.javashop.widget.member.MemberInvoiceApplyWidget" scope="prototype"></bean>
+	<bean id="member_email_check"  class="com.enation.javashop.widget.member.MemberEmailCheckWidget" scope="prototype"></bean>
+	<bean id="member_popularize"  class="com.enation.javashop.widget.member.MemberPopularizeWidget" scope="prototype"></bean>
+	
+</beans>

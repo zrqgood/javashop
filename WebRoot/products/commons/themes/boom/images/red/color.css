@@ -1,0 +1,28 @@
+﻿body {background:url(bodybg.gif) repeat-x;}
+.header{ background:url(pagetop.gif);}
+
+
+
+.mainTopArea .topTenTitle{background:url(hotsale.gif) no-repeat;}
+.mainTopArea .topTen{background:url(topten.gif) no-repeat 0 0;}
+
+.newsBar .more{ background:url(bodybg.gif) repeat-x 0 -130px;}
+
+
+.MenuList li a{ display:block ;color:#82073e}
+.MenuList li a:hover{ background:url(menuover.gif) no-repeat 50% 0;}
+
+.MainBorder .new                { background:url(maingoodsborder-top-new.gif) no-repeat}
+.MainBorder .hot                { background:url(maingoodsborder-top-hot.gif) no-repeat}
+.MainBorder .recommend          { background:url(maingoodsborder-top-recommend.gif) no-repeat}
+
+.border5 .top{ background:url(sideheavyborder-top.gif);}
+.border5 .body{ background:url(sideheavyborder-bg.gif)}
+.border5 .bottom{ background:url(sideheavyborder-bottom.gif);}
+
+.border6 .top{ background:url(sidearrowborder-top.gif);  }
+
+.Article-Tabs .current,
+.GoodsList-Tabs .current{
+	background:url(bodybg.gif) repeat-x 0 -130px;
+}

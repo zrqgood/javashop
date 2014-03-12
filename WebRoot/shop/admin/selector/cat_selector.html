@@ -1,0 +1,23 @@
+<form id="serchform">
+
+<div style="clear:both;padding-top:5px;"></div>
+
+
+<select name="catid" class="editinput">
+<option value="0">全部</option>
+<#assign children=catList />
+<#assign level=1 />
+<#include 'select_children.html' />
+</select>
+
+
+<div class="submitlist" align="center">
+ <table>
+ <tr><td >
+  <input name="btn" type="button" value=" 确    定   "  class="submitBtn" />
+   </td>
+   </tr>
+ </table>
+</div>	
+
+</form>

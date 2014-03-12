@@ -1,0 +1,50 @@
+<h3>团购:</h3>
+<div class="division" id="groupBuyBody">
+<table cellspacing="0" cellpadding="3" width="100%" class="liststyle">
+	<col class="span-2 ">
+	<col class="span-auto">
+	<col class="span-2">
+	<col class="span-2">
+	<col class="span-2">
+	<col class="span-1">
+	<col class="span-2 ColColorOrange">
+	<col class="span-2">
+	<thead>
+		<tr>
+			<th>图片</th>
+			<th>团购名称</th>
+			<th>商品积分</th>
+			<th>销售价格</th>
+			<th>优惠价格</th>
+			<th>数量</th>
+			<th>小计</th>
+			<th>删除</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		<#list groupBuyList as item >
+		<tr itemid="${item.id}" price="${item.coupPrice}">
+			<td><a style="margin: 0pt; padding: 0pt; text-decoration: none;"
+				target="_blank" href="goods-${item.goods_id}.html"><span
+				style="display: block; width: 50px; height: 50px;"
+				class="cart-product-img"><img height="50" width="36"
+				src="<@GoodsPic pic='${item.image_default}' postfix='_thumbnail' />" 
+				style="cursor: pointer;"></span></a></td>
+			<td style="text-align: left;"><a target="_blank"
+				href="goods-${item.goods_id}.html">${item.name}
+				</a></td>
+			<td>${item.point}</td>
+			<td class=" mktprice1">${item.price?string("currency")}</td>
+			<td>${item.coupPrice?string("currency")}</td>
+			<td>
+			<div class="Numinput" value="${item.num}"></div>
+			</td>
+			<td class="itemTotal">${item.subtotal?string("currency")}</td>
+			<td><span class="lnk quiet">删除</span></td>
+		</tr>
+		</#list>
+		
+	</tbody>
+</table>
+</div>

@@ -1,0 +1,180 @@
+body{
+	margin:0px;
+	background:transparent url(../images/leftbk.gif) repeat-y scroll 0 0;
+	font-family:Arial,"宋体",Verdana,sans-serif;
+	font-size:12px;
+}
+html,body {padding: 0;margin: 0; overflow-x:hidden; overflow-y:hidden;}
+dl,dd{margin:0px}
+ul,li{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+
+.top{
+	background:transparent url(../images/top.gif) repeat scroll 0 0;
+	height:100px;
+	left:0;
+	top:0;
+	position:absolute;
+	width:100%;
+	z-index:999;
+}
+.logo{
+	position:absolute;
+	top:16px;
+	left:10px;
+}
+.cleft{
+	position:absolute;
+	left:0;
+	top:100px;
+	width:173px;
+}
+.cclient{
+	position:absolute;
+	left:175px;
+	top:100px;
+	z-index:1;
+}
+
+.folder{
+	background:transparent url(../images/folder.gif) no-repeat scroll 10px 10px;
+}
+
+.sysmenu{
+	color:#234F8D;
+	position:absolute;
+	right:22px;
+	top:14px;
+	word-spacing:5px;
+	z-index:2;
+}
+.sysmenu ul li{
+	float:left;
+	padding:5px;
+	position: relative;
+	display: inline;
+	background:none;
+	border:none;
+}
+.sysmenu ul li a{
+	color:#185096;
+	text-decoration:none;
+}
+.sysmenu ul li a:hover{
+	color:#1C80C8;
+	text-decoration:none;
+}
+.sysmenu ul li ul{
+	position: absolute;
+	left: 0;
+	display: block;
+	visibility: hidden;
+	background:#F6FBFE;
+	border:1px solid #B0D3EE;
+	padding:3px 0;
+}
+.sysmenu ul li ul li{
+	display: list-item;
+	float: none;
+	padding:0 3px;
+	background-image:none;
+	
+}
+.sysmenu ul li ul li ul{
+	top: 0;
+}
+.sysmenu ul li ul li a{
+	display:block;
+	width: 90px; 
+	color: #003366;
+	padding: 4px 7px;
+	margin: 0;
+	border-bottom:1px solid #ECEFE7;
+}
+.sysmenu ul li ul li a:hover{ 
+	background-color: #CAE0F4;
+	color:#5B6D70;
+	font-weight:bold;
+}
+.sysmenu ul .img_down{
+	background: url(../images/arrow-down.gif) no-repeat right center;
+	padding-right:20px;
+}
+.sysmenu ul .img_right{
+	margin: 0;
+	background:url(../images/arrow-right.gif) no-repeat right center;
+}
+
+#dispanel{
+	width:100%;
+	overflow:auto;
+}
+#header{
+	height:51px;
+	background:transparent url(../images/clienttop.gif) repeat scroll 0 0;
+	color:#185096;
+	font-weight:bold;
+	font-size:14px;
+	line-height:51px;
+	padding-left:20px;
+}
+#toptab{
+	position:absolute;
+	left:172px;
+	bottom:3px;
+}
+#toptab .normal{
+	background:transparent url(../images/normal.gif) no-repeat scroll right 5px;
+	color:#336699;
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	padding:6px 20px 10px;
+	text-decoration:none;
+}
+#toptab .selected{
+	background:transparent url(../images/selected.gif) repeat scroll 0 0;
+	color:#FFFFFF;
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	height:25px;
+	padding:8px 0 0 50px;
+	text-decoration:none;
+	width:67px;
+}
+#toptab li{
+	float:left;
+}
+#leftMenus{
+	border-bottom:3px solid #D3E9F8;
+}
+#leftMenus dt{
+	background:transparent url(../images/leftmenu.gif) repeat scroll 0 0;
+	border-left:1px solid #FFFFFF;
+	position:relative;
+}
+#leftMenus dt a{
+	color:#333333;
+	display:block;
+	height:30px;
+	line-height:30px;
+	padding-left:30px;
+	text-decoration:none;
+}
+#leftMenus dd{
+	background-color:#F4F9FF;
+	background-image:url(../images/kit.gif);
+	background-position:15px 10px;
+	background-repeat:no-repeat;
+	border-bottom:1px solid #D8ECFF;
+	line-height:25px;
+	padding-left:28px;
+}
+#leftMenus dd a{
+	color:#3D6BAC;
+	text-decoration:none;
+}

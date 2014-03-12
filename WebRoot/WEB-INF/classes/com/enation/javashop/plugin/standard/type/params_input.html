@@ -1,0 +1,27 @@
+<#if paramAr?exists >
+	<#list paramAr as group >
+		<table  class="form-table">
+			<tr>
+				<th style='text-align:left' align="left" colSpan="2" class="groupname">
+					${group.name }
+					<input type="hidden" name="groupnames" value="${ group.name}" />
+					<input type="hidden" name="paramnums" value="${ group.paramNum}" />
+				</th>
+			</tr>
+			
+				<#list group.paramList as gparam>
+				<tr>
+					<th   style="font-weight: normal;">
+						<input type="hidden" name="paramnames" value="${ gparam.name}" />
+						${gparam.name }：
+					</th>
+					<td>
+						<input type="text" name="paramvalues" class="input_text" value="${gparam.value }"/>
+					</td>
+				</tr>
+				</#list>
+		</table>
+	</#list>
+<#else>
+该类型未定义参数
+</#if>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="false">
+
+	<!-- 安装 -->
+	<bean id="eopInstallManager" class="com.enation.app.base.core.service.EopInstallManager"></bean>
+	
+ 	<!-- Base应用 -->
+ 	<bean id="base" class="com.enation.app.base.BaseApp"></bean>
+ 	
+ 	<!-- 帮助 -->
+ 	<bean id="helpManager" class="com.enation.app.base.core.service.impl.HelpManager"></bean>
+
+	
+	<!-- 权限点管理 -->
+	<bean id="authActionManager" class="com.enation.app.base.core.service.auth.impl.AuthActionManager" parent="baseSupport"></bean>
+	
+ 	<!-- 权限 -->
+	<bean id="permissionManager" class="com.enation.app.base.core.service.auth.impl.PermissionManager" parent="baseSupport"></bean>
+
+ 	<!-- 角色管理 -->
+	<bean id="roleManager" class="com.enation.app.base.core.service.auth.impl.RoleManager" parent="baseSupport"></bean>
+	
+	<!-- 友情链接管理 -->
+	<bean id="friendsLinkManager" class="com.enation.app.base.core.service.impl.FriendsLinkManager"  parent="baseSupport" />
+	
+	<!-- Sitemap -->
+	<bean id="sitemapManager" class="com.enation.app.base.core.service.impl.cache.SitemapCacheProxy"></bean>
+	<bean id="askManager" class="com.enation.app.base.core.service.impl.AskManager"  ></bean>
+	<bean id="guestBookManager" class="com.enation.app.base.core.service.impl.GuestBookManager"  ></bean>
+	<bean id="multiSiteManager" class="com.enation.app.base.core.service.impl.MultiSiteManager" ></bean>
+	<bean id="updateManager" class="com.enation.app.base.core.service.impl.UpdateManager2" ></bean>
+	<bean id="sqlExportService" class="com.enation.app.base.core.service.solution.impl.SqlExportService" scope="prototype"></bean>
+		
+	<!-- 广告管理 -->	
+	<bean id="advManager" class="com.enation.app.base.core.service.impl.AdvManager" parent="baseSupport"></bean>
+	<bean id="adColumnManager" class="com.enation.app.base.core.service.impl.AdColumnManager" parent="baseSupport"></bean>
+	<bean id="widgetCacheManager" class="com.enation.app.base.core.service.impl.WidgetCacheManager"></bean>
+		
+	<!-- 站点菜单 -->	
+    <bean id="siteMenuManagerImpl" class="com.enation.app.base.core.service.impl.SiteMenuManager" parent="baseSupport"></bean>
+	
+	<!-- 缓存代理 -->	
+	<bean id="siteMenuManager" class="com.enation.app.base.core.service.impl.cache.SiteMenuCacheProxy" >
+		<constructor-arg><ref bean="siteMenuManagerImpl"/></constructor-arg>
+	</bean>
+			
+ 	<!-- 流量管理 -->
+	<bean id="accessRecorder" class="com.enation.app.base.core.service.impl.AccessRecorder" parent="baseSupport" ></bean>
+	
+ 	<!-- 流量导出器 -->
+	<bean id="accessExporter" class="com.enation.app.base.core.service.impl.AccessExporter" parent="baseSupport" scope="prototype"></bean>
+	
+		
+ 	
+ 	
+ 	<!-- 
+ 				=============================================
+ 				解决方案安装(因存在并发问题，故scope=protoype)
+ 				=============================================
+ 	-->
+ 	
+ 	<!-- 解决方案安装器 -->	
+ 	<bean id="solutionInstaller" class="com.enation.app.base.core.service.solution.impl.SolutionInstaller"  scope="prototype"></bean>
+ 
+ 	<!-- 解决方案导出器 -->	
+	<bean id="solutionExporter" class="com.enation.app.base.core.service.solution.impl.SolutionExporter" scope="prototype"></bean>
+	
+	<!-- 解决方案导入器 -->
+	<bean id="solutionImporter" class="com.enation.app.base.core.service.solution.impl.SolutionImporter" scope="prototype"></bean>
+	
+	<bean id="profileLoader" class="com.enation.app.base.core.service.solution.impl.ProfileLoaderImpl" scope="prototype"></bean>
+	<bean id="setupLoader" class="com.enation.app.base.core.service.solution.impl.SetupLoaderImpl" scope="prototype"></bean>
+	<bean id="adminThemeInfoFileLoader" class="com.enation.app.base.core.service.solution.impl.AdminThemeInfoLoaderImpl"  scope="prototype"></bean>
+	<bean id="menuInstaller" class="com.enation.app.base.core.service.solution.impl.MenuInstaller"  scope="prototype"></bean>
+	<bean id="appInstaller" class="com.enation.app.base.core.service.solution.impl.AppInstaller" scope="prototype"></bean>
+	<bean id="adminUserInstaller" class="com.enation.app.base.core.service.solution.impl.AdminUserInstaller" ></bean>
+	<bean id="adminThemeInstaller" class="com.enation.app.base.core.service.solution.impl.AdminThemeInstaller" scope="prototype"></bean>
+	<bean id="themeInstaller" class="com.enation.app.base.core.service.solution.impl.ThemeInstaller" scope="prototype"></bean>
+	<bean id="uriInstaller" class="com.enation.app.base.core.service.solution.impl.UriInstaller" scope="prototype"></bean>
+	<bean id="widgetInstaller" class="com.enation.app.base.core.service.solution.impl.WidgetInstaller" scope="prototype"></bean>
+	<bean id="borderInstaller" class="com.enation.app.base.core.service.solution.impl.BorderInstaller" scope="prototype"></bean>
+	<bean id="indexItemInstaller" class="com.enation.app.base.core.service.solution.impl.IndexItemInstaller" scope="prototype"></bean>
+	<bean id="productService" class="com.enation.app.base.core.service.solution.impl.ProductServiceImpl" scope="prototype"></bean>
+	<bean id="exampleDataInstaller" class="com.enation.app.base.core.service.solution.impl.ExampleDataInstaller" scope="prototype"></bean>
+	<bean id="installerFactory" class="com.enation.app.base.core.service.solution.InstallerFactory" scope="prototype"></bean>
+ 	<bean id="installerManager" class="com.enation.app.base.core.service.solution.InstallerManager" scope="prototype"></bean>
+	<bean id="batchSqlExecutor" class="com.enation.app.base.core.service.impl.BatchSqlExecutor"></bean>
+ 	<bean id="setupCreator" class="com.enation.app.base.core.service.solution.impl.SetupCreator"></bean>
+ 	<bean id="profileCreator" class="com.enation.app.base.core.service.solution.impl.ProfileCreator" scope="prototype"></bean>
+ 	<bean id="mysqlSolution" class="com.enation.app.base.core.service.dbsolution.impl.MySQLSolution" scope="prototype"></bean>
+ 	<bean id="oracleSolution" class="com.enation.app.base.core.service.dbsolution.impl.OracleSolution" scope="prototype"></bean>
+	<bean id="sqlserverSolution" class="com.enation.app.base.core.service.dbsolution.impl.SQLServerSolution" scope="prototype"></bean> 	
+<!--
+	<bean id="mssqlDataBaseCreater" class="com.enation.app.base.core.service.impl.database.MssqlDataBaseCreater"></bean>
+	<bean id="oracleDataBaseCreater" class="com.enation.app.base.core.service.impl.database.OracleDataBaseCreater"></bean>	
+	<bean id="mysqlDataBaseCreater" class="com.enation.app.base.core.service.impl.database.MysqlDataBaseCreater"></bean>
+ -->	
+	<bean id="dataSourceCreator" class="com.enation.app.base.core.service.impl.ComboPooledDataSourceCreator"></bean>
+	
+
+	
+	
+	<!-- 系统设置的缓存 -->
+	<bean id="settingCache" class="com.enation.framework.cache.EhCacheImpl"  >
+		<constructor-arg><value>settings</value></constructor-arg>
+	</bean>
+
+	<!-- 系统设置相关 -->
+	<bean id="saasSettingService" class="com.enation.app.base.core.service.impl.SaasSettingService"  parent="baseSupport" />
+	<bean id="settingService" class="com.enation.app.base.core.service.impl.SaasSettingCacheProxy" >
+		<constructor-arg>
+			<ref bean="saasSettingService"/>
+		</constructor-arg>
+		<property name="cache">
+			<ref bean="settingCache"/>
+		</property>
+	</bean>
+		
+	<!-- 使用Spring封装的Mail Sender -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mail.host}"/>
+		<property name="username" value="${mail.username}"/>
+		<property name="password" value="${mail.password}"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.timeout">25000</prop>
+			</props>
+		</property>		
+	</bean>		
+</beans>

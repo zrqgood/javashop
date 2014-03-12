@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-autowire="byName" default-lazy-init="false">
+	
+	<!--  产品安装 -->
+	<bean id="eopInstallAction" class="com.enation.app.base.core.action.EopInstallAction" scope="prototype"></bean>
+	
+	<!--  用户基本信息维护 -->
+	<bean id="baseInfoAction" class="com.enation.app.base.core.action.BaseInfoAction" scope="prototype"></bean>
+	
+	<!--  用户详细信息维护 -->
+	<bean id="userDetailAction" class="com.enation.app.base.core.action.UserDetailAction" scope="prototype"></bean>
+	
+	<!--  站点管理 -->
+	<bean id="userSiteAction" class="com.enation.app.base.core.action.UserSiteAction" scope="prototype"></bean>
+	
+	<!--  管理员-->
+	<bean id="userAdminAction" class="com.enation.app.base.core.action.UserAdminAction" scope="prototype"></bean>
+	
+	<!--  前台站点主题-->
+	<bean id="siteThemeAction" class="com.enation.app.base.core.action.SiteThemeAction" scope="prototype"></bean>
+	
+	<!--  后台站点主题-->
+	<bean id="siteAdminThemeAction" class="com.enation.app.base.core.action.SiteAdminThemeAction" scope="prototype"></bean>
+	
+	<!--  流量-->
+	<bean id="accessAction" class="com.enation.app.base.core.action.AccessAction" scope="prototype"></bean>
+	
+	<!--  后台首页-->
+	<bean id="indexAction" class="com.enation.app.base.core.action.IndexAction" scope="prototype" />
+	
+	<!--  base首页项-->
+	<bean id="baseIndexItemAction" class="com.enation.app.base.core.action.BaseIndexItemAction" scope="prototype" />
+	
+	<!--  帮助-->
+	<bean id="helpAction" class="com.enation.app.base.core.action.HelpAction" scope="prototype" />
+	
+	<!--  角色-->
+ 	<bean id="roleAction" class="com.enation.app.base.core.action.RoleAction" scope="prototype" />
+ 	
+	<!--  权限-->
+ 	<bean id="authAction" class="com.enation.app.base.core.action.AuthAction" scope="prototype" />
+	
+	<!--  边框-->
+	<bean id="borderAction" class="com.enation.app.base.core.action.BorderAction" scope="prototype" />
+	
+	<!--  上传-->
+	<bean id="uploadAction" class="com.enation.app.base.core.action.UploadAction" scope="prototype" />
+	
+	<!--  ckeditor上传-->
+	<bean id="ckEditorUploadAction" class="com.enation.app.base.core.action.CkEditorUploadAction" scope="prototype" />
+	
+	<!--  问答-->
+	<bean id="askAction" class="com.enation.app.base.core.action.AskAction" scope="prototype" />
+ 	
+	<!--  留言板-->
+ 	<bean id="guestBookAction" class="com.enation.app.base.core.action.GuestBookAction" scope="prototype" />
+ 	
+	<!--  theme uri-->
+ 	<bean id="themeUriAction" class="com.enation.app.base.core.action.ThemeUriAction" scope="prototype" />
+ 	
+	<!--  模板文件管理-->
+ 	<bean id="themeFileAction" class="com.enation.app.base.core.action.ThemeFileAction" scope="prototype" />
+ 	
+	<!-- 菜单管理-->
+ 	<bean id="menuAction" class="com.enation.app.base.core.action.MenuAction" scope="prototype" />
+ 	
+	<!-- 生成sitemap-->
+ 	<bean id="createSitemapAction" class="com.enation.app.base.core.action.CreateSitemapAction" scope="prototype" />
+ 	
+	<!-- 多站点管理-->
+ 	<bean id="multiSiteAction" class="com.enation.app.base.core.action.MultiSiteAction" scope="prototype" />
+ 	
+	<!--  版本升级-->
+ 	<bean id="updateAction" class="com.enation.app.base.core.action.UpdateAction" scope="prototype" />	
+	
+	<!-- 友情连接 -->
+	<bean id="friendsLinkAction" class="com.enation.app.base.core.action.FriendsLinkAction" scope="prototype" />
+
+	<!-- 广告 -->
+	<bean id="adColumnAction" class="com.enation.app.base.core.action.AdColumnAction" scope="prototype" />
+	<bean id="advAction" class="com.enation.app.base.core.action.AdvAction" scope="prototype" />
+		
+	<!-- 导航条 -->	
+ 	<bean id="siteMenuAction" class="com.enation.app.base.core.action.SiteMenuAction" scope="prototype"/>
+ 	
+ 	<!-- 系统设置 -->
+	<bean id="settingAction" class="com.enation.app.base.core.action.SettingAction" scope="prototype"/>
+			
+ 	<!-- 挂件缓存设置 -->
+	<bean id="widgetCacheAction" class="com.enation.app.base.core.action.WidgetCacheAction" scope="prototype"/>			
+</beans>

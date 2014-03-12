@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="false">
+	<bean id="articlePluginBundle" class="com.enation.cms.core.plugin.ArticlePluginBundle"></bean>
+	<bean id="inputFieldPlugin" class="com.enation.cms.plugin.InputFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>
+	<bean id="radioFieldPlugin" class="com.enation.cms.plugin.RadioFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>	
+	<bean id="checkboxFieldPlugin" class="com.enation.cms.plugin.CheckboxFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>	 		
+	<bean id="selectFieldPlugin" class="com.enation.cms.plugin.SelectFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean> 
+	<bean id="textareaFieldPlugin" class="com.enation.cms.plugin.TextareaFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean> 
+	<bean id="richEditFieldPlugin" class="com.enation.cms.plugin.RichEditFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean> 	
+	<bean id="imageFieldPlugin" class="com.enation.cms.plugin.ImageFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>
+	<bean id="dateFieldPlugin" class="com.enation.cms.plugin.DateFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>	
+	<bean id="cmsDataLogPlugin" class="com.enation.cms.plugin.CmsDataLogPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>
+	<bean id="cmsSitemapPlugin" class="com.enation.cms.plugin.CmsSitemapPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+				<ref bean="sitemapPluginBundle" />
+			</list>
+		</property>
+	</bean>
+	<bean id="attachmentFieldPlugin" class="com.enation.cms.plugin.AttachmentFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>	
+	<bean id="relatedFieldPlugin" class="com.enation.cms.plugin.RelatedFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>	
+	<bean id="multikImageFieldPlugin" class="com.enation.cms.plugin.MultiImageFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>	
+	<bean id="videoFieldPlugin" class="com.enation.cms.plugin.video.VideoFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>		
+	<bean id="paramsFieldPlugin" class="com.enation.cms.plugin.params.ParamsFieldPlugin">
+		<property name="bundleList">
+			<list>
+				<ref bean="articlePluginBundle" />
+			</list>
+		</property>
+	</bean>		
+</beans>

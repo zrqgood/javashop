@@ -1,0 +1,64 @@
+<span  >
+<select name="province_id" id="province_id">
+	<option value="0">请选择</option>
+	<#list provinceList as province>
+		<option value='${(province.region_id)?c}' >${province.local_name}</option>
+	</#list>
+</select>&nbsp;
+<input type="hidden" name="province" id="province" />
+
+<select name="city_id" id="city_id"><option value="0">请选择</option></select>&nbsp;
+<input type="hidden" name="city" id="city" />
+
+<select name="region_id" id="region_id"><option value="0">请选择</option></select>&nbsp;
+<input type="hidden" name="region" id="region" />	
+</span>
+<script>
+var RegionsSelect={
+	init:function(){
+		var self  = this;
+		$("#province_id").change(function(){
+				var regionid = $(this).val();
+				$("#province").val(  $("#province_id option:selected").text() );
+				if( "0"  ==  regionid ){return }
+				self.loadRegions(regionid,$("#city_id"));
+		});
+
+		$("#city_id").change(function(){
+			$("#city").val(  $("#city_id option:selected").text() );
+			var regionid = $(this).val();
+			if( "0"  ==  regionid ){return }
+			self.loadRegions(regionid,$("#region_id"));
+
+		});
+
+		$("#region_id").change(function(){
+			$("#region").val(  $("#region_id option:selected").text() );
+
+		});
+		
+	},
+	loadRegions:function(regionid,selectEl){
+		$.ajax({
+			url:"widget?type=regionsSelect&action=showJson&regionid="+regionid,
+			dataType:"json",
+			success:function(regionJson){
+				if(regionJson){
+					var html ="<option value='0'>请选择</option>";
+					$.each(regionJson,function(i,region){
+						html+="<option value='"+region.region_id+"'>"+ region.local_name +"</option>";
+					});
+					selectEl.empty().append(html);
+				}
+			},
+			error:function(){
+				alert("非常抱歉,加载地区出错");
+			}
+		});
+	}
+	
+}
+$(function(){
+	RegionsSelect.init();
+});
+</script>

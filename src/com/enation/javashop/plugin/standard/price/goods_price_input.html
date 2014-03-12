@@ -1,0 +1,74 @@
+<script type="text/javascript" src="memberprice.js"></script>
+<div style="display: none;"  tabid="tab_1"  class="tab-panel">
+	<table id="body1" class="form-table">
+	<tbody>
+ 
+		<tr>
+			<th>销售价：</th>
+			<td><input type="text" maxlength="25" style="width: 60px;"
+				name="price" id="price" class="price" autocomplete="off"  dataType=float value="${(goods.price!0)?c}">
+				<input type="button" class="mempriceBtn" value="编辑会员价格" />
+				<div class="member_price_box" ><!-- 声明控件，稍后初始化 -->
+				<#if lvList?exists>
+				<#list lvList as lv>
+					<input type="hidden" class="lvid"  value="${lv.lv_id}" name="lvid">
+					<input type="hidden" class="lvPrice" lvid="${lv.lv_id}" name="lvPrice">
+				</#list>
+				</#if>
+			</div>
+			&nbsp;&nbsp;<span class=  "help_icon" helpid="goods_price"></span>
+			</td>
+		</tr>
+		<tr>
+			<th>成本价：</th>
+			<td><input type="text" style="width: 60px;" maxlength="30"
+				name="cost" id="cost" autocomplete="off" value="${(goods.cost!0)?c}"> 
+			&nbsp;&nbsp;<span class="help_icon" helpid="goods_cost"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<th>重量：</th>
+			<td><input type="text" maxlength="25" style="width: 60px;"
+				name="weight" id="weight" autocomplete="off" value="${(goods.weight!0)?c}">克(g)</td>
+		</tr>
+
+		<tr>
+			<th>库存：</th>
+			<td><input type="text" maxlength="25" style="width: 60px;"
+				name="store" id="store" autocomplete="off" value="${(goods.store!0)?c}" dataType="int">
+			&nbsp;&nbsp;<span class="help_icon" helpid="goods_store"></span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div id="memberpricedlg"></div>
+<#if goods.goods_id?exists >
+<script>
+$(function(){
+	//初始化商品会员价
+	$.ajax({
+		url:'../shop/admin/memberPrice!getLvPriceJson.do?ajax=yes',
+		data:'goodsid=${goods.goods_id}',
+		dataType:'json',
+		success:function(result){
+			if(result.result==1){
+				var priceData = result.priceData;
+				$.each(priceData,function(i,price){
+					$(".member_price_box>input.lvPrice[lvid="+price.lvid+"]").val(price.price);
+				});
+			}
+			else{
+				alert("生成会员价格出错："+result.message);
+			}
+		},
+		error:function(){
+			alert("生成会员价格出错");
+		}
+	});
+
+	MemberPrice.bindMbPricBtnEvent();
+})
+</script>		
+</#if>	
+</div>

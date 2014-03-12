@@ -1,0 +1,107 @@
+<div id="siderIMchat" <#if state!='1'>style="display:none;"</#if>>
+<div id="siderIMchat_hiddenbar" ></div>
+<div id="siderIMchat_main" style="display: none;">
+<div class="top"></div>
+<#if wt==1>
+<div class="infobox">我们营业的时间<br/>${worktime!''}</div>
+</#if>
+	<div class="bg">
+	<#if qq==1>
+		<ul class="clearfix">
+		<#list qqlist as q>
+		 <li>
+			<div class="num">
+				<a href="tencent://message/?uin=${q.num}&&Site=enationsoft&&Menu=yes&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b752513b0b4a75251363a3c8dd0f8aa12a595b1714f9d45">
+					<img src="http://wpa.qq.com/pa?p=1:${q.num}:1"></img>
+				</a>
+			</div>
+			<div>${q.text!''}</div>
+		 </li>
+		 </#list>
+		</ul>
+	</#if>
+
+	<#if msn==1>
+		<ul class="clearfix" id="msncontent">
+		<#list msnlist as m>
+		 <li>
+			<div class="num">
+				<a href="msnim:chat?contact=${m.num}">
+					<img src="${staticserver}/default/images/msn.gif"></img>
+				</a>
+			</div>
+			<div>${m.text!''}</div>
+			<script>
+			$(function(){
+				if(isFirefox=navigator.userAgent.indexOf("Firefox")>0){
+					$("#msncontent").hide();//如果是FF则不显示MSN
+				}else{
+					$("#msncontent").show();
+				} 
+			});
+			</script>
+		 </li>
+		 </#list>
+		</ul>
+	</#if>
+
+	<#if ww==1>
+		<ul class="clearfix">
+		<#list wwlist as w>
+		 <li>
+			<div class="num">
+				<a target="_blank" href="http://amos1.taobao.com/msg.ww?v=2&uid=${w.num}&s=1" >
+					<img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid=${w.num}&s=1" alt="点击这里给我发消息" />
+				</a>
+			</div>
+			<div>${w.text!''}</div>
+		 </li>
+		 </#list>
+		</ul>
+	</#if>
+
+	<#if tel==1>
+		<ul class="clearfix">
+		 
+		 <li style="font-weight:700;font-size:12px">
+			 
+				 电话： ${imtel!''} 
+		 </li>
+		 
+		</ul>
+	</#if>
+
+		<div class="close"><span class="lnk" id="closeSiderIMchat">关闭在线客服</span></div>		 
+	</div>
+
+<div class="bottom"></div>
+</div>
+</div>
+<script type="text/javascript">
+
+function imscroll(){
+	
+	var h = ($(window).scrollTop()+100);
+	$("#siderIMchat").stop().animate({top:h},500);
+ 
+} 
+$(function(){
+	$("#siderIMchat_hiddenbar").hover(
+		function(){
+			$(this).hide();
+		},
+
+		function(){
+			$("#siderIMchat_main").show();
+		}
+	);
+	$("#closeSiderIMchat").click(function(){
+		$("#siderIMchat_main").hide();
+		$("#siderIMchat_hiddenbar").show();
+	});
+	$(window).scroll(function(){
+	  imscroll();
+	});
+	  imscroll();
+});
+</script>

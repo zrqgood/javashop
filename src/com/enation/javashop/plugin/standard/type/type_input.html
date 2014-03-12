@@ -1,0 +1,93 @@
+<script type="text/javascript"  >//var TypeCat={init:function(){var b=this;$("#type_id").change(function(){b.type_change_event($(this).val(),$(this).find("option:selected").attr("join_brand"))});$("#cat_id").change(function(){var a=$(this).find("option:selected").attr("typeid");b.changeType($(this).val(),a)})},changeType:function(b,a){if(confirm("\u662f\u5426\u6839\u636e\u6240\u9009\u5206\u7c7b\u7684\u9ed8\u8ba4\u7c7b\u578b\u91cd\u65b0\u8bbe\u5b9a\u5546\u54c1\u7c7b\u578b\uff1f\n\u5982\u679c\u91cd\u8bbe\uff0c\u53ef\u80fd\u4e22\u5931\u5f53\u524d\u6240\u8f93\u5165\u7684\u7c7b\u578b\u5c5e\u6027\u3001\u5173\u8054\u54c1\u724c\u3001\u53c2\u6570\u8868\u7b49\u7c7b\u578b\u76f8\u5173\u6570\u636e\u3002")){$("#type_id").val(a); this.type_change_event(a,this.getJoinBrand(a))}},getJoinBrand:function(b){var a=0;$("#type_id option").each(function(){if($(this).val()==b&&$(this).attr("join_brand")==1)a=1});return a},type_change_event:function(b,a,c){if(parseInt(a)==1){$("#brand_tr").show();this.loadBrandsInput(b,c)}else{$("#brand_id").empty();$("#brand_tr").hide()}if(!c){this.loadPropsInput(b);this.loadParamsInput(b)}},loadBrandsInput:function(b,a){$.ajax({type:"get",url:basePath+"type!listBrand.do?ajax=yes",data:"type_id="+b+ "&m="+(new Date).getTime(),dataType:"html",success:function(c){$("#brand_id").empty().append(c);a&&$("#brand_id").val(a)},error:function(c){alert("\u5f02\u6b65\u8bfb\u53d6\u5931\u8d25:"+c)}})},loadParamsInput:function(b){$.ajax({type:"get",url:basePath+"type!disParamsInput.do?ajax=yes",data:"type_id="+b+"&m="+(new Date).getTime(),dataType:"html",success:function(a){try{$("#tab_params").html(a)}catch(c){alert(c)}},error:function(a){alert("\u5f02\u6b65\u8bfb\u53d6\u5931\u8d25:"+a)}})},loadPropsInput:function(b){$.ajax({type:"get", url:basePath+"type!disPropsInput.do?ajax=yes",data:"type_id="+b+"&m="+(new Date).getTime(),dataType:"html",success:function(a){document.getElementById("tab_props").innerHTML=a},error:function(a){alert("\u5f02\u6b65\u8bfb\u53d6\u5931\u8d25:"+a)}})}};
+</script>
+<script type="text/javascript" src="js/input_handlers.js"></script>
+
+<script LANGUAGE="JavaScript">
+
+
+$( function() {  
+	TypeCat.init();  
+	<#if is_edit>
+	 var type_value = ${goods.type_id};
+	 $("#type_id").val(type_value);
+	 $("#cat_id").val(${goods.cat_id});
+//	 TypeCat.type_change_event(type_value,TypeCat.getJoinBrand(type_value),${goods.brand_id!0});
+	 TypeCat.type_change_event1(type_value,TypeCat.getJoinBrand(type_value),${goods.brand_id!0});
+	<#else>
+	    <#if catid?exists >
+		TypeCat.changeCat(${catid});
+		</#if>  	
+	</#if>
+
+});
+
+ 
+</script>
+<style>
+.form-table .groupname{
+	font-weight: bold;
+	font-size:14px;
+	padding-left: 35px; 
+}
+</style>
+<div tabid="tab_0" class="tab-panel"  style="width:60%;float:left">
+	<table   class="form-table">
+		<tr>
+			<th class="label">
+				商品分类：
+			</th>
+			<td>
+
+				<select name="goods.cat_id" id="cat_id" required="true"  >
+					<option value="">请选择商品分类</option>
+					<#assign children=catList />
+					<#assign level=1 />
+					<#include 'select_children.html' />  	
+				</select>
+				&nbsp;&nbsp;<span class="help_icon" helpid="goods_cat"></span>
+			</td>
+		</tr>	
+		<tr>
+			<th id="type_tip">
+				商品类型：
+			</th>
+			<td>
+				<select name="goods.type_id" id="type_id" required="true" >
+					<option value="">请选择商品类型</option>
+					<#list typeList as type>
+						<option join_brand="${type.join_brand}" value="${type.type_id }">
+							${type.name }
+						</option>
+					</#list>	
+				
+				</select>&nbsp;&nbsp;<span class="help_icon" helpid="goods_type"></span>
+			</td>
+		</tr>
+
+
+		<tr id="brand_tr">
+			<th>
+				品牌：
+			</th>
+			<td id="brand_id_td">
+				<select name="goods.brand_id" id="brand_id" >
+					<option value="">请选择</option>
+				</select>	&nbsp;&nbsp;<span class="help_icon" helpid="goods_brand"></span>		
+			</td>
+		</tr>
+
+	</table>
+</div>	
+ 
+
+<div id="tab_props" tabid="tab_2" class="tab-panel" style="display: none;">
+	<#if is_edit>
+		<#include "props_input.html" >   
+	</#if>
+</div>
+
+<div id="tab_params" tabid="tab_3"   class="tab-panel" style="display: none;">
+	<#if is_edit>
+		<#include "params_input.html" > 
+	</#if>
+</div>

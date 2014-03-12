@@ -1,0 +1,28 @@
+<LINK 
+rel=stylesheet type=text/css 
+href="css/slides.css">
+<li id="column2-1-1">
+<div name="__DT" class="slides" <#if width?exists>width="${width}"</#if> <#if height?exists>height="${height}"</#if> >
+<ul class="slide-pic" <#if width?exists>width="${width}"</#if> <#if height?exists>height="${height}"</#if> >
+    <#list advList as adv>
+	<li class="" <#if adv_index == 0>style="display: list-item;"<#else>style="display:none;"</#if>><a target="_blank"
+		href="${ctx}/core/adv!click.do?advid=${adv.aid}"><img
+		border="0" src="${adv.atturl}" <#if width?exists>width="${width}"</#if> <#if height?exists>height="${height}"</#if> 
+		alt="${adv.aname!''}"></a></li>
+	</#list>
+</ul>
+<ul class="slide-li op">
+    <#list advList as adv>
+    <li <#if adv_index == 0>class="cur"<#else>class=""</#if>></li>
+	</#list>
+</ul>
+<ul class="slide-li slide-txt">
+    <#list advList as adv>
+    <li <#if adv_index == 0>class="cur"<#else>class=""</#if>><a target="_blank"
+		href="${ctx}/core/adv!click.do?advid=${adv.aid}">${adv.aname!''}</a>
+	</li>
+	</#list>
+</ul>
+</div>
+<script src="js/jquery-tools-Slide.js" type="text/javascript"></script>
+</li>

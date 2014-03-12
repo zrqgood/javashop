@@ -1,0 +1,66 @@
+<#include 'common/header.html' />
+<script src="js/tab.js" type="text/javascript"></script>
+<script src="js/jquery-ApexSlider.js" type="text/javascript"></script>
+<!--content-->
+	<div class="content">
+		<div class="content_l">
+			<div class="tel">
+				<#include 'customPage/index_1.html'/>
+			</div>
+			<div class="map">
+				<img src="images/map_1.jpg" />
+			</div>
+		</div>
+		<div class="content_r">
+			<div class="article">
+				<!--news-->
+				<div class="news">
+					<div class="titleBar">
+						<ul>
+							<li class="current" id="1">公司新闻</li>
+							<li id="2">企业动态</li>
+						</ul>
+						<div class="more">
+							<a href="news-2-1.html"></a>
+						</div>
+					</div>
+					<div class="cont" id="cont_1">
+						${widget_2}
+					</div>
+					<div class="cont" id="cont_2">
+						${widget_3}
+					</div>
+				</div>
+				<!--news end-->
+				<!--公司简介-->
+				<div class="about">
+					<div class="title">
+						<div class="more"><a href="about.html"></a></div>
+					</div>
+					<div class="cont">
+						<img src="images/201001191263880023953.gif"/>
+						${widget_4}
+					</div>
+				</div>
+				<!--公司简介 end-->
+			</div>
+			<!--产品展示-->
+			<div class="product">
+				<div class="title">
+					<div class="more"><a href="product-7-1.html"></a></div>
+				</div>
+				<div class="imglist" >
+					${widget_5}
+					<script type="text/javascript">
+						$(function(){
+							$(".imglist ul").LeftMarquee({speed:50,step:1});
+						});
+					</script>
+				</div>
+			</div>
+			
+			<!--产品展示 end-->
+		</div>
+	</div>
+<!--content end-->
+<#include 'common/footer.html' />

@@ -1,0 +1,26 @@
+<meta http-equiv="refresh" content="3;url=<#if jumpurl?exists >${jumpurl}<#else>javascript:history.back();</#if>">
+<div class="FeedBackInfo">
+<div class="error clearfix">
+<div class="span-1 pic"></div>
+<div class="span-auto ">
+<h1><#if msg?exists >${msg}</#if></h1>
+
+<#if urls?exists >
+<ol>
+	<#list urls?keys  as itemKey>
+	<#assign url = urls[itemKey]>
+	<li><a href="${url}">${itemKey}</a></li>
+	</#list>
+</ol>
+</#if>
+
+<a class="jumpurl" href="<#if jumpurl?exists >${jumpurl}<#else>javascript:history.back();</#if>">13秒后系统会自动跳转，也可点击本处直接跳转</a>
+</div> 
+</div>
+</div>
+<script>
+function jumpurl(){
+	<#if !jumpurl?exists >history.back()<#else>location='${jumpurl}'</#if>;
+}
+//setTimeout('jumpurl()',3000);
+</script>

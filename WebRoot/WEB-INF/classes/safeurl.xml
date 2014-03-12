@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urls>
+<url>/core/admin/themeFile!edit.do</url>
+<url>/core/admin/themeFile!addFile.do</url>
+<url>/saas/admin/batchSqlExe.do</url>
+<url>/cms/admin/data!saveEdit.do</url>
+<url>/cms/admin/data!saveAdd.do</url>
+<url>/core/admin/menu!saveAdd.do</url>
+<url>/core/admin/menu!saveEdit.do</url>
+<url>/shop/admin/goods!saveAdd.do</url>
+<url>/shop/admin/goods!saveEdit.do</url>
+<url>/shop/admin/article!saveAdd.do</url>
+<url>/shop/admin/article!saveEdit.do</url>
+<url>/shop/admin/payCfg!save.do</url>
+<url>/core/admin/themeUri!saveEdit.do</url>
+<url>/core/admin/themeUri!saveAdd.do</url>
+</urls>

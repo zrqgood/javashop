@@ -1,0 +1,24 @@
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle data">
+	<colgroup class="span-5 ColColorGray"></colgroup>
+	<colgroup class="span-auto textleft"></colgroup>
+	<tbody>
+	<#list dlyTypeList as dlyType > 
+		<tr>
+			<th style="text-align: left;">
+			<label style="width: auto;">
+			<input type="radio" has_cod="0" class="toCheck" value="${dlyType.type_id}"  name="typeId" style="cursor: pointer;">${dlyType.name}</label>
+			</th>
+			<td>
+			<span class="fontcolorRed" style="font-size: 14px;">+${dlyType.price?string("currency")}</span><br>
+				<#if dlyType.protect_rate?exists >
+				<div style="border-bottom: 1px solid rgb(204, 204, 204); padding: 5px 0pt; margin: 0pt 0pt 5px; color: rgb(0, 0, 0);">
+				<input type="checkbox" value="1" name="isProtect" ><strong>保价费率</strong>
+				(商品价格的${dlyType.protect_rate}% ，不足${dlyType.min_price?string("currency")}按${dlyType.min_price?string("currency")}计算)。
+				</div>
+				</#if>
+			${dlyType.detail!''}
+			</td>
+		</tr>
+	</#list>
+	</tbody>
+</table>

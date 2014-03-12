@@ -1,0 +1,62 @@
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">我的优惠券</h1>
+<table cellspacing="0" cellpadding="3" width="100%" class="liststyle">
+	<col class="span-2 ">
+	<col>
+	<col class="span-4">
+	<col class="span-2">
+	<col class="span-3">
+	<thead>
+		<tr>
+			<th>号码</th>
+			<th>名称</th>
+			<th>有效期</th>
+			<th>可用次数</th>
+			<th>状态</th>
+			<!--  <th>限用商品</th>-->
+		</tr>
+	</thead>
+	<tbody>
+		<#list listMemberCoupons as coupon>
+		<tr>
+			<td rowspan="2">${coupon.memc_code!''}</td>
+			<td class=" textleft"><strong>${coupon.cpns_name!''}</strong><br>
+			</td>
+			<td rowspan="2"><@dateFormat date="${coupon.pmt_time_begin?c}" pattern="yyyy-MM-dd"/> ~ <@dateFormat date="${coupon.pmt_time_end?c}" pattern="yyyy-MM-dd"/></td>
+			<td rowspan="2">${coupon.memc_used_times!''}/${mc_use_times!''}</td>
+			<td rowspan="2">${coupon.status!''}</td>
+		</tr>
+		<tr>
+			<td class=" textleft"><span style="color: rgb(102, 102, 102);">${coupon.pmt_describe!''}</span></td>
+		</tr>
+		</#list>
+		
+	</tbody>
+</table>
+<div id="pager" ></div>
+<script>
+
+
+var Pager = {
+	init:function(){
+		var self = this;
+		var PC = 0;
+		PC = ${pageCount};
+		if(PC!=0){
+			$("#pager").pager({ pagerid:'pager',pagenumber: ${page}, pagecount: PC, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		location.href="member_coupons.html?page="+pageclickednumber;
+	}
+}
+
+$(function(){
+	Pager.init();
+});
+</script>
+</div>

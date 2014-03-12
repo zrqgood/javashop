@@ -1,0 +1,22 @@
+
+<div class="border3" id="${widgetid}">
+	<h2><div class="titleimg"></div></h2>
+	<div class="Product_List_S3" id="newproductbox"></div>
+</div>
+<div style="display:none" id="virtualbox">
+${body!''}
+</div>
+<script>
+(function(a){a.fn.ApexSlider=function(c){var e=undefined;c=a.extend({speed:500,step:4E3},c||{});return this.each(function(){function h(){e=setInterval(function(){k()},c.step)}function k(){b.animate({top:"-="+f},c.speed,"swing",function(){l()})}function l(){var d=0,g=undefined;b.each(function(){var i=parseInt(a(this).css("top").replace("px"));if(i<d){g=a(this);d=i}});g&&g.css("top",(b.size()-1)*f+"px")}var j=a(this),b=a(this).children(),f=parseInt(j.css("height").replace("px"));j.css("position","relative"); b.css("position","absolute");b.each(function(d){a(this).css("top",d*f+"px")}).hover(function(){e&&clearInterval(e)},function(){h()});h()})}})(jQuery);
+$(function(){
+    var row ;
+	$("#virtualbox .itemsWrap").each(function(i){
+		if(i % 3 == 0){
+			row = $("<div class=\"GoodsList\"></div>");
+			row.appendTo($("#newproductbox"));
+		}
+		$(this).appendTo(row);
+	});
+	$("#newproductbox").ApexSlider();
+});
+</script>

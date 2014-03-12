@@ -1,0 +1,27 @@
+<h3>捆绑商品</h3>
+<div class="division">
+<table cellspacing="0" cellpadding="3" width="100%" class="liststyle">
+	<colgroup class="span-auto"></colgroup>
+	<colgroup class="span-2"></colgroup>
+	<colgroup class="span-1"></colgroup>
+	<colgroup class="span-2 ColColorOrange"></colgroup>
+	<thead>
+		<tr>
+			<th width="53%" class="product">捆绑名称</th>
+			<th width="12%" class="price">优惠价格</th>
+			<th width="4%" class="number">数量</th>
+			<th width="9%" class="price">小计</th>
+		</tr>
+	</thead>
+	<tbody>
+		<#list pgkItemList as item >
+		<tr>
+			<td class="product">${item.name}</td>
+			<td class="price">${item.price?string("currency")}</td>
+			<td class="number">${item.num}</td>
+			<td class="cost">${item.subtotal?string("currency")}</td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>

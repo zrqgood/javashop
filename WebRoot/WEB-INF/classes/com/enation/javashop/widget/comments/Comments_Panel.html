@@ -1,0 +1,16 @@
+<#list commentsList as comment>
+<div>
+<strong><span class="author fontcolorOrange">${comment.author}<!-- --></span>说：</strong>
+<span class="timpstamp font10px fontcolorGray replies prepend-1">${comment.date?string("yyyy年MM月dd日 HH:mm:ss")}&nbsp;&nbsp;</span>
+<div class="boxBlue" style="margin: 10px 0pt;">${comment.comment}</div>
+<div>
+	<#list comment.list as reply>
+	<div style="border-bottom: 1px dotted rgb(174, 195, 207);">
+		<span class="author fontcolorOrange" style="color: rgb(0, 51, 153);">管理员[admin]回复：</span>
+		<span class="timpstamp font10px fontcolorGray replies prepend-1">${reply.date?string("yyyy年MM月dd日 HH:mm:ss")}</span>
+		<div>${reply.comment}</div>
+	</div>
+	</#list>	
+</div>
+</div>
+</#list>

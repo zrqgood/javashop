@@ -1,0 +1,36 @@
+<#if attrList?exists >
+<table  class="form-table">
+
+	<#list attrList as attr>
+		<input type="hidden" name="propnames" value="${attr.name }" />
+		<tr>
+			<th>
+				${attr.name } ：
+			</th>
+			<td>
+			
+				<#if attr.type<3 >
+				   <input type="text" name="propvalues" class="input_text"  value="${ attr.value}" style="width:150px" />
+				</#if>
+				
+				<#if (attr.type>=3) && (attr.type<=5)>
+					<select name="propvalues">
+						<option value="">
+							请选择
+						</option>
+						<#list attr.optionAr as option>
+							<option value="${option_index }" <#if attr.value==(""+option_index)>selected</#if> >
+								${option }
+							</option>
+						</#list>
+					</select>
+				</#if>
+				
+			</td>
+		</tr>
+	 </#list>
+	
+</table>
+<#else>
+该类型未字义属性
+</#if>

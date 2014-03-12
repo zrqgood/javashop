@@ -1,0 +1,36 @@
+<#if pmtList?exists || giftList?exists>
+<div class="division">
+<table cellspacing="0" cellpadding="0" width="100%"
+	class="liststyle data">
+	<colgroup class="span-4 ColColorGray"></colgroup>
+	<colgroup class="span-auto"></colgroup>
+	<tbody>
+	
+		<#if pmtList?exists >
+		<tr>
+			<th>享受的优惠：</th>
+			<td>
+			<ol>
+			<#list pmtList as pmt>
+				<li>${pmt.pmt_describe}</li>
+			</#list>	
+			</ol>
+			</td>
+		</tr>
+		</#if>
+		<#if giftList?exists >
+		<tr>
+			<th>获得赠品：</th>
+			<td>
+			<ol>
+			<#list giftList as gift>
+				<li>${gift.fo_name}&nbsp;&nbsp;</li>
+			</#list>	
+			</ol>
+			</td>
+		</tr>
+		</#if>
+	</tbody>
+</table>
+</div>
+</#if>

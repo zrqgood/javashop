@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widgets>
+	<page id="common">
+		<widget id="header">
+			<type>header</type>
+			<border>none</border>
+		</widget>
+		<widget id="loginbar">
+			<type>member_login_bar</type>
+			<border>none</border>
+			<folder>customPage</folder>
+			<custom_page>loginbar</custom_page>
+		</widget>
+		<widget id="cartbar">
+			<type>member_cart_bar</type>
+			<border>none</border>
+		</widget>
+		<widget id="menu">
+			<type>shop_menu</type>
+			<border>none</border>
+			<isDropDown>on</isDropDown>
+		</widget>
+		<widget id="searchbar">
+			<type>searchBar</type>
+			<border>none</border>
+		</widget>
+		<widget id="logo">
+			<type>imageWidget</type>
+			<src>attachment/images/logo.png</src>
+		</widget>
+		<widget id="banner">
+			<type>ad</type>
+			<acid>1</acid>
+		</widget>
+		<widget id="category">
+			<overflow>visible</overflow>
+			<bordertitle>商品分类</bordertitle>
+			<border>border1</border>
+			<type>goods_cat</type>
+		</widget>
+		<widget id="foothelp">
+			<type>staticDataDetail</type>
+			<catid>11</catid>
+			<id>34</id>
+			<custom_page>footer_cont</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="footmenu">
+			<type>staticDataDetail</type>
+			<catid>11</catid>
+			<id>35</id>
+			<custom_page>footer_cont</custom_page>
+			<folder>customPage</folder>
+		</widget>
+ 		<widget id="im">
+			<type>imbar</type>
+		</widget>	
+	</page>
+
+	<page id="/index.html">
+		<widget id="jqueryAd">
+			<acid>2</acid>
+			<overflow>visible</overflow>
+			<bordertitle />
+			<border>none</border>
+			<type>jqueryAdAdvance</type>
+		</widget>
+		<widget id="news1">
+			<type>staticDataList</type>
+			<count>4</count>
+			<catid>8</catid>
+			<folder>customPage</folder>
+			<custom_page>index_news</custom_page>
+		</widget>
+		<widget id="news2">
+			<type>staticDataList</type>
+			<count>4</count>
+			<catid>9</catid>
+			<folder>customPage</folder>
+			<custom_page>index_news</custom_page>
+		</widget>
+		<widget id="ad1">
+			<acid>3</acid>
+			<overflow>visible</overflow>
+			<bordertitle />
+			<border>none</border>
+			<type>ad</type>
+		</widget>
+		<widget id="hot">
+			<bordertitle>热卖商品</bordertitle>
+			<border>hot</border>
+			<type>goods_list</type>
+			<term>{tagid:'1'}</term>
+			<setting>{type:'default',goodsImgPosition:'top',
+				thumbnail_pic_width:'190px',thumbnail_pic_height:'245px',
+				showGoodsName:'on', goodsNum:8}</setting>
+			<overflow>visible</overflow>
+			<folder>customPage</folder>
+			<custom_page>index_goodsList</custom_page>
+		</widget>
+		<widget id="ad2">
+			<acid>4</acid>
+			<overflow>visible</overflow>
+			<bordertitle />
+			<border>none</border>
+			<type>ad</type>
+		</widget>
+		<widget id="bra">
+			<bordertitle></bordertitle>
+			<border>none</border>
+			<type>goods_list</type>
+			<overflow>visible</overflow>
+			<tabs>
+				[
+				{title:'魔术系列',term:{catid:'6'}},
+				{title:'挺拔集中',term:{catid:'7'}},
+				{title:'轻薄透气',term:{catid:'8'}}
+				]
+			</tabs>
+			<setting>{type:'morediv',goodsImgPosition:'top',changeEffect:0,columnnum:5,goodsNum:10}</setting>
+			<folder>customPage</folder>
+			<custom_page>index_bra</custom_page>
+		</widget>
+		<widget id="recommend">
+			<bordertitle>精品推荐</bordertitle>
+			<border>recommend</border>
+			<type>goods_list</type>
+			<term>{tagid:'3'}</term>
+			<setting>{type:'default',goodsImgPosition:'top',
+				thumbnail_pic_width:'180px',thumbnail_pic_height:'232px',
+				showGoodsName:'on', columnnum:5, goodsNum:10}</setting>
+			<overflow>visible</overflow>
+			<folder>customPage</folder>
+			<custom_page>index_goodsList</custom_page>
+		</widget>
+		<widget id="fadeplay">
+			<type>fadeplay</type>
+			<acid>6</acid>
+			<custom_page>squareAd</custom_page>
+			<folder>customPage</folder>
+			<overflow>visible</overflow>
+		</widget>
+	</page>
+
+	<page id="/member.html">
+		<widget id="1">
+			<overflow>visible</overflow>
+			<border />
+			<type>member_main</type>
+			<menu>member_menu</menu>
+			<address>member_address</address>
+		</widget>
+	</page>
+	
+	<page id="/agentApply.html">
+		<widget id="1">
+			<type>agentApply</type>
+		</widget>
+	</page>
+
+	<page id="/article.html">
+		<widget id="leftnav">
+			<type>dataCatTree</type>
+			<catid>2</catid>
+			<url>articleList</url>
+			<folder>customPage</folder>
+			<custom_page>leftnav</custom_page>
+		</widget>
+		<widget id="1">
+			<type>dynamicDataDetail</type>
+			<folder>customPage</folder>
+			<custom_page>article_cont</custom_page>
+		</widget>
+	</page>
+	
+	<page id="/articleList.html">
+		<widget id="leftnav">
+			<type>dataCatTree</type>
+			<catid>2</catid>
+			<url>articleList</url>
+			<folder>customPage</folder>
+			<custom_page>leftnav</custom_page>
+		</widget>
+		<widget id="1">
+			<type>dynamicDataList</type>
+			<folder>customPage</folder>
+			<custom_page>articleList_cont</custom_page>
+			<pagesize>10</pagesize>
+		</widget>
+	</page>
+
+	<page id="/help.html">
+		<widget id="1">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>3</catid>
+			<custom_page>helpleft</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="2">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>4</catid>
+			<custom_page>helpleft</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="3">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>5</catid>
+			<custom_page>helpleft</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="4">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>6</catid>
+			<custom_page>helpleft</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="5">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>7</catid>
+			<custom_page>helpleft</custom_page>
+			<folder>customPage</folder>
+		</widget>
+		<widget id="cont">
+			<type>dynamicDataDetail</type>
+			<folder>customPage</folder>
+			<custom_page>help_cont</custom_page>
+		</widget>
+	</page>
+	
+	<page id="/contactus.html">
+		<widget id="leftnav">
+			<type>dataCatTree</type>
+			<catid>2</catid>
+			<url>articleList</url>
+			<folder>customPage</folder>
+			<custom_page>leftnav</custom_page>
+		</widget>
+	</page>
+
+	<page id="/cart.html">		
+		<widget id="1">			
+			<type>shop_cart</type>
+		</widget>
+	</page>
+	
+	<page id="/exchange_point.html">
+		<widget id="1">
+			<type>cardWidget</type>
+
+		</widget>
+	</page>
+
+	<page id="/checkout.html">
+		<widget id="region_select">
+			<type>regionsSelect</type>
+			<ischild>yes</ischild>
+		</widget>	
+		<widget id="1">
+			<type>checkOutWidget</type>
+		</widget>
+	</page>	
+
+	<page id="/orderdetail.html">
+		<widget id="1">
+			<type>member_orderdetail</type>
+		</widget>
+	</page>
+
+	<page id="/payment.html">
+		<widget id="1">
+			<type>paywidget</type>
+		</widget>
+	</page>	
+
+	<page id="/paysuccess.html">
+		<widget id="1">
+			<type>paywidget</type>
+		</widget>
+	</page>
+
+	<page id="/goods.html">
+		<widget id="2">
+			<overflow>visible</overflow>
+			<border>border5</border>
+			<bordertitle>商品分类</bordertitle>
+			<type>goods_cat</type>
+		</widget>
+		<widget id="login">
+			<type>member_islogin</type>
+			<showhtml>false</showhtml> 
+		</widget>		
+		<widget id="main">
+			<type>goods_detail_main</type>
+			<showhtml>false</showhtml> 
+		</widget>
+		<widget id="goods_gallery">
+			<type>goods_gallery</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_params">
+			<type>goods_params</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_props">
+			<type>goods_props</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_intro">
+			<type>goods_intro</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_spec">
+			<type>goods_spec</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_pmt">
+			<type>goods_pmt</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_adjunct">
+			<type>goods_adjunct</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_complex">
+			<type>goods_complex</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_ask">
+			<type>goods_ask</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_discuss">
+			<type>goods_discuss</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="goods_detail">
+			<type>goods_detail</type>
+			<folder>customPage</folder>
+			<custom_page>goods_detail</custom_page>
+		</widget>			
+	</page>
+	
+	<page id="/default.html">
+		<widget id="/search-(.*).html">
+			<overflow>visible</overflow>
+			<border />
+			<type>goods_search</type>
+		</widget>
+		<widget id="/compare.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>goods_compare</type>
+		</widget>
+		<widget id="/package.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>goods_compare</type>
+		</widget>
+		<widget id="/brandDetail-(\d+).html">
+			<overflow>visible</overflow>
+			<border />
+			<type>brand_detail</type>
+		</widget>
+		<widget id="/brand.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>brand_list</type>
+		</widget>
+		<widget id="/search.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>search</type>
+		</widget>
+		<widget id="/guestbook.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>shop_guestbook</type>
+		</widget>
+		<widget id="/friendslink.html">
+			<overflow>visible</overflow>
+			<border />
+			<cat_id>1</cat_id>
+			<type>friends_link</type>
+		</widget>
+		<widget id="/package.html">
+			<overflow>visible</overflow>
+			<border />
+			<cat_id>1</cat_id>
+			<type>package</type>
+		</widget>
+		<widget id="/giftlist.html">
+			<overflow>visible</overflow>
+			<showtype>list</showtype>
+			<border />
+			<type>gift_list</type>
+		</widget>
+		<widget id="/gift-(\d+).html">
+			<overflow>visible</overflow>
+			<showtype>detail</showtype>
+			<border />
+			<type>gift_list</type>
+		</widget>
+		<widget id="/findpassword.html">
+			<overflow>visible</overflow>
+			<border />
+			<type>findpassword</type>
+		</widget>
+	</page>
+
+</widgets>

@@ -1,0 +1,57 @@
+<#include 'common/header.html' />
+<script type="text/javascript" src="js/jquery-ApexSlider.js"></script>
+<script>
+$(function(){
+	selectMenu(0);
+});
+</script>
+<!--中间-->
+<div class="main">
+	<div class="h425">
+		<div class="wrap">
+			<!--公司简介-->
+			<div class="about">
+				${widget_1}
+			</div>
+			<!--新闻中心-->
+			<div class="news">
+				${widget_2}
+			</div>
+			<!--联系我们-->
+			<div class="contact">
+				<h1>联系我们</h1>
+				<div class="cont">
+					电话：${site.usertel!''}<br/>
+					传真：${site.usertel1!''} <br/>
+					手机：${site.usermobile!''}<br/>
+					电子邮件：${site.email!''}<br/>
+					地址：${site.address!''}
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--产品中心-->
+		<div class="productCenter">
+			<h1>产品中心</h1>
+			<div class="wrap">
+				<div class="cont">
+					${widget_dataCat}
+				</div>
+				<div class="rounded">
+					<div class="l"></div>
+					<div class="r"></div>
+				</div>
+			</div>
+		</div>
+		<!--产品中心结束-->
+	</div>
+	<!--产品展示-->
+	<div class="producs">
+		<h1>产品展示</h1>
+		<div class="cont">
+			${widget_3}
+		</div>
+	</div>
+	<!--产品展示结束-->
+</div>
+<#include 'common/footer.html' />

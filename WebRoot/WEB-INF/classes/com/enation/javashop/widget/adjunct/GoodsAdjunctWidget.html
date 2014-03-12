@@ -1,0 +1,96 @@
+<div class="userselect" id="goods-adjunct">
+<#list adjList as adj>
+<div class="choose" >
+<div class="adjtitle">配件<em>可选 <#if adj.min_num==adj.max_num>${adj.min_num}<#else>${adj.min_num}-${adj.max_num}</#if> 件</em><span adj="配件"></span></div>
+<table width="100%" cellspacing="0" cellpadding="0"  min_num="${adj.min_num}" max_num="${adj.max_num}" >
+	<tbody class="goods-adjunct-row">
+		<#list adj.itemList as item>
+		<tr <#if !item_has_next>class="last"</#if> >
+			<td width="5%" valign="top">
+				<input type="checkbox" price="${item.coupPrice}" value="yes" name="has_adj">
+				<input type="hidden" name="adj_pro_id_${adj.adjunct_id}" disabled="true" value="${item.productid}"/>
+			</td>
+			<td width="55%">
+			<p class="adjpc">
+			<a title="${item.name}" target="_blank" href="goods-${item.goodsid}.html">
+			${item.name}
+			<#if item.specs?exists && item.specs!=''>
+			[${item.specs}]
+			</#if>
+			</a>
+			</p>
+			<span class="mktprice">原价格：<i>${item.price?string("currency")}</i></span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+				class="memberprice">配件价格：<i>${item.coupPrice?string("currency")}</i></span></td>
+			<td>数量：<input type="text" class="adj_num" name="adj_num_${adj.adjunct_id}" value="1" autocomplete="off" maxlength="10" size="2"></td>
+			<td>
+			<a rel="nofollow" class="addtocart" target="_blank_cart"
+				href="cart.html?action=add&productid=${item.productid}"  title="您可以单把独这个商品加入购物车">
+				<img  border="none" style="width: 64px; height: 25px; background-image: url('${staticserver}/default/statics/icons.gif'); background-repeat: no-repeat; background-position: 0pt -99px;"
+				alt="您可以单把独这个商品加入购物车"
+				src="${staticserver}/default/statics/transparent.gif"></a></td>
+			<td>
+
+			</td>
+		</tr>
+		</#list>
+	</tbody>
+</table>
+</div>
+</#list>
+
+<strong>配件总价:</strong><span class="price">0</span>
+
+</div>
+<script type="text/javascript">
+
+var Adjunct={
+	init:function(){
+		this.bindCheckEvent();
+		this.bindNumEvent();
+	},
+	bindCheckEvent:function(){
+		var self = this;
+		$("#goods-adjunct input[type=checkbox]").click(function(){
+			var checked  = $(this).attr("checked")
+			 
+			if(checked){
+				$(this).next().attr("disabled",false);
+				$(this).parent().parent().css("background-color","#e9e9e9");
+			}else{
+				$(this).next().attr("disabled",true);
+				$(this).parent().parent().css("background-color","#ffffff");
+			}
+
+			self.countPrice();
+		});		
+	},
+	bindNumEvent:function(){
+		$("#goods-adjunct input.adj_num").change(function(){
+			var num_input = $(this);
+			var min_num = num_input.parents("table").attr("min_num");
+			var max_num = num_input.parents("table").attr("max_num");
+			var value = num_input.val();
+			value = value<min_num?min_num:value;
+			value = value>max_num?max_num:value;
+			num_input.val(value);
+		});
+	}
+	,
+	
+	countPrice:function(){
+		var total  =0;
+		$("#goods-adjunct input[type=checkbox]").each(function(){
+			var chk = $(this);
+			var price = chk.attr("price");
+			if(chk.attr("checked")){
+				total+=parseFloat(price);
+			}
+		})
+		$("#goods-adjunct .price").html("￥"+total);
+	}
+}
+$(function(){
+	Adjunct.init();
+});
+</script>
+

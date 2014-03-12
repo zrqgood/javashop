@@ -1,0 +1,19 @@
+<div class="boxGray CartInfoItems">
+<h4>目前选购商品共<span class="cartCount fontcolorOrange">${count}</span>件</h4>
+
+<#if (goodsCount>0) >
+	<#include 'bar_GoodsList.html' />
+</#if>
+<#if (giftCount>0) >
+	<#include 'bar_GiftList.html' />
+</#if>
+<#if (pgkCount>0) >
+	<#include 'bar_PgkList.html' />
+</#if>			
+
+<div class="cart-goods-total">商品总额:<br>
+<span class="textright price1 total">${total?string("currency")}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="_blank" href="cart.html" class="lnk gocart">进入购物车</a>
+</div>
+
+</div>

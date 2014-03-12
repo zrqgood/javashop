@@ -1,0 +1,56 @@
+<div class="title">
+<div class="span-auto">显示方式</div>
+<div class="listmode floatLeft">
+
+<#if distype=='index' >
+<span class="list_index current">图文列表</span>
+<#else>
+<a title="橱窗" href="<@searchUrl type="distype" value="index" />">
+<span class="list_index">图文列表</span>
+</a>
+</#if>
+
+<#if distype=='grid' >
+<span class="list_grid current">图文列表</span>
+<#else>
+<a title="橱窗" href="<@searchUrl type="distype" value="grid" />">
+<span class="list_grid">橱窗</span>
+</a>
+</#if>
+
+<#if distype=='text' >
+<span class="list_text current">图文列表</span>
+<#else>
+<a title="文字" href="<@searchUrl type="distype" value="text" />">
+<span class="list_text">文字</span></a>
+
+</#if>
+</div>
+<div class="search_total">总共找到<font color="red">${total}</font>个商品</div>
+
+<div class="filtmode">
+<select id="orderSel" onchange="if(this.value!='_')window.location=this.value">
+	<option value="_">选择排序/显示方式</option>
+	<optgroup label="排序">
+		<option selected="selected" class="selected" value="<@searchUrl type="order" value="0" />">默认</option>
+		<option value="<@searchUrl type="order" value="1" />">按发布时间 新-&gt;旧</option>
+		<option value="<@searchUrl type="order" value="2" />">按发布时间 旧-&gt;新</option>
+		<option value="<@searchUrl type="order" value="3" />">按价格 从高到低</option>
+		<option value="<@searchUrl type="order" value="4" />">按价格 从低到高</option>
+		<option value="<@searchUrl type="order" value="5" />">访问次数</option>
+		<option value="<@searchUrl type="order" value="6" />">购买次数</option>
+	</optgroup>
+	<optgroup label="显示">
+		<option class="selected" value="<@searchUrl type="distype" value="index" />">图文列表</option>
+		<option value="<@searchUrl type="distype" value="grid" />">橱窗</option>
+		<option value="<@searchUrl type="distype" value="text" />">文字</option>
+	</optgroup>
+</select>
+</div>
+
+<div class="pagemode">
+<@pager pageno="${pageno}" pagesize="${pagesize}" total="${total}" />  
+</div>
+
+<div class="clear"></div>
+</div>

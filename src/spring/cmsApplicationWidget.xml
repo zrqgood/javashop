@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" >
+	<bean id="staticDataList" class="com.enation.cms.widget.StaticDataListWidget"  scope="prototype"></bean>
+	<bean id="staticDataDetail" class="com.enation.cms.widget.StaticDataDetailWidget" scope="prototype"></bean>
+ 	<bean id="dynamicDataDetail" class="com.enation.cms.widget.DynamicDataDetailWidget" scope="prototype"></bean>
+ 	<bean id="dynamicDataList" class="com.enation.cms.widget.DynamicDataListWidget" scope="prototype"></bean>
+ 	<bean id="dataForm" class="com.enation.cms.widget.DataFormWidget" scope="prototype"></bean>
+ 	<bean id="staticContent" class="com.enation.cms.widget.StaticContentWidget" scope="prototype"></bean>
+ 	<bean id="dataCatTree" class="com.enation.cms.widget.cattree.DataCatTreeWidget" scope="prototype"></bean>
+ 	<bean id="dataSearchForm" class="com.enation.cms.widget.DataSearchFormWidget" scope="prototype"></bean>
+ 	<bean id="dataSearchResult" class="com.enation.cms.widget.DataSearchResultWidget" scope="prototype"></bean>
+ 	<bean id="relatedData" class="com.enation.cms.widget.RelatedDataWidget" scope="prototype"></bean>
+</beans>

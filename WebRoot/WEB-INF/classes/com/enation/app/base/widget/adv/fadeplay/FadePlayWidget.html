@@ -1,0 +1,21 @@
+<script LANGUAGE="JavaScript" src="jquery.fade.js"></script>
+
+<script LANGUAGE="JavaScript">
+$(function(){
+	$("#fadeplay").play(
+		{
+			pictures:[
+			<#list advlist as adv>
+				"${adv.atturl}",
+			</#list>
+			],
+			speed:4000,
+			timeout:5000,
+			loadnum:2
+		}
+	);
+});
+</script>
+
+<ul id="fadeplay">
+</ul>

@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li, body, form, input, button, img, cite, strong, em,
+table, td, th { padding:0; margin:0;}
+h1, h2, h3, h4, h5, h6 { font-size:14px;}
+img, table, td, th { border:0;}
+ul, ol { list-style-type:none;padding:0;margin:0;}
+body { font:12px Arial, "宋体", Verdana, sans-serif;width:100%;height:100%;}
+html,body {padding: 0;margin: 0; overflow-x:hidden; overflow-y:hidden;}
+/* 字体颜色 */
+.red {color:red;}
+.bold {font-weight: bold; color: #660}
+body{background:url(../images/leftmenu_bg.gif) repeat-y  left bottom;}
+#head{height:66px;width:100%;position:absolute;z-index:99;}
+#head .top{width:100%;height:37px;background:url(../images/img_1.gif) repeat-x 0 0;}
+#head .top .logo{width:170px;height:37px;float:left;}
+#head .top .logo img{width:170px;height:37px;}
+#head .top #sysmenu{float:right;}
+
+
+#head .topnav{width:100%;height:29px;background:url(../images/img_1.gif) repeat-x 0 -37px;overflow:hidden;clear:both;}
+#head .topnav .menuact{width:168px;float:left;padding:6px 0 0 10px;}
+#head .topnav .menuact a{color:#999;background:url(../images/img_1.gif) no-repeat 0 -67px;overflow:hidden;padding:0 5px 0 16px;text-decoration:none;}
+#head .topnav .top_link{height:27px;line-height:27px;float:right;padding-right:20px;}
+#head .topnav .top_link a{color:#fff;padding:0 10px 0 20px;background:url(../images/img_1.gif) no-repeat 0 -83px;text-decoration:none;}
+
+#left{width:210px;height:100%;overflow:visible;position:absolute;left:0;bottom:0;top:66px;z-index:8;}
+#left #appmenu{width:33px;overflow:hidden;float:left}
+#left #appmenu ul {padding:10px 0 0 5px;float:right;}
+#left #appmenu ul li {width:28px;background:url(../images/li_bg_top1.gif) no-repeat 0 top;overflow:hidden}
+#left #appmenu ul li a{margin-top:11px;display:block;background:url(../images/li_bg_bottom1.gif) no-repeat 0 bottom;color:#475645;font-weight:bold;text-decoration:none;padding:0px 10px 8px;vertical-align: middle;}
+#left #appmenu ul li.actived{width:28px;background:url(../images/li_bg_top.gif) no-repeat 0 top;overflow:hidden}
+#left #appmenu ul li.actived a{margin-top:11px;display:block;background:url(../images/li_bg_bottom.gif) no-repeat 0 bottom;color:#475645;font-weight:bold;text-decoration:none;padding:0px 10px 8px;vertical-align: middle;}
+#left #extmenu{width:160px;float:left;background:url(../images/extmenu_bg.gif) repeat 0 -337px;}
+#left #extmenu ul{min-height:360px;height:auto !important;height:360px;overflow:visible;padding:5px 15px 0 13px;}
+#left #extmenu ul li{}
+#left #extmenu ul li dl{width:130px;margin-bottom:5px;}
+#left #extmenu ul li dl dt{height:25px;line-height:25px;background:url(../images/img_1.gif) no-repeat 0 -208px;padding-left:35px;cursor:pointer;margin-bottom:3px;}
+#left #extmenu ul li dl dt a{color:#4D6C2F;font-weight:bold;}
+#left #extmenu ul li dl dd{padding-left:10px;margin-left:8px;line-height:22px;background:url(../images/img_1.gif) no-repeat -48px -99px}
+#left #extmenu ul li dl dd a{color:#000;text-decoration:none;font-size:9pt;}
+#left #extmenu ul li dl dd a:hover{color:#f00;}
+#left #extmenu .extmenu_foot{width:100%;height:7px;overflow:hidden;background:url(../images/img_1.gif) no-repeat 0 -199px;}
+#right{position:absolute;left:210px;top:66px;right:0;bottom:0;z-index:7;}
+#right #header{height:28px;border:1px dotted #BFD67C;background:url(../images/img_1.gif) repeat 0 -307px;margin-top:10px;}
+#right #header .title{}
+#right #header #nav_title{color:#666600;font-weight:bold;line-height:28px;padding-left:10px;}
+#right ifram{width:100%;height:100%;}
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+<div class="ItemsWarp clearfix">
+<#list webpage.result as goods>  
+<div  class="items-list">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tbody>
+  <tr>
+    <td valign="middle" style="width: 120px;" class="goodpic">
+  	<a href="goods-${goods.goods_id}.html" style="width: 120px; height: 160px; overflow: hidden; text-align: center; vertical-align: middle; margin: 0px auto; line-height: 160px;" target="_blank">
+    <img alt="${goods.name}" src="<@GoodsPic pic='${goods.image_default}' postfix='_thumbnail' />">
+    </a>
+  </td>
+  
+    <td class="goodinfo">
+      <h6><a target="_blank" class="entry-title" title="${goods.name}" href="goods-${goods.goods_id}.html">${goods.name}</a></h6>
+    </td>
+    <td width="250" class="price_button">
+          <ul>
+            <li>
+            <span class="price1"> ${goods.price?string.currency}</span>
+            <span class="mktprice1">市场价: ${goods.mktprice?string.currency}</span>
+            </li>
+            
+             <li style="padding-left: 4px; padding-top: 8px;">
+             <span class="saveprice1"> 节省：${(goods.mktprice-goods.price)?string.currency}
+             </span>
+             </li>
+          </ul>
+
+			<ul class="button">
+				<#if goods.hasSpec==1>
+				<li style="z-index: 1000;" class="addcart buy-select">
+				<div style="display: none;" class="buy-select-list note">
+				<h3>请选择规格</h3>
+				<table width="100%">
+					<tbody>
+					    <#list goods.specList as spec>
+						<tr>
+							<td width="100">${spec.specs!''}</td>
+							<td><span class="fontcolorRed fontbold">${spec.price?string.currency}</span></td>
+							<td align="right" width="100" style="vertical-align: middle;">
+							<a class="btnbuy" rel="nofollow" title="加入购物车"
+								target="_blank_cart" product="256" buy="75"
+								href="cart.html?action=add&productid=${spec.product_id}"
+								type="g">购买</a></td>
+						</tr>
+						</#list>
+					</tbody>
+				</table>
+				</div>
+				</li>
+ 				<#else>
+
+				<li class="addcart"><a rel="nofollow" title="加入购物车"
+					target="_blank_cart" class="listact" buy="70" type="g"
+					href="cart.html?action=add&productid=${goods.productid!''}">加入购物车</a></li>
+	
+				</#if>
+
+				<li class="star-off" title="${goods.name}"  goodsid="${goods.goods_id}"><a rel="nofollow"
+					title="加入收藏" class="listact"
+					href="javascript:;">加入收藏</a></li>
+				<li class="vdetail">
+				<a title="${goods.name}" class="listact" target="_blank" href="goods-${goods.goods_id}.html">查看详细</a>
+				</li>
+				<li class="btncmp"  goodsid="${goods.goods_id}" goodsname="${goods.name}" typeid="${goods.type_id}">
+					<a title="商品对比" href="javascript:;">商品对比</a>
+				</li>
+			</ul>
+
+			</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+
+</#list> 
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".ItemsWarp .button li.buy-select").mouseover(function(){
+		$(this).find("div.buy-select-list").show();
+	});
+	$(".ItemsWarp .button li.buy-select").mouseout(function(){
+		$(this).find("div.buy-select-list").hide();
+	});	
+});
+</script>

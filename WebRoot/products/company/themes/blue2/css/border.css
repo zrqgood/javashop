@@ -1,0 +1,47 @@
+/* CSS Document */
+.border1{width:228px;height:301px;overflow:hidden;float:left;margin-right:11px;}
+.border1 .title{height:27px;padding-top:3px;}
+.border1 .title h1{background:url(../images/title_01.gif) no-repeat scroll left top;text-indent:-20000px;float:left;width:81px;height:16px;}
+.border1 .cont{width:218;height:266px;overflow:hidden;border:1px solid #D4D4D4;border-bottom:none;padding:4px 4px 0;position:relative;}
+.border1 .cont .img{background:url(../images/img_01.jpg) no-repeat;height:60px;padding-bottom:1px;}
+.border1 .cont .text{background:url(../images/cont_bg.gif) repeat-x scroll;width:100%;height:180px;}
+.border1 .cont .text .t{width:180px;padding-top:25px;margin:0 auto;height:155px;overflow:hidden;line-height:22px;}
+.border_b{width:228px;height:15px;position:absolute;bottom:0;left:-1px;background:url(../images/bottom_bg.gif);}
+.border2{width:228px;height:301px;overflow:hidden;float:left;margin-right:11px;}
+.border2 .title{height:27px;padding-top:3px;}
+.border2 .title h1{background:url(../images/title2_01.gif) no-repeat scroll left top;text-indent:-20000px;float:left;width:81px;height:16px;}
+.border2 .cont{width:218;height:266px;overflow:hidden;border:1px solid #D4D4D4;border-bottom:none;padding:4px 4px 0;position:relative;}
+.border2 .cont .img{background:url(../images/img_02.jpg) no-repeat;height:60px;padding-bottom:1px;}
+.border2 .cont .text{background:url(../images/cont_bg.gif) repeat-x scroll;width:100%;height:180px;}
+.border2 .cont .text .t{width:180px;padding-top:25px;margin:0 auto;height:155px;overflow:hidden;line-height:22px;}
+.border2 .cont .text .t ul li{background:url(../images/arr.jpg) no-repeat scroll left 6px;line-height:22px;height:22px;width:100%;overflow:hidden;}
+.border2 .cont .text .t ul li a{padding-left:9px;}
+.border3{width:228px;height:301px;overflow:hidden;float:left;}
+.border3 .title{height:27px;padding-top:3px;}
+.border3 .title h1{background:url(../images/title3_01.gif) no-repeat scroll left top;text-indent:-20000px;float:left;width:81px;height:16px;}
+.border3 .cont{width:218;height:266px;overflow:hidden;border:1px solid #D4D4D4;border-bottom:none;padding:4px 4px 0;position:relative;}
+.border3 .cont .img{background:url(../images/img_03.jpg) no-repeat;height:60px;padding-bottom:1px;}
+.border3 .cont .text{background:url(../images/cont_bg.gif) repeat-x scroll;width:100%;height:180px;}
+.border3 .cont .text .t{width:180px;padding-top:25px;margin:0 auto;height:155px;overflow:hidden;line-height:22px;}
+.border3 .cont .text .t ul li{background:url(../images/arr.jpg) no-repeat scroll left 6px;line-height:22px;height:22px;width:100%;overflow:hidden;}
+.border3 .cont .text .t ul li a{padding-left:9px;}
+.border4{width:667px;height:171px;margin-top:10px;overflow:hidden;padding:19px 19px 0;border:1px solid #D4D4D4;border-bottom:none;position:relative;}
+.border4 .img{width:131px;height:131px;overflow:hidden;float:left;padding-right:36px;}
+.border4 .img img{width:131px;height:131px;}
+.border4 .cont{float:left;width:480px;height:140px;overflow:hidden;}
+.border4 .cont ul li{background:url(../images/li_bg_02.gif) no-repeat scroll left 8px;line-height:24px;width:100%;height:24px;overflow:hidden;}
+.border4 .cont ul li a{padding-left:10px;width:390px;display:block;height:24px;overflow:hidden;float:left;}
+.border4 .cont ul li span{color:#999;}
+.border4 .border_b{background:url(../images/bottom_bg_02.gif) no-repeat scroll;width:707px;height:15px;overflow:hidden;left:-1px;bottom:0;}
+.border5{width:171px;height:175px;overflow:hidden;padding-top:10px;}
+.border5 .title{width:100%;height:26px;border-bottom:1px solid #D3D3D3;line-height:26px;}
+.border5 .title h1{float:left;width:59px;height:26px;display:block;background:url(../images/title5_01.gif);text-indent:-20000px;}
+.index_r a.more{background:url(../images/more_2.jpg);display:block;width:23px;height:5px;float:right;overflow:hidden;text-indent:-20000px;margin-top:13px;margin-right:3px;}
+.border5 .cont{width:100%;height:148px;overflow:hidden;}
+.border5 .cont ul{padding-top:15px;}
+.border5 .cont ul li{background:url(../images/li_bg_02.gif) no-repeat left 6px;line-height:22px;width:100%;height:22px;overflow:hidden;}
+.border5 .cont ul li a{padding-left:12px;}
+.border6{width:171px;height:192px;overflow:hidden;padding-top:10px;}
+.border6 .title{width:100%;height:26px;border-bottom:1px solid #D3D3D3;line-height:26px;}
+.border6 .title h1{float:left;width:59px;height:26px;display:block;background:url(../images/title6_01.gif);text-indent:-20000px;}
+.border6 .cont{width:100%;height:150px;overflow:hidden;padding-top:13px;line-height:22px;}

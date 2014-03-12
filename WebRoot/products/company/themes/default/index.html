@@ -1,0 +1,52 @@
+<#include 'common/header.html' />
+		<!--中间内容-->
+		<div class="content">
+			<div class="left">
+				<!--公司简介-->
+				<div class="aboutus">
+					<div class="title">公司简介<a href="about.html" class="more" onfocus="this.blur();">more</a></div>
+					<div class="cont">
+						${widget_1}
+					</div>
+				</div>
+				<!--公司简介 结束-->
+				<!--产品展示-->
+				<div class="products">
+					<div class="title">产品展示<a href="product-7-1.html" class="more" onfocus="this.blur();">more</a></div>
+					<div class="cont">
+						<div class="leftbg"><a href="#" onfocus="this.blur();"></a></div>
+						<div class="piclist">
+							${widget_2}
+							<script type="text/javascript" src="js/jquery-ApexSlider.js"></script>
+							<script type="text/javascript">
+								$(function(){
+									$(".piclist ul").LeftMarquee({speed:50,step:1,btnLeft:".leftbg a",btnRight:".rightbg a"});
+								});
+							</script>
+						</div>
+						<div class="rightbg"><a href="#" onfocus="this.blur();"></a></div>
+					</div>
+				</div>
+				<!--产品展示 结束-->
+			</div>
+			<div class="right">
+				<!--新闻公告-->
+				<div class="news">
+					<div class="title">新闻公告<a href="news-2-1.html" class="more" onfocus="this.blur();">more</a></div>
+						${widget_3}
+					</div>
+				<!--新闻公告 结束-->
+				<!--成功案例-->
+				<div class="success">
+					<div class="title">成功案例<a href="cases-12-1.html" class="more" onfocus="this.blur();">more</a></div>
+						${widget_4}
+					</div>
+				<!--成功案例 结束-->
+				<div class="circular"><!--底部圆角-->
+					<div class="circular_left"></div>
+					<div class="circular_right"></div>
+				</div>
+			</div>
+		</div>
+		<!--中间内容 结束-->
+<#include 'common/footer.html' />

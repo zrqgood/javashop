@@ -1,0 +1,147 @@
+<script type="text/javascript" src="js/jquery-form-2.33.js"></script>
+<script type="text/javascript" src="js/jquery.pager.js"></script>
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />
+<link href="css/comments.css" rel="stylesheet" type="text/css" />
+<div tab="<#if object_type=='discuss'>评论</#if><#if object_type=='ask'>购买咨询</#if>" class="section pdtdetail" style="">
+<h2><#if object_type=='discuss'>评论</#if><#if object_type=='ask'>购买咨询</#if><#if object_type=='leavewords'>客户留言</#if><span>（已有<em id="comment_count_${wid}">${totalCount}</em>条<#if object_type=='discuss'>评论</#if><#if object_type=='ask'>咨询</#if><#if object_type=='leavewords'>客户留言</#if>）</span></h2>
+
+<div class="FormWrap">
+<div id="goods-comment_${wid}" class="Comments">
+	<div class="division boxBrown">
+			<#include "Comments_Panel.html"> 
+	</div>
+	<div id="pager_${wid}" ></div>
+</div>
+<br/>
+
+<form method="post" class="addcomment" id="addcomment_${wid}">
+
+<input type="hidden" name="comments.object_id" value="${goods_id}" />
+<input type="hidden" name="comments.commenttype" value="${commentType}" />
+<input type="hidden" name="comments.object_type" value="${object_type}" />
+<!--<input type="hidden" name="comments.author" value="当前用户" />-->
+<!--<input type="hidden" name="comments.author_id" value="5" />-->
+<input type="hidden" name="direct_show" value="${directShow }" />
+<input type="hidden" name="validcode" value="${validcode }" />
+
+<h4>发表<#if object_type=="discuss">评论</#if><#if object_type=="ask">咨询</#if><#if object_type=="leavewords">留言</#if></h4>
+<div class="division">
+<table cellspacing="0" cellpadding="0" border="0" width="100%"
+	class="forform">
+	<tbody>
+		<tr>
+			<th><em>*</em>标题：</th>
+			<td><input type="text" vtype="text" name="comments.title" size="50"
+				required="true" class="inputstyle _x_ipt" autocomplete="off"></td>
+		</tr>
+		<tr>
+			<th><em>*</em>联系方式：</th>
+			<td><input type="text" vtype="text" name="comments.contact" size="20"
+				required="true" class="inputstyle _x_ipt" autocomplete="off"><span
+				class="infotips">(可以是电话、email、qq等)</span></td>
+		</tr>
+		<tr>
+			<th><em>*</em>内容：</th>
+			<td><textarea vtype="textarea" style="width: 80%;"
+				name="comments.comment" rows="5" required="true" class="inputstyle _x_ipt"
+				type="textarea"></textarea></td>
+		</tr>
+		<#if validcode=="1">
+		<tr>
+			<th><em>*</em>验证码：</th>
+			<td><input type="text" vtype="text" name="valid_code" class="valid_code" size="4"
+				required="true" class="inputstyle _x_ipt" autocomplete="off">&nbsp;<img class="code_img"/></td>
+		</tr>
+		</#if>
+		<tr>
+			<td></td>
+			<td><input type="button" id="comments_btn_${wid}" value="提交"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</form>
+</div>
+</div>
+
+<script>
+
+var Comments_${wid} = {
+	init:function(){
+		$(".code_img").hide();
+		var self = this;
+		$("#comments_btn_${wid}").click(function(){
+			self.add();
+		});	
+		$(".valid_code").focus(function(){
+			$(".code_img").attr("src","validcode.do?vtype=comments&rmd="+new Date().getTime()).click(function(){$(this).attr("src","validcode.do?vtype=comments&rmd="+new Date().getTime() )});
+			$(".code_img").show();
+		});
+		$(".valid_code").blur(function(){
+			$(".code_img").hide();
+		});
+	},
+	add:function(){
+		$("#comments_btn_${wid}").attr("disabled",true); 
+		var options = { 
+				url : "shop/comments!add.do",
+				type : "POST",
+				dataType : 'json',
+				success : function(result) {				
+	 				if(result.state==0){
+						alert(result.message);
+						<#if directShow=="1">
+						var em  =$("#comment_count_${wid}");
+						 em.html( parseInt(em.text())+1);
+						 Pager_${wid}.init();
+						 Pager_${wid}.PageClick(1);
+						 </#if>
+						 $("#comments_btn_${wid}").attr("disabled",false); 
+						 $("#addcomment_${wid}").get(0).reset();
+			 		}else{
+				 		alert(result.message);
+				 		$("#comments_btn_${wid}").attr("disabled",false); 
+				 	}
+				},
+				error : function(e) {
+					alert("出现错误 ，请重试");
+					$("#comments_btn_${wid}").attr("disabled",false); 
+				}
+		};
+
+		$('#addcomment_${wid}').ajaxSubmit(options);	
+	}		
+}
+
+var Pager_${wid} = {
+	init:function(){
+		var self = this;
+		var PC = 0;
+		var em  =$("#comment_count_${wid}");
+		PC = (parseInt(em.text()) % ${pageSize} == 0) ? (parseInt(em.text()) / ${pageSize}): (parseInt(em.text()) / ${pageSize} + 1);
+		if(PC!=0){
+			$("#pager_${wid}").pager({ pagerid:'pager_${wid}',pagenumber: 1, pagecount: PC, buttonClickCallback: self.PageClick });
+		}
+	},
+
+	PageClick:function(pageclickednumber){
+		var self = this;
+		$.ajax({
+			method:"get",
+			url:"shop/comments!list.do?object_id=${goods_id}&page="+pageclickednumber+"&object_type=${object_type}&commentType=${commentType}",
+			dataType:"html",
+			success:function(result){
+				$("#goods-comment_${wid}>.division").html(result);
+			},
+			error:function(){
+				alert("异步失败");
+			}
+		});
+	}
+}
+
+$(function(){
+	Comments_${wid}.init();
+	Pager_${wid}.init();
+});
+</script>

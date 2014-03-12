@@ -1,0 +1,39 @@
+<script src="${staticserver}/js/common/jquery.validate.js" type="text/javascript"></script>
+<link href="${staticserver}/js/common/validate/validate.css" rel="stylesheet" type="text/css" />
+<div>
+<h1 class="title">我的站点</h1>
+<form class="validate section"
+	action="member_security.html?action=save" method="post">
+<div class="FormWrap">
+
+<div style="border-top: 1px solid rgb(102, 102, 102);" class="division">
+<table width="100%" cellspacing="0" cellpadding="0" border="1"
+	class="forform">
+	<thead>
+		<th style="width:20px;text-align:left">id</th>
+		<th style="width:100px;text-align:left">站点名称</th>
+		<th style="width:300px;text-align:left">站点域名</th>
+		<th>操作</th>
+	</thead>
+	<tbody>
+	<#list siteList as site>
+		<tr style="border-bottom:1px solid #CCC">
+			<td>${site.id}</td>
+			<td>${site.sitename}</td>
+			<td><ul style="width:90%">
+			<#list site.eopSiteDomainList as domain>
+				<li style="width:100%;float:left">${domain.domain } &nbsp;<a href="http://${domain.domain }" target="_blank">访问前台</a>&nbsp;<a href="http://${domain.domain }/admin" target="_blank">登录后台</a>
+				</li>
+			</#list></ul>
+			</td>
+			<td><a	href="member_sites.html?action=delete&id=${site.id}" onclick="return confirm('这会删除您所选择的站点，并且数据不可恢复！确认要继续吗？');"> 
+		 删除 
+		</a></td>
+		</tr>
+	</#list>
+	</tbody>
+</table>
+</div>
+</div>
+</form>
+</div>
