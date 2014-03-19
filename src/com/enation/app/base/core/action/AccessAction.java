@@ -19,7 +19,7 @@ public class AccessAction extends WWAction {
 	private int startday;
 	private int endday;
 	private String runmodel; // 运行模式
-	private Map sData;//注释...
+	private Map sData;//注释...12
 
 	public String list() {
 		Calendar cal = Calendar.getInstance();
