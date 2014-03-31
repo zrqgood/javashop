@@ -7,7 +7,8 @@ import com.enation.javashop.core.model.PromotionActivity;
 import com.enation.javashop.core.service.IPromotionActivityManager;
 
 /**
- * 促销活动
+ * 促销活动    
+ * 
  * 
  * @author lzf<br/>
  *         2010-4-20下午05:34:37<br/>
